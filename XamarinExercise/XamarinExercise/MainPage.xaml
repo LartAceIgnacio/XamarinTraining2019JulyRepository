@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="XamarinExercise.MainPage">
+    <StackLayout>
+        <StackLayout HorizontalOptions="FillAndExpand">
+            <Button HorizontalOptions="Start" Text="Back"/>
+            <Button HorizontalOptions="End" Text="Next"/>
+        </StackLayout>
+        <StackLayout>
+            <Label x:Name="label" 
+                   Text="{Binding Value,StringFormat '{0}'}"/>
+            <Slider x:Name="slider"
+                    Maximum="45" 
+                    Minimum="10" />
+            <Label x:Name="quote"
+                Text="Some Quote"
+                   FontSize="{Binding Value}"/>
+        </StackLayout>
+    </StackLayout>
+
+    <!--<ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness"
+                    iOs="0,20,0,0"
+                    Android="0,0,0,0" />
+    </ContentPage.Padding>-->
+
+    <!--<StackLayout HorizontalOptions="Center">
+        <BoxView Color="Green" Opacity="{Binding Source={x:Reference slider},Path=Value}"/>
+        <Label BindingContext="{x:Reference slider}" 
+           Text="{Binding FallbackValue,
+                    StringFormat='Value is {0:F2}'}"
+                    Opacity="{Binding Value}"
+                    x:Name="label"/>
+        <Slider x:Name="slider" />
+
+    </StackLayout>-->
+    
+</ContentPage>
