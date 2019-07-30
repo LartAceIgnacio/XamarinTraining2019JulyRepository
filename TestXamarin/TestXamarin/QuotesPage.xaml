@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="TestXamarin.QuotesPage">
+    <ContentPage.Content>
+        <StackLayout Padding="20">
+            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                <Button x:Name="BackBtn" Text="Back" Clicked="BackBtn_Clicked" HorizontalOptions="StartAndExpand" />
+                <Button x:Name="NextBtn" Text="Next" Clicked="NextBtn_Clicked" HorizontalOptions="EndAndExpand" />
+            </StackLayout>            
+            <Label x:Name="FontSizeLabel" Text="Font size" />
+            <Slider x:Name="Slider" Maximum="72" Minimum="16" ValueChanged="Slider_ValueChanged" />
+            <Label x:Name="quote" Text="" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

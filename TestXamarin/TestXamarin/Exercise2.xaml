@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="TestXamarin.Exercise2">
+    <ContentPage.Content>
+        <StackLayout>
+            <BoxView x:Name="Box" HorizontalOptions="Center" />
+            <Label x:Name="RGBValue" HorizontalOptions="Center" Text="" />
+            <Label Text="Red" TextColor="Red" />
+            <Slider 
+                x:Name="RedSlider" 
+                Maximum="255" 
+                Minimum="0" 
+                ValueChanged="RedSlider_ValueChanged"/>
+            <Label Text="Green" TextColor="Green" />
+            <Slider 
+                x:Name="GreenSlider" 
+                Maximum="255" 
+                Minimum="0" 
+                ValueChanged="GreenSlider_ValueChanged"/>
+            <Label Text="Blue" TextColor="Blue" />
+            <Slider 
+                x:Name="BlueSlider" 
+                Maximum="255" 
+                Minimum="0" 
+                ValueChanged="BlueSlider_ValueChanged"
+                />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
