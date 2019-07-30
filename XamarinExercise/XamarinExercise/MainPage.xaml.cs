@@ -13,28 +13,85 @@ namespace XamarinExercise
     [DesignTimeVisible(false)]
     public partial class MainPage : ContentPage
     {
+        string[] quotes = { "I'll be there for you",
+                            "When the rain starts to fall",
+                            "Like I've been there Before",
+                            "Cause your there for me too" };
+        int index = 0;
+
         public MainPage()
         {
             InitializeComponent();
+            quote.Text = quotes[this.index];
+            boxView.Color = Color.FromRgb(25, 25, 25);
         }
-        void Slider_ValueChanged(object sender, ValueChangedEventArgs e)
+
+        void FontSize_ValueChanged(object sender, ValueChangedEventArgs e)
         {
-            double fontsize = e.NewValue;
-            label.Text = String.Format("The Slider value is {0}", fontsize);
-            quote.FontSize = fontsize;
+            double value = e.NewValue;
+            displayLabel.Text = String.Format("Font Size: {0}", value);
+            quote.FontSize = value;
         }
-        //public MainPage()
+
+        void OnButtonClicked(object sender, EventArgs e)
+        {
+            if (sender == next)
+            {
+                this.index++;
+                if (index > this.quotes.Length - 1)
+                {
+                    index = 0;
+                }
+                quote.Text = this.quotes[index];
+            }
+            else if (sender == back)
+            {
+                this.index--;
+                if (index < 0)
+                {
+                    index = this.quotes.Length - 1;
+                }
+                quote.Text = this.quotes[index];
+            }
+        }
+
+        void Color_ValueChanged(object sender, ValueChangedEventArgs e)
+        {
+            if (sender == red)
+            {
+                redLabel.Text = String.Format("Red: {0:X2}", (int)e.NewValue);
+            }
+            if (sender == green)
+            {
+                greenLabel.Text = String.Format("Green: {0:X2}", (int)e.NewValue);
+            }
+            if (sender == blue)
+            {
+                greenLabel.Text = String.Format("Blue: {0:X2}", (int)e.NewValue);
+            }
+            boxView.Color = Color.FromRgb((int)red.Value,
+                                          (int)green.Value,
+                                          (int)blue.Value);
+        }
+        //void OnNextButtonClicked(object sender, EventArgs e)
         //{
-        //    InitializeComponent();
-        //    slider.Value = 0.5;
-        //    if (Device.RuntimePlatform == Device.iOS)
+
+        //    this.index++;
+        //    if (index > this.quotes.Length-1)
         //    {
-        //        Padding = new Thickness(0, 20, 0, 0);
+        //        index = 0;
         //    }
+        //    quote.Text = this.quotes[index];
         //}
-        //void Handle_ValueChanged(object sender, Xamarin.Forms.ValueChangedEventArgs e)
+        //void OnBackButtonClicked(object sender, EventArgs e)
         //{
-        //    label.Text = string.Format("Value is {0:F2}, e.NewValue");
+        //    this.index--;
+        //    if (index < 0)
+        //    {
+        //        index = this.quotes.Length-1;
+        //    }
+        //    quote.Text = this.quotes[index];
         //}
+
     }
 }

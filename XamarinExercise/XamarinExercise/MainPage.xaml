@@ -5,38 +5,67 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="XamarinExercise.MainPage">
-    <StackLayout>
-        <StackLayout HorizontalOptions="FillAndExpand">
-            <Button HorizontalOptions="Start" Text="Back"/>
-            <Button HorizontalOptions="End" Text="Next"/>
+    
+    <StackLayout Padding="20,20,20,20">
+        <StackLayout >
+            <Button x:Name="back"
+                    HorizontalOptions="StartAndExpand" 
+                    Text="Back"
+                    Clicked="OnButtonClicked"/>
+            
+            <Button x:Name="next"
+                    HorizontalOptions="EndAndExpand" 
+                    Text="Next"
+                    Clicked="OnButtonClicked"/>
         </StackLayout>
-        <StackLayout>
-            <Label x:Name="label" 
-                   Text="{Binding Value,StringFormat '{0}'}"/>
-            <Slider x:Name="slider"
+
+        <Label x:Name="displayLabel"
+               Text="{Binding Source={x:Reference slider},
+                              Path=Value,
+                              StringFormat='Font Size: {0:F0}'}"
+               HorizontalOptions="Center"
+               VerticalOptions="CenterAndExpand" />
+
+        <Slider x:Name="slider"
                     Maximum="45" 
                     Minimum="10" />
-            <Label x:Name="quote"
-                Text="Some Quote"
-                   FontSize="{Binding Value}"/>
-        </StackLayout>
+        
+        <Label x:Name="quote"
+               Text="{Binding Value}"
+               FontSize="{Binding Source={x:Reference slider},
+                                      Path=Value}"
+               HorizontalOptions="Center" />
+        <BoxView x:Name="boxView"
+                 Color="{Binding Color}"
+                 VerticalOptions="FillAndExpand"/>
+
+        <Slider x:Name="red"
+                Minimum="0"
+                Maximum="255"/>
+
+        <Label x:Name="redLabel"
+               Text="{Binding Source={x:Reference red},
+                              Path=Value,
+                              StringFormat='Red: {0:F0}'}"/>
+
+        <Slider x:Name="green"
+                Minimum="0"
+                Maximum="255"/>
+
+        <Label x:Name="greenLabel"
+               Text="{Binding Source={x:Reference green},
+                              Path=Value,
+                              StringFormat='Green: {0:F0}'}"/>
+
+        <Slider x:Name="blue"
+                Minimum="0"
+                Maximum="255"/>
+
+        <Label x:Name="blueLabel"
+               Text="{Binding Source={x:Reference blue},
+                              Path=Value,
+                              StringFormat='Blue: {0:F0}'}"/>
+
     </StackLayout>
 
-    <!--<ContentPage.Padding>
-        <OnPlatform x:TypeArguments="Thickness"
-                    iOs="0,20,0,0"
-                    Android="0,0,0,0" />
-    </ContentPage.Padding>-->
-
-    <!--<StackLayout HorizontalOptions="Center">
-        <BoxView Color="Green" Opacity="{Binding Source={x:Reference slider},Path=Value}"/>
-        <Label BindingContext="{x:Reference slider}" 
-           Text="{Binding FallbackValue,
-                    StringFormat='Value is {0:F2}'}"
-                    Opacity="{Binding Value}"
-                    x:Name="label"/>
-        <Slider x:Name="slider" />
-
-    </StackLayout>-->
-    
 </ContentPage>
