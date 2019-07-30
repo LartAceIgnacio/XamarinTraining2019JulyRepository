@@ -19,8 +19,6 @@ namespace XamarinActivities
             var max = 255;
             var min = 0;
 
-            //rgb_result = new BoxView { BackgroundColor = Color.FromRgb(red_slider.Value, green_slider.Value, blue_slider.Value) };
-            //result.Color = Color.FromRgb(0, 0, 0);
             result.Color = Color.FromRgb(red_slider.Value, green_slider.Value, blue_slider.Value);
 
             red_slider.Maximum = max;

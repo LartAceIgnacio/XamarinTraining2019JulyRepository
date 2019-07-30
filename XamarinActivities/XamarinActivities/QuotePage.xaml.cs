@@ -17,8 +17,8 @@ namespace XamarinActivities
         public QuotePage()
         {
             InitializeComponent();
-            slider.Value = 10;
-            slider.Maximum = 30;
+            slider.Value = 20;
+            slider.Maximum = 50;
             slider.Minimum = 0;
 
             quoteList = new List<String>()
@@ -45,6 +45,7 @@ namespace XamarinActivities
             if (count == 0)
             {
                 quote.Text = quoteList[count];
+                count = quoteList.Count - 1;
             } else
             {
                 quote.Text = quoteList[count-1];
@@ -57,7 +58,8 @@ namespace XamarinActivities
 
             if (count == quoteList.Count-1) //last index
             {
-                quote.Text = quoteList[count];
+                quote.Text = quoteList[quoteList.Count - 1];
+                count = 0;
             }
             else
             {

@@ -9,7 +9,7 @@
         <StackLayout>
             <StackLayout Orientation="Horizontal">
                 <Button HorizontalOptions="Start" Text="Previous" Clicked="OnPreviousPageButtonClicked"></Button>
-                <Button HorizontalOptions="End" Text="Next" Clicked="OnNextPageButtonClicked"></Button>
+                <Button HorizontalOptions="EndAndExpand"  Text="Next" Clicked="OnNextPageButtonClicked"></Button>
             </StackLayout>
             <StackLayout BindingContext="{Binding Source={x:Reference slider} }">
                 <Label x:Name="font_size" Text="{Binding Value}"/>

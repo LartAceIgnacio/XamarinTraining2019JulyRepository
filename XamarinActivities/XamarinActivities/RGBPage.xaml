@@ -6,7 +6,7 @@
              mc:Ignorable="d"
              x:Class="XamarinActivities.RGBPage">
     <ContentPage.Content>
-        <StackLayout  >
+        <StackLayout Padding="0,20,0,0" >
             <BoxView x:Name="result" HorizontalOptions="Center" VerticalOptions="Center" />
             <Label   BindingContext="{Binding Source={x:Reference red_slider} }" Text="{Binding Value, StringFormat='Red: {0}'}"/>
             <Slider ValueChanged="Slider_ValueChanged" x:Name="red_slider"/>
