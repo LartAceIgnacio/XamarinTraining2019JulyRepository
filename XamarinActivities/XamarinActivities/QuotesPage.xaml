@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="XamarinActivities.QuotesPage">
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical">
+
+            <StackLayout VerticalOptions="Start"
+                Orientation="Horizontal">
+
+                <Button x:Name="Back_Button"
+                        Clicked="Back_Button_Clicked"
+                        Text="Back"
+                        HorizontalOptions="StartAndExpand" />
+
+                <Button x:Name="Next_Button"
+                        Clicked="Next_Button_Clicked"
+                        Text="Next"  />
+
+            </StackLayout>
+
+            <StackLayout Orientation="Vertical">
+                <Label x:Name="Font_Label" 
+                       Text="{Binding Source={x:Reference Font_Slider},
+                                      Path=Value,
+                                      StringFormat='Font is {0:F0}' }"/>
+                <Slider x:Name="Font_Slider"
+                        Maximum ="72"
+                        Minimum ="14"
+                        BackgroundColor="Gray" 
+                        ThumbColor="#fca103" />
+                
+                <Label x:Name="Quote_Label" 
+                       FontSize="{Binding Source={x:Reference Font_Slider},
+                                      Path=Value }" />
+            </StackLayout>
+            
+            <Label VerticalOptions="EndAndExpand"
+                   Text="Exercise 01 @ Kyla Gae C. Calpito" />
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

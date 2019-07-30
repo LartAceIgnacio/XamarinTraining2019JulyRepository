@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="XamarinActivities.BoxColorPage">
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical">
+            <StackLayout VerticalOptions="CenterAndExpand"
+                         HorizontalOptions="Center">
+                <BoxView x:Name="Box" />
+            </StackLayout>
+            
+            <StackLayout VerticalOptions="Center">
+                
+                <Label Text="{Binding Source={x:Reference Red_Slider},
+                       Path=Value,
+                       StringFormat='Red: {0:F0}' }"/>
+            
+                <Slider x:Name="Red_Slider"
+                        ValueChanged="RGB_Slider_ValueChanged"
+                        Maximum ="255"
+                        Minimum ="0"
+                        BackgroundColor="Gray" 
+                        ThumbColor="Red" />
+
+                <Label Text="{Binding Source={x:Reference Green_Slider},
+                       Path=Value,
+                       StringFormat='Green: {0:F0}' }"/>
+
+                <Slider x:Name="Green_Slider"
+                        ValueChanged="RGB_Slider_ValueChanged"
+                        Maximum ="255"
+                        Minimum ="0"
+                        BackgroundColor="Gray" 
+                        ThumbColor="Green" />
+
+                <Label Text="{Binding Source={x:Reference Blue_Slider},
+                       Path=Value,
+                       StringFormat='Blue {0:F0}' }"/>
+
+                <Slider x:Name="Blue_Slider"
+                        ValueChanged="RGB_Slider_ValueChanged"
+                        Maximum ="255"
+                        Minimum ="0"
+                        BackgroundColor="Gray" 
+                        ThumbColor="Blue" />
+            
+            </StackLayout>
+
+            <Label VerticalOptions="EndAndExpand" HorizontalOptions="End"
+                   Text="Exercise 02 @ Kyla Gae C. Calpito" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
