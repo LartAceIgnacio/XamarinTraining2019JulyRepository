@@ -10,8 +10,9 @@ namespace XamarinActivities
         {
             InitializeComponent();
 
-            // MainPage = new QuotesPage();
-            MainPage = new BoxColorPage();
+            MainPage = new TabsPage();
+            // MainPage = new BoxColorPage();
+
         }
 
         protected override void OnStart()
