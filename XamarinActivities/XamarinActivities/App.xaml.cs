@@ -11,6 +11,7 @@ namespace XamarinActivities
             InitializeComponent();
 
             MainPage = new TabsPage();
+            // MainPage = new QuotesPage();
             // MainPage = new BoxColorPage();
 
         }

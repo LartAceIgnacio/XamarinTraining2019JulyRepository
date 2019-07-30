@@ -14,11 +14,15 @@
                 <Button x:Name="Back_Button"
                         Clicked="Back_Button_Clicked"
                         Text="Back"
-                        HorizontalOptions="StartAndExpand" />
+                        HorizontalOptions="Start" />
+
+                <Label x:Name="Page_Label"
+                       HorizontalOptions="CenterAndExpand" />
 
                 <Button x:Name="Next_Button"
                         Clicked="Next_Button_Clicked"
-                        Text="Next"  />
+                        Text="Next"
+                        HorizontalOptions="End" />
 
             </StackLayout>
 

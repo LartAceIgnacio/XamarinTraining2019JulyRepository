@@ -21,7 +21,7 @@ namespace XamarinActivities
 
             Quotes = new List<string>()
             {
-                "Better to remain silent and be thought a fool than to speak out and remove all doubt.'– Abraham Lincoln",
+                "Better to remain silent and be thought a fool than to speak out and remove all doubt.– Abraham Lincoln",
                 "Nobody realizes that some people expend tremendous energy merely to be normal.– Albert Camus",
                 "The average dog is a nicer person than the average person.– Andy Rooney",
                 "Wine is constant proof that God loves us and loves to see us happy.– Benjamin Franklin",
@@ -29,6 +29,7 @@ namespace XamarinActivities
                 "The surest sign that intelligent life exists elsewhere in the universe is that it has never tried to contact us.– Bill Watterson"
             };
             Quote_Label.Text = Quotes[QuoteIndex];
+            Page_Label.Text = (QuoteIndex+1).ToString() + '/' + Quotes.Count;
         }
 
         private void Back_Button_Clicked(object sender, EventArgs e)
@@ -42,6 +43,7 @@ namespace XamarinActivities
                 QuoteIndex--;
             }
             Quote_Label.Text = Quotes[QuoteIndex];
+            Page_Label.Text = (QuoteIndex + 1).ToString() + '/' + Quotes.Count;
         }
 
         private void Next_Button_Clicked(object sender, EventArgs e)
@@ -55,6 +57,7 @@ namespace XamarinActivities
                 QuoteIndex++;
             }
             Quote_Label.Text = Quotes[QuoteIndex];
+            Page_Label.Text = (QuoteIndex + 1).ToString() + '/' + Quotes.Count;
         }
     }
 }
