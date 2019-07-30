@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="XamarinExcercise.MainPage"
+             Padding="20,20,20,20">
+    <StackLayout BindingContext="{x:Reference Slider}" Orientation="Vertical">
+        <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="Start">
+        <!-- Place new controls here -->
+        <!--<Label Text="Welcome to Xamarin.Forms!" 
+           HorizontalOptions="Center"
+           VerticalOptions="CenterAndExpand" />-->
+
+        <Button Text="Back" Clicked="Previous" HorizontalOptions="Start" VerticalOptions="Start" />
+        <Button Text="Next" Clicked="Next"
+                HorizontalOptions="EndAndExpand" VerticalOptions="StartAndExpand"/>
+
+
+    </StackLayout>
+        <Label Text="{Binding Value,StringFormat='Font: {0:0}'}" HorizontalOptions="Start"/>
+
+        <Slider x:Name="Slider" Maximum="72" Minimum="4" HorizontalOptions="FillAndExpand"/>
+
+        <Label x:Name="quote" Text="Sample Text" FontSize="{Binding Value}"/>
+    </StackLayout>
+
+
+</ContentPage>

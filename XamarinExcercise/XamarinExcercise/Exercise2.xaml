@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="XamarinExcercise.Exercise2">
+    <ContentPage.Content>
+        <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="Center">
+            <BoxView x:Name="Box"  HorizontalOptions="Center"/>
+
+            <Label x:Name="RedLabel"  HorizontalOptions="Start" VerticalOptions="Center"/>
+            <Slider x:Name="RedSlider" ValueChanged="RedChange" HorizontalOptions="FillAndExpand" VerticalOptions="Center"/>
+            <Label x:Name="GreenLabel"  Text="Green" HorizontalOptions="Start" VerticalOptions="Center"/>
+            <Slider x:Name="GreenSlider" ValueChanged="GreenChange" HorizontalOptions="FillAndExpand" VerticalOptions="Center"/>
+            <Label x:Name="BlueLabel"  Text="Blue" HorizontalOptions="Start" VerticalOptions="Center"/>
+            <Slider x:Name="BlueSlider" ValueChanged="BlueChange" HorizontalOptions="FillAndExpand" VerticalOptions="Center"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
