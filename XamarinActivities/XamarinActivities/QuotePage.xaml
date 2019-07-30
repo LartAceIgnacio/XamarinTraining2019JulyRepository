@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="XamarinActivities.QuotePage">
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Button HorizontalOptions="Start" Text="Previous" Clicked="OnPreviousPageButtonClicked"></Button>
+                <Button HorizontalOptions="End" Text="Next" Clicked="OnNextPageButtonClicked"></Button>
+            </StackLayout>
+            <StackLayout BindingContext="{Binding Source={x:Reference slider} }">
+                <Label x:Name="font_size" Text="{Binding Value}"/>
+                <Slider x:Name="slider"/>
+                <Label x:Name="quote" FontSize="{Binding Value}"/>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
