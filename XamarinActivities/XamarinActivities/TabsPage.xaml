@@ -7,7 +7,7 @@
             mc:Ignorable="d"
              x:Class="XamarinActivities.TabsPage">
   <!--Pages can be added as references or inline-->
-    <pages:MainPage Title= "Main Page" />
+    <pages:WelcomePage Title= "Welcome Page" />
     <pages:QuotesPage Title= "Quotes Page" />
     <pages:BoxColorPage Title= "Box Page" />
 </TabbedPage>
