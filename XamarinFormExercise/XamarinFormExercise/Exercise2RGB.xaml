@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="XamarinFormExercise.Exercise2RGB">
+    <ContentPage.Content>
+        <StackLayout Padding="0,20,0,0" >
+            <BoxView x:Name="result" HorizontalOptions="Center" VerticalOptions="Center" />
+            <Label   BindingContext="{Binding Source={x:Reference red} }" Text="{Binding Value, StringFormat='Red: {0:0,0}'}"/>
+            <Slider Maximum="255" Minimum="0" ValueChanged="Slider_ValueChanged" x:Name="red"/>
+            <Label   BindingContext="{Binding Source={x:Reference green} }" Text="{Binding Value, StringFormat='Green: {0:0,0}'}"/>
+            <Slider  Maximum="255" Minimum="0" ValueChanged="Slider_ValueChanged" x:Name="green"/>
+            <Label BindingContext="{Binding Source={x:Reference blue} }" Text="{Binding Value, StringFormat='Blue: {0:0,0}'}"/>
+            <Slider  Maximum="255" Minimum="0" ValueChanged="Slider_ValueChanged" x:Name="blue"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
