@@ -12,34 +12,38 @@
     </ContentPage.Padding>
     <ContentPage.Content>
         <StackLayout>
-
+          <StackLayout>
             <BoxView x:Name="boxView"
-                     Scale="3"
+                     Scale="2"
                      HorizontalOptions="Center"
                      VerticalOptions="Center"/>
+          </StackLayout>
+           
             
             <Label x:Name="getRed"
-                  Text ="{Binding Source={x:Reference redslider}, Path = Value}" />
+                  Text = "{Binding Source={x:Reference redslider}, Path = Value, StringFormat='Red : 0'}" />
             <Slider Maximum="255"
                     Minimum="0"
                     ValueChanged ="Color_ValueChanged" 
                     x:Name="redslider"/>
             
             <Label x:Name="getGreen"
-                    Text ="{Binding Source={x:Reference greenslider}, Path = Value}"/>
+                    Text ="{Binding Source={x:Reference greenslider}, Path = Value, StringFormat='Green : 0'}"/>
             <Slider Maximum="255"
                     Minimum="0"
                     x:Name="greenslider"
                     ValueChanged ="Color_ValueChanged"/>
             
             <Label x:Name="getBlue"
-                    Text = "{Binding Source={x:Reference blueslider}, Path = Value}"/>
+                    Text = "{Binding Source={x:Reference blueslider}, Path = Value, StringFormat='Blue : 0'}"/>
             <Slider Maximum="255"
                     Minimum="0"
                     ValueChanged ="Color_ValueChanged"
                     x:Name="blueslider"/>
 
-            <Label Text="Welcome to Xamarin.Forms!"/>
+            <Label Text="Exercise 2 @ Charles Kenichi Nazareno"
+                   VerticalOptions="EndAndExpand"
+                   HorizontalOptions ="End"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

@@ -34,8 +34,8 @@ namespace Exercise1
                 getGreen.Text = String.Format("Green : {0:0}", (int)e.NewValue);
             }
             boxView.Color = Color.FromRgb((int)redslider.Value
-                                        , (int)blueslider.Value
-                                        , (int)greenslider.Value );
+                                        , (int)greenslider.Value
+                                        , (int)blueslider.Value );
         }
 
     }
