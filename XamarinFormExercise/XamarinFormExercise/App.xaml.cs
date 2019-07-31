@@ -10,8 +10,8 @@ namespace XamarinFormExercise
         {
             InitializeComponent();
 
-          //   MainPage = new Exercise1QuotesPage();
-            MainPage = new Exercise2RGB();
+            MainPage = new Exercise1QuotesPage();
+            //MainPage = new Exercise2RGB();
         }
 
         protected override void OnStart()
