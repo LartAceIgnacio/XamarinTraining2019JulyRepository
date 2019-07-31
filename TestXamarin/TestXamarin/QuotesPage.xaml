@@ -14,6 +14,9 @@
             <Label x:Name="FontSizeLabel" Text="Font size" />
             <Slider x:Name="Slider" Maximum="72" Minimum="16" ValueChanged="Slider_ValueChanged" />
             <Label x:Name="quote" Text="" />
+            <StackLayout VerticalOptions="EndAndExpand">
+                <Label Text="Exercise 01 @ Jelmarose Grace M. De Vera" />
+            </StackLayout>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

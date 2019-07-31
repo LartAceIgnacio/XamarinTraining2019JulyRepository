@@ -6,7 +6,7 @@
              mc:Ignorable="d"
              x:Class="TestXamarin.Exercise2">
     <ContentPage.Content>
-        <StackLayout>
+        <StackLayout Padding="10">
             <BoxView x:Name="Box" HorizontalOptions="Center" />
             <Label x:Name="RGBValue" HorizontalOptions="Center" Text="" />
             <Label Text="Red" TextColor="Red" />
@@ -28,6 +28,9 @@
                 Minimum="0" 
                 ValueChanged="BlueSlider_ValueChanged"
                 />
+            <StackLayout VerticalOptions="EndAndExpand" HorizontalOptions="EndAndExpand">
+                <Label Text="Exercise 02 @ Jelmarose Grace M. De Vera" />
+            </StackLayout>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

@@ -15,8 +15,12 @@ namespace TestXamarin
 
         String[] quotes = new string[]
         {
-                "Close your eyes",
-                ""
+                "Chance favors the prepared mind",
+                "Hardwork and discipline beats talent",
+                "Let no man's ghost come back to say my training let me down - NY Fire Department Training Academy",
+                "The best plan is only good intentions unless it degenerates into work - Peter Drucker",
+                "Unattended children will be given espresso",
+                "Bawal umihi dito"
         };
 
         int i = 0;
