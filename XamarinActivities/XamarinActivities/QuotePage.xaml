@@ -6,14 +6,14 @@
              mc:Ignorable="d"
              x:Class="XamarinActivities.QuotePage">
     <ContentPage.Content>
-        <StackLayout >
+        <StackLayout Padding="20,20,20,20">
             <StackLayout Orientation="Horizontal">
                 <Button HorizontalOptions="Start" Text="Previous" Clicked="OnPreviousPageButtonClicked"></Button>
                 <Button HorizontalOptions="EndAndExpand"  Text="Next" Clicked="OnNextPageButtonClicked"></Button>
             </StackLayout>
             <StackLayout BindingContext="{Binding Source={x:Reference slider} }">
                 <Label x:Name="font_size" Text="{Binding Value}"/>
-                <Slider x:Name="slider"  Value="{Binding Value}"/>
+                <Slider x:Name="slider"  Value="{Binding Value}" BackgroundColor="#eb9e34"/>
                 <Label x:Name="quote" FontSize="{Binding Value}"/>
             </StackLayout>
             <StackLayout VerticalOptions="EndAndExpand" >

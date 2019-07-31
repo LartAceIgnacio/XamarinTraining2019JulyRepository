@@ -12,16 +12,24 @@ namespace XamarinActivities
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class QuotePage : ContentPage
     {
-        private int count;
-        private List<string> quoteList;
+        private int count = 0;
         public QuotePage()
         {
             InitializeComponent();
+            InitSlider();
+
+            quote.Text = DisplayQuoteList()[count];
+        }
+
+        private void InitSlider()
+        {
             slider.Maximum = 50;
             slider.Minimum = 0;
             slider.Value = 20;
-
-            quoteList = new List<String>()
+        }
+        private List<String> DisplayQuoteList()
+        {
+            var quoteList = new List<String>()
             {
                "Don't cry because it's over, smile because it happened.",
                "Be who you are and say what you feel, because those who mind don't matter, and those who matter don't mind",
@@ -36,19 +44,18 @@ namespace XamarinActivities
                "Two things are infinite: the universe and human stupidity; and I'm not sure about the universe."
             };
 
-            count = 0;
-            quote.Text = quoteList[count];
-        }
+            return quoteList;
+        } 
 
         private void OnPreviousPageButtonClicked(object sender, EventArgs e)
         {
             if (count == 0)
             {
-                quote.Text = quoteList[count];
-                count = quoteList.Count - 1;
+                quote.Text = DisplayQuoteList()[count];
+                count = DisplayQuoteList().Count - 1;
             } else
             {
-                quote.Text = quoteList[count-1];
+                quote.Text = DisplayQuoteList()[count-1];
                 count -= 1;
             }
         }
@@ -56,14 +63,14 @@ namespace XamarinActivities
         private void OnNextPageButtonClicked(object sender, EventArgs e)
         {
 
-            if (count == quoteList.Count-1) //last index
+            if (count == DisplayQuoteList().Count-1) //last index
             {
-                quote.Text = quoteList[quoteList.Count - 1];
+                quote.Text = DisplayQuoteList()[DisplayQuoteList().Count - 1];
                 count = 0;
             }
             else
             {
-                quote.Text = quoteList[count + 1];
+                quote.Text = DisplayQuoteList()[count + 1];
                 count += 1;
             }
         }

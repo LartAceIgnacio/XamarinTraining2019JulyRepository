@@ -15,12 +15,13 @@ namespace XamarinActivities
         public RGBPage()
         {
             InitializeComponent();
-
-            var max = 255;
-            var min = 0;
-
+            InitSlider(255, 0);
             result.Color = Color.FromRgb(red_slider.Value, green_slider.Value, blue_slider.Value);
 
+        }
+
+        private void InitSlider(int max, int min)
+        {
             red_slider.Maximum = max;
             blue_slider.Maximum = max;
             green_slider.Maximum = max;
@@ -32,7 +33,6 @@ namespace XamarinActivities
             red_slider.Value = 255;
             blue_slider.Value = 0;
             green_slider.Value = 35;
-
         }
 
         private void Slider_ValueChanged(object sender, ValueChangedEventArgs e)

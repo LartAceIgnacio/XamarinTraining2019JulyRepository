@@ -8,7 +8,7 @@
 
     <StackLayout>
         <!-- Place new controls here -->
-        <Label Text="Hello Gudmurneng" 
+        <Label Text="Xamarin Activities" 
            HorizontalOptions="Center"
            VerticalOptions="CenterAndExpand" />
         
