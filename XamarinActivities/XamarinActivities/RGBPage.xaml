@@ -6,7 +6,7 @@
              mc:Ignorable="d"
              x:Class="XamarinActivities.RGBPage">
     <ContentPage.Content>
-        <StackLayout Padding="0,20,0,0" >
+        <StackLayout Padding="2,20,2,2" >
             <BoxView x:Name="result" HorizontalOptions="Center" VerticalOptions="Center" />
             <Label   BindingContext="{Binding Source={x:Reference red_slider} }" Text="{Binding Value, StringFormat='Red: {0}'}"/>
             <Slider ValueChanged="Slider_ValueChanged" x:Name="red_slider"/>
@@ -14,6 +14,9 @@
             <Slider  ValueChanged="Slider_ValueChanged" x:Name="green_slider"/>
             <Label BindingContext="{Binding Source={x:Reference blue_slider} }" Text="{Binding Value, StringFormat='Blue: {0}'}"/>
             <Slider ValueChanged="Slider_ValueChanged" x:Name="blue_slider"/>
+            <StackLayout VerticalOptions="EndAndExpand" >
+                <Label Text="Exercise 02 @ Melrose Mejidana"/>
+            </StackLayout>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

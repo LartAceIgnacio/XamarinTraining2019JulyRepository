@@ -17,9 +17,9 @@ namespace XamarinActivities
         public QuotePage()
         {
             InitializeComponent();
-            slider.Value = 20;
             slider.Maximum = 50;
             slider.Minimum = 0;
+            slider.Value = 20;
 
             quoteList = new List<String>()
             {

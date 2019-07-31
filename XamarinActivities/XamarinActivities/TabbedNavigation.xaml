@@ -5,7 +5,9 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
             xmlns:pages="clr-namespace:XamarinActivities"
             mc:Ignorable="d"
-             x:Class="XamarinActivities.TabbedNavigation">
+             x:Class="XamarinActivities.TabbedNavigation"
+            BarBackgroundColor="#fcba03"
+            >
     <pages:MainPage Title="MainPage"/>
     <pages:QuotePage Title="QuotePage"/>
     <pages:RGBPage Title="RGBPage"/>
