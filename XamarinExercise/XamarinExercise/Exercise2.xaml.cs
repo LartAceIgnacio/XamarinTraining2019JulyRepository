@@ -15,7 +15,7 @@ namespace XamarinExercise
         public Exercise2()
         {
             InitializeComponent();
-            boxView.Color = Color.FromRgb(25, 25, 25);
+            boxView.Color = Color.FromRgb(0, 0, 0);
         }
         void Color_ValueChanged(object sender, ValueChangedEventArgs e)
         {

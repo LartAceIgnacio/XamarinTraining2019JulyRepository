@@ -69,6 +69,17 @@
                Text="{Binding Source={x:Reference blue},
                               Path=Value,
                               StringFormat='Blue: {0:F0}'}"/>
+        <ContentPresenter />
+
+        <StackLayout Orientation="Horizontal" 
+                     HorizontalOptions="Start"
+                     VerticalOptions="EndAndExpand">
+
+            <Label Text="Execercise ©Jasper"
+                   FontSize="12"/>
+
+        </StackLayout>
+        
     </StackLayout>
 
 </ContentPage>

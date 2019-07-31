@@ -9,32 +9,44 @@
         <StackLayout Padding="20,20,20,20">
             <StackLayout Orientation="Horizontal" >
                 <Button x:Name="back"
-                    HorizontalOptions="StartAndExpand" 
-                    Text="Back"
-                    Clicked="OnButtonClicked"/>
+                        HorizontalOptions="StartAndExpand" 
+                        Text="Back"
+                        Clicked="OnButtonClicked"/>
 
                 <Button x:Name="next"
-                    HorizontalOptions="EndAndExpand" 
-                    Text="Next"
-                    Clicked="OnButtonClicked"/>
+                        HorizontalOptions="EndAndExpand" 
+                        Text="Next"
+                        Clicked="OnButtonClicked"/>
             </StackLayout>
 
             <Label x:Name="displayLabel"
-               Text="{Binding Source={x:Reference slider},
-                              Path=Value,
-                              StringFormat='Font Size: {0:F0}'}"
-               HorizontalOptions="Center"
-               VerticalOptions="Center" />
+                   Text="{Binding Source={x:Reference slider},
+                                  Path=Value,
+                                  StringFormat='Font Size: {0:F0}'}"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center" />
 
             <Slider x:Name="slider"
                     Maximum="45" 
                     Minimum="10" />
 
             <Label x:Name="quote"
-               Text="{Binding Value}"
-               FontSize="{Binding Source={x:Reference slider},
-                                  Path=Value}"
-               HorizontalOptions="Center" />
+                   Text="{Binding Value}"
+                   FontSize="{Binding Source={x:Reference slider},
+                                      Path=Value}"
+                    HorizontalOptions="Center" />
+            
+            <StackLayout Orientation="Horizontal" 
+                         HorizontalOptions="Start"
+                         VerticalOptions="EndAndExpand">
+
+                <Label Text="Execercise 01 ©Jasper"
+                       FontSize="12"/>
+
+            </StackLayout>
+            
         </StackLayout>
+        
     </ContentPage.Content>
+    
 </ContentPage>
