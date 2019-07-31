@@ -8,7 +8,7 @@
     <ContentPage.Content>
         <StackLayout VerticalOptions="FillAndExpand" 
                      BackgroundColor="#127ac7" >
-            <StackLayout VerticalOptions="CenterAndExpand">
+            <StackLayout VerticalOptions="CenterAndExpand" Spacing="20">
                 <Label Text="Welcome to Xamarin"
                        HorizontalTextAlignment="Center"
                        FontSize="30"
