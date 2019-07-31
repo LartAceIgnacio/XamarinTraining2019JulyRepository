@@ -56,6 +56,12 @@ namespace XamarinExcercise
                 index++;
                 this.quote.Text = quotesList[index];
             }
+            if(index == 20)
+            {
+                index = 0;
+                this.quote.Text = quotesList[index];
+
+            }
 
 
         }
@@ -64,6 +70,11 @@ namespace XamarinExcercise
             if (index > 0)
             {
                 index--;
+                this.quote.Text = quotesList[index];
+            }
+            if(index == 0)
+            {
+                index = 19;
                 this.quote.Text = quotesList[index];
             }
 
