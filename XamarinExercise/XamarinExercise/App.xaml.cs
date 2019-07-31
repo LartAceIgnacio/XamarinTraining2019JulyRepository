@@ -10,7 +10,9 @@ namespace XamarinExercise
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            //MainPage = new MainPage();
+            //MainPage = new Exercise1();
+            MainPage = new Exercise2();
         }
 
         protected override void OnStart()

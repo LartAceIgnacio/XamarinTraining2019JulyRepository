@@ -11,7 +11,7 @@ namespace XamarinExercise
     // Learn more about making custom code visible in the Xamarin.Forms previewer
     // by visiting https://aka.ms/xamarinforms-previewer
     [DesignTimeVisible(false)]
-    public partial class MainPage : ContentPage
+    public partial class Exercise1 : ContentPage
     {
         string[] quotes = { "I'll be there for you",
                             "When the rain starts to fall",
@@ -19,11 +19,10 @@ namespace XamarinExercise
                             "Cause your there for me too" };
         int index = 0;
 
-        public MainPage()
+        public Exercise1()
         {
             InitializeComponent();
             quote.Text = quotes[this.index];
-            boxView.Color = Color.FromRgb(25, 25, 25);
         }
 
         void FontSize_ValueChanged(object sender, ValueChangedEventArgs e)
@@ -54,44 +53,5 @@ namespace XamarinExercise
                 quote.Text = this.quotes[index];
             }
         }
-
-        void Color_ValueChanged(object sender, ValueChangedEventArgs e)
-        {
-            if (sender == red)
-            {
-                redLabel.Text = String.Format("Red: {0:F0}", (int)e.NewValue);
-            }
-            if (sender == green)
-            {
-                greenLabel.Text = String.Format("Green: {0:F0}", (int)e.NewValue);
-            }
-            if (sender == blue)
-            {
-                greenLabel.Text = String.Format("Blue: {0:F0}", (int)e.NewValue);
-            }
-            boxView.Color = Color.FromRgb((int)red.Value,
-                                          (int)green.Value,
-                                          (int)blue.Value);
-        }
-        //void OnNextButtonClicked(object sender, EventArgs e)
-        //{
-
-        //    this.index++;
-        //    if (index > this.quotes.Length-1)
-        //    {
-        //        index = 0;
-        //    }
-        //    quote.Text = this.quotes[index];
-        //}
-        //void OnBackButtonClicked(object sender, EventArgs e)
-        //{
-        //    this.index--;
-        //    if (index < 0)
-        //    {
-        //        index = this.quotes.Length-1;
-        //    }
-        //    quote.Text = this.quotes[index];
-        //}
-
     }
 }

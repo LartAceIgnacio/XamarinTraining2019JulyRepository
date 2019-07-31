@@ -7,7 +7,7 @@
              x:Class="XamarinExercise.MainPage">
     
     <StackLayout Padding="20,20,20,20">
-        <StackLayout >
+        <StackLayout Orientation="Horizontal" >
             <Button x:Name="back"
                     HorizontalOptions="StartAndExpand" 
                     Text="Back"
@@ -35,11 +35,13 @@
                FontSize="{Binding Source={x:Reference slider},
                                       Path=Value}"
                HorizontalOptions="Center" />
+        
         <BoxView x:Name="boxView"
                  Color="{Binding Color}"
                  VerticalOptions="FillAndExpand"/>
 
         <Slider x:Name="red"
+                ValueChanged="Color_ValueChanged"
                 Minimum="0"
                 Maximum="255"/>
 
@@ -49,6 +51,7 @@
                               StringFormat='Red: {0:F0}'}"/>
 
         <Slider x:Name="green"
+                ValueChanged="Color_ValueChanged"
                 Minimum="0"
                 Maximum="255"/>
 
@@ -58,6 +61,7 @@
                               StringFormat='Green: {0:F0}'}"/>
 
         <Slider x:Name="blue"
+                ValueChanged="Color_ValueChanged"
                 Minimum="0"
                 Maximum="255"/>
 
@@ -65,7 +69,6 @@
                Text="{Binding Source={x:Reference blue},
                               Path=Value,
                               StringFormat='Blue: {0:F0}'}"/>
-
     </StackLayout>
 
 </ContentPage>

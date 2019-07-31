@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="XamarinExercise.Exercise1">
+    <ContentPage.Content>
+        <StackLayout Padding="20,20,20,20">
+            <StackLayout Orientation="Horizontal" >
+                <Button x:Name="back"
+                    HorizontalOptions="StartAndExpand" 
+                    Text="Back"
+                    Clicked="OnButtonClicked"/>
+
+                <Button x:Name="next"
+                    HorizontalOptions="EndAndExpand" 
+                    Text="Next"
+                    Clicked="OnButtonClicked"/>
+            </StackLayout>
+
+            <Label x:Name="displayLabel"
+               Text="{Binding Source={x:Reference slider},
+                              Path=Value,
+                              StringFormat='Font Size: {0:F0}'}"
+               HorizontalOptions="Center"
+               VerticalOptions="Center" />
+
+            <Slider x:Name="slider"
+                    Maximum="45" 
+                    Minimum="10" />
+
+            <Label x:Name="quote"
+               Text="{Binding Value}"
+               FontSize="{Binding Source={x:Reference slider},
+                                  Path=Value}"
+               HorizontalOptions="Center" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="XamarinExercise.Exercise2">
+    <ContentPage.Content>
+        <StackLayout Padding="20,20,20,20">
+            
+            <BoxView x:Name="boxView"
+                 Color="{Binding Color}"
+                 VerticalOptions="FillAndExpand"/>
+
+            <Slider x:Name="red"
+                ValueChanged="Color_ValueChanged"
+                Minimum="0"
+                Maximum="255"/>
+
+            <Label x:Name="redLabel"
+               Text="{Binding Source={x:Reference red},
+                              Path=Value,
+                              StringFormat='Red: {0:F0}'}"/>
+
+            <Slider x:Name="green"
+                ValueChanged="Color_ValueChanged"
+                Minimum="0"
+                Maximum="255"/>
+
+            <Label x:Name="greenLabel"
+               Text="{Binding Source={x:Reference green},
+                              Path=Value,
+                              StringFormat='Green: {0:F0}'}"/>
+
+            <Slider x:Name="blue"
+                ValueChanged="Color_ValueChanged"
+                Minimum="0"
+                Maximum="255"/>
+
+            <Label x:Name="blueLabel"
+               Text="{Binding Source={x:Reference blue},
+                              Path=Value,
+                              StringFormat='Blue: {0:F0}'}"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
