@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="ProjectDemo.Page1">
+    <ContentPage.Content>
+		<StackLayout>
+			<BoxView x:Name="colorbox"
+					 Color="Black"
+					 HorizontalOptions="Center"
+					 Margin="20"/>
+			<Label BindingContext="{x:Reference slider1}"
+				   Text="{Binding Value,
+							StringFormat='Red : {0:F0}'}"
+				   Opacity="{Binding Value}"
+				   x:Name="label1"/>
+			<Slider x:Name="slider1"
+					Maximum="255.0"
+					Minimum="0.0"
+					ValueChanged="Slider_ValueChanged"/>
+			<Label BindingContext="{x:Reference slider2}"
+				   Text="{Binding Value,
+							StringFormat='Green : {0:F0}'}"
+				   Opacity="{Binding Value}"
+				   x:Name="label2"/>
+			<Slider x:Name="slider2"
+					Maximum="255.0"
+					Minimum="0.0"
+					ValueChanged="Slider_ValueChanged"/>
+			<Label BindingContext="{x:Reference slider3}"
+				   Text="{Binding Value,
+							StringFormat='Blue : {0:F0}'}"
+				   Opacity="{Binding Value}"
+				   x:Name="label3"/>
+			<Slider x:Name="slider3"
+					Maximum="255.0"
+					Minimum="0.0"
+					ValueChanged="Slider_ValueChanged"/>
+			<StackLayout VerticalOptions="EndAndExpand">
+			<Label Text="Exercise 02@Mermellah Angni"
+					   HorizontalOptions="End"/>
+			</StackLayout>
+		</StackLayout>
+    </ContentPage.Content>
+</ContentPage>
