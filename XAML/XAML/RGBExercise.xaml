@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="XAML.RGBExercise">
+    <ContentPage.Content>
+        <StackLayout Padding="20">
+            
+            <StackLayout HorizontalOptions="CenterAndExpand" Padding="0, 100, 0, 0">
+                <BoxView x:Name="colorbox" Scale="2"/>
+            </StackLayout>
+
+            <StackLayout BindingContext="{x:Reference redslider}" Padding="0, 30, 0, 0">
+                <Slider x:Name="redslider" 
+                        ValueChanged="Color_ValueChanged" 
+                        Maximum="255" 
+                        Minimum="0"/>
+                
+                <Label Text="{Binding Value,
+                              StringFormat='Red: {0:F0}'}"/>
+            </StackLayout>
+
+            <StackLayout BindingContext="{x:Reference greenslider}">
+                <Slider x:Name="greenslider" 
+                        ValueChanged="Color_ValueChanged" 
+                        Maximum="255" 
+                        Minimum="0"/>
+                
+                <Label Text="{Binding Value,
+                              StringFormat='Green: {0:F0}'}"/>
+            </StackLayout>
+
+            <StackLayout BindingContext="{x:Reference blueslider}">
+                <Slider x:Name="blueslider" 
+                        ValueChanged="Color_ValueChanged" 
+                        Maximum="255"
+                        Minimum="0"/>
+                <Label Text="{Binding Value,
+                              StringFormat='Blue: {0:F0}'}"/>
+            </StackLayout>
+
+            <StackLayout VerticalOptions="EndAndExpand">
+                <Label Text="Exercise 2 - Dino Anglelo Reyes"
+                       FontSize="8"
+                       HorizontalOptions="End"></Label>
+            </StackLayout>
+            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

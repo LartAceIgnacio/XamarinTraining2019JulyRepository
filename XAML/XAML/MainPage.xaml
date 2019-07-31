@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="XAML.MainPage">
+
+    <StackLayout Padding="20">
+        <StackLayout Orientation="Horizontal" VerticalOptions="Start">
+            <Button Text="Back" Clicked="BackQuote" HorizontalOptions="StartAndExpand"></Button>
+            <Button Text="Next" Clicked="NextQuote" HorizontalOptions="EndAndExpand"></Button>
+        </StackLayout>
+
+        <StackLayout BindingContext="{x:Reference slider}">
+            <Slider x:Name="slider" Maximum="72" Minimum="16" />
+            <Label 
+               Text="{Binding Value,
+                      StringFormat='Font size is {0:F0}'}"
+               x:Name="label"/>
+            <Label x:Name="quote" FontSize="{Binding Value}"/>
+           
+        </StackLayout>
+
+        <StackLayout VerticalOptions="EndAndExpand">
+            <Label
+                Text="Exercise 1 - Dino Anglelo Reyes"
+                FontSize="8"
+                HorizontalOptions="Start"></Label>
+        </StackLayout>
+    </StackLayout>
+</ContentPage>
