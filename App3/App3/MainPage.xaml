@@ -20,7 +20,6 @@
         <StackLayout HorizontalOptions="End" VerticalOptions="End">
             <Label Text="Exercise 2 @ Felix Alexander Carao" HorizontalOptions="End" VerticalOptions="End" />
         </StackLayout>
-
     </StackLayout>
 
 </ContentPage>
