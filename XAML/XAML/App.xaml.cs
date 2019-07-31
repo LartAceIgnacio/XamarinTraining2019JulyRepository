@@ -11,7 +11,8 @@ namespace XAML
             InitializeComponent();
 
             //MainPage = new MainPage();
-            MainPage = new RGBExercise();
+            //MainPage = new RGBExercise();
+            MainPage = new StackLayout1();
         }
 
         protected override void OnStart()
