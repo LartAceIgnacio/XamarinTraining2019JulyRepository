@@ -4,9 +4,10 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="App3.MainPage">
-    <StackLayout>
-        <StackLayout VerticalOptions="Center">
+             x:Class="App3.Colors"
+             Padding="20,20,20,20">
+    <StackLayout VerticalOptions="FillAndExpand" Orientation="Vertical">
+        <StackLayout VerticalOptions="CenterAndExpand">
             <BoxView x:Name="Box" VerticalOptions="Center" HorizontalOptions="Center"/>
             <StackLayout HorizontalOptions="FillAndExpand">
                 <Label x:Name="redLabel"/>
@@ -17,8 +18,8 @@
                 <Slider ValueChanged="Handle_ValueChanged" x:Name="BlueSlider"  HorizontalOptions="FillAndExpand"/>
             </StackLayout>
         </StackLayout>
-        <StackLayout HorizontalOptions="End" VerticalOptions="End">
-            <Label Text="Exercise 2 @ Felix Alexander Carao" HorizontalOptions="End" VerticalOptions="End" />
+        <StackLayout HorizontalOptions="EndAndExpand" VerticalOptions="EndAndExpand">
+            <Label Text="Exercise 2 @ Felix Alexander Carao" />
         </StackLayout>
     </StackLayout>
 

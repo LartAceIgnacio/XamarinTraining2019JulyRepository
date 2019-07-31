@@ -10,8 +10,8 @@ namespace App3
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
-            //MainPage = new Quotes();
+            //MainPage = new Colors();
+            MainPage = new QuotesPage();
         }
 
         protected override void OnStart()

@@ -10,9 +10,9 @@ using Xamarin.Forms.Xaml;
 namespace App3
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class Quotes : ContentPage
+    public partial class QuotesPage : ContentPage
     {
-        public Quotes()
+        public QuotesPage()
         {
             InitializeComponent();
             DisplayedQuote.Text = _quotes[quoteNumber];

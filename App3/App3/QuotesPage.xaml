@@ -4,18 +4,20 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="App3.Quotes"
+             x:Class="App3.QuotesPage"
              Padding="20,20,20,20">
     <ContentPage.Content>
-        <StackLayout>
-            <StackLayout Orientation="Horizontal" HorizontalOptions="StartAndExpand">
-                <Button x:Name="Back" HorizontalOptions="Start" Clicked="Back_Clicked" Text="Back"></Button>
-                <Button x:Name="Next" HorizontalOptions="End" Clicked="Next_Clicked" Text="Next"></Button>
+        <StackLayout VerticalOptions="FillAndExpand">
+            <StackLayout Orientation="Horizontal">
+                <Button x:Name="Back" HorizontalOptions="StartAndExpand" Clicked="Back_Clicked" Text="Back"></Button>
+                <Button x:Name="Next" HorizontalOptions="EndAndExpand" Clicked="Next_Clicked" Text="Next"></Button>
             </StackLayout>
-            
             <Label x:Name="FontSize"></Label>
             <Slider ValueChanged="FontSlider_ValueChanged" x:Name="FontSlider" HorizontalOptions="FillAndExpand" Maximum="72" Minimum="4" />
             <Label x:Name="DisplayedQuote"/>
+            <StackLayout HorizontalOptions="StartAndExpand" VerticalOptions="EndAndExpand">
+                <Label Text="Exercise 1 @ Felix Alexander Carao" />
+            </StackLayout>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
