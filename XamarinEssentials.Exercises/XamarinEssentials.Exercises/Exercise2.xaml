@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="XamarinEssentials.Exercises.Exercise2">
+    <ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness"
+                    iOS="20,20,20,20"
+                    Android="20,20,20,20"/>
+    </ContentPage.Padding>
+    <ContentPage.Content>
+        <StackLayout>
+            <BoxView x:Name="BoxViewColor"
+                     HorizontalOptions="Center"
+                     VerticalOptions="Center"/>
+
+            <Label x:Name="RedLbl"/>
+            <Slider x:Name="RedSlider"
+                    ValueChanged="ColorSlider_ValueChanged"/>
+
+            <Label x:Name="GreenLbl"/>
+            <Slider x:Name="GreenSlider"
+                    ValueChanged="ColorSlider_ValueChanged"/>
+
+            <Label x:Name="BlueLbl"/>
+            <Slider x:Name="BlueSlider"
+                    ValueChanged="ColorSlider_ValueChanged"/>
+
+            <StackLayout HorizontalOptions="StartAndExpand"
+                         VerticalOptions="EndAndExpand">
+                <Label Text="Exercise 02 @Aaron Edwigg C. Custodio"
+                       HorizontalOptions="End"/>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
