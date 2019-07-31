@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Exercise1.Exercise2">
+    <ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness"
+                    iOS="20,100,20,20"
+                    Android ="20,100,20,20" />
+    </ContentPage.Padding>
+    <ContentPage.Content>
+        <StackLayout>
+
+            <BoxView x:Name="boxView"
+                     Scale="3"
+                     HorizontalOptions="Center"
+                     VerticalOptions="Center"/>
+            
+            <Label x:Name="getRed"
+                  Text ="{Binding Source={x:Reference redslider}, Path = Value}" />
+            <Slider Maximum="255"
+                    Minimum="0"
+                    ValueChanged ="Color_ValueChanged" 
+                    x:Name="redslider"/>
+            
+            <Label x:Name="getGreen"
+                    Text ="{Binding Source={x:Reference greenslider}, Path = Value}"/>
+            <Slider Maximum="255"
+                    Minimum="0"
+                    x:Name="greenslider"
+                    ValueChanged ="Color_ValueChanged"/>
+            
+            <Label x:Name="getBlue"
+                    Text = "{Binding Source={x:Reference blueslider}, Path = Value}"/>
+            <Slider Maximum="255"
+                    Minimum="0"
+                    ValueChanged ="Color_ValueChanged"
+                    x:Name="blueslider"/>
+
+            <Label Text="Welcome to Xamarin.Forms!"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

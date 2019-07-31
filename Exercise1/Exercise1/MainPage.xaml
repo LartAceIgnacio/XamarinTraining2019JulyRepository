@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Exercise1.MainPage">
+    <ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness"
+                    iOS="20,20,20,20"
+                    Android ="20, 20,20,20" />
+    </ContentPage.Padding>
+    <StackLayout>
+        
+        <StackLayout Orientation="Horizontal">
+            <!-- Place new controls here -->
+            <Button Text="Back"
+                HorizontalOptions="Start"
+                VerticalOptions="Start"
+                Clicked="BackButton_Clicked"/>
+            <Button Text="Next"
+                HorizontalOptions="EndAndExpand"
+                VerticalOptions="End"
+                Clicked="NextButton_Clicked"/>
+        </StackLayout>
+        <StackLayout>
+            <Label  Text ="{Binding Source={x:Reference slider}, Path = Value}" x:Name="getQuote"/>
+            <Slider Minimum ="0"
+                    Maximum="72" 
+                    ValueChanged ="Slider_ValueChanged" x:Name="slider"/>
+            <Label FontSize ="{Binding Source={x:Reference slider}, Path = Value}" x:Name="Quoted"/>
+        </StackLayout>
+        <Label Text="Exercise 01 @ Charles Kenichi Nazareno" 
+               VerticalOptions="EndAndExpand"
+               HorizontalOptions="Start"/>
+    </StackLayout>
+    
+   
+
+
+    
+
+</ContentPage>
