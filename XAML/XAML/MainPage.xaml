@@ -8,25 +8,29 @@
 
     <StackLayout Padding="20">
         <StackLayout Orientation="Horizontal" VerticalOptions="Start">
-            <Button Text="Back" Clicked="BackQuote" HorizontalOptions="StartAndExpand"></Button>
-            <Button Text="Next" Clicked="NextQuote" HorizontalOptions="EndAndExpand"></Button>
+            <Button Text="Back" 
+                    Clicked="BackQuote" 
+                    HorizontalOptions="StartAndExpand"/>
+            <Button Text="Next" 
+                    Clicked="NextQuote" 
+                    HorizontalOptions="EndAndExpand"/>
         </StackLayout>
 
         <StackLayout BindingContext="{x:Reference slider}">
-            <Slider x:Name="slider" Maximum="72" Minimum="16" />
-            <Label 
-               Text="{Binding Value,
-                      StringFormat='Font size is {0:F0}'}"
-               x:Name="label"/>
-            <Label x:Name="quote" FontSize="{Binding Value}"/>
+            <Slider x:Name="slider" 
+                    Maximum="72" 
+                    Minimum="16" />
+            <Label Text="{Binding Value,
+                          StringFormat='Font size is {0:F0}'}"/>
+            <Label x:Name="quote" 
+                   FontSize="{Binding Value}"/>
            
         </StackLayout>
 
         <StackLayout VerticalOptions="EndAndExpand">
-            <Label
-                Text="Exercise 1 - Dino Anglelo Reyes"
-                FontSize="8"
-                HorizontalOptions="Start"></Label>
+            <Label Text="Exercise 1 - Dino Anglelo Reyes"
+                   FontSize="8"
+                   HorizontalOptions="Start"></Label>
         </StackLayout>
     </StackLayout>
 </ContentPage>
