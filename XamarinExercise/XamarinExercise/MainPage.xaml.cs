@@ -23,7 +23,7 @@ namespace XamarinExercise
         {
             InitializeComponent();
             quote.Text = quotes[this.index];
-            boxView.Color = Color.FromRgb(25, 25, 25);
+            boxView.Color = Color.FromRgb(0, 0, 0);
         }
 
         void FontSize_ValueChanged(object sender, ValueChangedEventArgs e)
@@ -67,7 +67,7 @@ namespace XamarinExercise
             }
             if (sender == blue)
             {
-                greenLabel.Text = String.Format("Blue: {0:F0}", (int)e.NewValue);
+                blueLabel.Text = String.Format("Blue: {0:F0}", (int)e.NewValue);
             }
             boxView.Color = Color.FromRgb((int)red.Value,
                                           (int)green.Value,
