@@ -16,7 +16,6 @@ namespace XamarinActivities
     public partial class GridLayout2 : ContentPage
     {
         private string result;
-        private int count = 0;
         public GridLayout2()
         {
             InitializeComponent();
@@ -24,65 +23,48 @@ namespace XamarinActivities
         }
         private void LblResult_ValueChanged(object sender, EventArgs e)
         {
-            Button button = (Button)sender;
-            string pressed = button.Text;
+                Button button = (Button)sender;
+                var number = lblResult.Text;
+                number = number + button.Text;
+                lblResult.Text = String.Format("{0:n0}", Double.Parse(number));
+                result += button.Text;
 
-            if (count == 3)
-            {
-                lblResult.Text += ",";
-                count = 0;
-            }
-
-            if(pressed == btnDot.Text)
-            {
-                count = 0;
-            }
-
-            lblResult.Text += pressed;
-            count += 1;
-            result += pressed;
         }
 
         private void BtnEqual_Clicked(object sender, EventArgs e)
         {
             double total = Convert.ToDouble(new DataTable().Compute(result, null));
-            lblResult.Text = String.Format("{0:n}", total);
-            result = "";
-            count = 0;
+            lblResult.Text = total.ToString();
         }
 
         private void BtnClear_Clicked(object sender, EventArgs e)
         {
             lblResult.Text = "";
-            count = 0;
+            result = "";
         }
 
         private void BtnDivide_Clicked(object sender, EventArgs e)
         {
             lblResult.Text = "";
             result += "/";
-            count = 0;
         }
 
         private void BtnMultiply_Clicked(object sender, EventArgs e)
         {
             lblResult.Text = "";
             result += "*";
-            count = 0;
         }
 
         private void BtnSubtract_Clicked(object sender, EventArgs e)
         {
             lblResult.Text = "";
             result += btnSubtract.Text;
-            count = 0;
         }
 
         private void BtnAdd_Clicked(object sender, EventArgs e)
         {
             lblResult.Text = "";
             result += btnAdd.Text;
-            count = 0;
         }
 
 
