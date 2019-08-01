@@ -1,0 +1,255 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="XamarinExercise.CalculatorPage">
+    <ContentPage.Content>
+
+        <StackLayout BackgroundColor="#10151f"
+                     Padding="20,20,20,20"
+                     Orientation="Vertical"
+                     VerticalOptions="FillAndExpand"
+                     HorizontalOptions="FillAndExpand">
+
+            <Grid VerticalOptions="FillAndExpand"
+                  HorizontalOptions="FillAndExpand">
+                
+                <Grid.RowDefinitions>
+                    
+                    <RowDefinition Height="20" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    
+                </Grid.RowDefinitions>
+                
+                <Grid.ColumnDefinitions>
+                    
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    
+                </Grid.ColumnDefinitions>
+
+                <Label Text="Calculatir" 
+                       Grid.Row="0" 
+                       Grid.Column="0"
+                       Grid.ColumnSpan="4"/>
+
+                <Label x:Name="LabelDisplay"
+                       Text="{Binding Value, StringFormat='{0:N2}'}"
+                       FontSize="60"
+                       TextColor="#FFF"
+                       Grid.Row="1"
+                       Grid.Column="0"
+                       Grid.ColumnSpan="4"
+                       VerticalOptions="CenterAndExpand "
+                       HorizontalOptions="EndAndExpand"/>
+
+                
+                <Button x:Name="btnAc"
+                        Text="AC"
+                        FontSize="40"
+                        TextColor="#f59116"
+                        Grid.Row="2"
+                        Grid.Column="0"
+                        BorderColor="Blue"
+                        BorderRadius="10"
+                        BackgroundColor="#98a2b3"
+                        Clicked="OnButtonPress"/>
+
+                <Button x:Name="btnC"
+                        Text="C"
+                        FontSize="40"
+                        TextColor="#f59116"
+                        Grid.Row="2"
+                        Grid.Column="1"
+                        BorderColor="Blue"
+                        BorderRadius="10"
+                        BackgroundColor="#98a2b3"
+                        Clicked="OnButtonPress"/>
+
+                <Button x:Name="btnModulus"
+                        Text="%"
+                        FontSize="40"
+                        Grid.Row="2"
+                        Grid.Column="2"
+                        BorderColor="Blue"
+                        BorderRadius="10"
+                        BackgroundColor="#98a2b3"
+                        Clicked="OnButtonPress"/>
+
+                <Button x:Name="btnDivide"
+                        Text="÷"
+                        FontSize="40"
+                        Grid.Row="2"
+                        Grid.Column="3"
+                        BorderColor="Blue"
+                        BorderRadius="10"
+                        BackgroundColor="#f59116"
+                        Clicked="OnButtonPress"/>
+
+                <Button x:Name="btnOne"
+                        Text="1"
+                        FontSize="40"
+                        Grid.Row="3"
+                        Grid.Column="0"
+                        BorderColor="Blue"
+                        BorderRadius="10"
+                        BackgroundColor="#98a2b3"
+                        Clicked="OnButtonPress"/>
+
+                <Button x:Name="btnTwo"
+                        Text="2"
+                        FontSize="40"
+                        Grid.Row="3"
+                        Grid.Column="1"
+                        BorderColor="Blue"
+                        BorderRadius="10"
+                        BackgroundColor="#98a2b3"
+                        Clicked="OnButtonPress"/>
+
+                <Button x:Name="btnThree"
+                        Text="3"
+                        FontSize="40"
+                        Grid.Row="3"
+                        Grid.Column="2"
+                        BorderColor="Blue"
+                        BorderRadius="10"
+                        BackgroundColor="#98a2b3"
+                        Clicked="OnButtonPress"/>
+
+                <Button x:Name="btnMultiply"
+                        Text="X"
+                        FontSize="40"
+                        Grid.Row="3"
+                        Grid.Column="3"
+                        BorderColor="Blue"
+                        BorderRadius="10"
+                        BackgroundColor="#f59116"
+                        Clicked="OnButtonPress"/>
+
+                <Button x:Name="btnFour"
+                        Text="4"
+                        FontSize="40"
+                        Grid.Row="4"
+                        Grid.Column="0"
+                        BorderColor="Blue"
+                        BorderRadius="10"
+                        BackgroundColor="#98a2b3"
+                        Clicked="OnButtonPress"/>
+
+                <Button x:Name="btnFive"
+                        Text="5"
+                        FontSize="40"
+                        Grid.Row="4"
+                        Grid.Column="1"
+                        BorderColor="Blue"
+                        BorderRadius="10"
+                        BackgroundColor="#98a2b3"
+                        Clicked="OnButtonPress"/>
+
+                <Button x:Name="btnSix"
+                        Text="6"
+                        FontSize="40"
+                        Grid.Row="4"
+                        Grid.Column="2"
+                        BorderColor="Blue"
+                        BorderRadius="10"
+                        BackgroundColor="#98a2b3"
+                        Clicked="OnButtonPress"/>
+
+                <Button x:Name="btnMinus"
+                        Text="-"
+                        FontSize="40"
+                        Grid.Row="4"
+                        Grid.Column="3"
+                        BorderColor="Blue"
+                        BorderRadius="10"
+                        BackgroundColor="#f59116"
+                        Clicked="OnButtonPress"/>
+
+                <Button x:Name="btnSeven"
+                        Text="7"
+                        FontSize="40"
+                        Grid.Row="5"
+                        Grid.Column="0"
+                        BorderColor="Blue"
+                        BorderRadius="10"
+                        BackgroundColor="#98a2b3"
+                        Clicked="OnButtonPress"/>
+
+                <Button x:Name="btnEight"
+                        Text="8"
+                        FontSize="40"
+                        Grid.Row="5"
+                        Grid.Column="1"
+                        BorderColor="Blue"
+                        BorderRadius="10"
+                        BackgroundColor="#98a2b3"
+                        Clicked="OnButtonPress"/>
+
+                <Button x:Name="btnNine"
+                        Text="9"
+                        FontSize="40"
+                        Grid.Row="5"
+                        Grid.Column="2"
+                        BorderColor="Blue"
+                        BorderRadius="10"
+                        BackgroundColor="#98a2b3"
+                        Clicked="OnButtonPress"/>
+
+                <Button x:Name="btnAdd"
+                        Text="+"
+                        FontSize="40"
+                        Grid.Row="5"
+                        Grid.Column="3"
+                        BorderColor="Blue"
+                        BorderRadius="10"
+                        BackgroundColor="#f59116"
+                        Clicked="OnButtonPress"/>
+
+                <Button x:Name="btnZero"
+                        Text="0"
+                        FontSize="40"
+                        Grid.Row="6"
+                        Grid.Column="0"
+                        BorderColor="Blue"
+                        BorderRadius="10"
+                        Grid.ColumnSpan="2"
+                        BackgroundColor="#98a2b3"
+                        Clicked="OnButtonPress"/>
+
+                <Button x:Name="btnDot"
+                        Text="."
+                        FontSize="40"
+                        Grid.Row="6"
+                        Grid.Column="2"
+                        BorderColor="Blue"
+                        BorderRadius="10"
+                        BackgroundColor="#98a2b3"
+                        Clicked="OnButtonPress"/>
+
+                <Button x:Name="btnEquals"
+                        Text="="
+                        FontSize="40"
+                        Grid.Row="6"
+                        Grid.Column="3"
+                        BorderColor="Blue"
+                        BorderRadius="10"
+                        BackgroundColor="#f59116"
+                        Clicked="OnButtonPress"/>
+
+            </Grid>
+
+        </StackLayout>
+        
+    </ContentPage.Content>
+    
+</ContentPage>
