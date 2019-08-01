@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="XamarinActivities.InstagramPage">
+    
+    <ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness">
+            <OnPlatform.Platforms>
+                <On Platform="iOS" Value="0, 20, 0, 0" />
+                <On Platform="Android" Value="0, 0, 0, 0" />
+            </OnPlatform.Platforms>
+        </OnPlatform>
+    </ContentPage.Padding>
+    
+    <ContentPage.Content >
+        <StackLayout HorizontalOptions="FillAndExpand">
+            
+            <Label Text="nyc_photographer"
+                   Margin="10, 20, 0, 10"
+                   HorizontalOptions="Start" />
+
+            <Image Source="https://images.pexels.com/photos/1105766/pexels-photo-1105766.jpeg" />
+
+            <StackLayout Padding="5">
+                
+                <StackLayout Orientation="Horizontal">
+                    
+                    <Button Text="Like"
+                            FontSize="11"
+                            BackgroundColor="Transparent"
+                            BorderColor="White"
+                            WidthRequest="80"
+                            TextColor="#4296f5" />
+                    
+                    <Button Text="Comment"
+                            FontSize="11"
+                            BackgroundColor="Transparent"
+                            BorderColor="White"
+                            WidthRequest="80"
+                            TextColor="#4296f5" />
+                    
+                    <Button Text="Share"
+                            FontSize="11"
+                            BackgroundColor="Transparent"
+                            BorderColor="White"
+                            WidthRequest="80"
+                            TextColor="#4296f5" />
+                    
+                </StackLayout>
+
+                <BoxView Color="#f0f0f0"
+                         HeightRequest="1"
+                         Margin="0, 5, 0, 0"/>
+
+                <Label Text="700 Likes"
+                       FontAttributes="Bold" />
+
+                <Label Text="The city that never sleeps." />
+
+            </StackLayout>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
