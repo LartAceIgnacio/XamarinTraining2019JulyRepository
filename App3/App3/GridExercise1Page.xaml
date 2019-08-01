@@ -1,0 +1,160 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="App3.GridExercise1Page"
+             Padding="20"
+             BackgroundColor="#354242">
+    <ContentPage.Content>
+        <Grid Padding = "40"
+        RowSpacing = "10"
+         ColumnSpacing = "10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Label 
+                x:Name="displayedNumbers" 
+                Grid.Row="0" 
+                Grid.Column="0" 
+                Grid.ColumnSpan="3" 
+                FontSize="50" 
+                TextColor ="#fff"
+                VerticalOptions="CenterAndExpand"
+                HorizontalOptions="CenterAndExpand"
+             />
+            <Button 
+                x:Name="button1"
+                Text="1" 
+                Grid.Row="1" 
+                Grid.Column="0" 
+                FontSize="30" 
+                CornerRadius="30" 
+                TextColor = "#28282c" 
+                BackgroundColor = "#fff"
+                Clicked="Button1_Clicked"
+             />
+            <Button 
+                x:Name="button2"
+                Text="2" 
+                Grid.Row="1" 
+                Grid.Column="1" 
+                FontSize="30" 
+                CornerRadius="30" 
+                TextColor = "#28282c" 
+                BackgroundColor = "#fff"
+                Clicked="Button2_Clicked"
+             />
+            <Button 
+                x:Name="button3"
+                Text="3" 
+                Grid.Row="1" 
+                Grid.Column="2" 
+                FontSize="30" 
+                CornerRadius="30" 
+                TextColor = "#28282c" 
+                BackgroundColor = "#fff"
+                Clicked="Button3_Clicked"
+             />
+            <Button 
+                x:Name="button4"
+                Text="4" 
+                Grid.Row="2" 
+                Grid.Column="0" 
+                FontSize="30" 
+                CornerRadius="30" 
+                TextColor = "#28282c" 
+                BackgroundColor = "#fff"
+                Clicked="Button4_Clicked"
+             />
+            <Button 
+                x:Name="button5"
+                Text="5" 
+                Grid.Row="2" 
+                Grid.Column="1" 
+                FontSize="30" 
+                CornerRadius="30" 
+                TextColor = "#28282c" 
+                BackgroundColor = "#fff"
+                Clicked="Button5_Clicked"
+             />
+            <Button 
+                x:Name="button6"
+                Text="6" 
+                Grid.Row="2" 
+                Grid.Column="2" 
+                FontSize="30" 
+                CornerRadius="30" 
+                TextColor = "#28282c" 
+                BackgroundColor = "#fff"
+                Clicked="Button6_Clicked"
+             />
+            <Button 
+                x:Name="button7"
+                Text="7" 
+                Grid.Row="3" 
+                Grid.Column="0" 
+                FontSize="30" 
+                CornerRadius="30" 
+                TextColor = "#28282c" 
+                BackgroundColor = "#fff"
+                Clicked="Button7_Clicked"
+             />
+            <Button 
+                x:Name="button8"
+                Text="8" 
+                Grid.Row="3" 
+                Grid.Column="1" 
+                FontSize="30" 
+                CornerRadius="30" 
+                TextColor = "#28282c" 
+                BackgroundColor = "#fff"
+                Clicked="Button8_Clicked"
+             />
+            <Button 
+                x:Name="button9"
+                Text="9" 
+                Grid.Row="3" 
+                Grid.Column="2" 
+                FontSize="30" 
+                CornerRadius="30" 
+                TextColor = "#28282c" 
+                BackgroundColor = "#fff"
+                Clicked="Button9_Clicked"
+             />
+            <Button 
+                x:Name="button0"
+                Text="0" 
+                Grid.Row="4" 
+                Grid.Column="1" 
+                FontSize="30" 
+                CornerRadius="30" 
+                TextColor = "#28282c" 
+                BackgroundColor = "#fff"
+                Clicked="Button0_Clicked"
+             />
+            <Button 
+                x:Name="dialButton" 
+                Text="Dial"
+                FontSize="30" 
+                TextColor ="Black"
+                CornerRadius="30" 
+                BackgroundColor="#96ca2d"
+                Grid.Row="5" 
+                Grid.Column="0" 
+                Grid.ColumnSpan="3" 
+             />
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

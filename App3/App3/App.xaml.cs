@@ -11,7 +11,10 @@ namespace App3
             InitializeComponent();
 
             //MainPage = new Colors();
-            MainPage = new QuotesPage();
+            //MainPage = new QuotesPage();
+            //MainPage = new StackLayout1Page();
+
+            MainPage = new GridExercise1Page();
         }
 
         protected override void OnStart()
