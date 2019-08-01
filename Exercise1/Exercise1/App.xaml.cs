@@ -10,9 +10,12 @@ namespace Exercise1
         {
             InitializeComponent();
 
-            // MainPage = new MainPage();
-            MainPage = new Exercise2();
-            
+            //MainPage = new MainPage();
+            //MainPage = new Exercise2();
+            //MainPage = new StackLayout1Page();
+            //MainPage = new Grid1Page();
+            MainPage = new Grid2Page();
+            //MainPage = new StackLayout2Page();
         }
 
         protected override void OnStart()
