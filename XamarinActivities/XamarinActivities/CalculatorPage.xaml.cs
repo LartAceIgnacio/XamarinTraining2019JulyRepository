@@ -40,7 +40,12 @@ namespace XamarinActivities
         private void Equal_Button_Clicked(object sender, EventArgs e)
         {
             var operand1 = Double.Parse(num1);
-            var operand2 = Double.Parse(Number_Label.Text);
+            var operand2 = 0.00;
+
+            if (Number_Label.Text != String.Empty)
+            {
+                operand2 = Double.Parse(Number_Label.Text);
+            }
 
             if (operation == '+')
             {
