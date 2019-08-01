@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="XamarinEssentials.Exercises.StackLayout_Exercise2">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="userAction" TargetType="Label">
+                <Setter Property="TextColor" Value="Blue" />
+                <!--<Setter Property="BackgroundColor" Value="White" />-->
+                <!--<Setter Property="FontSize" Value="50" />-->
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness"
+                    iOS="0,20,0,0"
+                    Android="0,0,0,0"/>
+    </ContentPage.Padding>
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="White"
+                     Spacing="20">
+            <StackLayout Orientation="Vertical">
+                <Label Text="nyc_photographer"
+                       TextColor="Black"
+                       Margin="15,15,0,15"/>
+                <Image Source="http://placehold.it/1920x1080"/>
+                <StackLayout Orientation="Horizontal"
+                             Spacing="20"
+                             Margin="15,15,0,0">
+                    <Label Text="Like"
+                            Style="{StaticResource userAction}"/>
+                    <Label Text="Comment"
+                            Style="{StaticResource userAction}"/>
+                    <Label Text="Share"
+                            Style="{StaticResource userAction}"/>
+                </StackLayout>
+            </StackLayout>
+
+            <StackLayout Orientation="Vertical"
+                         Padding="10">
+                <BoxView BackgroundColor="#f0f0f0"
+                         HeightRequest="1"/>
+                <Label Text="700 Likes"
+                       FontAttributes="Bold"
+                       TextColor="Black"/>
+                <Label Text="This is picture with a resolution of 1920x1080 pixels."/>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

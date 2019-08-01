@@ -28,10 +28,9 @@
             <Slider x:Name="BlueSlider"
                     ValueChanged="ColorSlider_ValueChanged"/>
 
-            <StackLayout HorizontalOptions="StartAndExpand"
+            <StackLayout HorizontalOptions="EndAndExpand"
                          VerticalOptions="EndAndExpand">
-                <Label Text="Exercise 02 @Aaron Edwigg C. Custodio"
-                       HorizontalOptions="End"/>
+                <Label Text="Exercise 02 @Aaron Edwigg C. Custodio"/>
             </StackLayout>
         </StackLayout>
     </ContentPage.Content>
