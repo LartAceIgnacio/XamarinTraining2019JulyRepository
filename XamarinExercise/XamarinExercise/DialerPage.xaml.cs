@@ -21,10 +21,10 @@ namespace XamarinExercise
         {
 
             string inputText = (sender as Button).Text;
-            string labelText = LabelDisplay.Text;
+            string labelText = labelDisplay.Text;
 
             labelText = inputText;
-            LabelDisplay.Text += labelText;
+            labelDisplay.Text += labelText;
         }
     }
 }

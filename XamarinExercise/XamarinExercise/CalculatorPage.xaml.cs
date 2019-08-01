@@ -18,7 +18,7 @@ namespace XamarinExercise
         public CalculatorPage()
         {
             InitializeComponent();
-            LabelDisplay.Text = "0";
+            labelDisplay.Text = "0";
             
         }
         void OnButtonPress(object sender, EventArgs e)
@@ -113,7 +113,7 @@ namespace XamarinExercise
             {
                 
             }
-            LabelDisplay.Text = Convert.ToDecimal(this.displayValue).ToString("N0");
+            labelDisplay.Text = Convert.ToDecimal(this.displayValue).ToString("N0");
         }
     }
 }

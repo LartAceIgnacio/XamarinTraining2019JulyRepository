@@ -42,7 +42,7 @@
                        Grid.Column="0"
                        Grid.ColumnSpan="4"/>
 
-                <Label x:Name="LabelDisplay"
+                <Label x:Name="labelDisplay"
                        Text="{Binding Value, StringFormat='{0:N2}'}"
                        FontSize="60"
                        TextColor="#FFF"
@@ -82,8 +82,7 @@
                         Grid.Column="2"
                         BorderColor="Blue"
                         BorderRadius="10"
-                        BackgroundColor="#98a2b3"
-                        Clicked="OnButtonPress"/>
+                        BackgroundColor="#98a2b3"/>
 
                 <Button x:Name="btnDivide"
                         Text="÷"
@@ -92,8 +91,7 @@
                         Grid.Column="3"
                         BorderColor="Blue"
                         BorderRadius="10"
-                        BackgroundColor="#f59116"
-                        Clicked="OnButtonPress"/>
+                        BackgroundColor="#f59116"/>
 
                 <Button x:Name="btnOne"
                         Text="1"
@@ -132,8 +130,7 @@
                         Grid.Column="3"
                         BorderColor="Blue"
                         BorderRadius="10"
-                        BackgroundColor="#f59116"
-                        Clicked="OnButtonPress"/>
+                        BackgroundColor="#f59116"/>
 
                 <Button x:Name="btnFour"
                         Text="4"
@@ -172,8 +169,7 @@
                         Grid.Column="3"
                         BorderColor="Blue"
                         BorderRadius="10"
-                        BackgroundColor="#f59116"
-                        Clicked="OnButtonPress"/>
+                        BackgroundColor="#f59116"/>
 
                 <Button x:Name="btnSeven"
                         Text="7"
@@ -212,8 +208,7 @@
                         Grid.Column="3"
                         BorderColor="Blue"
                         BorderRadius="10"
-                        BackgroundColor="#f59116"
-                        Clicked="OnButtonPress"/>
+                        BackgroundColor="#f59116"/>
 
                 <Button x:Name="btnZero"
                         Text="0"
@@ -243,8 +238,7 @@
                         Grid.Column="3"
                         BorderColor="Blue"
                         BorderRadius="10"
-                        BackgroundColor="#f59116"
-                        Clicked="OnButtonPress"/>
+                        BackgroundColor="#f59116"/>
 
             </Grid>
 
