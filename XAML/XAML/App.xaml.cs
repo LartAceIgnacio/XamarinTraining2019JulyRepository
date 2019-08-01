@@ -13,6 +13,7 @@ namespace XAML
             //MainPage = new MainPage();
             //MainPage = new RGBExercise();
             //MainPage = new StackLayout1();
+            //MainPage = new StackLayout2();
             //MainPage = new GridExercise1();
             MainPage = new GridExercise2();
         }

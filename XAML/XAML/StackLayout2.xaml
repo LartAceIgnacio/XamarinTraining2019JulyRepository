@@ -5,11 +5,33 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="XAML.StackLayout2">
+    <ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness"
+                    iOS="0,20,0,0"
+                    Android="0,0,0,0"/>
+    </ContentPage.Padding>
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+        <StackLayout Orientation="Vertical">
+            <StackLayout Padding="10">
+                <Label Text="Dinorado Photography"/>
+            </StackLayout>
+            <Image Source="https://tinyurl.com/y6robdtb"/>
+            <StackLayout Orientation="Horizontal" Padding="10" Spacing="30">
+                <Label Text="Like"
+                       TextColor="Blue"/>
+                <Label Text="Comment"
+                       TextColor="Blue"/>
+                <Label Text="Share"
+                       TextColor="Blue"/>
+            </StackLayout>
+            <StackLayout Padding="10">
+                <BoxView Color="#f0f0f0"
+                         HeightRequest="1"/>
+                <Label Text="69 Likes"
+                       FontAttributes="Bold"/>
+                <Label Text="The Eiffel Tower is a wrought-iron lattice tower on the Champ de Mars in Paris, France."/>
+            </StackLayout>
+
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

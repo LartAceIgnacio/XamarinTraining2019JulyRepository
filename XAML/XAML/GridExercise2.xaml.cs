@@ -13,7 +13,6 @@ namespace XAML
     public partial class GridExercise2 : ContentPage
     {
         public Boolean HasOperation = false;
-        public int CommaCtr = 0;
         public GridExercise2()
         {
             InitializeComponent();
@@ -28,19 +27,12 @@ namespace XAML
             }
             else
             {
-                //if(CommaCtr>1)
-                //{
-                //    lblResult.Text = lblResult.Text +"," +_button.Text.ToString();
-                //    CommaCtr = 0;
-                //}
-                //else
-                //{
-                //    lblResult.Text = lblResult.Text + _button.Text.ToString();
-                //    CommaCtr += 1;
-                //}
-                lblResult.Text = lblResult.Text + _button.Text.ToString();
-                var _formatNumber = double.Parse(lblResult.Text);
-                lblResult.Text = _formatNumber.ToString("N0");
+                if (lblResult.Text.Replace(",", "").Length!=9)
+                {
+                    lblResult.Text = lblResult.Text + _button.Text.ToString();
+                    var _formatNumber = double.Parse(lblResult.Text);
+                    lblResult.Text = _formatNumber.ToString("N0");
+                }
             }
         }
 

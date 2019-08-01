@@ -24,7 +24,7 @@
             </Grid.ColumnDefinitions>
             <Label Text="0"
                    TextColor="White"
-                   FontSize="90"
+                   FontSize="65"
                    BackgroundColor="Black"
                    HorizontalTextAlignment="End"
                    VerticalTextAlignment="End"
