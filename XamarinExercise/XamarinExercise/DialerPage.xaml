@@ -8,7 +8,6 @@
     <ContentPage.Content>
 
         <StackLayout BackgroundColor="#354242"
-                     Padding="30,30,30,30"
                      Orientation="Vertical"
                      VerticalOptions="FillAndExpand"
                      HorizontalOptions="FillAndExpand">
