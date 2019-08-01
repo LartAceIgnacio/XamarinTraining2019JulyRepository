@@ -10,7 +10,7 @@ namespace XamarinActivities
         {
             InitializeComponent();
 
-            //MainPage = new GridLayout2();
+            //MainPage = new E3AbsoluteLayout1();
             MainPage = new TabbedNavigation();
         }
 

@@ -14,4 +14,6 @@
     <pages:StackLayout2 Title="S2"/>
     <pages:GridLayout1 Title="G1"/>
     <pages:GridLayout2 Title="G2"/>
+    <pages:E3AbsoluteLayout1 Title="A1"/>
+    <pages:E3AbsoluteLayout2 Title="A2"/>
 </TabbedPage>
