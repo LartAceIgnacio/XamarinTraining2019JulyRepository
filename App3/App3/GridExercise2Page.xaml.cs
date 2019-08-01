@@ -20,6 +20,7 @@ namespace App3
         {
             var _button = (Button)sender;
             displayedNumbers.Text += _button.Text;
+            displayedNumbers.Text=String.Format("{0:n0}", Double.Parse(displayedNumbers.Text));
         }
 
         private void ButtonC_Clicked(object sender, EventArgs e)
