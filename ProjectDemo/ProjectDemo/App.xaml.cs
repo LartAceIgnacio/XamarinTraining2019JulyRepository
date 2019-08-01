@@ -10,7 +10,7 @@ namespace ProjectDemo
 		{
 			InitializeComponent();
 
-			MainPage = new GridExercise1Page();
+			MainPage = new CalculatorPage();
 		}
 
 		protected override void OnStart()
