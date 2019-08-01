@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="XamarinActivities.DialPage">
+    
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="numberButton" TargetType="Button">
+                <Setter Property="FontSize" Value="30" />
+                <Setter Property="TextColor" Value="#28282c" />
+                <Setter Property="BackgroundColor" Value="#fff" />
+                <Setter Property="BorderRadius" Value="30" />
+            </Style>
+            <Style x:Key="dialButton" TargetType="Button">
+                <Setter Property="FontSize" Value="30" />
+                <Setter Property="TextColor" Value="#28282c" />
+                <Setter Property="BackgroundColor" Value="#96ca2d" />
+                <Setter Property="BorderRadius" Value="30" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    
+    <ContentPage.Content>
+        <Grid Padding="40"
+              RowSpacing="10"
+              ColumnSpacing="10"
+              BackgroundColor="#354242">
+            
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <Label x:Name="Number_Label" Grid.Row="0" Grid.RowSpan="2"  Grid.Column="0" Grid.ColumnSpan="3"
+                   HorizontalTextAlignment="Center"
+                   VerticalTextAlignment="Center"
+                   FontSize="50"
+                   TextColor="#fff"/>
+
+            <Button Text = "1" Grid.Row="2" Grid.Column="0"
+                    Clicked="Number_Button_Clicked"
+                    Style="{StaticResource numberButton}" />
+            <Button Text = "2" Grid.Row="2" Grid.Column="1"
+                    Clicked="Number_Button_Clicked"
+                    Style="{StaticResource numberButton}" />
+            <Button Text = "3" Grid.Row="2" Grid.Column="2"
+                    Clicked="Number_Button_Clicked"
+                    Style="{StaticResource numberButton}" />
+
+            <Button Text = "4" Grid.Row="3" Grid.Column="0"
+                    Clicked="Number_Button_Clicked"
+                    Style="{StaticResource numberButton}" />
+            <Button Text = "5" Grid.Row="3" Grid.Column="1"
+                    Clicked="Number_Button_Clicked"
+                    Style="{StaticResource numberButton}" />
+            <Button Text = "6" Grid.Row="3" Grid.Column="2"
+                    Clicked="Number_Button_Clicked"
+                    Style="{StaticResource numberButton}" />
+
+            <Button Text = "7" Grid.Row="4" Grid.Column="0"
+                    Clicked="Number_Button_Clicked"
+                    Style="{StaticResource numberButton}" />
+            <Button Text = "8" Grid.Row="4" Grid.Column="1"
+                    Clicked="Number_Button_Clicked"
+                    Style="{StaticResource numberButton}" />
+            <Button Text = "9" Grid.Row="4" Grid.Column="2"
+                    Clicked="Number_Button_Clicked"
+                    Style="{StaticResource numberButton}" />
+
+            <Button Text = "0" Grid.Row="5" Grid.Column="1"
+                    Clicked="Number_Button_Clicked"
+                    Style="{StaticResource numberButton}" />
+
+            <Button Text = "Dial" Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="3"
+                    Style="{StaticResource dialButton}" />
+            
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
