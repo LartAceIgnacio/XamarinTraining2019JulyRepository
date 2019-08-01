@@ -13,8 +13,9 @@ namespace App3
             //MainPage = new Colors();
             //MainPage = new QuotesPage();
             //MainPage = new StackLayout1Page();
-
-            MainPage = new GridExercise1Page();
+            MainPage = new StackLayout2Page();
+            //MainPage = new GridExercise1Page();
+            //MainPage = new GridExercise2Page();
         }
 
         protected override void OnStart()

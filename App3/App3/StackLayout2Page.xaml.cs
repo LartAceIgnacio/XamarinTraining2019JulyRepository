@@ -10,18 +10,15 @@ using Xamarin.Forms.Xaml;
 namespace App3
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class GridExercise1Page : ContentPage
+    public partial class StackLayout2Page : ContentPage
     {
-        public GridExercise1Page()
+        public StackLayout2Page()
         {
             InitializeComponent();
+            if (Device.RuntimePlatform == Device.iOS)
+            {
+                Padding = new Thickness(20, 0, 0, 0);
+            }
         }
-
-        private void Number_Input(object sender, EventArgs e)
-        {
-            var _button = (Button)sender;
-            displayedNumbers.Text += _button.Text;         
-        }
-      
     }
 }
