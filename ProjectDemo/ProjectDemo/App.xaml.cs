@@ -10,7 +10,7 @@ namespace ProjectDemo
 		{
 			InitializeComponent();
 
-			MainPage = new CalculatorPage();
+			MainPage = new AbsoluteLayoutExercise1();
 		}
 
 		protected override void OnStart()
