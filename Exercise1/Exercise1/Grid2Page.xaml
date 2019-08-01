@@ -46,7 +46,7 @@
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
             <Label Text="0"
-                   x:Name="numberResult"
+                   x:Name="numberResultLabel"
                    Grid.Column="0"
                    Grid.ColumnSpan="4"
                    Grid.Row="0"

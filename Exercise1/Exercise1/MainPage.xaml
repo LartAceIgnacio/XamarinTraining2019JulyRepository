@@ -10,34 +10,15 @@
                     iOS="20,20,20,20"
                     Android ="20, 20,20,20" />
     </ContentPage.Padding>
-    <StackLayout>
-        
-        <StackLayout Orientation="Horizontal">
-            <!-- Place new controls here -->
-            <Button Text="Back"
-                HorizontalOptions="Start"
-                VerticalOptions="Start"
-                Clicked="BackButton_Clicked"/>
-            <Button Text="Next"
-                HorizontalOptions="EndAndExpand"
-                VerticalOptions="End"
-                Clicked="NextButton_Clicked"/>
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="Center">
+            <Button x:Name ="quotePage_button" Text="Quotes Page" Clicked="QuotePage_button_Clicked"/>
+            <Button x:Name ="boxViewPage_button" Text="Box View Page" Clicked="BoxViewPage_button_Clicked"/>
+            <Button x:Name ="stackLayoutPage_button" Text="Stack Layout Page" Clicked="StackLayoutPage_button_Clicked"/>
+            <Button x:Name ="stackLayoutPage2_button" Text="Stack Layout Page 2" Clicked="StackLayoutPage2_button_Clicked"/>
+            <Button x:Name ="PhoneDialPage_button" Text="Dial Phone Page" Clicked="PhoneDialPage_button_Clicked"/>
+            <Button x:Name ="CalculatorPage_button" Text="Calculator Page" Clicked="CalculatorPage_button_Clicked"/>
         </StackLayout>
-        <StackLayout>
-            <Label  Text ="{Binding Source={x:Reference slider}, Path = Value}" x:Name="getQuote"/>
-            <Slider Minimum ="0"
-                    Maximum="72" 
-                    ValueChanged ="Slider_ValueChanged" x:Name="slider"/>
-            <Label FontSize ="{Binding Source={x:Reference slider}, Path = Value}" x:Name="Quoted"/>
-        </StackLayout>
-        <Label Text="Exercise 01 @ Charles Kenichi Nazareno" 
-               VerticalOptions="EndAndExpand"
-               HorizontalOptions="Start"/>
-    </StackLayout>
+    </ContentPage.Content>
     
-   
-
-
-    
-
 </ContentPage>

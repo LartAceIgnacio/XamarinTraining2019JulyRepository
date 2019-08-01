@@ -22,14 +22,14 @@ namespace Exercise1
 
         private void clearEntry(object sender, EventArgs e)
         {
-            this.numberResult.Text = "0";
+            this.numberResultLabel.Text = "0";
         }
 
         private void Button_Clicked(object sender, EventArgs e)
         {
             var normalButton = (Button)sender;
-            var input = this.numberResult.Text + normalButton.Text;
-            numberResult.Text = String.Format("{0:n0}", double.Parse(input));
+            var input = this.numberResultLabel.Text + normalButton.Text;
+            numberResultLabel.Text = String.Format("{0:n0}", double.Parse(input));
         }
     }
 }

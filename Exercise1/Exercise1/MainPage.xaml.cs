@@ -13,65 +13,37 @@ namespace Exercise1
     [DesignTimeVisible(false)]
     public partial class MainPage : ContentPage
     {
-        public String[] quotes;
-        public int quotePage = 0;
-        
+
         public MainPage()
         {
             InitializeComponent();
-            quotes = new String[5]
-            {
-                "Two things are infinite: the universe and human stupidity; and I'm not sure about the universe.",
-                "Be yourself; everyone else is already taken.",
-                "A room without books is like a body without a soul.",
-                "Be the change that you wish to see in the world.",
-                "Yesterday was a history, tomorrow's a mystery, but today is a gift, that is why we call it Present",
-            };
-            this.Quoted.Text = quotes[quotePage];
-            
+        }
+        async void QuotePage_button_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new QuotePage());
         }
 
-        void Slider_ValueChanged(object sender, ValueChangedEventArgs e)
+        async void BoxViewPage_button_Clicked(object sender, EventArgs e)
         {
-            getQuote.Text = String.Format("{0:0}", e.NewValue);
+            await Navigation.PushAsync(new Exercise2());
         }
 
-        private void NextButton_Clicked(object sender, EventArgs e)
+        async void StackLayoutPage_button_Clicked(object sender, EventArgs e)
         {
-            if (quotePage < 4)
-            {
-                quotePage++;
-                this.Quoted.Text = quotes[quotePage];
-
-            }
-            else 
-            {
-                quotePage = 0;
-                this.Quoted.Text = quotes[quotePage];
-            }
-
+            await Navigation.PushAsync(new StackLayout1Page());
+        }
+        async void StackLayoutPage2_button_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new StackLayout2Page());
+        }
+        async void PhoneDialPage_button_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new Grid1Page());
         }
 
-        private void BackButton_Clicked(object sender, EventArgs e)
+        async void CalculatorPage_button_Clicked(object sender, EventArgs e)
         {
-            if(quotePage > 0)
-            {
-                quotePage--;
-                this.Quoted.Text = quotes[quotePage];
-                
-            }
-            else
-            {
-                quotePage = 4;
-                this.Quoted.Text = quotes[quotePage];
-            }
-            
-
-        }
-
-        private void Button_Clicked(object sender, EventArgs e)
-        {
-
+            await Navigation.PushAsync(new Grid2Page());
         }
     }
 }
