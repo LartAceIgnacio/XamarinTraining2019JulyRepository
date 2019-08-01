@@ -12,6 +12,7 @@ namespace XamarinActivities
 
             // MainPage = new TabsPage();
             MainPage = new WelcomePage();
+            MainPage = new AbsolutePage();
             // MainPage = new InstagramPage();
             // MainPage = new DialPage();
             // MainPage = new CalculatorPage();
