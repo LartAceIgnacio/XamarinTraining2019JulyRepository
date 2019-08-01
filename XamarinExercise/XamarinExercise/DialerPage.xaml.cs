@@ -19,11 +19,8 @@ namespace XamarinExercise
 
         void OnButtonPress(object sender ,EventArgs e)
         {
-
             string inputText = (sender as Button).Text;
-            string labelText = labelDisplay.Text;
-
-            labelText = inputText;
+            string labelText = inputText;
             labelDisplay.Text += labelText;
         }
     }
