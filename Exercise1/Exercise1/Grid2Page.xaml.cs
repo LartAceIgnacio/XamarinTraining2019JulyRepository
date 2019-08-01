@@ -17,7 +17,7 @@ namespace Exercise1
         public Grid2Page()
         {
             InitializeComponent();
-            OnClear(this, null);
+            clearEntry(this, null);
         }
 
         private void clearEntry(object sender, EventArgs e)
