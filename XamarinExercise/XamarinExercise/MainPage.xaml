@@ -7,80 +7,31 @@
              x:Class="XamarinExercise.MainPage">
     
     <StackLayout Padding="20,20,20,20">
-        <StackLayout Orientation="Horizontal" >
-            <Button x:Name="back"
-                    HorizontalOptions="StartAndExpand" 
-                    Text="Back"
-                    Clicked="OnButtonClicked"/>
-            
-            <Button x:Name="next"
-                    HorizontalOptions="EndAndExpand" 
-                    Text="Next"
-                    Clicked="OnButtonClicked"/>
-        </StackLayout>
 
-        <Label x:Name="displayLabel"
-               Text="{Binding Source={x:Reference slider},
-                              Path=Value,
-                              StringFormat='Font Size: {0:F0}'}"
-               HorizontalOptions="Center"
-               VerticalOptions="CenterAndExpand" />
+        <Button x:Name="ex1"
+                Text="Exercise1"
+                Clicked='Ex1_Clicked' />
 
-        <Slider x:Name="slider"
-                    Maximum="45" 
-                    Minimum="10" />
+        <Button x:Name="ex2"
+                Text="Exercise2"
+                Clicked='Ex2_Clicked' />
+
+        <Button x:Name="ex3"
+                Text="Exercise3"
+                Clicked='Ex3_Clicked' />
+
+        <Button x:Name="ex4"
+                Text="Exercise4"
+                Clicked='Ex4_Clicked' />
         
-        <Label x:Name="quote"
-               Text="{Binding Value}"
-               FontSize="{Binding Source={x:Reference slider},
-                                      Path=Value}"
-               HorizontalOptions="Center" />
+        <Button x:Name="ex5"
+                Text="Exercise5"
+                Clicked='Ex5_Clicked'/>
         
-        <BoxView x:Name="boxView"
-                 Color="{Binding Color}"
-                 VerticalOptions="FillAndExpand"/>
+        <Button x:Name="ex6"
+                Text="Exercise6"
+                Clicked='Ex6_Clicked' />
 
-        <Slider x:Name="red"
-                ValueChanged="Color_ValueChanged"
-                Minimum="0"
-                Maximum="255"/>
-
-        <Label x:Name="redLabel"
-               Text="{Binding Source={x:Reference red},
-                              Path=Value,
-                              StringFormat='Red: {0:F0}'}"/>
-
-        <Slider x:Name="green"
-                ValueChanged="Color_ValueChanged"
-                Minimum="0"
-                Maximum="255"/>
-
-        <Label x:Name="greenLabel"
-               Text="{Binding Source={x:Reference green},
-                              Path=Value,
-                              StringFormat='Green: {0:F0}'}"/>
-
-        <Slider x:Name="blue"
-                ValueChanged="Color_ValueChanged"
-                Minimum="0"
-                Maximum="255"/>
-
-        <Label x:Name="blueLabel"
-               Text="{Binding Source={x:Reference blue},
-                              Path=Value,
-                              StringFormat='Blue: {0:F0}'}"/>
-        
-        <ContentPresenter />
-
-        <StackLayout Orientation="Horizontal" 
-                     HorizontalOptions="Start"
-                     VerticalOptions="EndAndExpand">
-
-            <Label Text="Execercise ©Jasper"
-                   FontSize="12"/>
-
-        </StackLayout>
-        
     </StackLayout>
 
 </ContentPage>

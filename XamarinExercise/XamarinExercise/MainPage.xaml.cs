@@ -13,85 +13,39 @@ namespace XamarinExercise
     [DesignTimeVisible(false)]
     public partial class MainPage : ContentPage
     {
-        string[] quotes = { "I'll be there for you",
-                            "When the rain starts to fall",
-                            "Like I've been there Before",
-                            "Cause your there for me too" };
-        int index = 0;
-
         public MainPage()
         {
             InitializeComponent();
-            quote.Text = quotes[this.index];
-            boxView.Color = Color.FromRgb(0, 0, 0);
         }
 
-        void FontSize_ValueChanged(object sender, ValueChangedEventArgs e)
+        private async void Ex1_Clicked(object sender, EventArgs e)
         {
-            double value = e.NewValue;
-            displayLabel.Text = String.Format("Font Size: {0}", value);
-            quote.FontSize = value;
+            await Navigation.PushAsync(new Exercise1());
         }
 
-        void OnButtonClicked(object sender, EventArgs e)
+        private async void Ex2_Clicked(object sender, EventArgs e)
         {
-            if (sender == next)
-            {
-                this.index++;
-                if (index > this.quotes.Length - 1)
-                {
-                    index = 0;
-                }
-                quote.Text = this.quotes[index];
-            }
-            else if (sender == back)
-            {
-                this.index--;
-                if (index < 0)
-                {
-                    index = this.quotes.Length - 1;
-                }
-                quote.Text = this.quotes[index];
-            }
+            await Navigation.PushAsync(new Exercise2());
         }
 
-        void Color_ValueChanged(object sender, ValueChangedEventArgs e)
+        private async void Ex3_Clicked(object sender, EventArgs e)
         {
-            if (sender == red)
-            {
-                redLabel.Text = String.Format("Red: {0:F0}", (int)e.NewValue);
-            }
-            if (sender == green)
-            {
-                greenLabel.Text = String.Format("Green: {0:F0}", (int)e.NewValue);
-            }
-            if (sender == blue)
-            {
-                blueLabel.Text = String.Format("Blue: {0:F0}", (int)e.NewValue);
-            }
-            boxView.Color = Color.FromRgb((int)red.Value,
-                                          (int)green.Value,
-                                          (int)blue.Value);
+            await Navigation.PushAsync(new LoginPage());
         }
-        //void OnNextButtonClicked(object sender, EventArgs e)
-        //{
 
-        //    this.index++;
-        //    if (index > this.quotes.Length-1)
-        //    {
-        //        index = 0;
-        //    }
-        //    quote.Text = this.quotes[index];
-        //}
-        //void OnBackButtonClicked(object sender, EventArgs e)
-        //{
-        //    this.index--;
-        //    if (index < 0)
-        //    {
-        //        index = this.quotes.Length-1;
-        //    }
-        //    quote.Text = this.quotes[index];
-        //}
+        private async void Ex4_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new InstagramPage());
+        }
 
+        private async void Ex5_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new DialerPage());
+        }
+
+        private async void Ex6_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new CalculatorPage());
+        }
     }
 }

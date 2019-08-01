@@ -74,23 +74,23 @@ namespace XamarinExercise
             }
             if (sender == btnAdd)
             {
-                
+                this.displayValue += "";
             }
             if (sender == btnMinus)
             {
-                
+                this.displayValue += "";
             }
             if (sender == btnDivide)
             {
-                
+                this.displayValue += "";
             }
             if (sender == btnMultiply)
             {
-                
+                this.displayValue += "";
             }
             if (sender == btnModulus)
             {
-                
+                this.displayValue += "";
             }
             if (sender == btnC)
             {
