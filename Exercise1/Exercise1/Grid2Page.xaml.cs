@@ -17,20 +17,19 @@ namespace Exercise1
         public Grid2Page()
         {
             InitializeComponent();
-            
+            OnClear(this, null);
         }
 
         private void clearEntry(object sender, EventArgs e)
         {
-            this.resultCalc.Text = "0";
+            this.numberResult.Text = "0";
         }
 
         private void Button_Clicked(object sender, EventArgs e)
         {
-            Button normalButton = (Button)sender;
-            string pressed = normalButton.Text;
-            this.resultCalc.Text += pressed;
-
+            var normalButton = (Button)sender;
+            var input = this.numberResult.Text + normalButton.Text;
+            numberResult.Text = String.Format("{0:n0}", double.Parse(input));
         }
     }
 }
