@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="XamarinFormExercise.Exercise4StackLayout2">
+    <ContentPage.Content>
+        <StackLayout HorizontalOptions="FillAndExpand">
+            <Label Text="nyc_photographer" HorizontalOptions="Start" FontSize="16" />
+            <StackLayout Padding="0,0,0,10">
+                <Image Source="https://images.wallpaperscraft.com/image/starry_sky_stars_shine_133871_1920x1080.jpg"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" Padding="0,0,0,10">
+                <Button Text="Like" BackgroundColor="White" TextColor="#1dabf0"/>
+                <Button Text="Comment" BackgroundColor="White" TextColor="#1dabf0"/>
+                <Button Text="Share" BackgroundColor="White" TextColor="#1dabf0"/>
+            </StackLayout>
+            <BoxView Color="#f0f0f0" HeightRequest="1"/>
+            <Label Text="700 likes" FontAttributes="Bold"/>
+            <Label Text="This is a shot yesterday in Skanor, Sweden, when driving home, from a couple of days of work in Denmark"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

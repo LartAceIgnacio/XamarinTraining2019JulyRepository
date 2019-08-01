@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="XamarinFormExercise.Exercise5GridLayout1"
+             BackgroundColor="#354242">
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout  HorizontalOptions="Center">
+            <Label
+                Text="1234"
+                 x:Name="result"
+                 FontSize="50"
+                 TextColor="#fff"/>
+            </StackLayout>
+            <Grid Padding="20" RowSpacing="10" ColumnSpacing="10" >
+                <Grid.RowDefinitions >
+                    <RowDefinition Height="0"/>
+                    <RowDefinition Height="2*" />
+                    <RowDefinition Height="7*" />
+                    <RowDefinition Height="7*" />
+                    <RowDefinition Height="7*" />
+                    <RowDefinition Height="7*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition   Width="*" />
+                    <ColumnDefinition   Width="*"/>
+                    <ColumnDefinition   Width="*" />
+                </Grid.ColumnDefinitions>
+          
+                <Button Text="1" x:Name="one" Clicked="ButtonOneClicked" Grid.Column="0" Grid.Row="2" FontSize = "30" TextColor="#28282c" BackgroundColor="#fff" CornerRadius="30"/>
+                <Button Text="2" x:Name="two" Clicked="ButtonTwoClicked"  Grid.Column="1" Grid.Row="2" FontSize = "30" TextColor="#28282c" BackgroundColor="#fff" CornerRadius="30"/>
+                <Button Text="3" x:Name="three" Clicked="ButtonThreeClicked"   Grid.Column="2" Grid.Row="2" FontSize = "30" TextColor="#28282c" BackgroundColor="#fff" CornerRadius="30"/>
+                <Button Text="4"  x:Name="four" Clicked="ButtonFourClicked"  Grid.Column="0" Grid.Row="3" FontSize = "30" TextColor="#28282c" BackgroundColor="#fff" CornerRadius="30"/>
+                <Button Text="5" x:Name="five" Clicked="ButtonFiveClicked"    Grid.Column="1" Grid.Row="3" FontSize = "30" TextColor="#28282c" BackgroundColor="#fff" CornerRadius="30"/>
+                <Button Text="6" x:Name="six" Clicked="ButtonSixClicked"    Grid.Column="2" Grid.Row="3" FontSize = "30" TextColor="#28282c" BackgroundColor="#fff" CornerRadius="30"/>
+                <Button Text="7" x:Name="seven" Clicked="ButtonSevenClicked"    Grid.Column="0" Grid.Row="4" FontSize = "30" TextColor="#28282c" BackgroundColor="#fff" CornerRadius="30"/>
+                <Button Text="8" x:Name="eight" Clicked="ButtonEightClicked"   Grid.Column="1" Grid.Row="4" FontSize = "30" TextColor="#28282c" BackgroundColor="#fff" CornerRadius="30"/>
+                <Button Text="9"  x:Name="nine" Clicked="ButtonNineClicked" Grid.Column="2" Grid.Row="4" FontSize = "30" TextColor="#28282c" BackgroundColor="#fff" CornerRadius="30"/>
+                <Button Text="0"   x:Name="zero" Clicked="ButtonZeroClicked" Grid.Column="1" Grid.Row="5" FontSize = "30" TextColor="#28282c" BackgroundColor="#fff" CornerRadius="30"/>
+            </Grid>
+            <StackLayout HorizontalOptions="Fill">
+                <Button  Text="Dial"   FontSize = "30"  BackgroundColor="#96ca2d" CornerRadius="30"/>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

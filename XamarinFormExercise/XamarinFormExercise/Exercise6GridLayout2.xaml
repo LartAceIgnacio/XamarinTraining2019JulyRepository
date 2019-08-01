@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+              BackgroundColor="Black" 
+             x:Class="XamarinFormExercise.Exercise6GridLayout2">
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout HorizontalOptions="EndAndExpand" Padding="0,0,0,60">
+                <Label  Text="0" x:Name="result" TextColor="White" FontSize="50"/>
+            </StackLayout>
+            <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" RowSpacing="0" ColumnSpacing="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="5*"/>
+                        <RowDefinition Height="5*"/>
+                        <RowDefinition Height="5*"/>
+                        <RowDefinition Height="5*"/>
+                        <RowDefinition Height="5*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="5*"/>
+                        <ColumnDefinition Width="5*"/>
+                        <ColumnDefinition Width="5*"/>
+                        <ColumnDefinition Width="5*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Button Text="C" x:Name="clear" Clicked="ButtonClearClicked"  Grid.Column="0" Grid.Row="0" FontSize = "30" TextColor="#28282c" BackgroundColor="#fff"/>
+                    <Button Text="+/-" x:Name="positiveNegative"  Grid.Column="1" Grid.Row="0" FontSize = "30" TextColor="#28282c" BackgroundColor="#fff"/>
+                    <Button Text="%" x:Name="modulus"  Grid.Column="2" Grid.Row="0" FontSize = "30" TextColor="#28282c" BackgroundColor="#fff"/>
+                    <Button Text="/" x:Name="divide"  Grid.Column="3" Grid.Row="0" FontSize = "30" TextColor="White" BackgroundColor="Orange"/>
+                    <Button Text="7" x:Name="seven" Clicked="ButtonSevenClicked" Grid.Column="0" Grid.Row="1" FontSize = "30" TextColor="#28282c" BackgroundColor="#fff"/>
+                    <Button Text="8" x:Name="eight" Clicked="ButtonEightClicked"  Grid.Column="1" Grid.Row="1" FontSize = "30" TextColor="#28282c" BackgroundColor="#fff"/>
+                    <Button Text="9" x:Name="nine" Clicked="ButtonNineClicked"  Grid.Column="2" Grid.Row="1" FontSize = "30" TextColor="#28282c" BackgroundColor="#fff"/>
+                    <Button Text="x" x:Name="multiply"  Grid.Column="3" Grid.Row="1" FontSize = "30" TextColor="White" BackgroundColor="Orange"/>
+                    <Button Text="4" x:Name="four" Clicked="ButtonFourClicked" Grid.Column="0" Grid.Row="2" FontSize = "30" TextColor="#28282c" BackgroundColor="#fff"/>
+                    <Button Text="5" x:Name="five" Clicked="ButtonFiveClicked" Grid.Column="1" Grid.Row="2" FontSize = "30" TextColor="#28282c" BackgroundColor="#fff"/>
+                    <Button Text="6" x:Name="six"  Clicked="ButtonSixClicked" Grid.Column="2" Grid.Row="2" FontSize = "30" TextColor="#28282c" BackgroundColor="#fff"/>
+                    <Button Text="-" x:Name="subtract"  Grid.Column="3" Grid.Row="2" FontSize = "30" TextColor="White" BackgroundColor="Orange"/>
+                    <Button Text="1" x:Name="one" Clicked="ButtonOneClicked" Grid.Column="0" Grid.Row="3" FontSize = "30" TextColor="#28282c" BackgroundColor="#fff"/>
+                    <Button Text="2" x:Name="two" Clicked="ButtonTwoClicked" Grid.Column="1" Grid.Row="3" FontSize = "30" TextColor="#28282c" BackgroundColor="#fff"/>
+                    <Button Text="3" x:Name="three" Clicked="ButtonThreeClicked"  Grid.Column="2" Grid.Row="3" FontSize = "30" TextColor="#28282c" BackgroundColor="#fff"/>
+                    <Button Text="+" x:Name="add"  Grid.Column="3" Grid.Row="3" FontSize = "30" TextColor="White" BackgroundColor="Orange"/>
+                    <Button Text="0" x:Name="zero" Clicked="ButtonZeroClicked"  Grid.ColumnSpan="2" Grid.Row="4" FontSize = "30" TextColor="#28282c" BackgroundColor="#fff"/>
+                    <Button Text="." x:Name="dot"  Grid.Column="2" Grid.Row="4" FontSize = "30" TextColor="#28282c" BackgroundColor="#fff"/>
+                    <Button Text="=" x:Name="equal"  Grid.Column="3" Grid.Row="4" FontSize = "30" TextColor="White" BackgroundColor="Orange"/>
+                </Grid>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
