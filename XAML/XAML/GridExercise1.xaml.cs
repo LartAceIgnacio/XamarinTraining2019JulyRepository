@@ -19,12 +19,18 @@ namespace XAML
 
         private void NumberButton_Clicked(object sender, EventArgs e)
         {
-            var button = (Button)sender;
-            var number = button.Text;
-
-            lblNumber.Text = lblNumber.Text + number;
+            var _button = (Button)sender;
+            lblNumber.Text = lblNumber.Text + _button.Text.ToString();
         }
 
-
+        private void DeleteButton_Clicked(object sender, EventArgs e)
+        {
+            if (lblNumber.Text.Length != 0)
+            {
+                string _text = lblNumber.Text;
+                _text = _text.Remove(lblNumber.Text.Length - 1);
+                lblNumber.Text = _text;
+            }
+        }
     }
 }

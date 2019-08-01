@@ -13,7 +13,8 @@ namespace XAML
             //MainPage = new MainPage();
             //MainPage = new RGBExercise();
             //MainPage = new StackLayout1();
-            MainPage = new GridExercise1();
+            //MainPage = new GridExercise1();
+            MainPage = new GridExercise2();
         }
 
         protected override void OnStart()

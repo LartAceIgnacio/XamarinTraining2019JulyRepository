@@ -9,7 +9,7 @@
     <ContentPage.Content>
             <Grid Padding="40" RowSpacing="10" ColumnSpacing="10">
             <Grid.RowDefinitions>
-                <RowDefinition Height="3*"/>
+                <RowDefinition Height="2*"/>
                 <RowDefinition Height="*" />
                 <RowDefinition Height="*" />
                 <RowDefinition Height="*" />
@@ -121,6 +121,14 @@
                     Grid.Column="1"
                     Clicked="NumberButton_Clicked"
                     x:Name="btnNum0"/>
+            <Button Text="⌦" 
+                    TextColor="#28282c"
+                    FontSize="30"
+                    BorderRadius="30"
+                    BackgroundColor="#fff"
+                    Grid.Row="4"
+                    Grid.Column="2"
+                    Clicked="DeleteButton_Clicked"/>
             <Button Text="Dial" 
                     FontSize="30"
                     BackgroundColor="#96ca2d"
