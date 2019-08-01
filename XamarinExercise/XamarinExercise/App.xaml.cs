@@ -14,7 +14,8 @@ namespace XamarinExercise
             //MainPage = new Exercise1();
             //MainPage = new Exercise2();
             //MainPage = new LoginPage();
-            MainPage = new CalculatorPage();
+            //MainPage = new CalculatorPage();
+            MainPage = new DialerPage();
         }
 
         protected override void OnStart()

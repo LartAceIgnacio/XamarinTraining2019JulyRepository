@@ -14,7 +14,17 @@ namespace XamarinExercise
     {
         public DialerPage()
         {
-            InitializeComponent();
+            InitializeComponent();           
+        }
+
+        void OnButtonPress(object sender ,EventArgs e)
+        {
+
+            string inputText = (sender as Button).Text;
+            string labelText = LabelDisplay.Text;
+
+            labelText = inputText;
+            LabelDisplay.Text += labelText;
         }
     }
 }
