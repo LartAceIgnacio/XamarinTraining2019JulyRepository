@@ -10,7 +10,12 @@ namespace XamarinExcercise
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            //MainPage = new MainPage();
+            //MainPage = new StackLayout1();
+            //MainPage = new StackLayout2();
+            //MainPage = new GridExercise1();
+            MainPage = new GridExercise2();
+
         }
 
         protected override void OnStart()

@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="XamarinExcercise.StackLayout2">
+    <ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness">
+            <On Platform="iOS" Value="0, 20, 0, 0" />
+            <On Platform="Android" Value="0, 0, 0, 0" />
+        </OnPlatform>
+    </ContentPage.Padding>
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout Padding="10">
+            <Label Text="nyc_photographer"
+                VerticalOptions="Start" 
+                HorizontalOptions="Start"
+                FontAttributes="Bold"
+                TextColor="Black"/>
+            </StackLayout>
+            <StackLayout>
+            <BoxView BackgroundColor="OrangeRed"
+                   VerticalOptions="StartAndExpand"
+                     HeightRequest="150"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" VerticalOptions="Start"
+                         HorizontalOptions="Start"
+                         Padding="10">
+                <Button Text="Like"
+                        BackgroundColor="WhiteSmoke"
+                        TextColor="Blue"/>
+                <Button Text="Comment"
+                        BackgroundColor="WhiteSmoke"
+                        TextColor="Blue"/>
+                <Button Text="Share"
+                        BackgroundColor="WhiteSmoke"
+                        TextColor="Blue"/>
+
+            </StackLayout>
+            <StackLayout Padding="10">
+                <BoxView BackgroundColor="#f0f0f0"
+                         HeightRequest="1"
+                         VerticalOptions="Fill"/>
+
+                <Label Text="700 likes"
+                       FontAttributes="Bold"
+                       FontSize="20"
+                       TextColor="Black"
+                       />
+                <Label Text="This is a shot yesterday in Skanor, Sweden, when driving home, from a coupleof days of work in Denmark."
+                       TextColor="Gray"
+                       FontSize="20"
+                       />
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

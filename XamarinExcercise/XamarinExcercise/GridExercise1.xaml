@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="XamarinExcercise.GridExercise1">
+    <ContentPage.Content>
+        <Grid BackgroundColor="#354242" Padding="40"
+              RowSpacing="10"
+              ColumnSpacing="10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Label Text="" x:Name="numberLabel" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3"
+                   FontSize="50"
+                   TextColor="white"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center"/>
+
+            <Button Clicked="Number_Clicked" Text="1" Grid.Row="1" Grid.Column="0"  TextColor="#354242" BackgroundColor="#fff"
+                    CornerRadius="30"
+                    FontSize="30"/>
+            <Button Clicked="Number_Clicked" Text="2" Grid.Row="1" Grid.Column="1" TextColor="#354242" BackgroundColor="#fff"
+                    CornerRadius="30"
+                    FontSize="30"/>
+            <Button Clicked="Number_Clicked" Text="3" Grid.Row="1" Grid.Column="2" TextColor="#354242" BackgroundColor="#fff"
+                    CornerRadius="30"
+                    FontSize="30"/>
+            <Button Clicked="Number_Clicked" Text="4" Grid.Row="2" Grid.Column="0" TextColor="#354242" BackgroundColor="#fff"
+                    CornerRadius="30"
+                    FontSize="30"/>
+            <Button Clicked="Number_Clicked" Text="5" Grid.Row="2" Grid.Column="1" TextColor="#354242" BackgroundColor="#fff"
+                    CornerRadius="30"
+                    FontSize="30"/>
+            <Button Clicked="Number_Clicked" Text="6" Grid.Row="2" Grid.Column="2" TextColor="#354242" BackgroundColor="#fff"
+                    CornerRadius="30"
+                    FontSize="30"/>
+            <Button Clicked="Number_Clicked" Text="7" Grid.Row="3" Grid.Column="0" TextColor="#354242" BackgroundColor="#fff"
+                    CornerRadius="30"
+                    FontSize="30"/>
+            <Button Clicked="Number_Clicked" Text="8" Grid.Row="3" Grid.Column="1" TextColor="#354242" BackgroundColor="#fff"
+                    CornerRadius="30"
+                    FontSize="30"/>
+            <Button Clicked="Number_Clicked" Text="9" Grid.Row="3" Grid.Column="2" TextColor="#354242" BackgroundColor="#fff"
+                    CornerRadius="30"
+                    FontSize="30"/>
+            <Button Clicked="Number_Clicked" Text="0" Grid.Row="4" Grid.Column="1" TextColor="#354242" BackgroundColor="#fff"
+                    CornerRadius="30"
+                    FontSize="30"/>
+            <Button Clicked="Number_Clicked" Text="Dial" Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="3" TextColor="#354242" BackgroundColor="#96ca2d"
+                    CornerRadius="30"
+                    FontSize="30"/>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

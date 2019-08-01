@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="XamarinExcercise.GridExercise2">
+    <ContentPage.Content>
+        <Grid BackgroundColor="#1C1C1C" ColumnSpacing="1" RowSpacing="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Label  Text="0" x:Name="numberLabel" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4"
+                   FontSize="75"
+                   TextColor="#DDD"
+                   HorizontalOptions="End"
+                   VerticalOptions="End"/>
+            
+            <Button Clicked="Clear_Clicked" Text="C" Grid.Row="1" Grid.Column="0" BackgroundColor="#CCC"
+                    TextColor="#1C1C1C"
+                    FontSize="30"
+                    CornerRadius="0"/>
+            <Button  Text="+/-" Grid.Row="1" Grid.Column="1" BackgroundColor="#CCC"
+                    TextColor="#1C1C1C"
+                    FontSize="30"
+                    CornerRadius="0"/>
+            <Button  Text="%" Grid.Row="1" Grid.Column="2" BackgroundColor="#CCC"
+                    TextColor="#1C1C1C"
+                    FontSize="30"
+                    CornerRadius="0"/>
+            <Button Clicked="Divide_Clicked" Text="÷" Grid.Row="1" Grid.Column="3" BackgroundColor="#FF9500"
+                    TextColor="White"
+                    FontSize="30"
+                    CornerRadius="0"/>
+
+            <Button Clicked="Number_Clicked"  Text="7" Grid.Row="2" Grid.Column="0" BackgroundColor="#DDD"
+                    TextColor="#1C1C1C"
+                    FontSize="30"
+                    CornerRadius="0"/>
+            <Button Clicked="Number_Clicked"  Text="8" Grid.Row="2" Grid.Column="1" BackgroundColor="#DDD"
+                    TextColor="#1C1C1C"
+                    FontSize="30"
+                    CornerRadius="0"/>
+            <Button Clicked="Number_Clicked"  Text="9" Grid.Row="2" Grid.Column="2" BackgroundColor="#DDD"
+                    TextColor="#1C1C1C"
+                    FontSize="30"
+                    CornerRadius="0"/>
+            <Button Clicked="Times_Clicked" Text="x" Grid.Row="2" Grid.Column="3" BackgroundColor="#FF9500"
+                    TextColor="White"
+                    FontSize="30"
+                    CornerRadius="0"/>
+
+            <Button Clicked="Number_Clicked"  Text="4" Grid.Row="3" Grid.Column="0" BackgroundColor="#DDD"
+                    TextColor="#1C1C1C"
+                    FontSize="30"
+                    CornerRadius="0"/>
+            <Button Clicked="Number_Clicked"  Text="5" Grid.Row="3" Grid.Column="1" BackgroundColor="#DDD"
+                    TextColor="#1C1C1C"
+                    FontSize="30"
+                    CornerRadius="0"/>
+            <Button Clicked="Number_Clicked"  Text="6" Grid.Row="3" Grid.Column="2" BackgroundColor="#DDD"
+                    TextColor="#1C1C1C"
+                    FontSize="30"
+                    CornerRadius="0"/>
+            <Button Clicked="Minus_Clicked" Text="-" Grid.Row="3" Grid.Column="3" BackgroundColor="#FF9500"
+                    TextColor="White"
+                    FontSize="30"
+                    CornerRadius="0"/>
+
+            <Button Clicked="Number_Clicked"  Text="1" Grid.Row="4" Grid.Column="0" BackgroundColor="#DDD"
+                    TextColor="#1C1C1C"
+                    FontSize="30"
+                    CornerRadius="0"/>
+            <Button Clicked="Number_Clicked"  Text="2" Grid.Row="4" Grid.Column="1" BackgroundColor="#DDD"
+                    TextColor="#1C1C1C"
+                    FontSize="30"
+                    CornerRadius="0"/>
+            <Button Clicked="Number_Clicked"  Text="3" Grid.Row="4" Grid.Column="2" BackgroundColor="#DDD"
+                    TextColor="#1C1C1C"
+                    FontSize="30"
+                    CornerRadius="0"/>
+            <Button Clicked="Plus_Clicked" Text="+" Grid.Row="4" Grid.Column="3" BackgroundColor="#FF9500"
+                    TextColor="White"
+                    FontSize="30"
+                    CornerRadius="0"/>
+
+            <Button Clicked="Number_Clicked"  Text="0" Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" BackgroundColor="#DDD"
+                    TextColor="#1C1C1C"
+                    FontSize="30"
+                    CornerRadius="0"/>
+            <Button Clicked="Number_Clicked"  Text="." Grid.Row="5" Grid.Column="2" BackgroundColor="#DDD"
+                    TextColor="#1C1C1C"
+                    FontSize="30"
+                    CornerRadius="0"/>
+            <Button  Text="=" Grid.Row="5" Grid.Column="3" BackgroundColor="#FF9500"
+                    TextColor="White"
+                    FontSize="30"
+                    CornerRadius="0" />
+
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
