@@ -32,6 +32,10 @@
                 Text="Exercise6"
                 Clicked='Ex6_Clicked' />
 
+        <Button x:Name="ex7"
+                Text="Exercise7"
+                Clicked='Ex7_Clicked'/>
+
     </StackLayout>
 
 </ContentPage>

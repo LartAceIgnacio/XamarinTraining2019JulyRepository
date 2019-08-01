@@ -47,5 +47,10 @@ namespace XamarinExercise
         {
             await Navigation.PushAsync(new CalculatorPage());
         }
+
+        private async void Ex7_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new AbsoluteLayoutPage());
+        }
     }
 }
