@@ -7,7 +7,7 @@
              x:Class="TestXamarin.GridLayout2">
     <ContentPage.Content>
         <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
-                     BackgroundColor="Black">
+                  BackgroundColor="Black">
             <Grid RowSpacing="1" ColumnSpacing="1" HorizontalOptions="FillAndExpand" 
                   VerticalOptions="FillAndExpand">
                 <Grid.RowDefinitions>
@@ -71,7 +71,6 @@
                 <Button x:Name="BtnEquals" Text="=" Grid.Row="5" Grid.Column="3"
                         FontSize="30" Clicked="BtnEquals_Clicked" BackgroundColor="Orange"
                         TextColor="White"/>
-                
             </Grid>
         </StackLayout>
     </ContentPage.Content>

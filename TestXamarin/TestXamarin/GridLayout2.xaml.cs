@@ -39,12 +39,12 @@ namespace TestXamarin
 
         private void BtnPosNeg_Clicked(object sender, EventArgs e)
         {
-
+            UpdateLblDisplay();
         }
 
         private void BtnPercent_Clicked(object sender, EventArgs e)
         {
-
+            UpdateLblDisplay();
         }
 
         private void BtnDivide_Clicked(object sender, EventArgs e)

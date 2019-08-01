@@ -61,15 +61,5 @@ namespace TestXamarin
         {
             await Navigation.PushAsync(new GridLayout2());
         }
-
-
-        /*
-         * void Handle_ValueChanged(object sender, Xamarin.Forms)
-         * {
-         *      Label.Text = String.Formar("Volume " {0}", e.NewValue.ToString());
-         * }
-         * 
-         * 
-         */
     }
 }
