@@ -10,6 +10,7 @@
     <pages:WelcomePage Title= "Welcome Page" />
     <pages:InstagramPage Title= "Instagram Page" />
     <pages:DialPage Title= "Dial Page" />
+    <pages:CalculatorPage Title= "Calculator Page" />
     <pages:QuotesPage Title= "Quotes Page" />
     <pages:BoxColorPage Title= "Box Page" />
 </TabbedPage>

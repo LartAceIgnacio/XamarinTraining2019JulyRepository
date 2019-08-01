@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="XamarinActivities.CalculatorPage">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="orangeButton" TargetType="Button">
+                <Setter Property="BackgroundColor" Value="#eb9234" />
+                <Setter Property="FontSize" Value="30" />
+                <Setter Property="TextColor" Value="#ffffff" />
+            </Style>
+            <Style x:Key="plainButton" TargetType="Button">
+                <Setter Property="BackgroundColor" Value="#dedbd7" />
+                <Setter Property="FontSize" Value="30" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <Grid ColumnSpacing="1"
+              RowSpacing="1"
+              Padding="0"
+              HorizontalOptions="FillAndExpand">
+            
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <Label x:Name="Number_Label" Grid.Row="0" Grid.RowSpan="2"  Grid.Column="0" Grid.ColumnSpan="4"
+                   HorizontalTextAlignment="End"
+                   VerticalTextAlignment="Center"
+                   FontSize="60"
+                   TextColor="#ffffff"
+                   BackgroundColor="#403f3e"/>
+
+            <Button Text = "C" Grid.Row="2" Grid.Column="0"
+                    Clicked="Clear_Button_Clicked"
+                    Style="{StaticResource plainButton}" />
+            <Button x:Name="PlusMinus_Button" Text = "+/-" Grid.Row="2" Grid.Column="1"
+                    Style="{StaticResource plainButton}" />
+            <Button x:Name="Percent_Button" Text = "%" Grid.Row="2" Grid.Column="2"
+                    Style="{StaticResource plainButton}" />
+            <Button x:Name="Divide_Button" Text = "÷" Grid.Row="2" Grid.Column="3"
+                    Clicked="Operator_Button_Clicked"
+                    Style="{StaticResource orangeButton}" />
+
+            <Button Text = "7" Grid.Row="3" Grid.Column="0"
+                    Clicked="Number_Button_Clicked"
+                    Style="{StaticResource plainButton}" />
+            <Button Text = "8" Grid.Row="3" Grid.Column="1"
+                    Clicked="Number_Button_Clicked"
+                    Style="{StaticResource plainButton}" />
+            <Button Text = "9" Grid.Row="3" Grid.Column="2"
+                    Clicked="Number_Button_Clicked"
+                    Style="{StaticResource plainButton}" />
+            <Button Text = "×" Grid.Row="3" Grid.Column="3"
+                    Clicked="Operator_Button_Clicked"
+                    Style="{StaticResource orangeButton}" />
+
+            <Button Text = "4" Grid.Row="4" Grid.Column="0"
+                    Clicked="Number_Button_Clicked"
+                    Style="{StaticResource plainButton}" />
+            <Button Text = "5" Grid.Row="4" Grid.Column="1"
+                    Clicked="Number_Button_Clicked"
+                    Style="{StaticResource plainButton}" />
+            <Button Text = "6" Grid.Row="4" Grid.Column="2"
+                    Clicked="Number_Button_Clicked"
+                    Style="{StaticResource plainButton}" />
+            <Button Text = "-" Grid.Row="4" Grid.Column="3"
+                    Clicked="Operator_Button_Clicked"
+                    Style="{StaticResource orangeButton}" />
+
+            <Button Text = "1" Grid.Row="5" Grid.Column="0"
+                    Clicked="Number_Button_Clicked"
+                    Style="{StaticResource plainButton}" />
+            <Button Text = "2" Grid.Row="5" Grid.Column="1"
+                    Clicked="Number_Button_Clicked"
+                    Style="{StaticResource plainButton}" />
+            <Button Text = "3" Grid.Row="5" Grid.Column="2"
+                    Clicked="Number_Button_Clicked"
+                    Style="{StaticResource plainButton}" />
+            <Button Text = "+" Grid.Row="5" Grid.Column="3"
+                    Clicked="Operator_Button_Clicked"
+                    Style="{StaticResource orangeButton}" />
+
+            <Button Text = "0" Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2"
+                    Clicked="Number_Button_Clicked"
+                    Style="{StaticResource plainButton}" />
+            <Button Text = "." Grid.Row="6" Grid.Column="2"
+                    Clicked="Number_Button_Clicked"
+                    Style="{StaticResource plainButton}" />
+            <Button Text = "=" Grid.Row="6" Grid.Column="3"
+                    Clicked="Operator_Button_Clicked"
+                    Style="{StaticResource orangeButton}" />
+            
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
