@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="TestXamarin.StackLayout2">
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout Padding="20,20,0,20">
+                <Label Text="snk_photographer" FontAttributes="Bold" />
+            </StackLayout>
+            <Image Source="https://wc-ahba9see.c.sakurastorage.jp/max-1200/87/3e7a272d03a381bdb2dbad063dbe6bdbe36058dd-740.jpg"
+                   Aspect="AspectFill" HeightRequest="300" />
+            <StackLayout Padding="0,10,0,10" Orientation="Horizontal">
+                <Button Text="Like" BackgroundColor="Transparent" TextColor="#1dabf0"
+                        Padding="0" HorizontalOptions="Start" />
+                <Button Text="Comment" BackgroundColor="Transparent" TextColor="#1dabf0"
+                        Padding="0" HorizontalOptions="Start"/>
+                <Button Text="Share" BackgroundColor="Transparent" TextColor="#1dabf0"
+                        Padding="0" HorizontalOptions="Start"/>
+            </StackLayout>
+            <BoxView Color="#f0f0f0" HeightRequest="1" HorizontalOptions="FillAndExpand"/>
+            <StackLayout Padding="20">
+                <Label Text="700 likes" FontSize="18" FontAttributes="Bold" />
+                <Label Text="Beef ribeye burgdoggen cupim pancetta frankfurter shank boudin pork belly doner filet mignon shoulder chuck kevin jerky." />
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

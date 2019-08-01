@@ -42,6 +42,26 @@ namespace TestXamarin
             await Navigation.PushAsync(new Exercise2());
         }
 
+        private async void GoToExercise3A_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new StackLayout1());
+        }
+
+        private async void GoToExercise3B_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new StackLayout2());
+        }
+
+        private async void GoToExercise4A_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new GridLayout1());
+        }
+
+        private async void GoToExercise4B_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new GridLayout2());
+        }
+
 
         /*
          * void Handle_ValueChanged(object sender, Xamarin.Forms)

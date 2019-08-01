@@ -11,9 +11,9 @@
                 <Button x:Name="BackBtn" Text="Back" Clicked="BackBtn_Clicked" HorizontalOptions="StartAndExpand" />
                 <Button x:Name="NextBtn" Text="Next" Clicked="NextBtn_Clicked" HorizontalOptions="EndAndExpand" />
             </StackLayout>            
-            <Label x:Name="FontSizeLabel" Text="Font size" />
+            <Label x:Name="FontSizeLabel" Text="Font Size: 16" FontSize="16" />
             <Slider x:Name="Slider" Maximum="72" Minimum="16" ValueChanged="Slider_ValueChanged" />
-            <Label x:Name="quote" Text="" />
+            <Label x:Name="quote" Text="" FontSize="16" />
             <StackLayout VerticalOptions="EndAndExpand">
                 <Label Text="Exercise 01 @ Jelmarose Grace M. De Vera" />
             </StackLayout>

@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="TestXamarin.GridLayout2">
+    <ContentPage.Content>
+        <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
+                     BackgroundColor="Black">
+            <Grid RowSpacing="1" ColumnSpacing="1" HorizontalOptions="FillAndExpand" 
+                  VerticalOptions="FillAndExpand">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="2*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Label x:Name="LblDisplay" Text="" Grid.Row="0" Grid.Column="0"
+                        FontSize="50" TextColor="White" HorizontalTextAlignment="End"
+                        Grid.ColumnSpan="4" BackgroundColor="Black"/>
+                <Button x:Name="BtnC" Text="C" Grid.Row="1" Grid.Column="0"
+                        FontSize="30" Clicked="BtnC_Clicked" BackgroundColor="White"/>
+                <Button x:Name="BtnPosNeg" Text="+/-" Grid.Row="1" Grid.Column="1"
+                        FontSize="30" Clicked="BtnPosNeg_Clicked" BackgroundColor="White"/>
+                <Button x:Name="BtnPercent" Text="%" Grid.Row="1" Grid.Column="2"
+                        FontSize="30" Clicked="BtnPercent_Clicked" BackgroundColor="White"/>
+                <Button x:Name="BtnDivide" Text="/" Grid.Row="1" Grid.Column="3"
+                        FontSize="30" Clicked="BtnDivide_Clicked" BackgroundColor="Orange"
+                        TextColor="White"/>
+                <Button x:Name="Btn7" Text="7" Grid.Row="2" Grid.Column="0"
+                        FontSize="30" Clicked="Btn7_Clicked" BackgroundColor="White"/>
+                <Button x:Name="Btn8" Text="8" Grid.Row="2" Grid.Column="1"
+                        FontSize="30" Clicked="Btn8_Clicked" BackgroundColor="White"/>
+                <Button x:Name="Btn9" Text="9" Grid.Row="2" Grid.Column="2"
+                        FontSize="30" Clicked="Btn9_Clicked" BackgroundColor="White"/>
+                <Button x:Name="BtnMultiply" Text="*" Grid.Row="2" Grid.Column="3"
+                        FontSize="30" Clicked="BtnMultiply_Clicked" BackgroundColor="Orange"
+                        TextColor="White"/>
+                <Button x:Name="Btn4" Text="4" Grid.Row="3" Grid.Column="0"
+                        FontSize="30" Clicked="Btn4_Clicked" BackgroundColor="White"/>
+                <Button x:Name="Btn5" Text="5" Grid.Row="3" Grid.Column="1"
+                        FontSize="30" Clicked="Btn5_Clicked" BackgroundColor="White"/>
+                <Button x:Name="Btn6" Text="6" Grid.Row="3" Grid.Column="2"
+                        FontSize="30" Clicked="Btn6_Clicked" BackgroundColor="White"/>
+                <Button x:Name="BtnSubtract" Text="-" Grid.Row="3" Grid.Column="3"
+                        FontSize="30" Clicked="BtnSubtract_Clicked" BackgroundColor="Orange"
+                        TextColor="White"/>
+                <Button x:Name="Btn1" Text="1" Grid.Row="4" Grid.Column="0"
+                        FontSize="30" Clicked="Btn1_Clicked" BackgroundColor="White"/>
+                <Button x:Name="Btn2" Text="2" Grid.Row="4" Grid.Column="1"
+                        FontSize="30" Clicked="Btn2_Clicked" BackgroundColor="White"/>
+                <Button x:Name="Btn3" Text="3" Grid.Row="4" Grid.Column="2"
+                        FontSize="30" Clicked="Btn3_Clicked" BackgroundColor="White"/>
+                <Button x:Name="BtnAdd" Text="+" Grid.Row="4" Grid.Column="3"
+                        FontSize="30" Clicked="BtnAdd_Clicked" BackgroundColor="Orange"
+                        TextColor="White"/>
+                <Button x:Name="Btn0" Text="0" Grid.Row="5" Grid.Column="0"
+                        FontSize="30" Clicked="Btn0_Clicked" Grid.ColumnSpan="2"
+                        BackgroundColor="White"/>
+                <Button x:Name="BtnDecimal" Text="." Grid.Row="5" Grid.Column="2"
+                        FontSize="30" Clicked="BtnDecimal_Clicked" BackgroundColor="White"/>
+                <Button x:Name="BtnEquals" Text="=" Grid.Row="5" Grid.Column="3"
+                        FontSize="30" Clicked="BtnEquals_Clicked" BackgroundColor="Orange"
+                        TextColor="White"/>
+                
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

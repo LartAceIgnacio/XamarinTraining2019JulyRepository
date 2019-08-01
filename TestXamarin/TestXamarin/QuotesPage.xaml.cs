@@ -28,8 +28,8 @@ namespace TestXamarin
         public QuotesPage()
         {
             InitializeComponent();
+            this.Slider.Value = 16;
             SetQuote(quotes[i]);
-            Slider.Value = 16;
         }
 
         public void SetQuote(String text)

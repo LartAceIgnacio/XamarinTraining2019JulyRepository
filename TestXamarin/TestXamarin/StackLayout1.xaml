@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="TestXamarin.StackLayout1">
+    <ContentPage.Content>
+        <StackLayout x:Name="ContainerParent" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+            <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand">
+                <Label Text="Welcome to Xamarin" FontSize="30" FontAttributes="Bold" 
+                        HorizontalOptions="Center" TextColor="White" />
+                <Label Text="Cross-platform apps made easy" FontSize="18" HorizontalOptions="Center"
+                        TextColor="White" />
+                <Button Text="Login" BackgroundColor="#1dabf0" HorizontalOptions="FillAndExpand"
+                        TextColor="White"/>
+                <Button Text="Register" BackgroundColor="#1dabf0" HorizontalOptions="FillAndExpand"
+                        TextColor="White"/>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

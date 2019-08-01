@@ -10,9 +10,9 @@ using Xamarin.Forms.Xaml;
 namespace TestXamarin
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class Exercise1 : ContentPage
+    public partial class StackLayout2 : ContentPage
     {
-        public Exercise1()
+        public StackLayout2()
         {
             InitializeComponent();
         }

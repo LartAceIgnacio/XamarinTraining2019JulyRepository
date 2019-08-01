@@ -7,37 +7,12 @@
              x:Class="TestXamarin.MainPage">
 
     <StackLayout>
-        <!-- Place new controls here -->
-        <!-- Label Text="Welcome to Xamarin.Forms!" 
-           HorizontalOptions="Center"
-           VerticalOptions="CenterAndExpand" / -->
-        <!-- 
-            <StackLayout 
-                Orientation =" Vertical | Horizontal "
-                HorizontalOptions = "Center | Start | End"
-                VerticalOptions = "Center | Start | End"
-            >
-        -->
-        <!--Label Text="This text will be centered horizontally and vertically" 
-               HorizontalOptions="Center"
-               VerticalOptions="Center"/>
-        <Entry x:Name="username" Placeholder="What's your name?"></Entry>
-        <Button Text="Click me!"
-                HorizontalOptions="Center"
-                VerticalOptions="Center"></Button>
-        <Label x:Name="Label" Text="{Binding 
-                                        Source={x:Reference Slider},
-                                        Path=Value,
-                                        StringFormat='Volume: {0:F2}'                                        
-                                    }"/>
-        <Slider x:Name="Slider" BackgroundColor="#0093ff" ></Slider>
-            <Slider 
-                x:Name = "Label"
-                ValueChanged="Handle_ValueChanged" - Function invoked when slider value is changed
-            />
-        -->
-        <Button x:Name="GoToExercise1" Text="Exercise 1" Clicked="GoToExercise1_Clicked" />
-        <Button x:Name="GoToExercise2" Text="Exercise 2" Clicked="GoToExercise2_Clicked" />
+        <Button x:Name="GoToExercise1" Text="Quotes" Clicked="GoToExercise1_Clicked"/>
+        <Button x:Name="GoToExercise2" Text="RGB Slider" Clicked="GoToExercise2_Clicked"/>
+        <Button x:Name="GoToExercise3A" Text="Stack Layout 1" Clicked="GoToExercise3A_Clicked"/>
+        <Button x:Name="GoToExercise3B" Text="Stack Layout 2" Clicked="GoToExercise3B_Clicked"/>
+        <Button x:Name="GoToExercise4A" Text="Grid Layout 1" Clicked="GoToExercise4A_Clicked"/>
+        <Button x:Name="GoToExercise4B" Text="Grid Layout 2" Clicked="GoToExercise4B_Clicked"/>
     </StackLayout>
 
 

@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="TestXamarin.GridLayout1">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="BtnRoundedCorners" TargetType="Button">
+                <Setter Property="CornerRadius" Value="30"></Setter>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="#354242" HorizontalOptions="FillAndExpand" 
+                     VerticalOptions="FillAndExpand">
+            <Grid Padding="40" RowSpacing="10" ColumnSpacing="10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="2*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Label x:Name="LblDisplay" Text="" Grid.Row="0" Grid.Column="0"
+                        FontSize="50" TextColor="White" HorizontalTextAlignment="Center"
+                        Grid.ColumnSpan="3"/>
+                <Button x:Name="Btn1" Text="1" Grid.Row="1" Grid.Column="0" 
+                        FontSize="30" Style="{StaticResource BtnRoundedCorners}"
+                        Clicked="Btn1_Clicked"/>
+                <Button x:Name="Btn2" Text="2" Grid.Row="1" Grid.Column="1" 
+                        FontSize="30" Style="{StaticResource BtnRoundedCorners}"
+                        Clicked="Btn2_Clicked"/>
+                <Button x:Name="Btn3" Text="3" Grid.Row="1" Grid.Column="2" 
+                        FontSize="30" Style="{StaticResource BtnRoundedCorners}"
+                        Clicked="Btn3_Clicked"/>
+                <Button x:Name="Btn4" Text="4" Grid.Row="2" Grid.Column="0" 
+                        FontSize="30" Style="{StaticResource BtnRoundedCorners}"
+                        Clicked="Btn4_Clicked"/>
+                <Button x:Name="Btn5" Text="5" Grid.Row="2" Grid.Column="1" 
+                        FontSize="30" Style="{StaticResource BtnRoundedCorners}"
+                        Clicked="Btn5_Clicked"/>
+                <Button x:Name="Btn6" Text="6" Grid.Row="2" Grid.Column="2" 
+                        FontSize="30" Style="{StaticResource BtnRoundedCorners}"
+                        Clicked="Btn6_Clicked"/>
+                <Button x:Name="Btn7" Text="7" Grid.Row="3" Grid.Column="0" 
+                        FontSize="30" Style="{StaticResource BtnRoundedCorners}"
+                        Clicked="Btn7_Clicked"/>
+                <Button x:Name="Btn8" Text="8" Grid.Row="3" Grid.Column="1" 
+                        FontSize="30" Style="{StaticResource BtnRoundedCorners}"
+                        Clicked="Btn8_Clicked"/>
+                <Button x:Name="Btn9" Text="9" Grid.Row="3" Grid.Column="2" 
+                        FontSize="30" Style="{StaticResource BtnRoundedCorners}"
+                        Clicked="Btn9_Clicked"/>
+                <Button x:Name="Btn0" Text="0" Grid.Row="4" Grid.Column="1" 
+                        FontSize="30" Style="{StaticResource BtnRoundedCorners}"
+                        Clicked="Btn0_Clicked"/>
+                <Button x:Name="BtnBackspace" Text="DEL" Grid.Row="4" Grid.Column="2"
+                        FontSize="30" Style="{StaticResource BtnRoundedCorners}"
+                        Clicked="BtnBackspace_Clicked"/>
+                <Button x:Name="BtnDial" Text="Dial" Grid.Row="5" Grid.Column="0" 
+                        FontSize="30" Style="{StaticResource BtnRoundedCorners}"
+                        Grid.ColumnSpan="3" BackgroundColor="#96ca2d"/>
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
