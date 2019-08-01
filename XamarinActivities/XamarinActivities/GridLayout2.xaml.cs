@@ -19,15 +19,21 @@ namespace XamarinActivities
         public GridLayout2()
         {
             InitializeComponent();
+            lblResult.Text = "";
 
         }
         private void LblResult_ValueChanged(object sender, EventArgs e)
         {
+            if (lblResult.Text.Length+1 <= 11)
+            {
                 Button button = (Button)sender;
                 var number = lblResult.Text;
+
                 number = number + button.Text;
                 lblResult.Text = String.Format("{0:n0}", Double.Parse(number));
+
                 result += button.Text;
+            }
 
         }
 

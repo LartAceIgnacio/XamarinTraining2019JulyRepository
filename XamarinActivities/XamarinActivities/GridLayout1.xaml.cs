@@ -20,7 +20,7 @@ namespace XamarinActivities
 
         private void LblResult_ValueChanged(object sender, EventArgs e)
         {
-            if (lblResult.Text.Length != 12)
+            if (lblResult.Text.Length+1 <= 12)
             {
                 Button button = (Button)sender;
                 string pressed = button.Text;
@@ -30,8 +30,6 @@ namespace XamarinActivities
             {
                 DisplayAlert("Dial", "You reached the maximun phone number", "OK");
             }
-
-            
         }
 
         private void BtnDial_Clicked(object sender, EventArgs e)
