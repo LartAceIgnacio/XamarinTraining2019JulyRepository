@@ -85,6 +85,7 @@
                     Style="{StaticResource numberButton}" />
 
             <Button Text = "Dial" Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="3"
+                    Clicked="Dial_Button_Clicked"
                     Style="{StaticResource dialButton}" />
             
         </Grid>

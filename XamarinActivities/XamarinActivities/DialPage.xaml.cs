@@ -23,5 +23,10 @@ namespace XamarinActivities
             var buttonValue = button.Text;
             Number_Label.Text = Number_Label.Text + buttonValue;
         }
+
+        private void Dial_Button_Clicked(object sender, EventArgs e)
+        {
+            DisplayAlert("Calling...", Number_Label.Text, "OK");
+        }
     }
 }

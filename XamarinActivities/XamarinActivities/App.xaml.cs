@@ -11,10 +11,10 @@ namespace XamarinActivities
             InitializeComponent();
 
             // MainPage = new TabsPage();
-            // MainPage = new WelcomePage();
+            MainPage = new WelcomePage();
             // MainPage = new InstagramPage();
             // MainPage = new DialPage();
-            MainPage = new CalculatorPage();
+            // MainPage = new CalculatorPage();
             // MainPage = new QuotesPage();
             // MainPage = new BoxColorPage();
 
