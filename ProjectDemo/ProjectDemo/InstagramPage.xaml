@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="ProjectDemo.InstagramPage">
+	<ContentPage.Padding>
+		<OnPlatform x:TypeArguments="Thickness"
+					iOS="0, 20, 0, 0"
+					Android="0, 0, 0, 0"/>
+	</ContentPage.Padding>
+	<ContentPage.Content>
+		<StackLayout Spacing="10" >
+            <Label Text="withikon"
+				   TextColor="Black"
+				   FontSize="20"
+				   Margin="14, 14, 0, 0"/>
+			<Image Source="https://tinyurl.com/yxdgu25n"/>
+			<StackLayout Orientation="Horizontal" Spacing="14" Padding="0,5,0,20">
+				<Label Text="Like"
+				   TextColor="#0a92cc"
+					   Margin="14, 0, 0, 0"/>
+				<Label Text="Comment"
+				   TextColor="#0a92cc"/>
+				<Label Text="Share"
+				   TextColor="#0a92cc"/>
+			</StackLayout>
+			
+			<BoxView Color="#f0f0f0"
+					 HeightRequest="1"
+					 Margin="14, 0, 0, 0"/>
+			<Label Text="700 likes"
+				   FontAttributes="Bold"
+				   TextColor="Black"
+				   FontSize="17"
+				   Margin="14, 0, 0, 0"/>
+			<Label Text="This is iKON, consists of Kim Hanbin as the leader, Kim Jinhwan as the Main Vocalist, Kim Jiwon as the Main Rapper, Song Yunhyeong as the Lead Vocalist, Koo Junhoe as the Main Vocalist, Kim Donghyuk as the Main Dancer, and Jung Chanwoo as the Vocalist."
+				   TextColor="#3d3d3d"
+				   FontSize="17"
+				   Margin="14, 0, 0, 0"/>
+		</StackLayout>
+    </ContentPage.Content>
+</ContentPage>
