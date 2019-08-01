@@ -73,7 +73,6 @@ namespace XamarinFormExercise
 
             concat += number;
             result.Text = concat;
-           
         }
     }
 }

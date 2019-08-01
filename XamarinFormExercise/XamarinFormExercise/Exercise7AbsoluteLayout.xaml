@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="XamarinFormExercise.Exercise7AbsoluteLayout">
+    <ContentPage.Content>
+        <AbsoluteLayout>
+            <Image Source="https://c.wallhere.com/photos/3d/0a/1920x1080_px_digital_art_fantasy_Art_landscape_Long_Hair_ryky_Trees_wind-1314651.jpg!d"
+               Aspect="AspectFill"
+               AbsoluteLayout.LayoutBounds="1,1,1,1"
+               AbsoluteLayout.LayoutFlags="All"
+               />
+
+        <Label Text="Relax" 
+               HorizontalOptions="Center"
+                   TextColor="White"
+                   FontSize="30"
+                   AbsoluteLayout.LayoutBounds="0.5,0,0.5,0.2"
+                   AbsoluteLayout.LayoutFlags="All"   />
+            <BoxView 
+                Color="Black"
+                Opacity="0.5"
+                AbsoluteLayout.LayoutFlags="All"
+                AbsoluteLayout.LayoutBounds="0.5, 1, 1, 0.1"/>
+            <StackLayout
+                Orientation="Horizontal" 
+                AbsoluteLayout.LayoutBounds="0.5,1,1,0.1" 
+                AbsoluteLayout.LayoutFlags="All">
+                <Label 
+                    Text="Profile" 
+                    TextColor="White" 
+                    HorizontalOptions="Center" 
+                    FontSize="15"/>
+                <Label  
+                    Text="Meditate" 
+                    TextColor="White" 
+                    HorizontalOptions="CenterAndExpand" 
+                    FontSize="15"/>
+                <Label 
+                    Text="Themes" 
+                    TextColor="White" 
+                    HorizontalOptions="Center" 
+                    FontSize="15"/>
+            </StackLayout>
+
+        </AbsoluteLayout>
+    </ContentPage.Content>
+</ContentPage>
