@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="XamarinActivities.RelativePage">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="bannerBoxView" TargetType="BoxView">
+                <Setter Property="BackgroundColor" Value="#d4d4d4" />
+            </Style>
+            <Style x:Key="numberLabel" TargetType="Label">
+                <Setter Property="TextColor" Value="#33353a" />
+                <Setter Property="FontSize" Value="60" />
+                <Setter Property="HorizontalTextAlignment" Value="Center" />
+                <Setter Property="FontAttributes" Value="Bold" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <RelativeLayout>
+
+            <BoxView x:Name="Banner_BoxView"
+                     RelativeLayout.WidthConstraint="{ConstraintExpression
+                         Type=RelativeToParent,
+                         Property=Width,
+                         Factor=1}"
+                     RelativeLayout.HeightConstraint="{ConstraintExpression
+                         Type=RelativeToParent,
+                         Property=Height,
+                         Factor=0.3}"
+                     Style="{StaticResource bannerBoxView}" />
+
+            <Label RelativeLayout.YConstraint="{ConstraintExpression
+                        Type=RelativeToView,
+                        ElementName=Banner_BoxView,
+                        Property=Y,
+                        Factor=1,
+                        Constant=30}"
+                   RelativeLayout.WidthConstraint="{ConstraintExpression
+                        Type=RelativeToView,
+                        ElementName=Banner_BoxView,
+                        Property=Width,
+                        Factor=1}"
+                   Style="{StaticResource numberLabel}"
+                   Text="$11.95" />
+
+            <Button RelativeLayout.YConstraint="{ConstraintExpression}" />
+
+        </RelativeLayout>
+    </ContentPage.Content>
+</ContentPage>
