@@ -15,7 +15,8 @@ namespace App3
             //MainPage = new StackLayout1Page();
             //MainPage = new StackLayout2Page();
             //MainPage = new GridExercise1Page();
-            MainPage = new GridExercise2Page();
+            //MainPage = new GridExercise2Page();
+            MainPage = new AbsoluteLayoutPage();
         }
 
         protected override void OnStart()
