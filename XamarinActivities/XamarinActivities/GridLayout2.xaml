@@ -11,7 +11,7 @@
                 <Label x:Name="lblResult" FontSize="60" TextColor="#fff" VerticalOptions="EndAndExpand" />
             </StackLayout>
             <StackLayout Padding="3" BackgroundColor="#aeaeb0">
-                <Grid ColumnSpacing="3" RowSpacing="3">
+                <Grid ColumnSpacing="2" RowSpacing="2">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="*" />
                         <RowDefinition Height="*" />
