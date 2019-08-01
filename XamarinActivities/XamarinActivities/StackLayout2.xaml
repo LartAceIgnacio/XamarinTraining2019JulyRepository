@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="XamarinActivities.StackLayout2">
+    <ContentPage.Content>
+        <StackLayout Spacing="10">
+            <StackLayout Padding="10,5,5,10">
+                <Label Text="nyc_photographer" Font="18" />
+            </StackLayout>
+            <StackLayout HorizontalOptions="Fill">
+                <Image Source="https://images2.alphacoders.com/743/thumb-1920-743487.jpg"></Image>
+            </StackLayout>
+            <StackLayout Padding="10">
+                <StackLayout Spacing="20" Orientation="Horizontal" >
+                    <Label TextColor="#90C6ED" Text="Like" Font="Bold"></Label>
+                    <Label TextColor="#90C6ED" Text="Comment" Font="Bold"></Label>
+                    <Label TextColor="#90C6ED" Text="Share" Font="Bold"></Label>
+                </StackLayout>
+                <BoxView  Color="#f0f0f0" HeightRequest="1"></BoxView>
+                <StackLayout>
+                    <Label x:Name="lblLikes" Font="Bold"></Label>
+                    <Label x:Name="lblCaption"></Label>
+                </StackLayout>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

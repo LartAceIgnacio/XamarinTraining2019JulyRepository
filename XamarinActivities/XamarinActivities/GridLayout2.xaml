@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="XamarinActivities.GridLayout2">
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="#1F1F1F">
+            <StackLayout HorizontalOptions="Fill" VerticalOptions="FillAndExpand">
+                <Label x:Name="lblResult" FontSize="60" TextColor="#fff" VerticalOptions="EndAndExpand" />
+            </StackLayout>
+            <StackLayout Padding="3" BackgroundColor="#aeaeb0">
+                <Grid ColumnSpacing="3" RowSpacing="3">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    
+                    <Button Clicked="BtnClear_Clicked" x:Name="btnClear" Text="C" Grid.Row="0" Grid.Column="0" FontSize="50" TextColor="#fff" BackgroundColor="#C9C9CB"/>
+                    <Button Clicked="LblResult_ValueChanged" x:Name="btnPositiveNegative" Text="±" Grid.Row="0" Grid.Column="1" FontSize="50" TextColor="#fff" BackgroundColor="#C9C9CB"/>
+                    <Button Clicked="LblResult_ValueChanged" x:Name="btnPercentage" Text="%" Grid.Row="0" Grid.Column="2" FontSize="50" TextColor="#fff" BackgroundColor="#C9C9CB"/>
+                    <Button Clicked="BtnDivide_Clicked" x:Name="btnDivide" Text="÷" Grid.Row="0" Grid.Column="3" FontSize="50" TextColor="#fff" BackgroundColor="#FB8F35" />
+                    <Button Clicked="LblResult_ValueChanged" x:Name="btnNum7" Text="7" Grid.Row="1" Grid.Column="0" FontSize="50" TextColor="#fff" BackgroundColor="#C9C9CB" />
+                    <Button Clicked="LblResult_ValueChanged" x:Name="btnNum8" Text="8" Grid.Row="1" Grid.Column="1" FontSize="50" TextColor="#fff" BackgroundColor="#C9C9CB"/>
+                    <Button Clicked="LblResult_ValueChanged" x:Name="btnNu9" Text="9" Grid.Row="1" Grid.Column="2" FontSize="50" TextColor="#fff" BackgroundColor="#C9C9CB"/>
+                    <Button Clicked="BtnMultiply_Clicked" x:Name="btnMultiply" Text="x" Grid.Row="1" Grid.Column="3" FontSize="50" TextColor="#fff" BackgroundColor="#FB8F35"/>
+                    <Button Clicked="LblResult_ValueChanged" x:Name="btnNum4" Text="4" Grid.Row="2" Grid.Column="0" FontSize="50" TextColor="#fff" BackgroundColor="#C9C9CB"/>
+                    <Button Clicked="LblResult_ValueChanged" x:Name="btnNum5" Text="5" Grid.Row="2" Grid.Column="1" FontSize="50" TextColor="#fff" BackgroundColor="#C9C9CB" />
+                    <Button Clicked="LblResult_ValueChanged" x:Name="btnNum6" Text="6" Grid.Row="2" Grid.Column="2" FontSize="50" TextColor="#fff" BackgroundColor="#C9C9CB"/>
+                    <Button Clicked="BtnSubtract_Clicked" x:Name="btnSubtract" Text="-" Grid.Row="2" Grid.Column="3" FontSize="50" TextColor="#fff" BackgroundColor="#FB8F35" />
+                    <Button Clicked="LblResult_ValueChanged" x:Name="btnNum1" Text="1" Grid.Row="3" Grid.Column="0" FontSize="50" TextColor="#fff" BackgroundColor="#C9C9CB"  />
+                    <Button Clicked="LblResult_ValueChanged" x:Name="btnNum2" Text="2" Grid.Row="3" Grid.Column="1" FontSize="50" TextColor="#fff" BackgroundColor="#C9C9CB"/>
+                    <Button Clicked="LblResult_ValueChanged" x:Name="btnNum3" Text="3" Grid.Row="3" Grid.Column="2" FontSize="50" TextColor="#fff" BackgroundColor="#C9C9CB" />
+                    <Button Clicked="BtnAdd_Clicked" x:Name="btnAdd" Text="+" Grid.Row="3" Grid.Column="3" FontSize="50" TextColor="#fff" BackgroundColor="#FB8F35" />
+                    <Button Clicked="LblResult_ValueChanged" x:Name="btnNum0" Text="0" Grid.Row="4" Grid.ColumnSpan="2" FontSize="50" TextColor="#fff" BackgroundColor="#C9C9CB" />
+                    <Button Clicked="LblResult_ValueChanged" x:Name="btnDot" Text="." Grid.Row="4" Grid.Column="2" FontSize="50" TextColor="#fff" BackgroundColor="#C9C9CB"  />
+                    <Button Clicked="BtnEqual_Clicked" Text="=" Grid.Row="4" Grid.Column="3" FontSize="50" TextColor="#fff" BackgroundColor="#FB8F35" />
+                </Grid>
+            </StackLayout>
+       </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

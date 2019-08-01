@@ -10,7 +10,7 @@ namespace XamarinActivities
         {
             InitializeComponent();
 
-            //MainPage = new QuotePage();
+            //MainPage = new GridLayout2();
             MainPage = new TabbedNavigation();
         }
 

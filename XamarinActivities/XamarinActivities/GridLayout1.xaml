@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="XamarinActivities.GridLayout1"
+             BackgroundColor="#354242">
+    <ContentPage.Content>
+            <Grid Padding="40" ColumnSpacing="10" RowSpacing="10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="2*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <Label x:Name="lblResult" Text="value" Grid.Row="0" Grid.ColumnSpan="3" FontSize="50" TextColor="#fff" HorizontalOptions="Center" />
+                <Button Clicked="LblResult_ValueChanged" Text="1" Grid.Row="1" Grid.Column="0" FontSize="30" TextColor="#28282c" BackgroundColor="#fff" BorderRadius="30" />
+                <Button Clicked="LblResult_ValueChanged" Text="2" Grid.Row="1" Grid.Column="1" FontSize="30" TextColor="#28282c" BackgroundColor="#fff" BorderRadius="30" />
+                <Button Clicked="LblResult_ValueChanged" Text="3" Grid.Row="1" Grid.Column="2" FontSize="30" TextColor="#28282c" BackgroundColor="#fff" BorderRadius="30" />
+                <Button Clicked="LblResult_ValueChanged" Text="4" Grid.Row="2" Grid.Column="0" FontSize="30" TextColor="#28282c" BackgroundColor="#fff" BorderRadius="30" />
+                <Button Clicked="LblResult_ValueChanged" Text="5" Grid.Row="2" Grid.Column="1" FontSize="30" TextColor="#28282c" BackgroundColor="#fff" BorderRadius="30" />
+                <Button Clicked="LblResult_ValueChanged" Text="6" Grid.Row="2" Grid.Column="2" FontSize="30" TextColor="#28282c" BackgroundColor="#fff" BorderRadius="30" />
+                <Button Clicked="LblResult_ValueChanged" Text="7" Grid.Row="3" Grid.Column="0" FontSize="30" TextColor="#28282c" BackgroundColor="#fff" BorderRadius="30" />
+                <Button Clicked="LblResult_ValueChanged" Text="8" Grid.Row="3" Grid.Column="1" FontSize="30" TextColor="#28282c" BackgroundColor="#fff" BorderRadius="30" />
+                <Button Clicked="LblResult_ValueChanged" Text="9" Grid.Row="3" Grid.Column="2" FontSize="30" TextColor="#28282c" BackgroundColor="#fff" BorderRadius="30" />
+                <Button Clicked="LblResult_ValueChanged" Text="0" Grid.Row="4" Grid.Column="1" FontSize="30" TextColor="#28282c" BackgroundColor="#fff" BorderRadius="30" />
+                <Button Clicked="BtnDial_Clicked" Text="Dial" Grid.Row="5" Grid.ColumnSpan="3" FontSize="30" TextColor="#28282c" BackgroundColor="#96ca2d" BorderRadius="30"/>
+            </Grid>
+    </ContentPage.Content>
+</ContentPage>
