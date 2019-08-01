@@ -12,7 +12,7 @@ namespace XAML
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class GridExercise2 : ContentPage
     {
-        public Boolean HasOperation = false;
+        public bool HasOperation = false;
         public GridExercise2()
         {
             InitializeComponent();
