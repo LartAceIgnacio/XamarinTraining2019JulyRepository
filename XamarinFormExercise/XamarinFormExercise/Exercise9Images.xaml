@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="XamarinFormExercise.Exercise9Images">
+    <ContentPage.Content>
+        <StackLayout>
+            <Grid ColumnSpacing="0" RowSpacing="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+               
+                <Image x:Name="imgOne"  Aspect="AspectFill" Grid.Row="0" Grid.Column="0"  />
+                <ActivityIndicator BindingContext="{x:Reference imgOne}"  Grid.Row="0" Grid.Column="0" IsRunning="{Binding IsLoading}" IsEnabled="True" IsVisible="True" Color="Green" BackgroundColor="Transparent"/>
+                <Image x:Name="imgTwo"  Aspect="AspectFill" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" Grid.RowSpan="2" />
+                <ActivityIndicator BindingContext="{x:Reference imgTwo}"  Grid.Row="0" Grid.Column="1" IsRunning="{Binding IsLoading}" IsEnabled="True" IsVisible="True" Color="Green" BackgroundColor="Transparent"/>
+                <Image x:Name="imgThree" Aspect="AspectFill" Grid.Row="1" Grid.Column="0"/>
+                <ActivityIndicator BindingContext="{x:Reference imgThree}"  Grid.Row="1" Grid.Column="0" IsRunning="{Binding IsLoading}" IsEnabled="True" IsVisible="True" Color="Green" BackgroundColor="Transparent"/>
+                <Image x:Name="imgFour" Grid.Row="2" Grid.Column="0" Aspect="AspectFill"/>
+                <ActivityIndicator BindingContext="{x:Reference imgFour}"  Grid.Row="2" Grid.Column="0" IsRunning="{Binding IsLoading}" IsEnabled="True" IsVisible="True" Color="Green" BackgroundColor="Transparent"/>
+                <Image  x:Name="imgFive" Grid.Row="2" Grid.Column="1" Aspect="AspectFill"/>
+                <ActivityIndicator BindingContext="{x:Reference imgFive}"  Grid.Row="2" Grid.Column="1" IsRunning="{Binding IsLoading}" IsEnabled="True" IsVisible="True" Color="Green" BackgroundColor="Transparent"/>
+                <Image x:Name="imgSix"  Grid.Row="2" Grid.Column="2" Aspect="AspectFill"/>
+                <ActivityIndicator BindingContext="{x:Reference imgSix}"  Grid.Row="2" Grid.Column="2" IsRunning="{Binding IsLoading}" IsEnabled="True" IsVisible="True" Color="Green" BackgroundColor="Transparent"/>
+                <Image x:Name="imgSeven"  Grid.Row="3" Grid.Column="0" Aspect="AspectFill"/>
+                <ActivityIndicator BindingContext="{x:Reference imgSeven}"  Grid.Row="3" Grid.Column="0" IsRunning="{Binding IsLoading}" IsEnabled="True" IsVisible="True" Color="Green" BackgroundColor="Transparent"/>
+                <Image  x:Name="imgEight" Grid.Row="3" Grid.Column="1" Aspect="AspectFill"/>
+                <ActivityIndicator BindingContext="{x:Reference imgEight}"  Grid.Row="3" Grid.Column="1" IsRunning="{Binding IsLoading}" IsEnabled="True" IsVisible="True" Color="Green" BackgroundColor="Transparent"/>
+                <Image x:Name="imgNine"  Grid.Row="3" Grid.Column="2" Aspect="AspectFill"/>
+                <ActivityIndicator BindingContext="{x:Reference imgNine}"  Grid.Row="3" Grid.Column="2" IsRunning="{Binding IsLoading}" IsEnabled="True" IsVisible="True" Color="Green" BackgroundColor="Transparent"/>
+                <Image   x:Name="imgTen"  Grid.Row="4" Grid.Column="0" Aspect="AspectFill"/>
+                <ActivityIndicator BindingContext="{x:Reference imgTen}"  Grid.Row="4" Grid.Column="0" IsRunning="{Binding IsLoading}" IsEnabled="True" IsVisible="True" Color="Green" BackgroundColor="Transparent"/>
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

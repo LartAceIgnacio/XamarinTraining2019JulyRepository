@@ -4,6 +4,7 @@ using System.Linq;
 
 using Foundation;
 using UIKit;
+using ImageCircle.Forms.Plugin.iOS;
 
 namespace XamarinFormExercise.iOS
 {
@@ -23,6 +24,8 @@ namespace XamarinFormExercise.iOS
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
             global::Xamarin.Forms.Forms.Init();
+            ImageCircleRenderer.Init(); // Rounded image
+
             LoadApplication(new App());
 
             return base.FinishedLaunching(app, options);

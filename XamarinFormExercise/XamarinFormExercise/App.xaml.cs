@@ -17,7 +17,9 @@ namespace XamarinFormExercise
             //MainPage = new Exercise5GridLayout1();
             // MainPage = new Exercise6GridLayout2();
             // MainPage = new Exercise7AbsoluteLayout();
-            MainPage = new Exercise8RelativeLayout();
+            //MainPage = new Exercise8RelativeLayout();
+            // MainPage = new Practice();
+            MainPage = new Exercise9Images();
         }
 
         protected override void OnStart()
