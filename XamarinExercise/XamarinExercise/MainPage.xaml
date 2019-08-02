@@ -37,8 +37,12 @@
                 Clicked='Ex7_Clicked'/>
 
             <Button x:Name="ex8"
-                Text="Exercise7"
+                Text="Exercise8"
                 Clicked='Ex8_Clicked'/>
+
+            <Button x:Name="ex9"
+                Text="Exercise9"
+                Clicked="Ex9_Clicked"/>
 
         </StackLayout>
     </ScrollView>

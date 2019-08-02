@@ -58,5 +58,10 @@ namespace XamarinExercise
             await Navigation.PushAsync(new RelativeLayoutPage());
 
         }
+
+        private async void Ex9_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new ImagePage());
+        }
     }
 }

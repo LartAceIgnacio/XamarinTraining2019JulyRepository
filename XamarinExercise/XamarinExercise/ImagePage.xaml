@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="XamarinExercise.ImagePage">
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="#ccdaf0"
+                     Padding="10">
+            <Grid>
+
+                <Grid.RowDefinitions>
+
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+
+                </Grid.ColumnDefinitions>
+
+                <AbsoluteLayout Grid.Row="0" 
+                                Grid.Column="0">
+                    <ActivityIndicator 
+                        AbsoluteLayout.LayoutBounds="0.5,0.5,1,1"
+                        AbsoluteLayout.LayoutFlags="All"
+                        IsRunning="{Binding Source={x:Reference image}, Path=IsLoading}"
+                        Color="White"/>
+                    <Image x:Name="image"
+                           Aspect="AspectFill"
+                           HorizontalOptions="CenterAndExpand"
+	                       VerticalOptions ="CenterAndExpand">
+                        <Image.Source>
+                            <UriImageSource Uri="https://tinyurl.com/y2hvt72y" 
+			                    CachingEnabled="False"/>
+                        </Image.Source>
+                    </Image>
+                </AbsoluteLayout>
+
+                <AbsoluteLayout Grid.Row="0"
+                                Grid.Column="1"
+                                Grid.RowSpan="2"
+                                Grid.ColumnSpan="2">
+                    <ActivityIndicator 
+                        AbsoluteLayout.LayoutBounds="0.5,0.5,1,1"
+                        AbsoluteLayout.LayoutFlags="All"
+                        IsRunning="{Binding Source={x:Reference image1}, Path=IsLoading}"
+                        Color="White"/>
+                    <Image x:Name="image1"
+                           Aspect="AspectFill"
+                           HorizontalOptions="CenterAndExpand"
+	                       VerticalOptions ="CenterAndExpand">
+                        <Image.Source>
+                            <UriImageSource Uri="https://tinyurl.com/yyuywv5l" 
+			                    CachingEnabled="False"/>
+                        </Image.Source>
+                    </Image>
+                </AbsoluteLayout>
+
+                <AbsoluteLayout Grid.Row="1" 
+                                Grid.Column="0">
+                    <ActivityIndicator 
+                        AbsoluteLayout.LayoutBounds="0.5,0.5,1,1"
+                        AbsoluteLayout.LayoutFlags="All"
+                        IsRunning="{Binding Source={x:Reference image2}, Path=IsLoading}"
+                        Color="White"/>
+                    <Image x:Name="image2"
+                           Aspect="AspectFill"
+                           HorizontalOptions="CenterAndExpand"
+	                       VerticalOptions ="CenterAndExpand">
+                        <Image.Source>
+                            <UriImageSource Uri="https://tinyurl.com/yypw59xh" 
+			                    CachingEnabled="False"/>
+                        </Image.Source>
+                    </Image>
+                </AbsoluteLayout>
+
+                <AbsoluteLayout Grid.Row="2" 
+                                Grid.Column="0">
+                    <ActivityIndicator 
+                        AbsoluteLayout.LayoutBounds="0.5,0.5,1,1"
+                        AbsoluteLayout.LayoutFlags="All"
+                        IsRunning="{Binding Source={x:Reference image3}, Path=IsLoading}"
+                        Color="White"/>
+                    <Image x:Name="image3"
+                           Aspect="AspectFill"
+                           HorizontalOptions="CenterAndExpand"
+	                       VerticalOptions ="CenterAndExpand">
+                        <Image.Source>
+                            <UriImageSource Uri="https://tinyurl.com/y22razxu" 
+			                    CachingEnabled="False"/>
+                        </Image.Source>
+                    </Image>
+                </AbsoluteLayout>
+
+
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

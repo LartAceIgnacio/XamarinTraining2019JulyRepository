@@ -16,8 +16,8 @@ namespace XamarinExercise
             //MainPage = new LoginPage();
             //MainPage = new CalculatorPage();
             //MainPage = new DialerPage();
-            MainPage = new RelativeLayoutPage();
-            //MainPage = new NavigationPage(new MainPage());
+            //MainPage = new RelativeLayoutPage();
+            MainPage = new NavigationPage(new MainPage());
         }
 
         protected override void OnStart()
