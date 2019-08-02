@@ -5,17 +5,19 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="TestXamarin.MainPage">
-
-    <StackLayout>
-        <Button x:Name="GoToExercise1" Text="Quotes" Clicked="GoToExercise1_Clicked"/>
-        <Button x:Name="GoToExercise2" Text="RGB Slider" Clicked="GoToExercise2_Clicked"/>
-        <Button x:Name="GoToExercise3A" Text="Stack Layout 1" Clicked="GoToExercise3A_Clicked"/>
-        <Button x:Name="GoToExercise3B" Text="Stack Layout 2" Clicked="GoToExercise3B_Clicked"/>
-        <Button x:Name="GoToExercise4A" Text="Grid Layout 1" Clicked="GoToExercise4A_Clicked"/>
-        <Button x:Name="GoToExercise4B" Text="Grid Layout 2" Clicked="GoToExercise4B_Clicked"/>
-        <Button x:Name="GoToExercise5" Text="Absolute Layout" Clicked="GoToExercise5_Clicked"/>
-        <Button x:Name="GoToExercise6" Text="Relative Layout" Clicked="GoToExercise6_Clicked"/>
-    </StackLayout>
-
-
+    <ScrollView>
+        <StackLayout>
+            <Label Text="Test Xamarin" HorizontalOptions="CenterAndExpand" />
+            <Button x:Name="GoToExercise1" Text="Quotes" Clicked="GoToExercise1_Clicked"/>
+            <Button x:Name="GoToExercise2" Text="RGB Slider" Clicked="GoToExercise2_Clicked"/>
+            <Button x:Name="GoToExercise3A" Text="Stack Layout 1" Clicked="GoToExercise3A_Clicked"/>
+            <Button x:Name="GoToExercise3B" Text="Stack Layout 2" Clicked="GoToExercise3B_Clicked"/>
+            <Button x:Name="GoToExercise4A" Text="Grid Layout 1" Clicked="GoToExercise4A_Clicked"/>
+            <Button x:Name="GoToExercise4B" Text="Grid Layout 2" Clicked="GoToExercise4B_Clicked"/>
+            <Button x:Name="GoToExercise5" Text="Absolute Layout" Clicked="GoToExercise5_Clicked"/>
+            <Button x:Name="GoToExercise6" Text="Relative Layout" Clicked="GoToExercise6_Clicked"/>
+            <Button x:Name="GoToRoundedImg" Text="Rounded Image" Clicked="GoToRoundedImg_Clicked"/>
+            <Button x:Name="GoToImageLoadingGrid" Text="Image Loading Grid" Clicked="GoToImageLoadingGrid_Clicked"/>
+        </StackLayout>
+    </ScrollView>
 </ContentPage>

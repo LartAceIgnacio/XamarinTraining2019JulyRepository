@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+
 using Xamarin.Forms;
 
 namespace TestXamarin
@@ -70,6 +71,16 @@ namespace TestXamarin
         private async void GoToExercise6_Clicked(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new RelativeLayout());
+        }
+
+        private async void GoToRoundedImg_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new RoundImageDemo());
+        }
+
+        private async void GoToImageLoadingGrid_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new ImageLoadingGrid());
         }
     }
 }

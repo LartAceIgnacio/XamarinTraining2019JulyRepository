@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="TestXamarin.ImageLoadingGrid">
+    <ContentPage.Content>
+        <!--ScrollView -->
+        <StackLayout>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <!-- Image 01 -->
+                <Image x:Name="Image01" Aspect="AspectFill" Grid.Row="0" Grid.Column="0">
+                    <Image.Source>
+                        <UriImageSource 
+                            Uri="https://wc-ahba9see.c.sakurastorage.jp/max-1200/87/3e7a272d03a381bdb2dbad063dbe6bdbe36058dd-740.jpg"
+                            CachingEnabled="False"/>
+                    </Image.Source>
+                </Image>
+                <ActivityIndicator Grid.Row="0" Grid.Column="0" 
+                    VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"
+                    BindingContext="{x:Reference Image01}" IsRunning="{Binding IsLoading}" />
+                <!-- Image 02 -->
+                <Image x:Name="Image02" Aspect="AspectFill" Grid.Row="0" Grid.Column="1" 
+                       Grid.ColumnSpan="2" Grid.RowSpan="2">
+                    <Image.Source>
+                        <UriImageSource 
+                            Uri="https://wc-ahba9see.c.sakurastorage.jp/87/obbxmvijlyxmsmaxajlngjuaacsewkvehcbeisqp-740.jpg"
+                            CachingEnabled="False"/>
+                    </Image.Source>
+                </Image>
+                <ActivityIndicator Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2"
+                    VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"
+                    BindingContext="{x:Reference Image02}" IsRunning="{Binding IsLoading}" />
+                <!-- Image 03 -->
+                <Image x:Name="Image03" Aspect="AspectFill" Grid.Row="1" Grid.Column="0">
+                    <Image.Source>
+                        <UriImageSource 
+                            Uri="https://wc-ahba9see.c.sakurastorage.jp/87/erhsjgdjnywssfscxuzdthlrbsplwnmfqkmcodmy-740.jpg"
+                            CachingEnabled="False"/>
+                    </Image.Source>
+                </Image>
+                <ActivityIndicator Grid.Row="1" Grid.Column="0"
+                    VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"
+                    BindingContext="{x:Reference Image03}" IsRunning="{Binding IsLoading}" />
+                <!-- Image 04 -->
+                <Image x:Name="Image04" Aspect="AspectFill" Grid.Row="2" Grid.Column="0"
+                       Grid.ColumnSpan="2" Grid.RowSpan="2">
+                    <Image.Source>
+                        <UriImageSource 
+                            Uri="https://wc-ahba9see.c.sakurastorage.jp/87/omltcpnidzkgwryladnoxjlksrsfkwpueyrxmwtr-740.jpg"
+                            CachingEnabled="False"/>
+                    </Image.Source>
+                </Image>
+                <ActivityIndicator Grid.Row="2" Grid.Column="0"
+                    VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"
+                    BindingContext="{x:Reference Image04}" IsRunning="{Binding IsLoading}" />
+                <!-- Image 05 -->
+                <Image x:Name="Image05" Aspect="AspectFill" Grid.Row="2" Grid.Column="2">
+                    <Image.Source>
+                        <UriImageSource 
+                            Uri="https://wc-ahba9see.c.sakurastorage.jp/87/ijqcbwbuyilabdtxeyoeunjgyjuxegljmytrjmdc-740.jpg"
+                            CachingEnabled="False"/>
+                    </Image.Source>
+                </Image>
+                <ActivityIndicator Grid.Row="2" Grid.Column="2"
+                    VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"
+                    BindingContext="{x:Reference Image05}" IsRunning="{Binding IsLoading}" />
+                <!-- Image 06 -->
+                <Image x:Name="Image06" Aspect="AspectFill" Grid.Row="3" Grid.Column="2">
+                    <Image.Source>
+                        <UriImageSource 
+                            Uri="https://wc-ahba9see.c.sakurastorage.jp/87/jlxvghzrblrmnmveifaapwijqofyjbzhnzkipzph-740.jpg"
+                            CachingEnabled="False"/>
+                    </Image.Source>
+                </Image>
+                <ActivityIndicator Grid.Row="3" Grid.Column="2"
+                    VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"
+                    BindingContext="{x:Reference Image06}" IsRunning="{Binding IsLoading}" />
+                <!-- Image 07 -->
+                <Image x:Name="Image07" Aspect="AspectFill" Grid.Row="4" Grid.Column="0">
+                    <Image.Source>
+                        <UriImageSource 
+                            Uri="https://wc-ahba9see.c.sakurastorage.jp/87/tpdouahulgvcwqgkeufjzgoiyohnykklgfytlkyd-740.jpg"
+                            CachingEnabled="False"/>
+                    </Image.Source>
+                </Image>
+                <ActivityIndicator Grid.Row="4" Grid.Column="0"
+                    VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"
+                    BindingContext="{x:Reference Image07}" IsRunning="{Binding IsLoading}" />
+                <!-- Image 08 -->
+                <Image x:Name="Image08" Aspect="AspectFill" Grid.Row="4" Grid.Column="1">
+                    <Image.Source>
+                        <UriImageSource 
+                            Uri="https://wc-ahba9see.c.sakurastorage.jp/87/fmzuhcryutqclbisasxvqwjfmmekbipqwacavskj-740.jpg"
+                            CachingEnabled="False"/>
+                    </Image.Source>
+                </Image>
+                <ActivityIndicator Grid.Row="4" Grid.Column="1"
+                    VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"
+                    BindingContext="{x:Reference Image08}" IsRunning="{Binding IsLoading}" />
+                <!-- Image 09 -->
+                <Image x:Name="Image09" Aspect="AspectFill" Grid.Row="4" Grid.Column="2">
+                    <Image.Source>
+                        <UriImageSource 
+                            Uri="https://wc-ahba9see.c.sakurastorage.jp/87/yrwsadmybolboxnlthihmspcfpmuxxyfvdcfakex-740.jpg"
+                            CachingEnabled="False"/>
+                    </Image.Source>
+                </Image>
+                <ActivityIndicator Grid.Row="4" Grid.Column="2"
+                    VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"
+                    BindingContext="{x:Reference Image09}" IsRunning="{Binding IsLoading}" />
+                
+            </Grid>
+        </StackLayout>
+        <!--/ScrollView -->
+    </ContentPage.Content>
+</ContentPage>
