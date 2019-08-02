@@ -13,6 +13,8 @@
         <Button x:Name="GoToExercise3B" Text="Stack Layout 2" Clicked="GoToExercise3B_Clicked"/>
         <Button x:Name="GoToExercise4A" Text="Grid Layout 1" Clicked="GoToExercise4A_Clicked"/>
         <Button x:Name="GoToExercise4B" Text="Grid Layout 2" Clicked="GoToExercise4B_Clicked"/>
+        <Button x:Name="GoToExercise5" Text="Absolute Layout" Clicked="GoToExercise5_Clicked"/>
+        <Button x:Name="GoToExercise6" Text="Relative Layout" Clicked="GoToExercise6_Clicked"/>
     </StackLayout>
 
 

@@ -13,7 +13,7 @@ namespace TestXamarin
     public partial class QuotesPage : ContentPage
     {
 
-        String[] quotes = new string[]
+        String[] _quotes = new string[]
         {
                 "Chance favors the prepared mind",
                 "Hardwork and discipline beats talent",
@@ -29,7 +29,7 @@ namespace TestXamarin
         {
             InitializeComponent();
             this.Slider.Value = 16;
-            SetQuote(quotes[i]);
+            SetQuote(_quotes[i]);
         }
 
         public void SetQuote(String text)
@@ -41,19 +41,19 @@ namespace TestXamarin
         {
             if (i == 0)
             {
-                i = quotes.Length - 1;
+                i = _quotes.Length - 1;
             }
             else
             {
                 i--;
             }
 
-            SetQuote(quotes[i]);
+            SetQuote(_quotes[i]);
         }
 
         private void NextBtn_Clicked(object sender, EventArgs e)
         {
-            if (i == quotes.Length - 1)
+            if (i == _quotes.Length - 1)
             {
                 i = 0;
             }
@@ -61,7 +61,7 @@ namespace TestXamarin
             {
                 i++;
             }
-            SetQuote(quotes[i]);
+            SetQuote(_quotes[i]);
         }
 
         private void Slider_ValueChanged(object sender, ValueChangedEventArgs e)

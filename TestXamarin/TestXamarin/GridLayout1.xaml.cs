@@ -12,7 +12,7 @@ namespace TestXamarin
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class GridLayout1 : ContentPage
     {
-        private List<string> DialDisplay = new List<string>();
+        private List<string> _DialDisplay = new List<string>();
         public GridLayout1()
         {
             InitializeComponent();
@@ -20,74 +20,74 @@ namespace TestXamarin
 
         private void UpdateLblDisplay()
         {
-            this.LblDisplay.Text = String.Join(String.Empty, DialDisplay);
+            this.LblDisplay.Text = String.Join(String.Empty, _DialDisplay);
         }
 
         private void Btn1_Clicked(object sender, EventArgs e)
         {
-            DialDisplay.Add("1");
+            _DialDisplay.Add("1");
             UpdateLblDisplay();
         }
 
         private void Btn2_Clicked(object sender, EventArgs e)
         {
-            DialDisplay.Add("2");
+            _DialDisplay.Add("2");
             UpdateLblDisplay();
         }
 
         private void Btn3_Clicked(object sender, EventArgs e)
         {
-            DialDisplay.Add("3");
+            _DialDisplay.Add("3");
             UpdateLblDisplay();
         }
 
         private void Btn4_Clicked(object sender, EventArgs e)
         {
-            DialDisplay.Add("4");
+            _DialDisplay.Add("4");
             UpdateLblDisplay();
         }
 
         private void Btn5_Clicked(object sender, EventArgs e)
         {
-            DialDisplay.Add("5");
+            _DialDisplay.Add("5");
             UpdateLblDisplay();
         }
 
         private void Btn6_Clicked(object sender, EventArgs e)
         {
-            DialDisplay.Add("6");
+            _DialDisplay.Add("6");
             UpdateLblDisplay();
         }
 
         private void Btn7_Clicked(object sender, EventArgs e)
         {
-            DialDisplay.Add("7");
+            _DialDisplay.Add("7");
             UpdateLblDisplay();
         }
 
         private void Btn8_Clicked(object sender, EventArgs e)
         {
-            DialDisplay.Add("8");
+            _DialDisplay.Add("8");
             UpdateLblDisplay();
         }
 
         private void Btn9_Clicked(object sender, EventArgs e)
         {
-            DialDisplay.Add("9");
+            _DialDisplay.Add("9");
             UpdateLblDisplay();
         }
 
         private void Btn0_Clicked(object sender, EventArgs e)
         {
-            DialDisplay.Add("0");
+            _DialDisplay.Add("0");
             UpdateLblDisplay();
         }
 
         private void BtnBackspace_Clicked(object sender, EventArgs e)
         {
-            if(DialDisplay.Count() > 0)
+            if(_DialDisplay.Count() > 0)
             {
-                DialDisplay.Remove(DialDisplay.Last());
+                _DialDisplay.Remove(_DialDisplay.Last());
                 UpdateLblDisplay();
             }
         }

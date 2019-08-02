@@ -61,5 +61,15 @@ namespace TestXamarin
         {
             await Navigation.PushAsync(new GridLayout2());
         }
+
+        private async void GoToExercise5_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new AbsoluteLayout());
+        }
+
+        private async void GoToExercise6_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new RelativeLayout());
+        }
     }
 }
