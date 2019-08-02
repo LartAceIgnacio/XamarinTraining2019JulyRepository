@@ -5,6 +5,8 @@ using System.Linq;
 using Foundation;
 using UIKit;
 
+using ImageCircle.Forms.Plugin.iOS;
+
 namespace XamarinActivities.iOS
 {
     // The UIApplicationDelegate for the application. This class is responsible for launching the 
@@ -24,6 +26,8 @@ namespace XamarinActivities.iOS
         {
             global::Xamarin.Forms.Forms.Init();
             LoadApplication(new App());
+
+            ImageCircleRenderer.Init();
 
             return base.FinishedLaunching(app, options);
         }

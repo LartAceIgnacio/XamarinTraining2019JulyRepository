@@ -10,9 +10,7 @@
                Aspect="AspectFill"
                AbsoluteLayout.LayoutBounds="1, 1, 1, 1" 
                AbsoluteLayout.LayoutFlags="All"></Image>
-        <Label Text="Relax" 
-               FontSize="30"
-               TextColor="White"
+        <Label Text="Relax" FontSize="30" TextColor="White"
                HorizontalOptions="Center"
                AbsoluteLayout.LayoutBounds="0.5, 20, 100, 40" 
                AbsoluteLayout.LayoutFlags="XProportional"></Label>
@@ -24,16 +22,13 @@
                      Spacing="30"
                      AbsoluteLayout.LayoutBounds="0.5, 1, 1, 0.1" 
                      AbsoluteLayout.LayoutFlags="All">
-            <Label Text="Profile" 
-                   TextColor="White"
+            <Label Text="Profile" TextColor="White"
                    FontSize="15"
                    HorizontalOptions="Center"></Label>
-            <Label Text="Medidate" 
-                   TextColor="White"
+            <Label Text="Medidate" TextColor="White"
                    FontSize="15"
                    HorizontalOptions="CenterAndExpand"></Label>
-            <Label Text="Themes" 
-                   TextColor="White"
+            <Label Text="Themes" TextColor="White"
                    FontSize="15"
                    HorizontalOptions="Center"></Label>
         </StackLayout>
