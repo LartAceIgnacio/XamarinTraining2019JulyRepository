@@ -39,8 +39,10 @@
             <Button Text="Add $7.99 Credit"
                     FontSize="15"
                     BackgroundColor="#1695A3"
+                    TextColor="White"
                     BorderRadius="15"
                     HeightRequest="30"
+                    Padding="5"
                     FontAttributes="Bold"
                     RelativeLayout.WidthConstraint =
                     "{ConstraintExpression Type=RelativeToView,
@@ -59,7 +61,7 @@
                                                 Property=Height,
                                                 Constant=30}"
                          HorizontalOptions="CenterAndExpand"
-                         Padding="30">
+                         Padding="30, 0, 30, 0">
                 <Label Text="Why pay for credit?"
                        FontSize="15"
                        FontAttributes="Bold"
