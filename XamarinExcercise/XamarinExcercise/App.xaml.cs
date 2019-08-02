@@ -14,8 +14,9 @@ namespace XamarinExcercise
             //MainPage = new StackLayout1();
             //MainPage = new StackLayout2();
             //MainPage = new GridExercise1();
-            MainPage = new GridExercise2();
-
+            //MainPage = new GridExercise2();
+            //MainPage = new AbsoluteLayoutExercise();
+            MainPage = new RelativeLayoutExercise();
         }
 
         protected override void OnStart()

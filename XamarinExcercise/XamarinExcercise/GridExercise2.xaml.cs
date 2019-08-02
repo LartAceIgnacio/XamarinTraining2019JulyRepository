@@ -13,7 +13,7 @@ namespace XamarinExcercise
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class GridExercise2 : ContentPage
     {
-        double output = 0;
+        //double output = 0;
         string equation = " ";
         bool equate = false;
         double result = 0;

@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="XamarinExcercise.AbsoluteLayoutExercise">
+    <ContentPage.Content>
+        <AbsoluteLayout>
+
+            <!--<BoxView AbsoluteLayout.LayoutBounds="0, 0, 1, 1"
+                     AbsoluteLayout.LayoutFlags="All"
+                     BackgroundColor="Gold"
+                     />-->
+            <Image
+                Source="https://i.pinimg.com/originals/48/c5/0b/48c50bf3230510cee5f2622357475cc0.jpg"
+                Aspect="AspectFill"
+                AbsoluteLayout.LayoutBounds="0, 0, 1, 1"
+                     AbsoluteLayout.LayoutFlags="All"
+                />
+            <Label Text="Relax" TextColor="DimGray" 
+                   AbsoluteLayout.LayoutBounds="0.5, 20, 100, 100"
+                   AbsoluteLayout.LayoutFlags="XProportional"
+                   FontSize="30"/>
+            <BoxView
+                    AbsoluteLayout.LayoutBounds="0, 1, 1, 100"
+                    AbsoluteLayout.LayoutFlags="YProportional,WidthProportional" 
+                    BackgroundColor="Black"
+                    Opacity="0.5"
+            />
+
+            <StackLayout Orientation="Horizontal"   
+                    AbsoluteLayout.LayoutBounds="0, 1, 1, 100"
+                    AbsoluteLayout.LayoutFlags="YProportional,WidthProportional" 
+                Padding="30,0" >
+                <Label Text="Profile" FontSize="15" HorizontalOptions="Center" 
+                       VerticalOptions="Center"
+                       TextColor="white"/>
+                <Label Text="Meditate" FontSize="15" HorizontalOptions="CenterAndExpand"
+                       VerticalOptions="Center"
+                       TextColor="white"/>
+                <Label Text="Themes" FontSize="15" HorizontalOptions="Center"
+                       VerticalOptions="Center"
+                       TextColor="white"/>
+            </StackLayout>
+
+        </AbsoluteLayout>
+        
+    </ContentPage.Content>
+</ContentPage>

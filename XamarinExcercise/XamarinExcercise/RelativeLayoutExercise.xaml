@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="XamarinExcercise.RelativeLayoutExercise">
+    <ContentPage.Content>
+        <RelativeLayout>
+            <BoxView x:Name="BannerBox" RelativeLayout.HeightConstraint="{ConstraintExpression 
+                Type=RelativeToParent,
+                Property=Height,
+                Factor=0.3333}"
+                     RelativeLayout.WidthConstraint="{ConstraintExpression 
+                Type=RelativeToParent,
+                Property=Width,
+                Factor=1}"
+                BackgroundColor="#f7f7f7"/>
+            
+            <StackLayout x:Name="Stack1" HorizontalOptions="Center" VerticalOptions="Center"
+                         RelativeLayout.HeightConstraint="{ConstraintExpression
+                Type=RelativeToParent,
+                Property=Height,Factor=0.3333}"
+                         RelativeLayout.WidthConstraint="{ConstraintExpression
+                Type=RelativeToParent,
+                Property=Width,Factor=1}">
+                <Label Text="$11.95" TextColor="#33353a"
+                   FontSize="60"
+                   FontAttributes="Bold"/>
+
+                <Button Text="Add $7.99 Credit" Padding="5"
+                        BackgroundColor="#1695A3"
+                        TextColor="White"
+                        CornerRadius="15"
+                        HeightRequest="30"
+                        FontSize="15"
+                        FontAttributes="Bold"/>
+
+                
+            </StackLayout>
+            <StackLayout Spacing="30" Padding="40, 0, 40, 0" HorizontalOptions="Center" VerticalOptions="Center"
+                        RelativeLayout.YConstraint="{ConstraintExpression
+                    Type=RelativeToView,
+                    ElementName=BannerBox,
+                    Property=Height,
+                    Factor=1,Constant=30}">
+
+                <Label x:Name="WhyLabel" Text="Why pay for credits?"
+                       FontSize="15" FontAttributes="Bold" TextColor="#33353a"
+                       HorizontalTextAlignment="Center"/>
+                <Label  Text="Because you can reach people who aren't on SkyApp by calling mobile and landline numbers, or spending SMS, at low-cost rates."
+                       FontSize="13" FontAttributes="Bold" TextColor="#33353a"
+                       HorizontalTextAlignment="Center"/>
+            </StackLayout>
+        </RelativeLayout>
+    </ContentPage.Content>
+</ContentPage>
