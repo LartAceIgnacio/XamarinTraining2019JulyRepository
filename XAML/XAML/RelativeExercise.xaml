@@ -7,7 +7,7 @@
              x:Class="XAML.RelativeExercise">
     <ContentPage.Content>
         <RelativeLayout>
-            <BoxView Color="#f7f7f7" x:Name="TopBanner"
+            <BoxView Color="#f7f7f7" x:Name="TopBannerBoxView"
                      RelativeLayout.WidthConstraint =
                      "{ConstraintExpression Type=RelativeToParent,
                                             Property=Width,
@@ -15,19 +15,59 @@
                      RelativeLayout.HeightConstraint =
                      "{ConstraintExpression Type=RelativeToParent,
                                             Property=Height,
-                                            Factor=0.3}" />
+                                            Factor=0.3333}" />
+
+
+
+            <StackLayout Orientation="Vertical"
+                         RelativeLayout.WidthConstraint =
+                         "{ConstraintExpression Type=RelativeToParent,
+                                                Property=Width,
+                                                Factor=1}"
+                         RelativeLayout.HeightConstraint =
+                         "{ConstraintExpression Type=RelativeToView,
+                                                ElementName=TopBannerBoxView,
+                                                Property=Height,
+                                                Factor=1}"
+                         HorizontalOptions="CenterAndExpand"
+                         VerticalOptions="CenterAndExpand">
             <Label Text="$11.95"
-                   TextColor="#33353a"
-                   FontSize="60"
-                   FontAttributes="Bold"
-                   RelativeLayout.XConstraint =
-                     "{ConstraintExpression Type=RelativeToParent,
-                                            Property=Width,
-                                            Factor=0.30}"
-                     RelativeLayout.YConstraint =
-                     "{ConstraintExpression Type=RelativeToParent,
-                                            Property=Height,
-                                            Factor=0.10}" />
+                          FontSize="60"
+                          FontAttributes="Bold"
+                          x:Name="lblPrice"/>
+
+            <Button Text="Add $7.99 Credit"
+                    FontSize="15"
+                    BackgroundColor="#1695A3"
+                    BorderRadius="15"
+                    HeightRequest="30"
+                    FontAttributes="Bold"
+                    RelativeLayout.WidthConstraint =
+                    "{ConstraintExpression Type=RelativeToView,
+                                           ElementName=lblPrice,
+                                           Property=Width,
+                                           Factor=1}"/>
+            </StackLayout>
+
+            <StackLayout RelativeLayout.WidthConstraint =
+                         "{ConstraintExpression Type=RelativeToParent,
+                                                Property=Width,
+                                                Factor=1}"
+                         RelativeLayout.YConstraint =
+                         "{ConstraintExpression Type=RelativeToView,
+                                                ElementName=TopBannerBoxView,
+                                                Property=Height,
+                                                Constant=30}"
+                         HorizontalOptions="CenterAndExpand"
+                         Padding="30">
+                <Label Text="Why pay for credit?"
+                       FontSize="15"
+                       FontAttributes="Bold"
+                       HorizontalTextAlignment="Center"/>
+                <Label Text="Because you can reach people who aren't on SkyApp by calling mobile and landline number, or spending SMS, at low-cost rates."
+                       HorizontalTextAlignment="Center"/>
+            </StackLayout>
+            
         </RelativeLayout>
     </ContentPage.Content>
 </ContentPage>
