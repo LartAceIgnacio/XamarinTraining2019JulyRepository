@@ -7,15 +7,39 @@
              x:Class="XamarinActivities.RelativePage">
     <ContentPage.Resources>
         <ResourceDictionary>
+            
             <Style x:Key="bannerBoxView" TargetType="BoxView">
-                <Setter Property="BackgroundColor" Value="#d4d4d4" />
+                <Setter Property="BackgroundColor" Value="#f7f7f7" />
             </Style>
+            
             <Style x:Key="numberLabel" TargetType="Label">
                 <Setter Property="TextColor" Value="#33353a" />
                 <Setter Property="FontSize" Value="60" />
-                <Setter Property="HorizontalTextAlignment" Value="Center" />
                 <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
             </Style>
+            
+            <Style x:Key="addCreditButton" TargetType="Button">
+                <Setter Property="FontSize" Value="15" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="TextColor" Value="White" />
+                <Setter Property="BackgroundColor" Value="#1695A3" />
+                <Setter Property="HeightRequest" Value="30" />
+                <Setter Property="BorderRadius" Value="15" />
+                <Setter Property="Padding" Value="5" />
+            </Style>
+            
+            <Style x:Key="creditLabel" TargetType="Label">
+                <Setter Property="FontSize" Value="15" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="HorizontalTextAlignment" Value="Center" />
+            </Style>
+            
+            <Style x:Key="descriptionLabel" TargetType="Label">
+                <Setter Property="FontSize" Value="15" />
+                <Setter Property="HorizontalTextAlignment" Value="Center" />
+            </Style>
+            
         </ResourceDictionary>
     </ContentPage.Resources>
     <ContentPage.Content>
@@ -29,24 +53,49 @@
                      RelativeLayout.HeightConstraint="{ConstraintExpression
                          Type=RelativeToParent,
                          Property=Height,
-                         Factor=0.3}"
+                         Factor=0.33}"
                      Style="{StaticResource bannerBoxView}" />
 
-            <Label RelativeLayout.YConstraint="{ConstraintExpression
-                        Type=RelativeToView,
-                        ElementName=Banner_BoxView,
-                        Property=Y,
-                        Factor=1,
-                        Constant=30}"
-                   RelativeLayout.WidthConstraint="{ConstraintExpression
-                        Type=RelativeToView,
-                        ElementName=Banner_BoxView,
-                        Property=Width,
-                        Factor=1}"
-                   Style="{StaticResource numberLabel}"
-                   Text="$11.95" />
+            <StackLayout RelativeLayout.HeightConstraint="{ConstraintExpression
+                            Type=RelativeToView,
+                            ElementName=Banner_BoxView,
+                            Property=Height,
+                            Factor=1}"
+                         RelativeLayout.WidthConstraint="{ConstraintExpression
+                            Type=RelativeToView,
+                            ElementName=Banner_BoxView,
+                            Property=Width,
+                            Factor=1}"
+                         VerticalOptions="CenterAndExpand"
+                         HorizontalOptions="CenterAndExpand">
+                
+                <Label x:Name="Balance_Label"
+                       Style="{StaticResource numberLabel}"
+                       Text="$11.95" />
 
-            <Button RelativeLayout.YConstraint="{ConstraintExpression}" />
+                <Button Style="{StaticResource addCreditButton}"
+                        Text="Add $7.99 Credit"/>
+                
+            </StackLayout>
+
+            <StackLayout RelativeLayout.WidthConstraint="{ConstraintExpression
+                             Type=RelativeToParent,
+                             Property=Width,
+                             Factor=1}"
+                         RelativeLayout.YConstraint="{ConstraintExpression
+                            Type=RelativeToParent,
+                            Property=Height,
+                            Factor=0.33,
+                            Constant=30}"
+                         Padding="40, 0, 40, 0">
+                
+                <Label Style="{StaticResource creditLabel}"
+                       Text="Why pay for credit?" />
+                
+                <Label Style="{StaticResource descriptionLabel}"
+                       Text="Because you can reach people who aren't on SkypeApp by calling mobile and landline number, or spending SMS, at low-cost rates" />
+                
+            </StackLayout>
 
         </RelativeLayout>
     </ContentPage.Content>
