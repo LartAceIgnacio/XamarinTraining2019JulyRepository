@@ -6,10 +6,74 @@
              mc:Ignorable="d"
              x:Class="App3.RelativeLayoutPage">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+        <RelativeLayout>
+            <BoxView 
+                x:Name="BannerBoxView" 
+                BackgroundColor="#f7f7f7"
+                RelativeLayout.WidthConstraint="{ConstraintExpression
+                    Type=RelativeToParent,
+                    Property=Width,
+                    Factor=1}"
+                RelativeLayout.HeightConstraint="{ConstraintExpression
+                    Type=RelativeToParent,
+                    Property=Height,
+                    Factor=0.33333333333333333333333333333333333333}"/>
+            <StackLayout
+                RelativeLayout.YConstraint="{ConstraintExpression
+                    Type=RelativeToView,
+                    ElementName=BannerBoxView,
+                    Property=Height,
+                    Factor=.2}"
+                RelativeLayout.WidthConstraint="{ConstraintExpression
+                    Type=RelativeToParent,
+                    Property=Width,
+                    Factor=1}"
+                HorizontalOptions="Center">
+                <Label
+                    x:Name="PriceLabel"
+                    Text="$11.95"
+                    TextColor="#33353a"
+                    FontSize="60"
+                    FontAttributes="Bold"
+                    HorizontalOptions="Center"/>
+                <Button
+                    Padding="5"
+                    Text="Add $7.99 Credit"
+                    BackgroundColor="#1695A3"
+                    CornerRadius="15"
+                    HeightRequest="30"
+                    FontSize="15"
+                    FontAttributes="Bold"
+                    TextColor="White"
+                    RelativeLayout.WidthConstraint="{ConstraintExpression
+                        Type=RelativeToView,
+                        ElementName=PriceLabel,
+                        Property=Width,
+                        Factor=1}"/>
+            </StackLayout>
+            <StackLayout
+                RelativeLayout.YConstraint="{ConstraintExpression
+                    Type=RelativeToView,
+                    ElementName=BannerBoxView,
+                    Property=Height,
+                    Factor=1,
+                    Constant=30}"
+                RelativeLayout.WidthConstraint="{ConstraintExpression
+                    Type=RelativeToParent,
+                    Property=Width,
+                    Factor=1}"
+                HorizontalOptions="CenterAndExpand"
+                Padding="20,0,20,0">
+                <Label 
+                    Text="Why pay for credit?"
+                    FontAttributes="Bold"
+                    FontSize="15"
+                    HorizontalTextAlignment="Center"/>
+                <Label 
+                    Text="Because you can reach people who aren't on SkyApps by calling mobile and landline numbers, or spending SMS, at low-cost rates"
+                    FontSize="15"
+                    HorizontalTextAlignment="Center"/>
+            </StackLayout>
+        </RelativeLayout>
     </ContentPage.Content>
 </ContentPage>
