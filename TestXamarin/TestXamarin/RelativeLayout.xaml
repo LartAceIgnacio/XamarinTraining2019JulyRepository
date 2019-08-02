@@ -13,16 +13,21 @@
                      RelativeLayout.HeightConstraint="{ConstraintExpression
                             Type=RelativeToParent, Property=Height, Factor=0.33}" />
             <Label x:Name="LblPrice" Text="$11.95" FontSize="60" FontAttributes="Bold"/>
-            <Button x:Name="BtnAddCredit" Text="Add $7.99 Credit" BackgroundColor="#1695A3"
-                    CornerRadius="15" HeightRequest="30" FontSize="15" FontAttributes="Bold"
+            <Button x:Name="BtnAddCredit" Text="Add $7.99 Credit" 
+                    BackgroundColor="#1695A3" CornerRadius="15" HeightRequest="40" 
+                    FontSize="15" FontAttributes="Bold" TextColor="White"
+                    RelativeLayout.XConstraint="{ConstraintExpression
+                            Type=RelativeToParent, Property=Width, Factor=0.31}"
+                    RelativeLayout.YConstraint="{ConstraintExpression
+                            Type=RelativeToParent, Property=Height, Factor=0.20}"
                     />
             <StackLayout 
                     RelativeLayout.XConstraint="{ConstraintExpression
-                    Type=RelativeToView, ElementName=BoxViewBanner, Property=Width, 
-                    Factor=0.33}"
+                            Type=RelativeToView, ElementName=BoxViewBanner, Property=Width, 
+                            Factor=0.33}"
                     RelativeLayout.YConstraint="{ConstraintExpression
-                    Type=RelativeToView, ElementName=BoxViewBanner, Property=Height, 
-                    Factor=1, Constant=30}">
+                            Type=RelativeToView, ElementName=BoxViewBanner, Property=Height, 
+                            Factor=1, Constant=30}">
                 <Label Text="Why pay for credit?" FontSize="15" FontAttributes="Bold"/>
                 <Label x:Name="LblDescription" Text="Description" FontSize="13" 
                        HorizontalTextAlignment="Center"/>
