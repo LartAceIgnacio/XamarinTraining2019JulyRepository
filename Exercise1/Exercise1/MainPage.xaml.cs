@@ -40,10 +40,18 @@ namespace Exercise1
         {
             await Navigation.PushAsync(new Grid1Page());
         }
-
         async void CalculatorPage_button_Clicked(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new Grid2Page());
+        }
+        async void AbsoluteLayoutPage_button_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new AbsoluteLayoutPage());
+        }
+
+        async void RelativeLayoutPage_button_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new RelativeLayoutPage());
         }
     }
 }

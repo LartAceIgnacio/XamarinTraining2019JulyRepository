@@ -55,7 +55,7 @@
                    HorizontalTextAlignment="End"
                    VerticalTextAlignment="End"/>
             <Button Style="{StaticResource upperButton}"
-                    Clicked="clearEntry"
+                    Clicked="ClearEntry"
                     Text="C" 
                     Grid.Row="1"
                     Grid.Column="0"/>

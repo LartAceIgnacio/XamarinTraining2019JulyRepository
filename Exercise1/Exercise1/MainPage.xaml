@@ -18,6 +18,8 @@
             <Button x:Name ="stackLayoutPage2_button" Text="Stack Layout Page 2" Clicked="StackLayoutPage2_button_Clicked"/>
             <Button x:Name ="PhoneDialPage_button" Text="Dial Phone Page" Clicked="PhoneDialPage_button_Clicked"/>
             <Button x:Name ="CalculatorPage_button" Text="Calculator Page" Clicked="CalculatorPage_button_Clicked"/>
+            <Button x:Name ="AbsoluteLayoutPage_button" Text="Absolute Layout" Clicked="AbsoluteLayoutPage_button_Clicked"/>
+            <Button x:Name ="RelativeLayoutPage_button" Text="Relative Layout" Clicked ="RelativeLayoutPage_button_Clicked" />
         </StackLayout>
     </ContentPage.Content>
     

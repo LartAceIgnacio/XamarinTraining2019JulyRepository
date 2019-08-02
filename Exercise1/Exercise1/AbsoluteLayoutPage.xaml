@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Exercise1.AbsoluteLayoutPage">
+    <ContentPage.Content>
+        <AbsoluteLayout>
+            <Image Source="http://lorempixel.com/1920/1080/nature/7/" 
+                   AbsoluteLayout.LayoutBounds="0,0,1,1"
+                   AbsoluteLayout.LayoutFlags="All"
+                   Aspect = "AspectFill"/>
+            <Label Text="Relax"
+                   TextColor="white"
+                   FontSize="30"
+                   AbsoluteLayout.LayoutFlags="XProportional"
+                   AbsoluteLayout.LayoutBounds="0.5, 20"/>
+            <BoxView Opacity="0.5"
+                     BackgroundColor="Black"
+                     AbsoluteLayout.LayoutFlags="PositionProportional, WidthProportional"
+                     AbsoluteLayout.LayoutBounds="1, 1, 1, 100"/>
+            <StackLayout Orientation="Horizontal"
+                         AbsoluteLayout.LayoutFlags="PositionProportional, WidthProportional"
+                         AbsoluteLayout.LayoutBounds="0, 1, 1, 100"
+                         Padding="30,0">
+                <Label Text="Profile"
+                       TextColor="White"
+                       FontSize="15"
+                       HorizontalOptions="Center"
+                       VerticalOptions="Center"/>
+                <Label Text="Meditate"
+                       TextColor="White"
+                       FontSize="15"
+                       HorizontalOptions="CenterAndExpand"
+                       VerticalOptions="Center"/>
+                <Label Text="Themes"
+                       TextColor="White"
+                       FontSize="15"
+                       HorizontalOptions="Center"
+                       VerticalOptions="Center"/>
+            </StackLayout>
+        </AbsoluteLayout>
+        
+    </ContentPage.Content>
+</ContentPage>

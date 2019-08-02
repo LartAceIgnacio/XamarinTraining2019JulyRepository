@@ -17,10 +17,10 @@ namespace Exercise1
         public Grid2Page()
         {
             InitializeComponent();
-            clearEntry(this, null);
+            ClearEntry(this, null);
         }
 
-        private void clearEntry(object sender, EventArgs e)
+        private void ClearEntry(object sender, EventArgs e)
         {
             this.numberResultLabel.Text = "0";
         }
