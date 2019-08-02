@@ -12,7 +12,7 @@ namespace XamarinActivities
 
             // MainPage = new TabsPage();
             // MainPage = new AbsolutePage();
-            MainPage = new RelativePage();
+            // MainPage = new RelativePage();
             // MainPage = new WelcomePage();
             // MainPage = new InstagramPage();
             // MainPage = new DialPage();
@@ -20,6 +20,7 @@ namespace XamarinActivities
             // MainPage = new QuotesPage();
             // MainPage = new BoxColorPage();
 
+            MainPage = new GridImagePage();
         }
 
         protected override void OnStart()
