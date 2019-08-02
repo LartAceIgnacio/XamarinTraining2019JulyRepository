@@ -70,6 +70,7 @@
 
             <StackLayout HorizontalOptions="CenterAndExpand"
                          Spacing="20"
+                         Padding="70,0,70,0"
                       RelativeLayout.WidthConstraint="{ConstraintExpression
                       Type=RelativeToView,
                       ElementName=xBanner,
@@ -86,7 +87,8 @@
                        FontSize="15"
                        FontAttributes="Bold"
                        HorizontalTextAlignment="Center"
-                       HorizontalOptions="CenterAndExpand"/>
+                       HorizontalOptions="CenterAndExpand"
+                       />
 
                 <Label Text="Because you can reach people who aren't on SkyApp by calling mobile and landline numbers, or spending SMS, at low-cost rates."
                        FontSize="13"
