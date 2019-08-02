@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="XamarinEssentials.Exercises.RelativeLayout_Exercise">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="banner" TargetType="BoxView">
+                <Setter Property="RelativeLayout.WidthConstraint"
+                        Value="{ConstraintExpression
+                               Type=RelativeToParent,
+                               Property=Width,
+                               Factor=1}" />
+                <Setter Property="RelativeLayout.HeightConstraint"
+                        Value="{ConstraintExpression
+                               Type=RelativeToParent,
+                               Property=Height,
+                               Factor=0.3333333}" />
+                <Setter Property="Color" Value="#f7f7f7" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <RelativeLayout>
+            <BoxView x:Name="boxViewBanner"
+                     Style="{StaticResource banner}"/>
+            <StackLayout Orientation="Vertical"
+                         VerticalOptions="CenterAndExpand"
+                         HorizontalOptions="CenterAndExpand"
+                         RelativeLayout.WidthConstraint="{ConstraintExpression
+                            Type=RelativeToParent,
+                            Property=Width,
+                            Factor=1}"
+                         RelativeLayout.HeightConstraint="{ConstraintExpression
+                            Type=RelativeToParent,
+                            Property=Height,
+                            Factor=0.3333333}">
+                    <Label x:Name="lblPrice"
+                           Text="$11.95"
+                           TextColor="#33353a"
+                           FontSize="60"
+                           FontAttributes="Bold"
+                           HorizontalOptions="CenterAndExpand"/>
+                    <Button Text="Add $7.99 Credit"
+                            TextColor="White"
+                            BackgroundColor="#1695a3"
+                            CornerRadius="15"
+                            HeightRequest="30"
+                            Font="15"
+                            FontAttributes="Bold"
+                            Padding="5"/>
+                </StackLayout>
+
+                <!--30 units below parent-->
+                <StackLayout RelativeLayout.YConstraint="{ConstraintExpression
+                            Type=RelativeToView,
+                            ElementName=boxViewBanner,
+                            Property=Height,
+                            Factor=1,
+                            Constant=30}"
+                         Orientation="Vertical"
+                         Padding="50, 0, 50, 0"
+                         Spacing="20">
+                    <Label Text="Why pay for credit?"
+                       FontSize="15"
+                       FontAttributes="Bold"
+                       HorizontalOptions="Center"/>
+                    <Label Text="Because you can reach people who aren't on SkyApp by calling mobile and landline numbers, or spending SMS, at low-cost rates."
+                       FontSize="13"
+                       HorizontalOptions="Center"
+                       HorizontalTextAlignment="Center"/>
+                </StackLayout>
+        </RelativeLayout>
+    </ContentPage.Content>
+</ContentPage>

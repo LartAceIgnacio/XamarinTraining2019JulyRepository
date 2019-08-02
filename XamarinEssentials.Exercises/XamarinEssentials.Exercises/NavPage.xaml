@@ -6,13 +6,17 @@
              mc:Ignorable="d"
              x:Class="XamarinEssentials.Exercises.NavPage">
     <ContentPage.Content>
-        <StackLayout VerticalOptions="Center">
-            <Button x:Name="GoToQuotesPage" Text="Quotes Page" Clicked="GoToQuotesPage_Clicked" />
-            <Button x:Name="GoToBoxColorPage" Text="Box Color" Clicked="GoToBoxColorPage_Clicked" />
-            <Button x:Name="GoToLoginPage" Text="Login Page" Clicked="GoToLoginPage_Clicked" />
-            <Button x:Name="GoToInstagram" Text="Wannabe Instagram" Clicked="GoToInstagram_Clicked" />
-            <Button x:Name="GoToPhone" Text="Phone" Clicked="GoToPhone_Clicked" />
-            <Button x:Name="GoToCalculator" Text="Calculator" Clicked="GoToCalculator_Clicked" />
-        </StackLayout>
+        <ScrollView>
+            <StackLayout VerticalOptions="Center">
+                <Button x:Name="GoToQuotesPage" Text="Quotes Page" Clicked="GoToQuotesPage_Clicked" />
+                <Button x:Name="GoToBoxColorPage" Text="Box Color" Clicked="GoToBoxColorPage_Clicked" />
+                <Button x:Name="GoToLoginPage" Text="Login Page" Clicked="GoToLoginPage_Clicked" />
+                <Button x:Name="GoToInstagram" Text="Wannabe Instagram" Clicked="GoToInstagram_Clicked" />
+                <Button x:Name="GoToPhone" Text="Phone" Clicked="GoToPhone_Clicked" />
+                <Button x:Name="GoToCalculator" Text="Calculator" Clicked="GoToCalculator_Clicked" />
+                <Button x:Name="GoToAbsolute" Text="Relax Flowers" Clicked="GoToAbsolute_Clicked" />
+                <Button x:Name="GoToRelative" Text="Pay for Credits" Clicked="GoToRelative_Clicked" />
+            </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

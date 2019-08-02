@@ -47,5 +47,15 @@ namespace XamarinEssentials.Exercises
         {
             await Navigation.PushAsync(new Grid_Exercise2());
         }
+
+        private async void GoToAbsolute_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new AbsoluteLayout_Exercise());
+        }
+
+        private async void GoToRelative_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new RelativeLayout_Exercise());
+        }
     }
 }
