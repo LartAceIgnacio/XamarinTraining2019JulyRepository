@@ -10,12 +10,12 @@
         <RelativeLayout>
 
             <BoxView x:Name="banner"
-                         Color="#c3cee0"
-                         RelativeLayout.WidthConstraint="{ConstraintExpression
+                     Color="#c3cee0"
+                     RelativeLayout.WidthConstraint="{ConstraintExpression
                             Type=RelativeToParent,
                             Property=Width,
                             Factor=1}"
-                         RelativeLayout.HeightConstraint="{ConstraintExpression
+                     RelativeLayout.HeightConstraint="{ConstraintExpression
                             Type=RelativeToParent,
                             Property=Height,
                             Factor=0.33}"/>
