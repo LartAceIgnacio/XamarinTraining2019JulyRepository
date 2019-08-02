@@ -1,0 +1,174 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="App3.Image2Page">
+    <ContentPage.Content>
+        <Grid Padding = "0"
+        RowSpacing = "1"
+         ColumnSpacing = "1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <AbsoluteLayout
+                Grid.Row="0"
+                Grid.Column="0" 
+                Grid.ColumnSpan="2" 
+                Grid.RowSpan="2">
+                <Image 
+                    x:Name="LucinaImage" 
+                    Aspect = "Fill"
+                    AbsoluteLayout.LayoutBounds="0,0,1,1"
+                    AbsoluteLayout.LayoutFlags="All">
+                </Image>
+                <ActivityIndicator 
+                    BindingContext="{x:Reference LucinaImage}" 
+                    IsRunning="{Binding IsLoading}" 
+                    AbsoluteLayout.LayoutBounds="0.5,0.5,50,50"
+                    AbsoluteLayout.LayoutFlags="PositionProportional"
+                    Color="Black"/>
+            </AbsoluteLayout>
+            <AbsoluteLayout
+                Grid.Row="2"
+                Grid.Column="0">
+                <Image 
+                    x:Name="RobinImage" 
+                    Aspect = "Fill"
+                    AbsoluteLayout.LayoutBounds="0,0,1,1"
+                    AbsoluteLayout.LayoutFlags="All">
+                </Image>
+                <ActivityIndicator
+                    BindingContext="{x:Reference RobinImage}" 
+                    IsRunning="{Binding IsLoading}" 
+                    AbsoluteLayout.LayoutBounds="0.5,0.5,50,50"
+                    AbsoluteLayout.LayoutFlags="PositionProportional"
+                    Color="Black"/>
+            </AbsoluteLayout>
+            <AbsoluteLayout
+                Grid.Row="3"
+                Grid.Column="0">
+                <Image 
+                    x:Name="SeveraImage" 
+                    Aspect = "Fill"
+                    AbsoluteLayout.LayoutBounds="0,0,1,1"
+                    AbsoluteLayout.LayoutFlags="All">
+                </Image>
+                <ActivityIndicator 
+                    BindingContext="{x:Reference SeveraImage}" 
+                    IsRunning="{Binding IsLoading}" 
+                    AbsoluteLayout.LayoutBounds="0.5,0.5,50,50"
+                    AbsoluteLayout.LayoutFlags="PositionProportional"
+                    Color="Black"/>
+            </AbsoluteLayout>
+            <AbsoluteLayout
+                Grid.Row="4"
+                Grid.Column="0">
+                <Image 
+                    x:Name="BradyImage" 
+                    Aspect = "Fill"
+                    AbsoluteLayout.LayoutBounds="0,0,1,1"
+                    AbsoluteLayout.LayoutFlags="All">
+                </Image>
+                <ActivityIndicator 
+                    BindingContext="{x:Reference BradyImage}" 
+                    IsRunning="{Binding IsLoading}" 
+                    AbsoluteLayout.LayoutBounds="0.5,0.5,50,50"
+                    AbsoluteLayout.LayoutFlags="PositionProportional"
+                    Color="Black"/>
+            </AbsoluteLayout>
+            <AbsoluteLayout
+                Grid.Row="3"
+                Grid.Column="1"
+                Grid.ColumnSpan="2"
+                Grid.RowSpan="2">
+                <Image 
+                    x:Name="ChromImage" 
+                    Aspect = "Fill"
+                    AbsoluteLayout.LayoutBounds="0,0,1,1"
+                    AbsoluteLayout.LayoutFlags="All">
+                </Image>
+                <ActivityIndicator 
+                    BindingContext="{x:Reference ChromImage}" 
+                    IsRunning="{Binding IsLoading}" 
+                    AbsoluteLayout.LayoutBounds="0.5,0.5,50,50"
+                    AbsoluteLayout.LayoutFlags="PositionProportional"
+                    Color="Black"/>
+            </AbsoluteLayout>
+            <AbsoluteLayout
+                Grid.Row="0"
+                Grid.Column="2">
+                <Image 
+                    x:Name="KjelleImage" 
+                    Aspect = "Fill"
+                    AbsoluteLayout.LayoutBounds="0,0,1,1"
+                    AbsoluteLayout.LayoutFlags="All">
+                </Image>
+                <ActivityIndicator 
+                    BindingContext="{x:Reference KjelleImage}" 
+                    IsRunning="{Binding IsLoading}" 
+                    AbsoluteLayout.LayoutBounds="0.5,0.5,50,50"
+                    AbsoluteLayout.LayoutFlags="PositionProportional"
+                    Color="Black"/>
+            </AbsoluteLayout>
+            <AbsoluteLayout
+                Grid.Row="1"
+                Grid.Column="2">
+                <Image 
+                    x:Name="CynthiaImage" 
+                    Aspect = "Fill"
+                    AbsoluteLayout.LayoutBounds="0,0,1,1"
+                    AbsoluteLayout.LayoutFlags="All">
+                </Image>
+                <ActivityIndicator 
+                    BindingContext="{x:Reference CynthiaImage}" 
+                    IsRunning="{Binding IsLoading}" 
+                    AbsoluteLayout.LayoutBounds="0.5,0.5,50,50"
+                    AbsoluteLayout.LayoutFlags="PositionProportional"
+                    Color="Black"/>
+            </AbsoluteLayout>
+            <AbsoluteLayout
+                Grid.Row="2"
+                Grid.Column="2">
+                <Image 
+                    x:Name="CordeliaImage" 
+                    Aspect = "Fill"
+                    AbsoluteLayout.LayoutBounds="0,0,1,1"
+                    AbsoluteLayout.LayoutFlags="All">
+                </Image>
+                <ActivityIndicator 
+                    BindingContext="{x:Reference CordeliaImage}" 
+                    IsRunning="{Binding IsLoading}" 
+                    AbsoluteLayout.LayoutBounds="0.5,0.5,50,50"
+                    AbsoluteLayout.LayoutFlags="PositionProportional"
+                    Color="Black"/>
+            </AbsoluteLayout>
+            <AbsoluteLayout
+                Grid.Row="2"
+                Grid.Column="1">
+                <Image 
+                    x:Name="MorganImage" 
+                    Aspect = "Fill"
+                    AbsoluteLayout.LayoutBounds="0,0,1,1"
+                    AbsoluteLayout.LayoutFlags="All">
+                </Image>
+                <ActivityIndicator 
+                    BindingContext="{x:Reference MorganImage}" 
+                    IsRunning="{Binding IsLoading}" 
+                    AbsoluteLayout.LayoutBounds="0.5,0.5,50,50"
+                    AbsoluteLayout.LayoutFlags="PositionProportional"
+                    Color="Black"/>
+            </AbsoluteLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
