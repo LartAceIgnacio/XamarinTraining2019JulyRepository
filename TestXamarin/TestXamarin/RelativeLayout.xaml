@@ -12,15 +12,18 @@
                             Type=RelativeToParent, Property=Width, Factor=1}"
                      RelativeLayout.HeightConstraint="{ConstraintExpression
                             Type=RelativeToParent, Property=Height, Factor=0.33}" />
-            <Label x:Name="LblPrice" Text="$11.95" FontSize="60" FontAttributes="Bold"/>
+            <Label x:Name="LblPrice" Text="$11.95" FontSize="60" FontAttributes="Bold"
+                    RelativeLayout.XConstraint="{ConstraintExpression
+                            Type=RelativeToParent, Property=Width, Factor=0.25}"
+                    RelativeLayout.YConstraint="{ConstraintExpression
+                            Type=RelativeToParent, Property=Height, Factor=0.05}"/>
             <Button x:Name="BtnAddCredit" Text="Add $7.99 Credit" 
                     BackgroundColor="#1695A3" CornerRadius="15" HeightRequest="40" 
                     FontSize="15" FontAttributes="Bold" TextColor="White"
                     RelativeLayout.XConstraint="{ConstraintExpression
                             Type=RelativeToParent, Property=Width, Factor=0.31}"
                     RelativeLayout.YConstraint="{ConstraintExpression
-                            Type=RelativeToParent, Property=Height, Factor=0.20}"
-                    />
+                            Type=RelativeToParent, Property=Height, Factor=0.20}" />
             <StackLayout 
                     RelativeLayout.XConstraint="{ConstraintExpression
                             Type=RelativeToView, ElementName=BoxViewBanner, Property=Width, 
