@@ -15,6 +15,7 @@ namespace TestXamarin
         public RelativeLayout()
         {
             InitializeComponent();
+            this.LblDescription.Text = "Because you can reach people who aren't on SkyApp by calling mobile and landline numbers, or spending SMS, at low-cost rates.";
         }
     }
 }

@@ -25,15 +25,18 @@
                     RelativeLayout.YConstraint="{ConstraintExpression
                             Type=RelativeToParent, Property=Height, Factor=0.20}" />
             <StackLayout 
+                    HorizontalOptions="FillAndExpand"
                     RelativeLayout.XConstraint="{ConstraintExpression
                             Type=RelativeToView, ElementName=BoxViewBanner, Property=Width, 
-                            Factor=0.33}"
+                            Factor=0.07}"
                     RelativeLayout.YConstraint="{ConstraintExpression
                             Type=RelativeToView, ElementName=BoxViewBanner, Property=Height, 
                             Factor=1, Constant=30}">
-                <Label Text="Why pay for credit?" FontSize="15" FontAttributes="Bold"/>
+                <Label Text="Why pay for credit?" FontSize="15" FontAttributes="Bold"
+                       HorizontalTextAlignment="Center" HorizontalOptions="CenterAndExpand"/>
                 <Label x:Name="LblDescription" Text="Description" FontSize="13" 
-                       HorizontalTextAlignment="Center"/>
+                       HorizontalTextAlignment="Center" HorizontalOptions="CenterAndExpand"
+                       WidthRequest="300"/>
             </StackLayout>
         </RelativeLayout>
     </ContentPage.Content>
