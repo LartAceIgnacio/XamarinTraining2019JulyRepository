@@ -11,7 +11,7 @@ namespace XamarinActivities
             InitializeComponent();
 
             //MainPage = new E3AbsoluteLayout1();
-            MainPage = new TabbedNavigation();
+            MainPage = new E3RelativeLayout();
         }
 
         protected override void OnStart()
