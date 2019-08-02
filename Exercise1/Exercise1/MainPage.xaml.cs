@@ -48,7 +48,6 @@ namespace Exercise1
         {
             await Navigation.PushAsync(new AbsoluteLayoutPage());
         }
-
         async void RelativeLayoutPage_button_Clicked(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new RelativeLayoutPage());

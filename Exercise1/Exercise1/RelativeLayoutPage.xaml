@@ -7,14 +7,93 @@
              x:Class="Exercise1.RelativeLayoutPage">
     <ContentPage.Content>
         <RelativeLayout>
-            <BoxView Color ="#f7f7f7" x:Name="Banner"
+            <BoxView Color ="#f7f7f7" x:Name="xBanner"
                       RelativeLayout.WidthConstraint="{ConstraintExpression
                       Type=RelativeToParent,
-                      Property=Width, Factor=1, Constant=0}"
+                      Property=Width,
+                      Factor=1}"
                       RelativeLayout.HeightConstraint="{ConstraintExpression
                       Type=RelativeToParent,
-                      Property=Heigth, Factor=0.3, Constant=0}"/>
-            
+                      Property=Height, 
+                      Factor=0.3}"/>
+            <StackLayout HorizontalOptions="CenterAndExpand"
+                      RelativeLayout.WidthConstraint="{ConstraintExpression
+                      Type=RelativeToParent,
+                      Property=Width,
+                      Factor=1}"
+                      RelativeLayout.YConstraint="{ConstraintExpression
+                      Type=RelativeToView,
+                      ElementName=xBanner,
+                      Property=Height, 
+                      Factor=0.1,
+                      Constant=5}">
+            <Label  Text="$11.95"
+                FontSize="60"
+                x:Name="priceLabel"
+                FontAttributes="Bold"
+                TextColor="#33353a"
+                HorizontalOptions="CenterAndExpand"
+                RelativeLayout.WidthConstraint="{ConstraintExpression
+                Type=RelativeToParent,
+                Property=Width,
+                Factor=1}"
+                RelativeLayout.YConstraint="{ConstraintExpression
+                Type=RelativeToView,
+                ElementName=xBanner,
+                Property=Height,
+                Factor=0.3,
+                Constant=30}"/>
+                
+            <Button BackgroundColor="#1695A3"
+                    BorderRadius="15"
+                    HeightRequest="30"
+                    FontSize="15"
+                    FontAttributes="Bold"
+                    TextColor="White"
+                    Text="Add $7.99 Credit"
+                    Padding="5, 5, 5, 5"
+                    BorderWidth="10"
+                    HorizontalOptions="CenterAndExpand"
+                    RelativeLayout.WidthConstraint="{ConstraintExpression
+                    Type=RelativeToView,
+                    ElementName=priceLabel,
+                    Property=Width,
+                    Factor=1,
+                    Constant=50}"
+                    RelativeLayout.YConstraint="{ConstraintExpression
+                    Type=RelativeToView,
+                    ElementName=priceLabel,
+                    Property=Height,
+                    Factor=1,
+                    Constant=30}"/>
+            </StackLayout>
+
+            <StackLayout HorizontalOptions="CenterAndExpand"
+                         Spacing="20"
+                      RelativeLayout.WidthConstraint="{ConstraintExpression
+                      Type=RelativeToView,
+                      ElementName=xBanner,
+                      Property=Width,
+                      Factor=1}"
+                      RelativeLayout.YConstraint="{ConstraintExpression
+                      Type=RelativeToView,
+                      ElementName=xBanner,
+                      Property=Height,
+                      Factor=1,
+                      Constant=30}">
+                
+                <Label Text="Why pay for credit?"
+                       FontSize="15"
+                       FontAttributes="Bold"
+                       HorizontalTextAlignment="Center"
+                       HorizontalOptions="CenterAndExpand"/>
+
+                <Label Text="Because you can reach people who aren't on SkyApp by calling mobile and landline numbers, or spending SMS, at low-cost rates."
+                       FontSize="13"
+                       HorizontalTextAlignment="Center"
+                       HorizontalOptions="Center"/>
+            </StackLayout>
         </RelativeLayout>
+        
     </ContentPage.Content>
 </ContentPage>
