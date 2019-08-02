@@ -7,24 +7,29 @@
              x:Class="XamarinActivities.AbsolutePage">
     <ContentPage.Resources>
         <ResourceDictionary>
+            
             <Style x:Key="relaxLabel" TargetType="Label">
                 <Setter Property="FontSize" Value="30" />
                 <Setter Property="TextColor" Value="White" />
                 <Setter Property="HorizontalTextAlignment" Value="Center" />
             </Style>
+            
             <Style x:Key="blackBoxView" TargetType="BoxView">
                 <Setter Property="Color" Value="Black" />
                 <Setter Property="Opacity" Value=".5" />
                 <Setter Property="HeightRequest" Value="100" />
             </Style>
+            
             <Style x:Key="stackLayout" TargetType="StackLayout">
                 <Setter Property="Padding" Value="30, 0" />
                 <Setter Property="HeightRequest" Value="100" />
             </Style>
+            
             <Style x:Key="stackLabel" TargetType="Label">
                 <Setter Property="FontSize" Value="15" />
                 <Setter Property="TextColor" Value="White" />
             </Style>
+            
         </ResourceDictionary>
     </ContentPage.Resources>
     <ContentPage.Content>
@@ -49,13 +54,17 @@
                          AbsoluteLayout.LayoutBounds="0, 1, 1, 50"
                          AbsoluteLayout.LayoutFlags="PositionProportional, WidthProportional"
                          Style="{StaticResource stackLayout}">
+                
                 <Label Text="Profile"
                        Style="{StaticResource stackLabel}" />
+                
                 <Label Text="Meditate"
                        HorizontalOptions="CenterAndExpand"
                        Style="{StaticResource stackLabel}" />
+                
                 <Label Text="Themes"
                        Style="{StaticResource stackLabel}" />
+                
             </StackLayout>
             
         </AbsoluteLayout>
