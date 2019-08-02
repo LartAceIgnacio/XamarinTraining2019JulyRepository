@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="ProjectDemo.RelativeLayoutPage">
+	<ContentPage.Content>
+		<RelativeLayout>
+			<BoxView x:Name="Boxview1" BackgroundColor="#f7f7f7"   
+            RelativeLayout.WidthConstraint="{ConstraintExpression  
+            Type=RelativeToParent,  
+            Property=Width,  
+            Factor=1}"  
+            RelativeLayout.HeightConstraint="{ConstraintExpression  
+            Type=RelativeToParent,  
+            Property=Height,  
+            Factor=0.3}">
+
+			</BoxView>
+			<Label	x:Name="lblPrice"
+					Text="$11.95"
+				   TextColor="#33353a"
+				   FontSize="60"
+				   FontAttributes="Bold"
+				   RelativeLayout.XConstraint="{ConstraintExpression
+					Type=RelativeToView,
+					ElementName=Boxview1,
+					Property=Width,
+					Factor=0.25}"
+					RelativeLayout.YConstraint="{ConstraintExpression
+				Type=RelativeToView,
+				ElementName=Boxview1,
+				Property=Height,
+				Factor=0.25}"/>
+			<Button Text="Add $7.99 Credit"
+					TextColor="White"
+					FontSize = "15"
+					FontAttributes = "Bold"
+					Padding="5"
+					BackgroundColor = "#1695A3"
+					BorderRadius = "15"
+					HeightRequest = "30"
+					RelativeLayout.XConstraint="{ConstraintExpression
+					Type=RelativeToView,
+				ElementName=Boxview1,
+				Property=Width,
+				Factor=0.25}"
+					RelativeLayout.YConstraint="{ConstraintExpression
+				Type=RelativeToView,
+				ElementName=lblPrice,
+				Property=Height,
+				Factor=1,
+				Constant=40}"
+					RelativeLayout.WidthConstraint="{ConstraintExpression
+				Type=RelativeToView,
+				ElementName=lblPrice,
+				Property=Width,
+				Factor=1}"/>
+
+			<StackLayout Spacing="15"
+						 Padding="30,0,30,0"
+				RelativeLayout.YConstraint="{ConstraintExpression
+					Type=RelativeToView,
+				ElementName=Boxview1,
+				Property=Height,
+				Factor=1,
+				Constant=30}">
+				<Label Text="Why pay for credit?"
+					   TextColor="Black"
+					   FontSize="15"
+					   FontAttributes="Bold"
+					   HorizontalTextAlignment="Center"/>
+				<Label Text="Because you can reach people who aren't on SkyApp by calling mobile and landline numbers, or spending SMS, at low-cost rates."
+					   TextColor="Black"
+					   FontSize="13"
+					   HorizontalTextAlignment="Center">
+				</Label>
+			</StackLayout>
+		</RelativeLayout>
+	</ContentPage.Content>
+</ContentPage>
