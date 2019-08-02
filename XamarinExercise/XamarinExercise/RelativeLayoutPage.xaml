@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="XamarinExercise.RelativeLayoutPage">
+    <ContentPage.Content>
+
+        <RelativeLayout>
+
+            <BoxView x:Name="banner"
+                         Color="#c3cee0"
+                         RelativeLayout.WidthConstraint="{ConstraintExpression
+                            Type=RelativeToParent,
+                            Property=Width,
+                            Factor=1}"
+                         RelativeLayout.HeightConstraint="{ConstraintExpression
+                            Type=RelativeToParent,
+                            Property=Height,
+                            Factor=0.33}"/>
+
+            <StackLayout HorizontalOptions="CenterAndExpand"
+                         VerticalOptions="CenterAndExpand"
+                         RelativeLayout.WidthConstraint="{ConstraintExpression
+                             Type=RelativeToView,
+                             ElementName=banner,
+                             Property=Width,
+                             Factor=1}"
+                         RelativeLayout.HeightConstraint="{ConstraintExpression
+                             Type=RelativeToView,
+                             ElementName=banner,
+                             Property=Height,
+                             Factor=1}">
+
+                <Label  x:Name="lblCredit"
+                        Text="$11.95"
+                        TextColor="#33353a"
+                        FontSize="60"
+                        FontAttributes="Bold"
+                        HorizontalOptions="CenterAndExpand"/>
+
+                <Button x:Name="btnCredit"
+                        Text="Add $7.99 Credit"
+                        TextColor="#FFF"
+                        FontSize="15"
+                        FontAttributes="Bold"
+                        Padding="5"
+                        BackgroundColor="#1695A3"
+                        CornerRadius="15"
+                        HeightRequest="30"
+                        HorizontalOptions="FillAndExpand"
+                        VerticalOptions="FillAndExpand"
+                        RelativeLayout.WidthConstraint="{ConstraintExpression
+                                   Type=RelativeToView,
+                                   ElementName=lblCredit,
+                                   Property=Width,
+                                   Factor=1}"/>
+            </StackLayout>
+
+            <StackLayout HorizontalOptions="FillAndExpand"
+                         Spacing="20"
+                         Padding="60,0,60,0"
+                         RelativeLayout.WidthConstraint="{ConstraintExpression
+                            Type=RelativeToParent,
+                            Property=Width,
+                            Factor=1}"
+                         RelativeLayout.YConstraint="{ConstraintExpression
+                            Type=RelativeToView,
+                            ElementName=banner,
+                            Property=Height,
+                            Factor=1,
+                            Constant=30}">
+
+                <Label x:Name="lblHead"
+                       Text="Why Pay for Credit?"
+                       FontSize="15"
+                       FontAttributes="Bold"
+                       HorizontalOptions="CenterAndExpand"/>
+
+                <Label x:Name="lblDescription"
+                       Text="Because you can reach people who aren't on SkyApp by calling mobile and Landline numbers, or spending SMS, at low cost rates"
+                       FontSize="13"
+                       HorizontalOptions="CenterAndExpand"
+                       HorizontalTextAlignment="Center"/>
+                
+            </StackLayout>
+            
+        </RelativeLayout>
+
+    </ContentPage.Content>
+
+</ContentPage>
