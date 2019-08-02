@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Exercise1.ImageGalleryPage">
+    <ContentPage.Content>
+        <Grid Padding="5,0,0,0" RowSpacing="1" ColumnSpacing="1" BackgroundColor="Black">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <AbsoluteLayout Grid.Row="0" Grid.Column="0">
+                <ActivityIndicator 
+                    BindingContext="{x:Reference Img1}"
+                    IsRunning="{Binding IsLoading}"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"/>
+                <Image x:Name="Img1" 
+                   Aspect = "Fill"
+                   Source = "https://tinyurl.com/yypw59xh"/>
+            </AbsoluteLayout>
+            <AbsoluteLayout Grid.Row="0" Grid.RowSpan="2" Grid.Column="1" Grid.ColumnSpan="2">
+                
+                <Image x:Name="Img4" 
+                    Aspect = "AspectFill"
+                    AbsoluteLayout.LayoutBounds="0, 0, 1, 1"
+                    AbsoluteLayout.LayoutFlags="All"/>
+                <ActivityIndicator 
+                    BindingContext="{x:Reference Img4}"
+                    IsRunning="{Binding IsLoading}"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"/>
+            </AbsoluteLayout>
+            <AbsoluteLayout Grid.Row="1" Grid.Column="0">
+                <ActivityIndicator 
+                    BindingContext="{x:Reference Img2}"
+                    IsRunning="{Binding IsLoading}"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"/>
+                <Image x:Name="Img2" 
+                   Aspect = "AspectFill"
+                   AbsoluteLayout.LayoutBounds="0, 0, 1, 1"
+                   AbsoluteLayout.LayoutFlags="All"/>
+            </AbsoluteLayout>
+            <AbsoluteLayout Grid.Row="2" Grid.Column="0">
+                    <ActivityIndicator 
+                    BindingContext="{x:Reference Img3}"
+                    IsRunning="{Binding IsLoading}"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"/>
+                <Image x:Name="Img3" 
+                   Aspect = "AspectFill"
+                   AbsoluteLayout.LayoutBounds="0, 0, 1, 1"
+                   AbsoluteLayout.LayoutFlags="All"/>
+            </AbsoluteLayout>
+
+            <AbsoluteLayout Grid.Row="2" Grid.Column="1">
+                <ActivityIndicator 
+                    BindingContext="{x:Reference Img5}"
+                    IsRunning="{Binding IsLoading}"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"/>
+                <Image x:Name="Img5" 
+                   Aspect = "AspectFill"
+                   AbsoluteLayout.LayoutBounds="0, 0, 1, 1"
+                   AbsoluteLayout.LayoutFlags="All"/>
+            </AbsoluteLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

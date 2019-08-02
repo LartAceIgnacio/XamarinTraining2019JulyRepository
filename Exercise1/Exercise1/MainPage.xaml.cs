@@ -52,5 +52,13 @@ namespace Exercise1
         {
             await Navigation.PushAsync(new RelativeLayoutPage());
         }
+        async void ImahengBilogPage_button_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new ImahengBilog());
+        }
+        async void ImageGalleryPage_button_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new ImageGalleryPage());
+        }
     }
 }
