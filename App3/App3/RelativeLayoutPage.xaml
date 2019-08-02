@@ -19,23 +19,24 @@
                     Property=Height,
                     Factor=0.33333333333333333333333333333333333333}"/>
             <StackLayout
-                RelativeLayout.YConstraint="{ConstraintExpression
-                    Type=RelativeToView,
-                    ElementName=BannerBoxView,
-                    Property=Height,
-                    Factor=.2}"
                 RelativeLayout.WidthConstraint="{ConstraintExpression
                     Type=RelativeToParent,
                     Property=Width,
                     Factor=1}"
-                HorizontalOptions="Center">
+                RelativeLayout.HeightConstraint="{ConstraintExpression
+                    Type=RelativeToParent,
+                    Property=Height,
+                    Factor=0.333333333333333333333333333333333333333}"
+                HorizontalOptions="Center"
+                VerticalOptions="CenterAndExpand">
                 <Label
                     x:Name="PriceLabel"
                     Text="$11.95"
                     TextColor="#33353a"
                     FontSize="60"
                     FontAttributes="Bold"
-                    HorizontalOptions="Center"/>
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"/>
                 <Button
                     Padding="5"
                     Text="Add $7.99 Credit"
@@ -45,6 +46,7 @@
                     FontSize="15"
                     FontAttributes="Bold"
                     TextColor="White"
+                    VerticalOptions="Center"
                     RelativeLayout.WidthConstraint="{ConstraintExpression
                         Type=RelativeToView,
                         ElementName=PriceLabel,
