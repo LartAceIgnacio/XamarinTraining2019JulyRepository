@@ -4,6 +4,7 @@ using System.Linq;
 
 using Foundation;
 using UIKit;
+using ImageCircle.Forms.Plugin.iOS;
 
 namespace XAML.iOS
 {
@@ -24,6 +25,8 @@ namespace XAML.iOS
         {
             global::Xamarin.Forms.Forms.Init();
             LoadApplication(new App());
+
+            ImageCircleRenderer.Init();
 
             return base.FinishedLaunching(app, options);
         }

@@ -31,24 +31,20 @@
                                                 Factor=1}"
                          HorizontalOptions="CenterAndExpand"
                          VerticalOptions="CenterAndExpand">
-            <Label Text="$11.95"
-                          FontSize="60"
-                          FontAttributes="Bold"
-                          x:Name="lblPrice"/>
+                
+                <Label Text="$11.95"
+                       FontSize="60"
+                       FontAttributes="Bold"
+                       x:Name="lblPrice"/>
 
-            <Button Text="Add $7.99 Credit"
+                <Button Text="Add $7.99 Credit"
                     FontSize="15"
                     BackgroundColor="#1695A3"
                     TextColor="White"
                     BorderRadius="15"
                     HeightRequest="30"
                     Padding="5"
-                    FontAttributes="Bold"
-                    RelativeLayout.WidthConstraint =
-                    "{ConstraintExpression Type=RelativeToView,
-                                           ElementName=lblPrice,
-                                           Property=Width,
-                                           Factor=1}"/>
+                    FontAttributes="Bold"/>
             </StackLayout>
 
             <StackLayout RelativeLayout.WidthConstraint =
