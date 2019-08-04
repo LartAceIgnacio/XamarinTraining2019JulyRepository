@@ -61,7 +61,7 @@ namespace XamarinExercise
 
         private async void Ex9_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new ImagePage());
+            await Navigation.PushAsync(new GridImages());
         }
     }
 }
