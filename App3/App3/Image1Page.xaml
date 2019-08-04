@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="App3.Image1Page">
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                <Button x:Name="BackButton"
+                        WidthRequest="64"
+                        HeightRequest="64"
+                        HorizontalOptions="StartAndExpand"
+                        Clicked="BackButton_Clicked"/>
+                <ActivityIndicator 
+                    BindingContext="{x:Reference DisplayedImage}" 
+                    IsRunning="{Binding IsLoading}" 
+                    Color="Black"
+                    HorizontalOptions="CenterAndExpand"/>
+                <Button x:Name="NextButton"
+                        WidthRequest="64"
+                        HeightRequest="64"
+                        HorizontalOptions="EndAndExpand"
+                        Clicked="NextButton_Clicked"/>
+            </StackLayout>
+            <Image x:Name="DisplayedImage"
+                   HorizontalOptions="CenterAndExpand"
+                   VerticalOptions="CenterAndExpand"
+                   Aspect="AspectFit"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
