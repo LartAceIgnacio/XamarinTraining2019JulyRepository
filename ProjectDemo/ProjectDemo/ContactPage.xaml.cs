@@ -82,11 +82,13 @@ namespace ProjectDemo
 					PhoneNumber = "09176782536"
 				}
 			};
+		public List<Contact> temporaryContactList = new List<Contact>();
 		public ContactPage()
 		{
 			InitializeComponent();
 			
 			contactListView.ItemsSource = GetContacts();
+			cloneContactList();
 		}
 		public List<Contact> GetContacts()
 		{
@@ -120,13 +122,19 @@ namespace ProjectDemo
 
 			}
 		}
-
+		public void cloneContactList()
+		{
+			contacts.ForEach((item) =>
+			{
+				temporaryContactList.Add(item);
+			});
+		}
 		private void Delete_Clicked(object sender, EventArgs e)
 		{
 			var menuItem = sender as MenuItem;
 			var _contact = menuItem.CommandParameter as Contact;
-			GetContacts().Remove(_contact);
-			contactListView.ItemsSource = GetContacts();
+			temporaryContactList.Remove(_contact);
+			contactListView.ItemsSource = temporaryContactList.OrderBy(o => o.Firstname).ToList();
 		}
 	}
 
@@ -139,6 +147,15 @@ namespace ProjectDemo
 			get
 			{
 				return Firstname + " " + Lastname;
+			}
+		}
+		public string Initial
+		{
+			get
+			{
+				char[] chars = { Firstname[0] , Lastname[0] };
+				string s = new string(chars);
+				return s;
 			}
 		}
 	}

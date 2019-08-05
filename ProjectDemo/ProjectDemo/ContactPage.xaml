@@ -14,13 +14,18 @@
 					  Refreshing="ContactListView_Refreshing">
 				<ListView.ItemTemplate>
 					<DataTemplate>
-						<ImageCell ImageSource="https://coolbackgrounds.io/images/backgrounds/black/pure-black-background-f9eeb41f.jpg"
-								   Text="{Binding FullName}"
-								   Detail="{Binding PhoneNumber}">
-								<ImageCell.ContextActions>
-									<MenuItem Clicked="Delete_Clicked" CommandParameter="{Binding .}" Text="Delete"/>
-								</ImageCell.ContextActions>
-								</ImageCell>
+						<ViewCell>
+							<StackLayout Orientation="Horizontal" Spacing="5" Margin="5,0,0,0">
+								<BoxView BackgroundColor="Black"/>
+								<StackLayout Orientation="Vertical" Spacing="1">
+									<Label Text="{Binding FullName}"/>
+									<Label Text="{Binding PhoneNumber}"/>
+								</StackLayout>
+							</StackLayout>
+							<ViewCell.ContextActions>
+								<MenuItem Clicked="Delete_Clicked" CommandParameter="{Binding .}" Text="Delete"/>
+							</ViewCell.ContextActions>
+						</ViewCell>
 					</DataTemplate>
 				</ListView.ItemTemplate>
 			</ListView>
