@@ -12,43 +12,45 @@ namespace App3
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class Image1Page : ContentPage
     {
-        int ctr = 1;
+        int id = 1;
         public Image1Page()
         {
             InitializeComponent();
+            BackButton.BackgroundColor = Color.FromRgba(0, 0, 0, 0);
             BackButton.ImageSource = "leftarrow";
+            NextButton.BackgroundColor = Color.FromRgba(0, 0, 0, 0);
             NextButton.ImageSource = "rightarrow";
             DisplayedImage.Source = new UriImageSource
             {
-                Uri = new Uri(String.Format("http://lorempixel.com/320/240/city/{0}", ctr)),
+                Uri = new Uri(String.Format("http://lorempixel.com/320/240/city/{0}", id)),
                 CachingEnabled = false
             };
         }
 
         private void BackButton_Clicked(object sender, EventArgs e)
         {
-            ctr -= 1;
-            if (ctr == 0)
+            id -= 1;
+            if (id == 0)
             {
-                ctr = 10;
+                id = 10;
             }
             DisplayedImage.Source = new UriImageSource
             {
-                Uri = new Uri(String.Format("http://lorempixel.com/320/240/city/{0}", ctr)),
+                Uri = new Uri(String.Format("http://lorempixel.com/320/240/city/{0}", id)),
                 CachingEnabled = false
             };
         }
 
         private void NextButton_Clicked(object sender, EventArgs e)
         {
-            ctr += 1;
-            if (ctr == 11)
+            id += 1;
+            if (id == 11)
             {
-                ctr = 1;
+                id = 1;
             }
             DisplayedImage.Source = new UriImageSource
             {
-                Uri = new Uri(String.Format("http://lorempixel.com/320/240/city/{0}", ctr)),
+                Uri = new Uri(String.Format("http://lorempixel.com/320/240/city/{0}", id)),
                 CachingEnabled = false
             };
         }

@@ -6,28 +6,32 @@
              mc:Ignorable="d"
              x:Class="App3.Image1Page">
     <ContentPage.Content>
-        <StackLayout>
-            <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
-                <Button x:Name="BackButton"
-                        WidthRequest="64"
-                        HeightRequest="64"
-                        HorizontalOptions="StartAndExpand"
-                        Clicked="BackButton_Clicked"/>
+        <StackLayout
+            BackgroundColor = "Black">
+            <StackLayout 
+                Orientation = "Horizontal" 
+                HorizontalOptions = "FillAndExpand"
+                Padding = "0, 20, 0, 0">
+                <Button x:Name = "BackButton"
+                        WidthRequest =  "64"
+                        HeightRequest = "64"
+                        HorizontalOptions = "StartAndExpand"
+                        Clicked = "BackButton_Clicked"/>
                 <ActivityIndicator 
-                    BindingContext="{x:Reference DisplayedImage}" 
-                    IsRunning="{Binding IsLoading}" 
-                    Color="Black"
-                    HorizontalOptions="CenterAndExpand"/>
-                <Button x:Name="NextButton"
-                        WidthRequest="64"
-                        HeightRequest="64"
-                        HorizontalOptions="EndAndExpand"
-                        Clicked="NextButton_Clicked"/>
+                    BindingContext = "{x:Reference DisplayedImage}" 
+                    IsRunning = "{Binding IsLoading}" 
+                    Color = "White"
+                    HorizontalOptions = "Center"/>
+                <Button x:Name = "NextButton"
+                        WidthRequest = "64"
+                        HeightRequest = "64"
+                        HorizontalOptions = "EndAndExpand"
+                        Clicked = "NextButton_Clicked"/>
             </StackLayout>
-            <Image x:Name="DisplayedImage"
-                   HorizontalOptions="CenterAndExpand"
-                   VerticalOptions="CenterAndExpand"
-                   Aspect="AspectFit"/>
+            <Image x:Name = "DisplayedImage"
+                   HorizontalOptions = "FillAndExpand"
+                   VerticalOptions = "FillAndExpand"
+                   Aspect = "AspectFit"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
