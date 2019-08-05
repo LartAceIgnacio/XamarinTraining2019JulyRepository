@@ -6,15 +6,15 @@
              mc:Ignorable="d"
              x:Class="App3.Image1Page">
     <ContentPage.Content>
-        <StackLayout
+        <AbsoluteLayout
             BackgroundColor = "Black">
             <StackLayout 
                 Orientation = "Horizontal" 
                 HorizontalOptions = "FillAndExpand"
-                Padding = "20, 20, 20, 0">
+                Padding = "20, 20, 20, 0"
+                AbsoluteLayout.LayoutBounds = "0.5, 0, 1, 0.1"
+                AbsoluteLayout.LayoutFlags = "All">
                 <Button x:Name = "BackButton"
-                        WidthRequest =  "64"
-                        HeightRequest = "64"
                         HorizontalOptions = "StartAndExpand"
                         Clicked = "BackButton_Clicked"/>
                 <ActivityIndicator 
@@ -31,7 +31,9 @@
             <Image x:Name = "DisplayedImage"
                    HorizontalOptions = "FillAndExpand"
                    VerticalOptions = "FillAndExpand"
-                   Aspect = "AspectFit"/>
-        </StackLayout>
+                   Aspect = "AspectFit"
+                   AbsoluteLayout.LayoutBounds = "0.5, 0.5, 1, 0.8"
+                   AbsoluteLayout.LayoutFlags = "All"/>
+        </AbsoluteLayout>
     </ContentPage.Content>
 </ContentPage>
