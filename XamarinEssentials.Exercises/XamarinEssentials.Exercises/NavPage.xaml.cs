@@ -57,5 +57,15 @@ namespace XamarinEssentials.Exercises
         {
             await Navigation.PushAsync(new RelativeLayout_Exercise());
         }
+
+        private async void GoToImagesGrid_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new Images_Exercise2());
+        }
+
+        private async void GoToImageGallery_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new Images_Exercise1());
+        }
     }
 }

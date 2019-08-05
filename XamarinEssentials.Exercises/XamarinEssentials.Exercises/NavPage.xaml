@@ -16,6 +16,8 @@
                 <Button x:Name="GoToCalculator" Text="Calculator" Clicked="GoToCalculator_Clicked" />
                 <Button x:Name="GoToAbsolute" Text="Relax Flowers" Clicked="GoToAbsolute_Clicked" />
                 <Button x:Name="GoToRelative" Text="Pay for Credits" Clicked="GoToRelative_Clicked" />
+                <Button x:Name="GoToImagesGrid" Text="Image Gallery" Clicked="GoToImagesGrid_Clicked" />
+                <Button x:Name="GoToImageGallery" Text="Image Slideshow" Clicked="GoToImageGallery_Clicked" />
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>

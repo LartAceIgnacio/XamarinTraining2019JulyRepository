@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="XamarinEssentials.Exercises.Images_Exercise1">
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical">
+            <StackLayout Orientation="Horizontal">
+                <Button x:Name="btnBack"
+                        Text="Back"
+                        ClassId="btnBack"
+                        Clicked="btnChangeImage_Clicked"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center"/>
+                <ActivityIndicator BindingContext="{x:Reference imgDisplay}"
+                                   IsRunning="{Binding IsLoading}"
+                                   HorizontalOptions="CenterAndExpand"
+                                   VerticalOptions="Center"/>
+                <Button x:Name="btnNext"
+                        Text="Next"
+                        ClassId="btnNext"
+                        Clicked="btnChangeImage_Clicked"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center"/>
+            </StackLayout>
+            <Grid 
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="FillAndExpand">
+                <Image x:Name="imgDisplay"
+                           VerticalOptions="CenterAndExpand"
+                           Aspect="AspectFit"/>
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
