@@ -17,12 +17,12 @@ namespace ProjectDemo
 			InitializeComponent();
 			imgDisplayImage.Source = new UriImageSource
 			{
-				Uri = new Uri("http://lorempixel.com/320/240/city/1"),
+				Uri = new Uri("http://lorempixel.com/800/600/city/1"),
 				CachingEnabled = false
 			};
 		}
 		private int _counter = 1;
-		private string _imgUrl = "http://lorempixel.com/320/240/city/";
+		private string _imgUrl = "http://lorempixel.com/800/600/city/";
 		private void NextImage(object sender, EventArgs e)
 		{
 			if(_counter<10)
