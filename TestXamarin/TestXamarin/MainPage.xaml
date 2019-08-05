@@ -8,6 +8,7 @@
     <ScrollView>
         <StackLayout>
             <Label Text="Test Xamarin" HorizontalOptions="CenterAndExpand" />
+            <Button x:Name="GoToQuickReach" Text="QuickReach" Clicked="GoToQuickReach_Clicked" />
             <Button x:Name="GoToExercise1" Text="Quotes" Clicked="GoToExercise1_Clicked"/>
             <Button x:Name="GoToExercise2" Text="RGB Slider" Clicked="GoToExercise2_Clicked"/>
             <Button x:Name="GoToExercise3A" Text="Stack Layout 1" Clicked="GoToExercise3A_Clicked"/>
@@ -18,6 +19,7 @@
             <Button x:Name="GoToExercise6" Text="Relative Layout" Clicked="GoToExercise6_Clicked"/>
             <Button x:Name="GoToRoundedImg" Text="Rounded Image" Clicked="GoToRoundedImg_Clicked"/>
             <Button x:Name="GoToImageLoadingGrid" Text="Image Loading Grid" Clicked="GoToImageLoadingGrid_Clicked"/>
+            <Button x:Name="GoToContactsList" Text="Contacts List" Clicked="GoToContactsList_Clicked" />
         </StackLayout>
     </ScrollView>
 </ContentPage>

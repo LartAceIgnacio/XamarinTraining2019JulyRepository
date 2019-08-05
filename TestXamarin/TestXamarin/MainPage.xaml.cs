@@ -82,5 +82,15 @@ namespace TestXamarin
         {
             await Navigation.PushAsync(new ImageLoadingGrid());
         }
+
+        private async void GoToQuickReach_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new QuickReach());
+        }
+
+        private async void GoToContactsList_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new Contacts_List());
+        }
     }
 }
