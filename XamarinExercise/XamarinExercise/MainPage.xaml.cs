@@ -68,5 +68,9 @@ namespace XamarinExercise
         {
             await Navigation.PushAsync(new ImageGallery());
         }
+        private async void Ex11_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new ContactsPage());
+        }
     }
 }

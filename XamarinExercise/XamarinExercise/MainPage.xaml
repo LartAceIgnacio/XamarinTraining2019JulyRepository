@@ -48,6 +48,10 @@
                 Text="Exercise10"
                 Clicked="Ex10_Clicked"/>
 
+            <Button x:Name="ex11"
+                Text="Exercise11"
+                Clicked="Ex11_Clicked"/>
+
         </StackLayout>
     </ScrollView>
     
