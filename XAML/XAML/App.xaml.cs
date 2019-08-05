@@ -18,7 +18,8 @@ namespace XAML
             //MainPage = new GridExercise2();
             //MainPage = new AbsoluteExercise();
             //MainPage = new RelativeExercise();
-            MainPage = new ImageExercise2();
+            MainPage = new ImageExercise1();
+            //MainPage = new ImageExercise2();
         }
 
         protected override void OnStart()
