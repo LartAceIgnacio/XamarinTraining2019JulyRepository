@@ -10,7 +10,7 @@ namespace ProjectDemo
 		{
 			InitializeComponent();
 
-			MainPage = new RelativeLayoutPage();
+			MainPage = new ImageDemo();
 		}
 
 		protected override void OnStart()
