@@ -11,7 +11,7 @@
             <StackLayout 
                 Orientation = "Horizontal" 
                 HorizontalOptions = "FillAndExpand"
-                Padding = "0, 20, 0, 0">
+                Padding = "20, 20, 20, 0">
                 <Button x:Name = "BackButton"
                         WidthRequest =  "64"
                         HeightRequest = "64"
