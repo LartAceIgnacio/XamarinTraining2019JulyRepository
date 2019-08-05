@@ -40,6 +40,26 @@ namespace Exercise1
                 Uri = new Uri("https://tinyurl.com/y2hvt72y"),
                 CachingEnabled = false
             };
+            Img6.Source = new UriImageSource
+            {
+                Uri = new Uri("https://tinyurl.com/y5hdz9l6"),
+                CachingEnabled = false
+            };
+            Img7.Source = new UriImageSource
+            {
+                Uri = new Uri("https://tinyurl.com/y697jezg"),
+                CachingEnabled = false
+            };
+            Img8.Source = new UriImageSource
+            {
+                Uri = new Uri("https://tinyurl.com/y6t2pfdv"),
+                CachingEnabled = false
+            };
+            Img9.Source = new UriImageSource
+            {
+                Uri = new Uri("https://tinyurl.com/y2nt9kt9"),
+                CachingEnabled = false
+            };
         }
     }
 }

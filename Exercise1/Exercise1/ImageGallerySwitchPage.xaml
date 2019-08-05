@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Exercise1.ImageGallerySwitchPage">
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="Black">
+            <StackLayout Orientation="Horizontal">
+
+                <Button Text="Back"
+                HorizontalOptions="Start"
+                VerticalOptions="Start"
+                Clicked="BackButton_Clicked"/>
+                <ActivityIndicator 
+                    BindingContext="{x:Reference ImageGallery}"
+                    IsRunning="{Binding IsLoading}"
+                    HorizontalOptions="Center"/>
+                <Button Text="Next"
+                HorizontalOptions="EndAndExpand"
+                VerticalOptions="End"
+                Clicked="NextButton_Clicked"/>
+            </StackLayout>
+            <StackLayout>
+                <Image x:Name="ImageGallery"
+                   VerticalOptions="CenterAndExpand"
+                   Aspect="Fill"/>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

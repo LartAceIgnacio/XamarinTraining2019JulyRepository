@@ -6,7 +6,7 @@
              mc:Ignorable="d"
              x:Class="Exercise1.ImageGalleryPage">
     <ContentPage.Content>
-        <Grid Padding="5,0,0,0" RowSpacing="1" ColumnSpacing="1" BackgroundColor="Black">
+        <Grid Padding="10,0,0,0" RowSpacing="1" ColumnSpacing="1" BackgroundColor="Black">
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="*"/>
@@ -71,6 +71,54 @@
                     HorizontalOptions="Center"
                     VerticalOptions="Center"/>
                 <Image x:Name="Img5" 
+                   Aspect = "AspectFill"
+                   AbsoluteLayout.LayoutBounds="0, 0, 1, 1"
+                   AbsoluteLayout.LayoutFlags="All"/>
+            </AbsoluteLayout>
+
+            <AbsoluteLayout Grid.Row="2" Grid.Column="2">
+                <ActivityIndicator 
+                    BindingContext="{x:Reference Img6}"
+                    IsRunning="{Binding IsLoading}"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"/>
+                <Image x:Name="Img6" 
+                   Aspect = "AspectFill"
+                   AbsoluteLayout.LayoutBounds="0, 0, 1, 1"
+                   AbsoluteLayout.LayoutFlags="All"/>
+            </AbsoluteLayout>
+
+            <AbsoluteLayout Grid.Row="3" Grid.Column="0">
+                <ActivityIndicator 
+                    BindingContext="{x:Reference Img7}"
+                    IsRunning="{Binding IsLoading}"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"/>
+                <Image x:Name="Img7" 
+                   Aspect = "AspectFill"
+                   AbsoluteLayout.LayoutBounds="0, 0, 1, 1"
+                   AbsoluteLayout.LayoutFlags="All"/>
+            </AbsoluteLayout>
+
+            <AbsoluteLayout Grid.Row="3" Grid.Column="1">
+                <ActivityIndicator 
+                    BindingContext="{x:Reference Img8}"
+                    IsRunning="{Binding IsLoading}"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"/>
+                <Image x:Name="Img8" 
+                   Aspect = "AspectFill"
+                   AbsoluteLayout.LayoutBounds="0, 0, 1, 1"
+                   AbsoluteLayout.LayoutFlags="All"/>
+            </AbsoluteLayout>
+
+            <AbsoluteLayout Grid.Row="3" Grid.Column="2">
+                <ActivityIndicator 
+                    BindingContext="{x:Reference Img9}"
+                    IsRunning="{Binding IsLoading}"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"/>
+                <Image x:Name="Img9" 
                    Aspect = "AspectFill"
                    AbsoluteLayout.LayoutBounds="0, 0, 1, 1"
                    AbsoluteLayout.LayoutFlags="All"/>
