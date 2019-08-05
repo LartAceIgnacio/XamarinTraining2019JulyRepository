@@ -11,7 +11,8 @@ namespace XamarinActivities
             InitializeComponent();
 
             //MainPage = new TabbedNavigation();
-            MainPage = new E4ImagePage();
+            MainPage = new E4ImageExercised1();
+            //MainPage = new E4ImagePage();
         }
 
         protected override void OnStart()

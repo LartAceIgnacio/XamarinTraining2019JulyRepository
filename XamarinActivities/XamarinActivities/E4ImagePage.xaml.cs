@@ -18,7 +18,7 @@ namespace XamarinActivities
 
             imgOne.Source = new UriImageSource
             {
-                Uri = new Uri("https://tinyurl.com/y22razxu"),
+                Uri = new Uri("https://tinyurl.com/myel-city-1"),
                 CachingEnabled = false
             };
 
