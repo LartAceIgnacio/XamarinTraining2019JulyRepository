@@ -4,12 +4,32 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="ProjectDemo.ImageExercise1Page">
+             x:Class="ProjectDemo.ImageExercise1Page"
+			 BackgroundColor="Black">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
-    </ContentPage.Content>
+		<StackLayout Orientation="Vertical"
+					 Spacing="75">
+        <StackLayout Orientation="Horizontal"
+					 Padding="20,30,20,0">
+			<ImageButton Source="leftarrow.png"
+						 HeightRequest="50"
+						 WidthRequest="50"
+						 Clicked="PreviousImage"
+						 HorizontalOptions="Center"/>
+			<ActivityIndicator BindingContext="{x:Reference imgDisplayImage}"
+							IsRunning="{Binding IsLoading}"
+							   HorizontalOptions="CenterAndExpand"/>
+			<ImageButton Source="rightarrow.png"
+						 HorizontalOptions="Center"
+						 HeightRequest="50"
+						 WidthRequest="50"
+						 Clicked="NextImage"/>
+		</StackLayout>
+		<Image x:Name="imgDisplayImage"
+			   HorizontalOptions="StartAndExpand"
+			   HeightRequest="350"
+			   WidthRequest="360"
+			   Aspect="AspectFill"/>
+		</StackLayout>
+	</ContentPage.Content>
 </ContentPage>

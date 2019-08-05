@@ -15,6 +15,56 @@ namespace ProjectDemo
 		public ImageExercise1Page()
 		{
 			InitializeComponent();
+			imgDisplayImage.Source = new UriImageSource
+			{
+				Uri = new Uri("http://lorempixel.com/320/240/city/1"),
+				CachingEnabled = false
+			};
+		}
+		private int _counter = 1;
+		private string _imgUrl = "http://lorempixel.com/320/240/city/";
+		private void NextImage(object sender, EventArgs e)
+		{
+			if(_counter<10)
+			{
+				_counter += 1;
+				imgDisplayImage.Source = new UriImageSource
+				{
+					Uri = new Uri(_imgUrl + _counter),
+					CachingEnabled = false
+				};
+			}
+			if(_counter==10)
+			{
+				_counter = 1;
+				imgDisplayImage.Source = new UriImageSource
+				{
+					Uri = new Uri(_imgUrl + _counter),
+					CachingEnabled = false
+				};
+			}
+		}
+
+		private void PreviousImage(object sender, EventArgs e)
+		{
+			if (_counter > 0)
+			{
+				_counter -= 1;
+				imgDisplayImage.Source = new UriImageSource
+				{
+					Uri = new Uri(_imgUrl + _counter),
+					CachingEnabled = false
+				};
+			}
+			if (_counter == 0)
+			{
+				_counter = 10;
+				imgDisplayImage.Source = new UriImageSource
+				{
+					Uri = new Uri(_imgUrl + _counter),
+					CachingEnabled = false
+				};
+			}
 		}
 	}
 }
