@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             xmlns:controls="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
+             x:Class="XamarinExcercise.ImageExercise">
+    <ContentPage.Content>
+        <Grid RowSpacing="1" ColumnSpacing="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <AbsoluteLayout  Grid.Column="0" Grid.Row="0">
+                <Image x:Name="image1" Aspect="AspectFill"
+                       AbsoluteLayout.LayoutBounds="0, 0, 1, 1"
+                       AbsoluteLayout.LayoutFlags="All"/>
+                <ActivityIndicator 
+                       AbsoluteLayout.LayoutBounds="0, 0, 1, 1"
+                       AbsoluteLayout.LayoutFlags="All"
+                       BindingContext="{x:Reference image1}"
+                                   IsRunning="{Binding IsLoading}"/>
+            </AbsoluteLayout>
+
+            <AbsoluteLayout  Grid.Column="1" Grid.Row="0" Grid.RowSpan="2" Grid.ColumnSpan="2">
+                <Image x:Name="image2" Aspect="AspectFill"
+                       AbsoluteLayout.LayoutBounds="0, 0, 1, 1"
+                       AbsoluteLayout.LayoutFlags="All"/>
+                <ActivityIndicator 
+                       AbsoluteLayout.LayoutBounds="0, 0, 1, 1"
+                       AbsoluteLayout.LayoutFlags="All"
+                       BindingContext="{x:Reference image2}"
+                                   IsRunning="{Binding IsLoading}"/>
+            </AbsoluteLayout>
+
+            <AbsoluteLayout  Grid.Column="0" Grid.Row="1" >
+                <Image x:Name="image3" Aspect="AspectFill"
+                       AbsoluteLayout.LayoutBounds="0, 0, 1, 1"
+                       AbsoluteLayout.LayoutFlags="All"/>
+                <ActivityIndicator 
+                       AbsoluteLayout.LayoutBounds="0, 0, 1, 1"
+                       AbsoluteLayout.LayoutFlags="All"
+                       BindingContext="{x:Reference image3}"
+                                   IsRunning="{Binding IsLoading}"/>
+            </AbsoluteLayout>
+
+            <AbsoluteLayout  Grid.Column="0" Grid.Row="2" >
+                <Image x:Name="image4" Aspect="AspectFill"
+                       AbsoluteLayout.LayoutBounds="0, 0, 1, 1"
+                       AbsoluteLayout.LayoutFlags="All"/>
+                <ActivityIndicator 
+                       AbsoluteLayout.LayoutBounds="0, 0, 1, 1"
+                       AbsoluteLayout.LayoutFlags="All"
+                       BindingContext="{x:Reference image4}"
+                                   IsRunning="{Binding IsLoading}"/>
+            </AbsoluteLayout>
+
+            <AbsoluteLayout  Grid.Column="1" Grid.Row="2" >
+                <Image x:Name="image5" Aspect="AspectFill"
+                       AbsoluteLayout.LayoutBounds="0, 0, 1, 1"
+                       AbsoluteLayout.LayoutFlags="All"/>
+                <ActivityIndicator 
+                       AbsoluteLayout.LayoutBounds="0, 0, 1, 1"
+                       AbsoluteLayout.LayoutFlags="All"
+                       BindingContext="{x:Reference image5}"
+                                   IsRunning="{Binding IsLoading}"/>
+            </AbsoluteLayout>
+
+            <AbsoluteLayout  Grid.Column="2" Grid.Row="2" >
+                <Image x:Name="image6" Aspect="AspectFill"
+                       AbsoluteLayout.LayoutBounds="0, 0, 1, 1"
+                       AbsoluteLayout.LayoutFlags="All"/>
+                <ActivityIndicator 
+                       AbsoluteLayout.LayoutBounds="0, 0, 1, 1"
+                       AbsoluteLayout.LayoutFlags="All"
+                       BindingContext="{x:Reference image6}"
+                                   IsRunning="{Binding IsLoading}"/>
+            </AbsoluteLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
