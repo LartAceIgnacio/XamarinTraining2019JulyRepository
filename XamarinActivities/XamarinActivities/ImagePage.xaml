@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="XamarinActivities.ImagePage">
+    <ContentPage.Content>
+        <RelativeLayout BackgroundColor="Black">
+            <StackLayout Orientation="Horizontal" 
+                         RelativeLayout.WidthConstraint="{ConstraintExpression
+                             Type=RelativeToParent,
+                             Property=Width,
+                             Factor=1}"
+                         RelativeLayout.YConstraint="{ConstraintExpression
+                             Type=RelativeToParent,
+                             Property=Height,
+                             Factor=0.1}">
+                <Button HorizontalOptions="Start"
+                        Clicked="Back_Button_Clicked"
+                        Text="Back" />
+                <ActivityIndicator BindingContext="{x:Reference Image}"
+                                   IsRunning="{Binding IsLoading}"
+                                   HorizontalOptions="CenterAndExpand"
+                                   Color="Orange" />
+                <Button HorizontalOptions="End"
+                        Clicked="Next_Button_Clicked"
+                        Text="Next" />
+            </StackLayout>
+            <StackLayout x:Name="ImageContainer"
+                         RelativeLayout.WidthConstraint="{ConstraintExpression
+                             Type=RelativeToParent,
+                             Property=Width,
+                             Factor=1}"
+                         RelativeLayout.HeightConstraint="{ConstraintExpression
+                             Type=RelativeToParent,
+                             Property=Height,
+                             Factor=0.38}"
+                         RelativeLayout.YConstraint="{ConstraintExpression
+                             Type=RelativeToParent,
+                             Property=Height,
+                             Factor=0.3}"
+                         BackgroundColor="LightGray">
+                <Image x:Name="Image"
+                       VerticalOptions="FillAndExpand"
+                       Aspect="AspectFill" />
+            </StackLayout>
+        </RelativeLayout>
+    </ContentPage.Content>
+</ContentPage>

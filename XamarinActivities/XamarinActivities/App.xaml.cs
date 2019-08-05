@@ -11,6 +11,8 @@ namespace XamarinActivities
             InitializeComponent();
 
             // MainPage = new TabsPage();
+            MainPage = new ImagePage();
+            // MainPage = new GridImagePage();
             // MainPage = new AbsolutePage();
             // MainPage = new RelativePage();
             // MainPage = new WelcomePage();
@@ -19,8 +21,6 @@ namespace XamarinActivities
             // MainPage = new CalculatorPage();
             // MainPage = new QuotesPage();
             // MainPage = new BoxColorPage();
-
-            MainPage = new GridImagePage();
         }
 
         protected override void OnStart()
