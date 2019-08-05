@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="XamarinActivities.ContactsPage">
+    <ContentPage.Content>
+        <StackLayout>
+            
+            <SearchBar Placeholder="Search..." TextChanged="SearchBar_TextChanged" />
+
+            <ListView x:Name="contactsList"
+                      HasUnevenRows="True"
+                      SeparatorColor="#503026">
+
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal">
+                                <AbsoluteLayout>
+                                    <BoxView AbsoluteLayout.LayoutFlags="All"
+                                             AbsoluteLayout.LayoutBounds="0, 0, 1, 1"
+                                             Margin="5"
+                                             BackgroundColor="Gray" />
+                                    <Label AbsoluteLayout.LayoutFlags="All"
+                                           AbsoluteLayout.LayoutBounds="0, 0, 1, 1"
+                                           Margin="5"
+                                           Text="AC"
+                                           HorizontalTextAlignment="Center"
+                                           VerticalTextAlignment="Center"
+                                           FontSize="16"/>
+                                </AbsoluteLayout>
+                                <StackLayout>
+                                    <Label VerticalOptions="Start"
+                                           Text="{Binding FullName}"
+                                           FontSize="14"/>
+                                    <Label VerticalOptions="End"
+                                           Text="{Binding MobileNumber}"
+                                           FontSize="11"/>
+                                </StackLayout>                                
+                            </StackLayout>
+                            <!--<ViewCell.ContextActions>
+                                <MenuItem Clicked="Call_Clicked" CommandParameter="{Binding .}" Text="Call" />
+                                <MenuItem Clicked="Delete_Clicked" CommandParameter="{Binding .}" Text="Delete" />
+                            </ViewCell.ContextActions>-->
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+
+            </ListView>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
