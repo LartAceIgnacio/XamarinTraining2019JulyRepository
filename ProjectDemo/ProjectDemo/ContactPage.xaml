@@ -6,15 +6,24 @@
              mc:Ignorable="d"
              x:Class="ProjectDemo.ContactPage">
     <ContentPage.Content>
-		<ListView x:Name="contactListView"
-				  SeparatorColor="#707070">
-			<ListView.ItemTemplate>
-				<DataTemplate>
-					<ImageCell ImageSource="https://coolbackgrounds.io/images/backgrounds/black/pure-black-background-f9eeb41f.jpg"
-							   Text="{Binding Firstname}"
-							   Detail="{Binding PhoneNumber}"/>
-				</DataTemplate>
-			</ListView.ItemTemplate>
-		</ListView>
-    </ContentPage.Content>
+		<StackLayout>
+			<SearchBar Placeholder="Search" TextChanged="SearchBar_TextChanged"/>
+			<ListView x:Name="contactListView"
+					  SeparatorColor="#707070"
+					  IsPullToRefreshEnabled="True"
+					  Refreshing="ContactListView_Refreshing">
+				<ListView.ItemTemplate>
+					<DataTemplate>
+						<ImageCell ImageSource="https://coolbackgrounds.io/images/backgrounds/black/pure-black-background-f9eeb41f.jpg"
+								   Text="{Binding FullName}"
+								   Detail="{Binding PhoneNumber}">
+								<ImageCell.ContextActions>
+									<MenuItem Clicked="Delete_Clicked" CommandParameter="{Binding .}" Text="Delete"/>
+								</ImageCell.ContextActions>
+								</ImageCell>
+					</DataTemplate>
+				</ListView.ItemTemplate>
+			</ListView>
+		</StackLayout>
+	</ContentPage.Content>
 </ContentPage>
