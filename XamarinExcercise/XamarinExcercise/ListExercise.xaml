@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="XamarinExcercise.ListExercise">
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                <Label Text="My Contacts" HorizontalOptions="Center"/>
+            </StackLayout>
+            <SearchBar x:Name="searchString" Placeholder="Search Name or Number" TextChanged="SearchBar_TextChanged"/>
+
+            <ListView x:Name="ContactList"
+                      IsPullToRefreshEnabled="True"
+                      Refreshing="ContactList_Refreshing"
+                      HasUnevenRows="True" SeparatorColor="Gold">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal" >
+                                <Label x:Name="initial" Text="{Binding Initial}" 
+                                       TextColor="White"
+                                       FontSize="25" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" 
+                                       BackgroundColor="{Binding NameColor}"  
+                                       WidthRequest="{Binding Source={x:Reference initial}, Path=Height}" />
+                                    <StackLayout Orientation="Vertical">
+                                    <Label Text="{Binding FullName}" FontSize="20"/>
+                                    <Label Text="{Binding ContactNumber}"/>
+                                </StackLayout>
+                            </StackLayout>
+                            <ViewCell.ContextActions>
+                                <MenuItem Text="Delete"
+                                          CommandParameter="{Binding .}"
+                                          Clicked="Delete_Clicked"/>
+                            </ViewCell.ContextActions>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
