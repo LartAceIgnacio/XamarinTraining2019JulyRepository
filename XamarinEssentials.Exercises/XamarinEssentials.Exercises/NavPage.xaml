@@ -18,6 +18,7 @@
                 <Button x:Name="GoToRelative" Text="Pay for Credits" Clicked="GoToRelative_Clicked" />
                 <Button x:Name="GoToImagesGrid" Text="Image Gallery" Clicked="GoToImagesGrid_Clicked" />
                 <Button x:Name="GoToImageGallery" Text="Image Slideshow" Clicked="GoToImageGallery_Clicked" />
+                <Button x:Name="GoToContacts" Text="Contacts" Clicked="GoToContacts_Clicked" />
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>

@@ -67,5 +67,10 @@ namespace XamarinEssentials.Exercises
         {
             await Navigation.PushAsync(new Images_Exercise1());
         }
+
+        private async void GoToContacts_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new ListView_Exercise());
+        }
     }
 }
