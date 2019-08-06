@@ -6,18 +6,25 @@ using System.Threading.Tasks;
 using XAML.Models;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using System.Collections.ObjectModel;
 
 namespace XAML
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ListExercise : ContentPage
     {
+
+        ObservableCollection<Person> DeletedList = new ObservableCollection<Person>();
         public ListExercise()
         {
             InitializeComponent();
+            InitialList();
+            
+        }
 
-            #region List of Persons
-            var people = new List<Person>
+        private ObservableCollection<Person> InitialList()
+        {
+            ObservableCollection<Person> People = new ObservableCollection<Person>
             {
                 new Person
                 {
@@ -86,8 +93,46 @@ namespace XAML
                     ContactNumber = "09123456799"
                 },
             };
-            personListView.ItemsSource = people;
-            #endregion
+            personListView.ItemsSource = People.OrderBy(p => p.FirstName);
+            DeletedList = People;
+            return People;
+        }
+
+        
+
+        ObservableCollection<Person> SearchContacts(string searchText = null)
+        {
+            if (String.IsNullOrWhiteSpace(searchText))
+            {
+                return InitialList();
+            }
+            else
+            {
+                var searchPeople = InitialList().Where(p => p.FullName.ToLower().Contains(searchText.ToLower()) || p.ContactNumber.Contains(searchText));
+                ObservableCollection<Person> filteredPeople = new ObservableCollection<Person>(searchPeople);
+                return filteredPeople;
+            }
+        }
+
+        private void SearchBar_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            var _people = SearchContacts(e.NewTextValue).OrderBy(p => p.FirstName);
+            personListView.ItemsSource = _people;
+        }
+
+        private void DeleteItem_Clicked(object sender, EventArgs e)
+        {
+            var menuItem = sender as MenuItem;
+            var person = menuItem.CommandParameter as Person;
+            DeletedList.Remove(person);
+            personListView.ItemsSource = DeletedList.OrderBy(p => p.FirstName);
+            
+        }
+
+        private void PersonListView_Refreshing(object sender, EventArgs e)
+        {
+            InitialList();
+            personListView.EndRefresh();
         }
     }
 }

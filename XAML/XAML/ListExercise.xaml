@@ -7,21 +7,40 @@
              x:Class="XAML.ListExercise">
     <ContentPage.Content>
         <StackLayout>
-            <ListView x:Name="personListView">
+            <ListView x:Name="personListView"
+                      IsPullToRefreshEnabled="True"
+                      Refreshing="PersonListView_Refreshing"
+                      RowHeight="60">
                 <ListView.Header>
-                    <Label>My Contacts</Label>
+                    <StackLayout>
+                        <SearchBar Placeholder="Search Contacts..." TextChanged="SearchBar_TextChanged"></SearchBar>
+                        <Label>My Contacts</Label>
+                    </StackLayout>
                 </ListView.Header>
                 
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
-                            <StackLayout>
-                                <AbsoluteLayout Padding="10">
-                                    <BoxView BackgroundColor="Pink"/>
-                                    <Label Text="{Binding NameInitial}"
-                                           FontSize="12"/>
+                            <ViewCell.ContextActions>
+                                <MenuItem CommandParameter="{Binding .}" Text="Delete" Clicked="DeleteItem_Clicked"/>
+                            </ViewCell.ContextActions>
+                            <StackLayout Orientation="Horizontal" Padding="5">
+                                <AbsoluteLayout>
+                                    <BoxView x:Name="ContactBox"
+                                             Color="{Binding BoxBgColor}"
+                                             CornerRadius="50"
+                                             AbsoluteLayout.LayoutFlags="PositionProportional"
+                                             AbsoluteLayout.LayoutBounds="0,0,50,50"/>
+                                    <Label Text="{Binding NameInitials}"
+                                           FontSize="24"
+                                           TextColor="White"
+                                           AbsoluteLayout.LayoutFlags="PositionProportional"
+                                           AbsoluteLayout.LayoutBounds="0.5,0.35"/>
                                 </AbsoluteLayout>
-                                    <Label Text="{Binding FullDetails}"/>
+                                <StackLayout>
+                                    <Label Text="{Binding FullName}"/>
+                                    <Label Text="{Binding ContactNumber}"/>
+                                </StackLayout>
                             </StackLayout>
                         </ViewCell>
                     </DataTemplate>

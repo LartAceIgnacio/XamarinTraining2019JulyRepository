@@ -4,29 +4,10 @@ using System.Linq;
 using System.Text;
 using Xamarin.Forms;
 
-
 namespace XAML.Models
 {
-    public class Person
+    public class SideColor:Person
     {
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-        public string ContactNumber { get; set; }
-        public string FullName
-        {
-            get
-            {
-                return FirstName + " " + LastName;
-            }
-        }
-        public string NameInitials
-        {
-            get
-            {
-                return FirstName[0].ToString() + LastName[0].ToString();
-            }
-        }
-
         public Dictionary<char, Color> Colors = new Dictionary<char, Color>()
         {
             {'A', Color.Red},
