@@ -17,6 +17,7 @@
 						<ViewCell>
 							<StackLayout Orientation="Horizontal" Spacing="5" Margin="5,0,0,0">
 								<BoxView BackgroundColor="Black"/>
+								<Label Text="{Binding Initial}"/>
 								<StackLayout Orientation="Vertical" Spacing="1">
 									<Label Text="{Binding FullName}"/>
 									<Label Text="{Binding PhoneNumber}"/>

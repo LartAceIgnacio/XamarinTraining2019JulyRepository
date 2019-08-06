@@ -83,21 +83,24 @@ namespace ProjectDemo
 				}
 			};
 		public List<Contact> temporaryContactList = new List<Contact>();
+		public Boolean isRefreshed = false;
 		public ContactPage()
 		{
 			InitializeComponent();
-			
-			contactListView.ItemsSource = GetContacts();
+
 			cloneContactList();
+			contactListView.ItemsSource = GetContacts();
+			
 		}
 		public List<Contact> GetContacts()
 		{
-			List<Contact> SortedContact = contacts.OrderBy(o => o.Firstname).ToList();
+			List<Contact> SortedContact = temporaryContactList.OrderBy(o => o.Firstname).ToList();
 			return SortedContact;
 		}
 
 		private void ContactListView_Refreshing(object sender, EventArgs e)
 		{
+			cloneContactList();
 			contactListView.ItemsSource = GetContacts();
 			contactListView.EndRefresh();
 		}
@@ -106,24 +109,26 @@ namespace ProjectDemo
 		{
 			string searchtext = e.NewTextValue;
 			var contacts = new ObservableCollection<Contact>();
-			foreach (var item in GetContacts())
-			{
-				contacts.Add(item);
-			}
+				foreach (var item in GetContacts())
+				{
+					contacts.Add(item);
+				}
 
-			if (String.IsNullOrWhiteSpace(searchtext))
-			{
-				contactListView.ItemsSource = GetContacts();
-			}
-			else
-			{
-				var filteredContact = contacts.Where(contact => contact.FullName.ToLower().Contains(searchtext.ToLower()) || contact.PhoneNumber.ToLower().Contains(searchtext.ToLower()));
-				contactListView.ItemsSource = filteredContact;
+				if (String.IsNullOrWhiteSpace(searchtext))
+				{
+					contactListView.ItemsSource = GetContacts();
+				}
+				else
+				{
+					var filteredContact = temporaryContactList.Where(contact => contact.FullName.ToLower().Contains(searchtext.ToLower()) || contact.PhoneNumber.ToLower().Contains(searchtext.ToLower()));
+					contactListView.ItemsSource = filteredContact;
 
-			}
+				}
+
 		}
 		public void cloneContactList()
 		{
+			temporaryContactList.Clear();
 			contacts.ForEach((item) =>
 			{
 				temporaryContactList.Add(item);
@@ -134,7 +139,7 @@ namespace ProjectDemo
 			var menuItem = sender as MenuItem;
 			var _contact = menuItem.CommandParameter as Contact;
 			temporaryContactList.Remove(_contact);
-			contactListView.ItemsSource = temporaryContactList.OrderBy(o => o.Firstname).ToList();
+			contactListView.ItemsSource = GetContacts();
 		}
 	}
 

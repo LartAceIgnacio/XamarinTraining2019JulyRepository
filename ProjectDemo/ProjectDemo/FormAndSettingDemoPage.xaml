@@ -5,11 +5,67 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="ProjectDemo.FormAndSettingDemoPage">
-    <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
-    </ContentPage.Content>
+	
+	<!---  DATE PICKER -->
+	
+	<!--<ContentPage.Padding>
+		<OnPlatform x:TypeArguments="Thickness">
+			<On Platform="iOS" Value="0, 20, 0, 0" />
+		</OnPlatform>
+	</ContentPage.Padding>
+
+	<StackLayout Margin="10">
+		<Label Text="Days Between Dates"
+               Style="{DynamicResource TitleStyle}"
+               Margin="0, 20"
+               HorizontalTextAlignment="Center" />
+
+		<Label Text="Start Date:" />
+
+		<DatePicker x:Name="startDatePicker"
+                    Format="D"
+                    Margin="30, 0, 0, 30"
+                    DateSelected="OnDateSelected" />
+
+		<Label Text="End Date:" />
+
+		<DatePicker x:Name="endDatePicker"
+                    MinimumDate="{Binding Source={x:Reference startDatePicker},
+                                          Path=Date}"
+                    Format="D"
+                    Margin="30, 0, 0, 30"
+                    DateSelected="OnDateSelected" />
+
+		<StackLayout Orientation="Horizontal"
+                     Margin="0, 0, 0, 30">
+			<Label Text="Include both days in total: "
+                   VerticalOptions="Center" />
+			<Switch x:Name="includeSwitch"
+                    Toggled="OnSwitchToggled" />
+		</StackLayout>
+
+		<Label x:Name="resultLabel"
+               FontAttributes="Bold"
+               HorizontalTextAlignment="Center" />
+
+	</StackLayout>-->
+
+	
+	<!---  TIME PICKER -->
+
+	<StackLayout>
+		<Entry x:Name="_entry"
+               Placeholder="Enter event to be reminded of" />
+		<Label Text="Select the time below to be reminded at." />
+		<TimePicker x:Name="_timePicker"
+                    Time="11:00:00"
+                    Format="T"
+                    PropertyChanged="OnTimePickerPropertyChanged" />
+		<StackLayout Orientation="Horizontal">
+			<Label Text="Enable timer:" />
+			<Switch x:Name="_switch"
+                    HorizontalOptions="EndAndExpand"
+                    Toggled="OnSwitchToggled" />
+		</StackLayout>
+	</StackLayout>
 </ContentPage>
