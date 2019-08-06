@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -81,7 +82,7 @@ namespace TestXamarin
             typeof(string), typeof(CustomCell), "Initials");
         public static readonly BindableProperty AvatarBackgroundColorProperty = BindableProperty.Create("Color",
             typeof(string), typeof(CustomCell), "Color");
-        
+
         public string FullName
         {
             get { return (string)GetValue(ContactFullNameProperty); }
@@ -94,7 +95,7 @@ namespace TestXamarin
             ContactInitials.SetBinding(Label.TextProperty, "IN");
             ContactFullName.SetBinding(Label.TextProperty, "Full Name");
             ContactNumber.SetBinding(Label.TextProperty, "Contact No.");
-            
+
             //Set design properties
             cellWrapper.Orientation = StackOrientation.Vertical;
             horizontalLayout.Orientation = StackOrientation.Horizontal;
@@ -117,9 +118,9 @@ namespace TestXamarin
         {
             base.OnBindingContextChanged();
 
-            if(BindingContext != null)
+            if (BindingContext != null)
             {
-                
+
             }
         }
     }
@@ -127,97 +128,6 @@ namespace TestXamarin
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class Contacts_List : ContentPage
     {
-        private readonly List<PeopleList> contacts = new List<PeopleList>
-        {
-            new PeopleList("Letter A", "A")
-            {
-                new Person
-                {
-                    FirstName = "Aaron Edwigg",
-                    LastName = "Custodio",
-                    ContactNo = "298395723"
-                },
-                new Person
-                {
-                    FirstName = "Arnold Allan",
-                    LastName = "Mendoza",
-                    ContactNo = "2389274832"
-                },
-            },
-            new PeopleList("Letter C", "C")
-            {
-                new Person
-                {
-                    FirstName = "Charles Ken'ichi",
-                    LastName = "Nazareno",
-                    ContactNo = "297493824"
-                }
-            },
-            new PeopleList("Letter D", "D")
-            {
-                new Person
-                {
-                    FirstName = "Dino Angelo",
-                    LastName = "Reyes",
-                    ContactNo = "297329"
-                },
-            },
-            new PeopleList("Letter F", "F")
-            {
-                new Person
-                {
-                    FirstName = "Felix Alexander",
-                    LastName = "Carao",
-                    ContactNo = "09074932"
-                },
-            },
-            new PeopleList("Letter J", "J")
-            {                
-                new Person
-                {
-                    FirstName = "Jasper",
-                    LastName = "Orilla",
-                    ContactNo = "30932874"
-                },
-                new Person
-                {
-                    FirstName = "Jelmarose Grace",
-                    LastName = "De Vera",
-                    ContactNo = "09556986121"
-                },
-            },
-            new PeopleList("Letter K", "K")
-            {
-                new Person
-                {
-                    FirstName = "Kyla Gae",
-                    LastName = "Calpito",
-                    ContactNo = "238274832"
-                },
-            },
-            new PeopleList("Letter M", "M")
-            {
-                new Person
-            {
-                FirstName = "Marc Kenneth",
-                LastName = "Lomio",
-                ContactNo = "349289"
-            },
-            new Person
-            {
-                FirstName = "Melrose",
-                LastName = "Mejidana",
-                ContactNo = "193812942"
-            },
-            new Person
-            {
-                FirstName = "Mermellah",
-                LastName = "Angni",
-                ContactNo = "289463287"
-            },
-            }
-        };
-
         private ObservableCollection<PeopleList> _results = new ObservableCollection<PeopleList>();
         private readonly Dictionary<char, string> colors = new Dictionary<char, string>()
         {
@@ -249,28 +159,117 @@ namespace TestXamarin
             { 'Z', "#000000" },
 
         };
+
+        private readonly List<Person> unsortedContacts = new List<Person>
+        {
+            new Person
+                {
+                    FirstName = "Aaron Edwigg",
+                    LastName = "Custodio",
+                    ContactNo = "298395723"
+                },
+            new Person
+                {
+                    FirstName = "Arnold Allan",
+                    LastName = "Mendoza",
+                    ContactNo = "2389274832"
+                },
+            new Person
+                {
+                    FirstName = "Charles Ken'ichi",
+                    LastName = "Nazareno",
+                    ContactNo = "297493824"
+                },
+            new Person
+                {
+                    FirstName = "Dino Angelo",
+                    LastName = "Reyes",
+                    ContactNo = "297329"
+                },
+            new Person
+                {
+                    FirstName = "Felix Alexander",
+                    LastName = "Carao",
+                    ContactNo = "09074932"
+                },
+            new Person
+                {
+                    FirstName = "Jasper",
+                    LastName = "Orilla",
+                    ContactNo = "30932874"
+                },
+            new Person
+                {
+                    FirstName = "Jelmarose Grace",
+                    LastName = "De Vera",
+                    ContactNo = "09556986121"
+                },
+            new Person
+                {
+                    FirstName = "Kyla Gae",
+                    LastName = "Calpito",
+                    ContactNo = "238274832"
+                },
+            new Person
+                {
+                    FirstName = "Marc Kenneth",
+                    LastName = "Lomio",
+                    ContactNo = "349289"
+                },
+            new Person
+                {
+                    FirstName = "Melrose",
+                    LastName = "Mejidana",
+                    ContactNo = "193812942"
+                },
+            new Person
+                {
+                    FirstName = "Mermellah",
+                    LastName = "Angni",
+                    ContactNo = "289463287"
+                },
+
+        };
         public Contacts_List()
         {
             InitializeComponent();
             //this.ContactsList.ItemTemplate = new DataTemplate(typeof(CustomCell));
-            this.ContactsList.ItemsSource = contacts;
-            
+            var sortedContacts = SortContactsToGroup(unsortedContacts);
+            this.ContactsList.ItemsSource = sortedContacts;
         }
-        /*
+
+        private List<PeopleList> SortContactsToGroup(List<Person> unsortedContacts)
+        {
+            List<PeopleList> contacts = new List<PeopleList>();
+            List<Person> sortedContacts = new List<Person>();
+            for (char c = 'A'; c <= 'Z'; c++)
+            {
+                foreach (var contact in unsortedContacts)
+                {
+                    if (contact.FirstName[0] == c)
+                    {
+                        sortedContacts.Add(contact);
+                    }
+                }
+                if (sortedContacts.Count > 0)
+                {
+                    var group = new PeopleList(String.Format("Letter {0}", c), String.Format("{0}", c));
+                    foreach (Person contact in sortedContacts)
+                    {
+                        group.Add(contact);
+                    }
+                    //Reset contents of sortedContacts
+                    sortedContacts.Clear();
+
+                    contacts.Add(group);
+                }
+            }
+            return contacts;
+        }
+
         private ObservableCollection<PeopleList> GetSearchResults(string query)
         {
-            var people = new ObservableCollection<PeopleList>();
-            var results = people.Where(group => group.All(
-                person => person.FirstName.ToLower().Contains(query.ToLower()) ||
-                          person.LastName.ToLower().Contains(query.ToLower()) ||
-                          person.ContactNo.Contains(query.ToLower())
-            ));
-            ObservableCollection<PeopleList> searchResults = new ObservableCollection<PeopleList>(results);
-            return searchResults;
-        }
-        */
-        private ObservableCollection<PeopleList> GetSearchResults(string query)
-        {
+            var contacts = SortContactsToGroup(unsortedContacts);
             var people = new ObservableCollection<PeopleList>(contacts);
             var results = people.Where(group => group.All(
                 person => person.FirstName.ToLower().Contains(query.ToLower()) ||
@@ -283,8 +282,9 @@ namespace TestXamarin
 
         private void ContactSearch_TextChanged(object sender, TextChangedEventArgs e)
         {
-            if(String.IsNullOrEmpty(e.NewTextValue) || String.IsNullOrWhiteSpace(e.NewTextValue))
+            if (String.IsNullOrEmpty(e.NewTextValue) || String.IsNullOrWhiteSpace(e.NewTextValue))
             {
+                var contacts = SortContactsToGroup(unsortedContacts);
                 this.ContactsList.ItemsSource = contacts;
             }
             else
@@ -293,5 +293,33 @@ namespace TestXamarin
                 this.ContactsList.ItemsSource = _results;
             }
         }
+
+        private void ContactsList_Refreshing(object sender, EventArgs e)
+        {
+            var contacts = SortContactsToGroup(unsortedContacts);
+            this.ContactsList.ItemsSource = contacts;
+            this.ContactsList.EndRefresh();
+        }
+        
+        private void DeleteContact(Person person)
+        {
+            var updatedList = new List<Person>(unsortedContacts);
+            updatedList.Remove(person);
+            var contacts = SortContactsToGroup(updatedList);
+            this.ContactsList.ItemsSource = contacts;
+        }
+
+        private async void MenuItem_Clicked(object sender, EventArgs e)
+        {
+            var menuItem = sender as MenuItem;
+            var person = menuItem.CommandParameter as Person;
+            string action = await DisplayActionSheet("Delete contact?", "Cancel", "OK");
+            if (action == "OK")
+            {
+                DeleteContact(person);
+                await DisplayAlert("Deleting contact..", "Deleted contact", "OK");
+            }
+        }
+
     }
 }

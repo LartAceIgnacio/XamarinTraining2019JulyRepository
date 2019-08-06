@@ -10,7 +10,9 @@
             <SearchBar x:Name="ContactSearch" Placeholder="Search..." TextChanged="ContactSearch_TextChanged" />
             <ListView x:Name="ContactsList"
                       IsGroupingEnabled="True"
-                      GroupDisplayBinding="{Binding LongName}">
+                      GroupDisplayBinding="{Binding LongName}"
+                      IsPullToRefreshEnabled="True"
+                      Refreshing="ContactsList_Refreshing">
                 <ListView.Header>
                     <StackLayout Orientation="Horizontal" BackgroundColor="#0093ff" HorizontalOptions="FillAndExpand">
                         <Label Text="My Contacts" TextColor="White" FontSize="20" HorizontalOptions="CenterAndExpand" />
@@ -31,6 +33,9 @@
                                     </StackLayout>
                                 </StackLayout>
                             </StackLayout>
+                            <ViewCell.ContextActions>
+                                <MenuItem Clicked="MenuItem_Clicked" CommandParameter="{Binding .}" Text="Delete" />
+                            </ViewCell.ContextActions>
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
