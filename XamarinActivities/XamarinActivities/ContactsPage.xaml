@@ -12,6 +12,7 @@
         </ResourceDictionary>
     </ContentPage.Resources>
     <ContentPage.Content>
+        
         <StackLayout>
             
             <SearchBar Placeholder="Search..." TextChanged="SearchBar_TextChanged" />
@@ -26,6 +27,7 @@
                     <DataTemplate>
                         <ViewCell>
                             <StackLayout Orientation="Horizontal" Margin="5">
+                                
                                 <AbsoluteLayout>
                                     <BoxView AbsoluteLayout.LayoutFlags="All"
                                              AbsoluteLayout.LayoutBounds="0, 0, 1, 1"
@@ -41,6 +43,7 @@
                                            VerticalTextAlignment="Center"
                                            FontSize="16"/>
                                 </AbsoluteLayout>
+                                
                                 <StackLayout>
                                     <Label VerticalOptions="Start"
                                            Text="{Binding FullName}"
@@ -50,17 +53,21 @@
                                            Text="{Binding MobileNumber}"
                                            FontSize="12"
                                            TextColor="DarkGray" />
-                                </StackLayout>                                
+                                </StackLayout>
+                                
                             </StackLayout>
+                            
                             <ViewCell.ContextActions>
                                 <MenuItem Clicked="Delete_Clicked" CommandParameter="{Binding .}" Text="Delete" />
                             </ViewCell.ContextActions>
+                            
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
 
             </ListView>
-
+            
         </StackLayout>
+        
     </ContentPage.Content>
 </ContentPage>

@@ -32,7 +32,7 @@ namespace XamarinActivities.Util
                     case "K":
                         return Color.Orange;
                     case "M":
-                        return Color.Magenta;
+                        return Color.MediumPurple;
                     default:
                         return Color.Black;
                 };

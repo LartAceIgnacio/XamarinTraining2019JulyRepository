@@ -54,7 +54,7 @@ namespace XamarinActivities
             else
             {
                 var filteredContactsList = _contacts.Where(c => c.FullName.ToLower().Contains(searchText.ToLower()) ||
-                                                           c.MobileNumber.ToLower().Contains(searchText.ToLower()))
+                                                           c.MobileNumber.Contains(searchText.ToLower()))
                                                    .ToList()
                                                    .OrderBy(c => c.FirstName);
                 return new ObservableCollection<Contact>(filteredContactsList);
