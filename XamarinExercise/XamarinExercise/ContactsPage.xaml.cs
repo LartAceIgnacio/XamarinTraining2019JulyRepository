@@ -53,7 +53,6 @@ namespace XamarinExercise
             }
         }
         
-
         async void Delete_Clicked(object sender, EventArgs e)
         {
             var contacItem = sender as MenuItem;

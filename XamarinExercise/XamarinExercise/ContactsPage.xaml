@@ -14,10 +14,12 @@
                       Refreshing="ContactList_Refreshing"
                       SeparatorVisibility="None"
                       RowHeight="50">
+                
                 <ListView.Header>
                     <StackLayout HorizontalOptions="Center">
                     </StackLayout>
                 </ListView.Header>
+                
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell Height="40">
@@ -49,17 +51,21 @@
                                     <Label Text="{Binding ContactNo}"/>
                                 </StackLayout>
                             </StackLayout>
+                            
                             <ViewCell.ContextActions>
                                 <MenuItem Clicked="Delete_Clicked" CommandParameter="{Binding .}" Text="Delete"/>
                             </ViewCell.ContextActions>
+                            
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
+                
                 <ListView.Footer>
                      <StackLayout>
                                 
                      </StackLayout>
                 </ListView.Footer>
+                
             </ListView>
         </StackLayout>
     </ContentPage.Content>
