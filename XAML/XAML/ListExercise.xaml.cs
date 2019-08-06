@@ -134,5 +134,14 @@ namespace XAML
             InitialList();
             personListView.EndRefresh();
         }
+
+
+        async void PersonListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        {
+            Person person = e.SelectedItem as Person;
+            var page = new ContactPage(person);
+            page.BindingContext = person;
+            await Navigation.PushAsync(page);
+        }
     }
 }

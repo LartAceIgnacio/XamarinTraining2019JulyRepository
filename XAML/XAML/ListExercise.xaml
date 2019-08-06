@@ -9,6 +9,7 @@
         <StackLayout>
             <ListView x:Name="personListView"
                       IsPullToRefreshEnabled="True"
+                      ItemSelected="PersonListView_ItemSelected"
                       Refreshing="PersonListView_Refreshing"
                       RowHeight="60">
                 <ListView.Header>
@@ -35,7 +36,7 @@
                                            FontSize="24"
                                            TextColor="White"
                                            AbsoluteLayout.LayoutFlags="PositionProportional"
-                                           AbsoluteLayout.LayoutBounds="0.5,0.35"/>
+                                           AbsoluteLayout.LayoutBounds="0.5,0.45"/>
                                 </AbsoluteLayout>
                                 <StackLayout>
                                     <Label Text="{Binding FullName}"/>
