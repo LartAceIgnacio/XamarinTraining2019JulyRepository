@@ -5,7 +5,8 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:converters="clr-namespace:XamarinActivities.Util"
              mc:Ignorable="d"
-             x:Class="XamarinActivities.ContactsPage">
+             x:Class="XamarinActivities.ContactsPage"
+             Title="Contacts">
     <ContentPage.Resources>
         <ResourceDictionary>
             <converters:StringToColorConverter x:Key="StringToColorConverter" />
@@ -21,7 +22,8 @@
                       HasUnevenRows="True"
                       SeparatorColor="#503026"
                       IsPullToRefreshEnabled="True"
-                      Refreshing="ContactsList_Refreshing">
+                      Refreshing="ContactsList_Refreshing"
+                      ItemTapped="ContactsList_ItemTapped">
 
                 <ListView.ItemTemplate>
                     <DataTemplate>

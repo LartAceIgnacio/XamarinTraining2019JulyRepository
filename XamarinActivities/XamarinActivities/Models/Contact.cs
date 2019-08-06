@@ -11,14 +11,21 @@ namespace XamarinActivities.Models
         public string FullName { get; set; }
         public string Initials { get; set; }
         public string MobileNumber { get; set; }
+        public string EmailAddress { get; set; }
+        public string FacebookLink { get; set; }
+        public string InstagramLink { get; set; }
 
-        public Contact(string firstName, string lastName, string mobileNumber)
+        public Contact(string firstName, string lastName, string mobileNumber, string emailAddress, 
+                       string facebookLink, string instagramLink)
         {
             FirstName = firstName;
             LastName = lastName;
             FullName = firstName + " " + lastName;
             Initials = firstName[0].ToString() + lastName[0].ToString();
             MobileNumber = mobileNumber;
+            EmailAddress = emailAddress;
+            FacebookLink = facebookLink;
+            InstagramLink = instagramLink;
         }
     }
 }

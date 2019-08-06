@@ -9,6 +9,7 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 using XamarinActivities.Models;
+using XamarinActivities.Modals;
 
 namespace XamarinActivities
 {
@@ -28,17 +29,17 @@ namespace XamarinActivities
         {
             var contacts = new ObservableCollection<Contact>()
             {
-                new Contact("Melrose", "Mejidana", "09999999989") { },
-                new Contact("Arnold Allan", "Mendoza", "09999999998") { },
-                new Contact("Charles Kenichi", "Nazareno", "09999999997") { },
-                new Contact("Dino Angelo", "Reyes", "09999999996") { },
-                new Contact("Mermellah", "Angni", "09999999988") { },
-                new Contact("Aaron Edwigg", "Custodio", "09999999999") { },
-                new Contact("Felix Alexander", "Carao", "09999999995") { },
-                new Contact("Jasper", "Orilla", "09999999994") { },
-                new Contact("Kyla Gae", "Calpito", "09999999991") { },
-                new Contact("Jelmarose Grace", "De Vera", "09999999993") { },
-                new Contact("Marc Kenneth", "Lomio", "09999999990") { },
+                new Contact("Melrose", "Mejidana", "09999999989", "melrose@blastasia.com", "facebook.com/melrose", "instagram.com/melrose") { },
+                new Contact("Arnold Allan", "Mendoza", "09999999998", "arnold@blastasia.com", "facebook.com/arnold", "instagram.com/arnold") { },
+                new Contact("Charles Kenichi", "Nazareno", "09999999997", "charles@blastasia.com", "facebook.com/charles", "instagram.com/charles") { },
+                new Contact("Dino Angelo", "Reyes", "09999999996", "dino@blastasia.com", "facebook.com/dino", "instagram.com/dino") { },
+                new Contact("Mermellah", "Angni", "09999999988", "mermellah@blastasia.com", "facebook.com/mermellah", "instagram.com/mermellah") { },
+                new Contact("Aaron Edwigg", "Custodio", "09999999999", "aaron@blastasia.com", "facebook.com/aaron", "instagram.com/aaron") { },
+                new Contact("Felix Alexander", "Carao", "09999999995", "felix@blastasia.com", "facebook.com/felix", "instagram.com/felix") { },
+                new Contact("Jasper", "Orilla", "09999999994", "jasper@blastasia.com", "facebook.com/jasper", "instagram.com/jasper") { },
+                new Contact("Kyla Gae", "Calpito", "09999999991", "kyla@blastasia.com", "facebook.com/kyla", "instagram.com/kyla") { },
+                new Contact("Jelmarose Grace", "De Vera", "09999999993", "jelmarose@blastasia.com", "facebook.com/jelmarose", "instagram.com/jelmarose") { },
+                new Contact("Marc Kenneth", "Lomio", "09999999990", "marc@blastasia.com", "facebook.com/marc", "instagram.com/marc") { },
             };
 
             return new ObservableCollection<Contact>(contacts.OrderBy(c => c.FirstName));
@@ -78,6 +79,13 @@ namespace XamarinActivities
             _contacts = getContacts();
             contactsList.ItemsSource = _contacts;
             contactsList.EndRefresh();
+        }
+        
+        private void ContactsList_ItemTapped(object sender, ItemTappedEventArgs e)
+        {
+            var contact = e.Item as Contact;
+            ViewContactPage view = new ViewContactPage(contact);
+            this.Navigation.PushModalAsync(new NavigationPage(view));
         }
     }
 }

@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:converters="clr-namespace:XamarinActivities.Util"
+             mc:Ignorable="d"
+             x:Class="XamarinActivities.Modals.ViewContactPage"
+             Title="{Binding FirstName}">
+    
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converters:StringToColorConverter x:Key="StringToColorConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Name="Delete_MenuItem" Order="Secondary" Icon="Xamarin.png" Text="Delete" Priority="1" />
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Content>
+        <RelativeLayout>
+            <BoxView RelativeLayout.WidthConstraint="{ConstraintExpression
+                        Type=RelativeToParent,
+                        Property=Width,
+                        Factor=1}"
+                        RelativeLayout.HeightConstraint="{ConstraintExpression
+                        Type=RelativeToParent,
+                        Property=Height,
+                        Factor=0.25}"
+                    Margin="5"
+                    BackgroundColor="{Binding Converter={StaticResource StringToColorConverter}}" />
+            <Label RelativeLayout.YConstraint="{ConstraintExpression
+                            Type=RelativeToParent,
+                            Property=Height,
+                            Factor=0.15}"
+                       RelativeLayout.XConstraint="{ConstraintExpression
+                            Type=RelativeToParent,
+                            Property=Width,
+                            Factor=0.4}"
+                       RelativeLayout.WidthConstraint="{ConstraintExpression
+                            Type=RelativeToParent,
+                            Property=Width,
+                            Factor=0.20}"
+                       RelativeLayout.HeightConstraint="{ConstraintExpression
+                            Type=RelativeToParent,
+                            Property=Width,
+                            Factor=0.20}"
+                        Text="{Binding Initials}"
+                        TextColor="White"
+                        FontAttributes="Bold"
+                        Margin="5"
+                        HorizontalTextAlignment="Center"
+                        VerticalTextAlignment="Center"
+                        FontSize="22"
+                        BackgroundColor="DarkGray" />
+
+            <StackLayout RelativeLayout.YConstraint="{ConstraintExpression
+                            Type=RelativeToParent,
+                            Property=Height,
+                            Factor=0.33}"
+                         RelativeLayout.WidthConstraint="{ConstraintExpression
+                            Type=RelativeToParent,
+                            Property=Width,
+                            Factor=1}">
+                <Label Text="{Binding FullName}"
+                   FontSize="30"
+                   Margin="3"
+                   HorizontalTextAlignment="Center"
+                   VerticalTextAlignment="Center" />
+
+                <StackLayout Orientation="Horizontal" Margin="10">
+                    <Image Source="phone.png" WidthRequest="25" HeightRequest="25" />
+                    <Label Text="{Binding MobileNumber}"
+                           FontSize="20"
+                           HorizontalOptions="StartAndExpand"
+                           VerticalTextAlignment="Center"/>
+                </StackLayout>
+                
+                <StackLayout Orientation="Horizontal" Margin="10">
+                    <Image Source="contact.png" WidthRequest="25" HeightRequest="25" />
+                    <Label Text="{Binding EmailAddress}"
+                           FontSize="20"
+                           HorizontalOptions="StartAndExpand"
+                           VerticalTextAlignment="Center"/>
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal" Margin="10">
+                    <Image Source="facebook.png" WidthRequest="25" HeightRequest="25" />
+                    <Label Text="{Binding FacebookLink}"
+                           FontSize="20"
+                           HorizontalOptions="StartAndExpand"
+                           VerticalTextAlignment="Center"/>
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal" Margin="10">
+                    <Image Source="instagram.png" WidthRequest="25" HeightRequest="25" />
+                    <Label Text="{Binding InstagramLink}"
+                           FontSize="20"
+                           HorizontalOptions="StartAndExpand"
+                           VerticalTextAlignment="Center"/>
+                </StackLayout>
+
+            </StackLayout>
+
+        </RelativeLayout>
+    </ContentPage.Content>
+</ContentPage>
