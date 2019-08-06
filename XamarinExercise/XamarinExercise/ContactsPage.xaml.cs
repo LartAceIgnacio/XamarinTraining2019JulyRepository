@@ -15,7 +15,6 @@ namespace XamarinExercise
     public partial class ContactsPage : ContentPage
     {
         ObservableCollection<Contacts> contactList;
-        ObservableCollection<Contacts> contactSearchList;
         public ContactsPage()
         {
             InitializeComponent();
@@ -40,14 +39,14 @@ namespace XamarinExercise
         }
         ObservableCollection<Contacts> Filter(string searchText=null)
         {
-            contactSearchList = contactList;
+
             if (string.IsNullOrWhiteSpace(searchText))
             {
                 return contactList;
             }
             else
             {
-                var filter = contactSearchList.Where(c => c.FullName.ToLower().Contains(searchText.ToLower())).OrderBy(c => c.FirstName).ToList();
+                var filter = contactList.Where(c => c.FullName.ToLower().Contains(searchText.ToLower())).OrderBy(c => c.FirstName).ToList();
                 ObservableCollection<Contacts> filteredContacs = new ObservableCollection<Contacts>(filter);
                 return filteredContacs;
             }
