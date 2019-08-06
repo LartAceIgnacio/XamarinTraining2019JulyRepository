@@ -18,10 +18,10 @@ namespace Exercise1
         {
             InitializeComponent();
         }
-        async void QuotePage_button_Clicked(object sender, EventArgs e)
-        {
-            await Navigation.PushAsync(new QuotePage());
-        }
+        //async void QuotePage_button_Clicked(object sender, EventArgs e)
+        //{
+        //    await Navigation.PushAsync(new QuotePage());
+        //}
         async void BoxViewPage_button_Clicked(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new Exercise2());
@@ -62,6 +62,11 @@ namespace Exercise1
         async void ImageGallerySwitchPage_button_Clicked(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new ImageGallerySwitchPage());
+        }
+
+        async void ContactListPage_button_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new ContactListPage());
         }
     }
 }
