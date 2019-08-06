@@ -57,7 +57,8 @@ namespace XamarinActivities
             {
                 foreach (var color in _colorList)
                 {
-                    if (color.Key == person.InitialKey.Substring(0, 1))
+                    var firstLetter = person.InitialKey.Substring(0, 1);
+                    if (color.Key == firstLetter)
                     {
                         person.InitialKeyColor = color.Value;
                     }
@@ -155,10 +156,10 @@ namespace XamarinActivities
             }
             else
             {
-                var sortedPeople = _peopleList.OrderBy(p => p.FirstName).ToList();
-                lstContacts.ItemsSource = sortedPeople.Where(p => p.FirstName.ToLower().StartsWith(e.NewTextValue.ToLower())
+                lstContacts.ItemsSource = _peopleList.Where(p => p.FirstName.ToLower().StartsWith(e.NewTextValue.ToLower())
                                                                || p.LastName.ToLower().StartsWith(e.NewTextValue.ToLower())
-                                                               || p.ContactNumber.Contains(e.NewTextValue));
+                                                               || p.ContactNumber.Contains(e.NewTextValue))
+                                                     .OrderBy(p => p.FirstName).ToList();
             }
         }
 
@@ -166,7 +167,7 @@ namespace XamarinActivities
         {
             var mi = (MenuItem) sender;
             var personToDelete = (Person) mi.CommandParameter;
-            bool answer = await DisplayAlert("Contact List", "Are you sure you want to delete " +personToDelete.FullName + "?", "OK", "Cancel");
+            bool answer = await DisplayAlert("Contact List", "Are you sure you want to delete " + personToDelete.FullName + "?", "OK", "Cancel");
 
             if (answer)
             {
