@@ -11,7 +11,7 @@ namespace XamarinActivities
             InitializeComponent();
 
             //MainPage = new TabbedNavigation();
-            MainPage = new E4ImageExercised1();
+            MainPage = new E5ContactPage();
             //MainPage = new E4ImagePage();
         }
 
