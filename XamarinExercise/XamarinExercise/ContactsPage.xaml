@@ -30,12 +30,12 @@
                                 <AbsoluteLayout HeightRequest="40"
                                                 WidthRequest="40">
                                     <BoxView x:Name="boxInital"
-                                            AbsoluteLayout.LayoutBounds="1, 1, 1, 1"
-                                            AbsoluteLayout.LayoutFlags="All"
-                                            Color="{Binding BoxColor}"
-                                            CornerRadius="15"/>
+                                             AbsoluteLayout.LayoutBounds="1, 1, 1, 1"
+                                             AbsoluteLayout.LayoutFlags="All"
+                                             Color="{Binding BoxColor}"
+                                             CornerRadius="15"/>
                                     <Label Text="{Binding Initials}"
-                                           TextColor="White"
+                                           TextColor="#dbe2ff"
                                            FontSize="20"
                                            FontAttributes="Bold"
                                            VerticalOptions="Center"
