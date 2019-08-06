@@ -16,7 +16,7 @@
                 <DataTemplate>
                     <ViewCell>
                         <ViewCell.ContextActions>
-                            <MenuItem Clicked="OnDelete" 
+                            <MenuItem Clicked="OnDelete_Clicked" 
                                       CommandParameter="{Binding .}" 
                                       Text="Delete" 
                                       IsDestructive="True"></MenuItem>

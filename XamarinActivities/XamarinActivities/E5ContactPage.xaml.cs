@@ -163,7 +163,7 @@ namespace XamarinActivities
             }
         }
 
-        async void OnDelete(object sender, EventArgs e)
+        async void OnDelete_Clicked(object sender, EventArgs e)
         {
             var mi = (MenuItem) sender;
             var personToDelete = (Person) mi.CommandParameter;
