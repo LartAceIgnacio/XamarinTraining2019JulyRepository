@@ -3,8 +3,14 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:converters="clr-namespace:XamarinActivities.Util"
              mc:Ignorable="d"
              x:Class="XamarinActivities.ContactsPage">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converters:StringToColorConverter x:Key="StringToColorConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
     <ContentPage.Content>
         <StackLayout>
             
@@ -24,7 +30,7 @@
                                     <BoxView AbsoluteLayout.LayoutFlags="All"
                                              AbsoluteLayout.LayoutBounds="0, 0, 1, 1"
                                              Margin="5"
-                                             BackgroundColor="Gray" />
+                                             BackgroundColor="{Binding Converter={StaticResource StringToColorConverter}}" />
                                     <Label AbsoluteLayout.LayoutFlags="All"
                                            AbsoluteLayout.LayoutBounds="0, 0, 1, 1"
                                            Text="{Binding Initials}"
