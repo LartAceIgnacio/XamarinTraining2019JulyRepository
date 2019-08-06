@@ -15,7 +15,6 @@ namespace XamarinExercise
     public partial class ContactsPage : ContentPage
     {
         ObservableCollection<Contacts> contactList;
-        ObservableCollection<Contacts> searchList;
         public ContactsPage()
         {
             InitializeComponent();
@@ -25,16 +24,16 @@ namespace XamarinExercise
         ObservableCollection<Contacts> GetContacts()
         {
             var contacts = new ObservableCollection<Contacts>() {
-                new Contacts() { FirstName = "Jelma Grace", LastName = "DeVera", ContactNo = "09111111111"},
-                new Contacts() { FirstName = "Aaron Edwigg", LastName = "Custodio", ContactNo = "0922222222" },
-                new Contacts() { FirstName = "Mark Kenneth", LastName = "Lomio", ContactNo = "09333333333" },
-                new Contacts() { FirstName = "Melrose", LastName = "Mejidana", ContactNo = "09444444444" },
-                new Contacts() { FirstName = "Felix Alexander", LastName = "Carao", ContactNo = "09555555555" },
-                new Contacts() { FirstName = "Dino Angelo", LastName = "Reyes", ContactNo = "09666666666" },
-                new Contacts() { FirstName = "Charles Kenichi", LastName = "Nazareno", ContactNo = "09777777777" },
-                new Contacts() { FirstName = "Kyla Gae", LastName = "Calpito", ContactNo = "09888888888" },
-                new Contacts() { FirstName = "Arnold", LastName = "Mendoza", ContactNo = "09999999999" },
-                new Contacts() { FirstName = "Mermela", LastName = "Angni", ContactNo = "09101010101" }
+                new Contacts() { FirstName = "Jelma Grace", LastName = "DeVera", ContactNo = "09111111111", Address="Pasig City", EmailAddress="jelmaGD@gmail.com", Birthday="January 28"},
+                new Contacts() { FirstName = "Aaron Edwigg", LastName = "Custodio", ContactNo = "0922222222", Address="Cavite City", EmailAddress="aaronEC@gmail.com", Birthday="January 11" },
+                new Contacts() { FirstName = "Mark Kenneth", LastName = "Lomio", ContactNo = "09333333333", Address="Cainta, Rizal", EmailAddress="mKc@gmail.com", Birthday="December 11"  },
+                new Contacts() { FirstName = "Melrose", LastName = "Mejidana", ContactNo = "09444444444", Address="Cainta, Rizal", EmailAddress="mKc@gmail.com", Birthday="March 26" },
+                new Contacts() { FirstName = "Felix Alexander", LastName = "Carao", ContactNo = "09555555555", Address="Pasig City", EmailAddress="lex@gmail.com", Birthday="April 23" },
+                new Contacts() { FirstName = "Dino Angelo", LastName = "Reyes", ContactNo = "09666666666", Address="Pasig City", EmailAddress="dinorado@gmail.com", Birthday="Junly 19" },
+                new Contacts() { FirstName = "Charles Kenichi", LastName = "Nazareno", ContactNo = "09777777777", Address="Cavite City", EmailAddress="blazt@gmail.com", Birthday="December 6" },
+                new Contacts() { FirstName = "Kyla Gae", LastName = "Calpito", ContactNo = "09888888888", Address="Makati City", EmailAddress="kyla@gmail.com", Birthday="December 4" },
+                new Contacts() { FirstName = "Arnold", LastName = "Mendoza", ContactNo = "09999999999", Address="Batangas City", EmailAddress="rnold@gmail.com", Birthday="OCtober 11" },
+                new Contacts() { FirstName = "Mermela", LastName = "Angni", ContactNo = "09101010101", Address="Marawi City", EmailAddress="gerald@gmail.com", Birthday="February 29" }
             };
             return contacts;
         }
@@ -74,8 +73,15 @@ namespace XamarinExercise
 
         void SearchBar_TextChanged(object sender, TextChangedEventArgs e)
         {
+            ObservableCollection<Contacts> searchList;
             searchList = Filter(e.NewTextValue);
             contactListView.ItemsSource = searchList.OrderBy(c=>c.FirstName);
+        }
+        void ContactItem_Tapped(object sender, ItemTappedEventArgs e)
+        {
+            Contacts contact = e.Item as Contacts;
+            var contactInfo= new NavigationPage(new ContactInfoPage(contact));
+            this.Navigation.PushModalAsync(contactInfo);
         }
     }
 }

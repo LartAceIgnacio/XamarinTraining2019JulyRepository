@@ -13,7 +13,8 @@
                       IsPullToRefreshEnabled="True"
                       Refreshing="ContactList_Refreshing"
                       SeparatorVisibility="None"
-                      RowHeight="50">
+                      RowHeight="50"
+                      ItemTapped="ContactItem_Tapped">
                 
                 <ListView.Header>
                     <StackLayout HorizontalOptions="Center">

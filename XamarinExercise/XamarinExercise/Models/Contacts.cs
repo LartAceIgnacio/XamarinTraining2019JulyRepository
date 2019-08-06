@@ -11,6 +11,9 @@ namespace XamarinExercise.Models
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string ContactNo { get; set; }
+        public string Address { get; set; }
+        public string EmailAddress { get; set; }
+        public string Birthday { get; set; }
 
         private readonly IDictionary<string, Color> alphabetofColor = new Dictionary<string, Color>()
         {
