@@ -30,22 +30,29 @@
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
-                            <StackLayout 
-                                Orientation="Horizontal"
-                                Padding="20, 0, 20, 0">
+                            <AbsoluteLayout
+                                Padding="20, 0, 20, 0"
+                                HorizontalOptions="FillAndExpand">
                                 <Label 
                                     Text="{Binding GetInitials}"
-                                    VerticalOptions="Center"
                                     TextColor="White"
                                     BackgroundColor="{Binding GetBackgroundColor}"
-                                    FontAttributes="Bold"/>
+                                    FontAttributes="Bold"
+                                    AbsoluteLayout.LayoutBounds="0, 0.5, 40, 40"
+                                    AbsoluteLayout.LayoutFlags="PositionProportional"
+                                    HorizontalTextAlignment="Center"
+                                    VerticalTextAlignment="Center"/>
                                 <Label 
                                     Text="{Binding FullName}"
-                                    VerticalOptions="Center"/>
+                                    VerticalOptions="Center"
+                                    AbsoluteLayout.LayoutBounds="0.3, 0.5"
+                                    AbsoluteLayout.LayoutFlags="PositionProportional"/>
                                 <Label 
                                     Text="{Binding PhoneNumber}"
-                                    VerticalOptions="Center"/>
-                            </StackLayout>
+                                    FontAttributes="Bold"
+                                    AbsoluteLayout.LayoutBounds="1, 0.5"
+                                    AbsoluteLayout.LayoutFlags="PositionProportional"/>
+                            </AbsoluteLayout>
                             <ViewCell.ContextActions>
                                 <MenuItem Clicked="Delete_Clicked" CommandParameter="{Binding .}" Text="Delete"/>
                             </ViewCell.ContextActions>
