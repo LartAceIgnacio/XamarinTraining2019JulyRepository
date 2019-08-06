@@ -7,9 +7,34 @@
              x:Class="TestXamarin.Contacts_List">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <SearchBar x:Name="ContactSearch" Placeholder="Search..." TextChanged="ContactSearch_TextChanged" />
+            <ListView x:Name="ContactsList"
+                      IsGroupingEnabled="True"
+                      GroupDisplayBinding="{Binding LongName}">
+                <ListView.Header>
+                    <StackLayout Orientation="Horizontal" BackgroundColor="#0093ff" HorizontalOptions="FillAndExpand">
+                        <Label Text="My Contacts" TextColor="White" FontSize="20" HorizontalOptions="CenterAndExpand" />
+                    </StackLayout>
+                </ListView.Header>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout x:Name="ContactsCell" Orientation="Vertical">
+                                <StackLayout Orientation="Horizontal">
+                                    <AbsoluteLayout>
+                                        <BoxView x:Name="ContactAvatar" BackgroundColor="#0093ff" />
+                                        <Label x:Name="ContactInitials" Text="AB" />
+                                    </AbsoluteLayout>
+                                    <StackLayout>
+                                        <Label Text="{Binding FirstName}" />
+                                        <Label Text="{Binding ContactNo}" />
+                                    </StackLayout>
+                                </StackLayout>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
