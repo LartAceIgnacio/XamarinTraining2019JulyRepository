@@ -12,12 +12,14 @@
 
             <ListView x:Name="contactsList"
                       HasUnevenRows="True"
-                      SeparatorColor="#503026">
+                      SeparatorColor="#503026"
+                      IsPullToRefreshEnabled="True"
+                      Refreshing="ContactsList_Refreshing">
 
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
-                            <StackLayout Orientation="Horizontal">
+                            <StackLayout Orientation="Horizontal" Margin="5">
                                 <AbsoluteLayout>
                                     <BoxView AbsoluteLayout.LayoutFlags="All"
                                              AbsoluteLayout.LayoutBounds="0, 0, 1, 1"
@@ -25,8 +27,10 @@
                                              BackgroundColor="Gray" />
                                     <Label AbsoluteLayout.LayoutFlags="All"
                                            AbsoluteLayout.LayoutBounds="0, 0, 1, 1"
+                                           Text="{Binding Initials}"
+                                           TextColor="White"
+                                           FontAttributes="Bold"
                                            Margin="5"
-                                           Text="AC"
                                            HorizontalTextAlignment="Center"
                                            VerticalTextAlignment="Center"
                                            FontSize="16"/>
@@ -34,16 +38,17 @@
                                 <StackLayout>
                                     <Label VerticalOptions="Start"
                                            Text="{Binding FullName}"
-                                           FontSize="14"/>
+                                           FontSize="14"
+                                           TextColor="Black" />
                                     <Label VerticalOptions="End"
                                            Text="{Binding MobileNumber}"
-                                           FontSize="11"/>
+                                           FontSize="12"
+                                           TextColor="DarkGray" />
                                 </StackLayout>                                
                             </StackLayout>
-                            <!--<ViewCell.ContextActions>
-                                <MenuItem Clicked="Call_Clicked" CommandParameter="{Binding .}" Text="Call" />
+                            <ViewCell.ContextActions>
                                 <MenuItem Clicked="Delete_Clicked" CommandParameter="{Binding .}" Text="Delete" />
-                            </ViewCell.ContextActions>-->
+                            </ViewCell.ContextActions>
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>

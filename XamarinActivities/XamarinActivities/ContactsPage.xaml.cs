@@ -15,10 +15,13 @@ namespace XamarinActivities
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ContactsPage : ContentPage
     {
+        ObservableCollection<Contact> _contacts;
+
         public ContactsPage()
         {
             InitializeComponent();
-            contactsList.ItemsSource = getContacts();
+            _contacts = getContacts();
+            contactsList.ItemsSource = _contacts;
         }
 
         ObservableCollection<Contact> getContacts()
@@ -38,12 +41,43 @@ namespace XamarinActivities
                 new Contact("Marc Kenneth", "Lomio", "09999999990") { },
             };
 
-            return contacts;
+            return new ObservableCollection<Contact>(contacts.OrderBy(c => c.FirstName));
+        }
+
+        ObservableCollection<Contact> filterContacts(string searchText = null)
+        {
+
+            if (String.IsNullOrEmpty(searchText))
+            {
+                return new ObservableCollection<Contact>(_contacts.OrderBy(c => c.FirstName));
+            }
+            else
+            {
+                var filteredContactsList = _contacts.Where(c => c.FullName.ToLower().Contains(searchText.ToLower()) ||
+                                                           c.MobileNumber.ToLower().Contains(searchText.ToLower()))
+                                                   .ToList()
+                                                   .OrderBy(c => c.FirstName);
+                return new ObservableCollection<Contact>(filteredContactsList);
+            }
         }
 
         private void SearchBar_TextChanged(object sender, TextChangedEventArgs e)
         {
+            contactsList.ItemsSource = filterContacts(e.NewTextValue);
+        }
 
+        private void Delete_Clicked(object sender, EventArgs e)
+        {
+            var menuItem = sender as MenuItem;
+            var contact = menuItem.CommandParameter as Contact;
+            _contacts.Remove(contact);
+        }
+
+        private void ContactsList_Refreshing(object sender, EventArgs e)
+        {
+            _contacts = getContacts();
+            contactsList.ItemsSource = _contacts;
+            contactsList.EndRefresh();
         }
     }
 }
