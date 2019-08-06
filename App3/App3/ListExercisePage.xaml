@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="App3.ListExercisePage">
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout
+                HorizontalOptions="Fill"
+                BackgroundColor="Maroon"
+                HeightRequest="50">
+                <Label
+                    Text="My Contacts"
+                    TextColor="White"
+                    FontSize="18"
+                    HorizontalOptions="Center"
+                    VerticalOptions="CenterAndExpand"/>
+            </StackLayout>
+            <SearchBar 
+                Placeholder="Search" 
+                TextChanged="SearchBar_TextChanged"
+                HorizontalOptions="FillAndExpand"/>
+            <ListView 
+                x:Name="contactList"
+                IsPullToRefreshEnabled="True"
+                Refreshing="ContactList_Refreshing"
+                RowHeight="50">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout 
+                                Orientation="Horizontal"
+                                Padding="20, 0, 20, 0">
+                                <Label 
+                                    Text="{Binding GetInitials}"
+                                    VerticalOptions="Center"
+                                    TextColor="White"
+                                    BackgroundColor="{Binding GetBackgroundColor}"
+                                    FontAttributes="Bold"/>
+                                <Label 
+                                    Text="{Binding FullName}"
+                                    VerticalOptions="Center"/>
+                                <Label 
+                                    Text="{Binding PhoneNumber}"
+                                    VerticalOptions="Center"/>
+                            </StackLayout>
+                            <ViewCell.ContextActions>
+                                <MenuItem Clicked="Delete_Clicked" CommandParameter="{Binding .}" Text="Delete"/>
+                            </ViewCell.ContextActions>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
