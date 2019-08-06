@@ -15,9 +15,15 @@
 				<ListView.ItemTemplate>
 					<DataTemplate>
 						<ViewCell>
-							<StackLayout Orientation="Horizontal" Spacing="5" Margin="5,0,0,0">
-								<BoxView BackgroundColor="Black"/>
-								<Label Text="{Binding Initial}"/>
+							<StackLayout Orientation="Horizontal" Spacing="10" Margin="5,0,0,0">
+								<AbsoluteLayout>
+									<BoxView BackgroundColor="{Binding Color}" Margin="0,2,0,0"/>
+									<Label Text="{Binding Initial}"
+										   FontSize="20"
+										   Margin="5,2,0,0"
+										   AbsoluteLayout.LayoutBounds="0,0,1,1"
+										   AbsoluteLayout.LayoutFlags="All"/>
+								</AbsoluteLayout>
 								<StackLayout Orientation="Vertical" Spacing="1">
 									<Label Text="{Binding FullName}"/>
 									<Label Text="{Binding PhoneNumber}"/>

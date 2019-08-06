@@ -83,6 +83,7 @@ namespace ProjectDemo
 				}
 			};
 		public List<Contact> temporaryContactList = new List<Contact>();
+		
 		public Boolean isRefreshed = false;
 		public ContactPage()
 		{
@@ -108,11 +109,6 @@ namespace ProjectDemo
 		private void SearchBar_TextChanged(object sender, TextChangedEventArgs e)
 		{
 			string searchtext = e.NewTextValue;
-			var contacts = new ObservableCollection<Contact>();
-				foreach (var item in GetContacts())
-				{
-					contacts.Add(item);
-				}
 
 				if (String.IsNullOrWhiteSpace(searchtext))
 				{
@@ -145,6 +141,16 @@ namespace ProjectDemo
 
 	public class Contact
 	{
+		public Dictionary<char, string> colorDict = new Dictionary<char, string>()
+		{
+			{ 'A', "#ff5454" },
+			{ 'C', "#ffb254" },
+			{ 'D', "#5dff54" },
+			{ 'F', "#54ffee" },
+			{ 'J', "#5457ff" },
+			{ 'K', "#af54ff" },
+			{ 'M', "#ff54b8" }
+		};
 		public string Firstname { get; set; }
 		public string Lastname { get; set; }
 		public string PhoneNumber { get; set; }
@@ -161,6 +167,14 @@ namespace ProjectDemo
 				char[] chars = { Firstname[0] , Lastname[0] };
 				string s = new string(chars);
 				return s;
+			}
+		}
+		public string Color
+		{
+			get
+			{
+				string color = colorDict[Firstname[0]];
+				return color;
 			}
 		}
 	}
