@@ -5,22 +5,13 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="XamarinActivities.E5ContactPage"
-            >
+             Title="My Contacts">
     <StackLayout>
-        <Label Text="{Binding displayedColor}" x:Name="lblColor"/>
         <SearchBar Placeholder="Search here" TextChanged="SeachBar_TextChanged"></SearchBar>
         <ListView x:Name="lstContacts" 
                   IsPullToRefreshEnabled="True"
                   Refreshing="ContactListView_Refreshing"
                   HasUnevenRows="True">
-            <ListView.Header>
-                <StackLayout VerticalOptions="Center">
-                    <Label Text="Contact List" 
-                           BackgroundColor="#eb9834"
-                           TextColor="#f5f0eb"
-                           HorizontalTextAlignment="Center"/>
-                </StackLayout>
-            </ListView.Header>
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
@@ -34,7 +25,7 @@
                             <StackLayout Padding="5">
                                 <AbsoluteLayout>
                                     <BoxView x:Name="bvColor"
-                                             BackgroundColor="{Binding Color}"
+                                             BackgroundColor="{Binding InitialKeyColor}"
                                              CornerRadius="50"
                                              AbsoluteLayout.LayoutBounds="0, 0, 50, 50"
                                              AbsoluteLayout.LayoutFlags="PositionProportional"></BoxView>

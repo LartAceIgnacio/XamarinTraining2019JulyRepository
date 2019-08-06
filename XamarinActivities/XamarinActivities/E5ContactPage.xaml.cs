@@ -59,7 +59,7 @@ namespace XamarinActivities
                 {
                     if (color.Key == person.InitialKey.Substring(0, 1))
                     {
-                        person.Color = color.Value;
+                        person.InitialKeyColor = color.Value;
                     }
                 }
             }
@@ -162,7 +162,6 @@ namespace XamarinActivities
             }
         }
 
-
         async void OnDelete(object sender, EventArgs e)
         {
             var mi = (MenuItem) sender;
@@ -176,7 +175,6 @@ namespace XamarinActivities
                 await DisplayAlert("Contact List", personToDelete.FullName + " successfully deleted", "OK");
             }
         }
-
 
         private void ContactListView_Refreshing(object sender, EventArgs e)
         {

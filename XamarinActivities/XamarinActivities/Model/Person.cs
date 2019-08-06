@@ -11,7 +11,7 @@ namespace XamarinActivities.Model
         public string ContactNumber { get; set; }
         public string FullName { get { return FirstName + " " + LastName; } }
         public string InitialKey { get { return FirstName.Substring(0, 1) + LastName.Substring(0, 1); } }
-        public string Color { get; set; }
+        public string InitialKeyColor { get; set; }
 
         public string GetInitialKey(string firstName, string lastName)
         {
