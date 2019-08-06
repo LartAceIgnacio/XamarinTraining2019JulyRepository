@@ -17,6 +17,21 @@ namespace TestXamarin
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string ContactNo { get; set; }
+        public string Color { get; set; }
+        public string FullName
+        {
+            get
+            {
+                return String.Format("{0} {1}", this.FirstName, this.LastName);
+            }
+        }
+        public string Initials
+        {
+            get
+            {
+                return String.Format("{0}{1}", this.FirstName[0], this.LastName[0]);
+            }
+        }
     }
 
     public class PeopleList : List<Person>
@@ -30,143 +45,28 @@ namespace TestXamarin
         }
     }
 
-    public class CustomContactCell : StackLayout
-    {
-        BoxView Avatar = new BoxView();
-        Label Initials = new Label();
-        Label FullName = new Label();
-        Label ContactNo = new Label();
-        String initials = "";
-        String fullname = "";
-        String contactno = "";
-        String hex = "";
-
-
-        public CustomContactCell(Person person, string color)
-        {
-            initials = String.Format("{0}{1}", person.FirstName[0], person.LastName[0]);
-            fullname = String.Format("{0} {1}", person.FirstName, person.LastName);
-            contactno = person.ContactNo;
-            hex = color;
-
-            new BoxView()
-            {
-                BackgroundColor = Color.FromHex(color),
-            };
-            new Label()
-            {
-                Text = initials
-            };
-        }
-    }
-
-    public class CustomCell : ViewCell
-    {
-        //Initialization
-        StackLayout cellWrapper = new StackLayout();
-
-        AbsoluteLayout avatarLayout = new AbsoluteLayout();
-        BoxView ContactAvatar = new BoxView();
-        Label ContactInitials = new Label();
-
-        StackLayout horizontalLayout = new StackLayout();
-        StackLayout stackLabelsLayout = new StackLayout();
-        Label ContactFullName = new Label();
-        Label ContactNumber = new Label();
-
-        public static readonly BindableProperty ContactFullNameProperty = BindableProperty.Create("FullName",
-            typeof(string), typeof(CustomCell), "FullName");
-        public static readonly BindableProperty ContactNumberProperty = BindableProperty.Create("ContactNumber",
-            typeof(string), typeof(CustomCell), "ContactNumber");
-        public static readonly BindableProperty ContactInitialsProperty = BindableProperty.Create("Initials",
-            typeof(string), typeof(CustomCell), "Initials");
-        public static readonly BindableProperty AvatarBackgroundColorProperty = BindableProperty.Create("Color",
-            typeof(string), typeof(CustomCell), "Color");
-
-        public string FullName
-        {
-            get { return (string)GetValue(ContactFullNameProperty); }
-            set { SetValue(ContactFullNameProperty, value); }
-        }
-
-        public CustomCell()
-        {
-            //Set binding
-            ContactInitials.SetBinding(Label.TextProperty, "IN");
-            ContactFullName.SetBinding(Label.TextProperty, "Full Name");
-            ContactNumber.SetBinding(Label.TextProperty, "Contact No.");
-
-            //Set design properties
-            cellWrapper.Orientation = StackOrientation.Vertical;
-            horizontalLayout.Orientation = StackOrientation.Horizontal;
-            stackLabelsLayout.Orientation = StackOrientation.Vertical;
-
-            ContactAvatar.BackgroundColor = Color.FromHex("#0093ff");
-            ContactInitials.TextColor = Color.White;
-
-            //Add to view
-            stackLabelsLayout.Children.Add(ContactFullName);
-            stackLabelsLayout.Children.Add(ContactNumber);
-
-            horizontalLayout.Children.Add(stackLabelsLayout);
-
-            cellWrapper.Children.Add(horizontalLayout);
-            View = cellWrapper;
-        }
-
-        protected override void OnBindingContextChanged()
-        {
-            base.OnBindingContextChanged();
-
-            if (BindingContext != null)
-            {
-
-            }
-        }
-    }
-
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class Contacts_List : ContentPage
     {
         private ObservableCollection<PeopleList> _results = new ObservableCollection<PeopleList>();
         private readonly Dictionary<char, string> colors = new Dictionary<char, string>()
         {
-            { 'A', "#000000" },
-            { 'B', "#000000" },
-            { 'C', "#000000" },
-            { 'D', "#000000" },
-            { 'E', "#000000" },
-            { 'F', "#000000" },
-            { 'G', "#000000" },
-            { 'H', "#000000" },
-            { 'I', "#000000" },
-            { 'J', "#000000" },
-            { 'K', "#000000" },
-            { 'L', "#000000" },
-            { 'M', "#000000" },
-            { 'N', "#000000" },
-            { 'O', "#000000" },
-            { 'P', "#000000" },
-            { 'Q', "#000000" },
-            { 'R', "#000000" },
-            { 'S', "#000000" },
-            { 'T', "#000000" },
-            { 'U', "#000000" },
-            { 'V', "#000000" },
-            { 'W', "#000000" },
-            { 'X', "#000000" },
-            { 'Y', "#000000" },
-            { 'Z', "#000000" },
-
+            { 'A', "#262262" },
+            { 'C', "#3D3B30" },
+            { 'D', "#629677" },
+            { 'F', "#993955" },
+            { 'J', "#243E36" },
+            { 'K', "#DA3E52" },
+            { 'M', "#A30000" },
         };
 
         private readonly List<Person> unsortedContacts = new List<Person>
         {
             new Person
                 {
-                    FirstName = "Aaron Edwigg",
-                    LastName = "Custodio",
-                    ContactNo = "298395723"
+                    FirstName = "Charles Ken'ichi",
+                    LastName = "Nazareno",
+                    ContactNo = "297493824"
                 },
             new Person
                 {
@@ -176,9 +76,9 @@ namespace TestXamarin
                 },
             new Person
                 {
-                    FirstName = "Charles Ken'ichi",
-                    LastName = "Nazareno",
-                    ContactNo = "297493824"
+                    FirstName = "Aaron Edwigg",
+                    LastName = "Custodio",
+                    ContactNo = "298395723"
                 },
             new Person
                 {
@@ -188,15 +88,15 @@ namespace TestXamarin
                 },
             new Person
                 {
-                    FirstName = "Felix Alexander",
-                    LastName = "Carao",
-                    ContactNo = "09074932"
-                },
-            new Person
-                {
                     FirstName = "Jasper",
                     LastName = "Orilla",
                     ContactNo = "30932874"
+                },
+            new Person
+                {
+                    FirstName = "Felix Alexander",
+                    LastName = "Carao",
+                    ContactNo = "09074932"
                 },
             new Person
                 {
@@ -206,21 +106,15 @@ namespace TestXamarin
                 },
             new Person
                 {
-                    FirstName = "Kyla Gae",
-                    LastName = "Calpito",
-                    ContactNo = "238274832"
-                },
-            new Person
-                {
                     FirstName = "Marc Kenneth",
                     LastName = "Lomio",
                     ContactNo = "349289"
                 },
             new Person
                 {
-                    FirstName = "Melrose",
-                    LastName = "Mejidana",
-                    ContactNo = "193812942"
+                    FirstName = "Kyla Gae",
+                    LastName = "Calpito",
+                    ContactNo = "238274832"
                 },
             new Person
                 {
@@ -228,26 +122,39 @@ namespace TestXamarin
                     LastName = "Angni",
                     ContactNo = "289463287"
                 },
+            new Person
+                {
+                    FirstName = "Melrose",
+                    LastName = "Mejidana",
+                    ContactNo = "193812942"
+                },
 
         };
         public Contacts_List()
         {
             InitializeComponent();
-            //this.ContactsList.ItemTemplate = new DataTemplate(typeof(CustomCell));
             var sortedContacts = SortContactsToGroup(unsortedContacts);
             this.ContactsList.ItemsSource = sortedContacts;
+        }
+
+        private string GetColor(char c)
+        {
+            colors.TryGetValue(c, out string color);
+            return color;
         }
 
         private List<PeopleList> SortContactsToGroup(List<Person> unsortedContacts)
         {
             List<PeopleList> contacts = new List<PeopleList>();
             List<Person> sortedContacts = new List<Person>();
+            unsortedContacts = unsortedContacts.OrderBy(person => person.FirstName).ToList();
             for (char c = 'A'; c <= 'Z'; c++)
             {
                 foreach (var contact in unsortedContacts)
                 {
                     if (contact.FirstName[0] == c)
                     {
+                        contact.Color = GetColor(contact.FirstName[0]);
                         sortedContacts.Add(contact);
                     }
                 }

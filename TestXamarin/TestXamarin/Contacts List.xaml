@@ -4,6 +4,7 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
+             xmlns:local ="clr-namespace:TestXamarin"
              x:Class="TestXamarin.Contacts_List">
     <ContentPage.Content>
         <StackLayout>
@@ -14,8 +15,9 @@
                       IsPullToRefreshEnabled="True"
                       Refreshing="ContactsList_Refreshing">
                 <ListView.Header>
-                    <StackLayout Orientation="Horizontal" BackgroundColor="#0093ff" HorizontalOptions="FillAndExpand">
-                        <Label Text="My Contacts" TextColor="White" FontSize="20" HorizontalOptions="CenterAndExpand" />
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                        <Label Text="My Contacts" TextColor="#0093ff" FontSize="20" 
+                               FontAttributes="Bold" HorizontalOptions="CenterAndExpand" />
                     </StackLayout>
                 </ListView.Header>
                 <ListView.ItemTemplate>
@@ -24,11 +26,12 @@
                             <StackLayout x:Name="ContactsCell" Orientation="Vertical">
                                 <StackLayout Orientation="Horizontal">
                                     <AbsoluteLayout>
-                                        <BoxView x:Name="ContactAvatar" BackgroundColor="#0093ff" />
-                                        <Label x:Name="ContactInitials" Text="AB" />
+                                        <BoxView x:Name="ContactAvatar" BackgroundColor="{Binding Color}" />
+                                        <Label x:Name="ContactInitials" Text="{Binding Initials}" 
+                                               TextColor="White" FontSize="Large" HorizontalTextAlignment="Center"/>
                                     </AbsoluteLayout>
                                     <StackLayout>
-                                        <Label Text="{Binding FirstName}" />
+                                        <Label Text="{Binding FullName}" />
                                         <Label Text="{Binding ContactNo}" />
                                     </StackLayout>
                                 </StackLayout>
