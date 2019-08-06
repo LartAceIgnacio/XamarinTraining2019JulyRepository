@@ -1,4 +1,4 @@
-﻿using System;
+﻿using System;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -19,7 +19,8 @@ namespace XamarinFormExercise
             // MainPage = new Exercise7AbsoluteLayout();
             //MainPage = new Exercise8RelativeLayout();
             // MainPage = new Practice();
-            MainPage = new Exercise9Images();
+            //MainPage = new Exercise9Images();
+            MainPage = new Exercise10ListViewExercise();
         }
 
         protected override void OnStart()

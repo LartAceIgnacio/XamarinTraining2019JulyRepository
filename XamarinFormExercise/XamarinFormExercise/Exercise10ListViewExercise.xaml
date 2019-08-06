@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="XamarinFormExercise.Exercise10ListViewExercise">
+    <ContentPage.Content>
+        <StackLayout>
+            <SearchBar Placeholder="Search Here..." 
+                       TextChanged="SearchBar_TextChanged"/>
+            <ListView 
+                x:Name="ListviewContacts" 
+                HasUnevenRows="True" 
+                ItemTapped="PersonListView_ItemTapped"
+                IsPullToRefreshEnabled="True"
+                Refreshing="PersonListView_Refreshing">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Frame BackgroundColor="{Binding ColorLogo}" 
+                                   Padding="5" HorizontalOptions="Center" 
+                                   WidthRequest="40" HeightRequest="10" 
+                                   Grid.Column="0" Grid.Row="1" Grid.RowSpan="2" 
+                                   CornerRadius="80">
+                                <Label Text="{Binding FirstLetter}" 
+                                       TextColor="White" 
+                                       HorizontalTextAlignment="Center"></Label>
+                            </Frame>
+                            <Label Text="{Binding Fullname}" 
+                                   FontSize="15" 
+                                   Grid.Column="1" Grid.Row="0"/>
+                            <Label Text="{Binding ContactNumber}"
+                                   FontSize="15" 
+                                   Grid.Column="1" Grid.Row="1"/>
+                        </Grid>
+                            <ViewCell.ContextActions>
+                                <MenuItem Clicked="Delete_Clicked" CommandParameter="{Binding .}" Text="Delete"/>
+                            </ViewCell.ContextActions>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
