@@ -44,7 +44,7 @@
                                     VerticalTextAlignment="Center"/>
                                 <Label 
                                     Text="{Binding FullName}"
-                                    VerticalOptions="Center"
+                                    HorizontalTextAlignment="Start"
                                     AbsoluteLayout.LayoutBounds="0.3, 0.5"
                                     AbsoluteLayout.LayoutFlags="PositionProportional"/>
                                 <Label 

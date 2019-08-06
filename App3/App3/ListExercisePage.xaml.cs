@@ -65,7 +65,7 @@ namespace App3
             var menuItem = sender as MenuItem;
             var _contact = menuItem.CommandParameter as Contact;
             _contactList.Remove(_contact);
-            DisplayAlert("Delete", _contact.FullName, "OK");
+            DisplayAlert("This contact has been deleted", _contact.FullName, "OK");
         }
     }
 }
