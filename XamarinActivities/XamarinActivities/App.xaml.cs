@@ -11,8 +11,11 @@ namespace XamarinActivities
             InitializeComponent();
 
             //MainPage = new TabbedNavigation();
-            MainPage = new NavigationPage(new E5ContactPage());
             //MainPage = new E4ImagePage();
+
+            var page = new E5ContactPage();
+            MainPage = new NavigationPage(page);
+            NavigationPage.SetHasNavigationBar(page, false);
         }
 
         protected override void OnStart()

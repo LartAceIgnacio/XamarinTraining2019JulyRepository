@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -44,12 +45,36 @@ namespace XamarinActivities
                 { "Y", "#4a638c"},
                 { "Z", "#e89c23"}
         };
+        public Person PersonToDelete { get; set; }
         public E5ContactPage()
         {
             InitializeComponent();
             InitContactList();
             InitItemSource();
+
+            MessagingCenter.Subscribe<E6ContactDetailsPage, Person>(this, "Delete", (sender, person) => {
+                _peopleList.Remove(person);
+                lstContacts.ItemsSource = _peopleList.OrderBy(p => p.FullName);
+                DisplayAlert("Contact List", personToDelete.FullName + " successfully deleted", "OK");
+                MessagingCenter.Unsubscribe<E6ContactDetailsPage, Person>(this, "Delete");
+            });
         }
+
+        //public E5ContactPage(Person personToDelete)
+        //{
+        //    InitializeComponent();
+        //    InitContactList();
+        //    InitItemSource();
+        //    Debug.WriteLine(personToDelete.FirstName);
+
+        //    if (personToDelete != null)
+        //    {
+        //        _peopleList.Remove(personToDelete);
+        //        lstContacts.ItemsSource = _peopleList.OrderBy(p => p.FullName);
+        //        Debug.WriteLine(personToDelete.FullName);
+        //        DisplayAlert("Contact List", personToDelete.FullName + " successfully deleted", "OK");
+        //    } 
+        //}
 
         public void InitColor()
         {
@@ -79,69 +104,80 @@ namespace XamarinActivities
                {
                    FirstName = "Melrose",
                    LastName = "Mejidana",
-                   ContactNumber = "09389062548"
+                   ContactNumber = "09389062548",
+                   ImgURL = "https://tinyurl.com/yxmzuluw"
                },
                new Person()
                {
                    FirstName = "Aaron",
                    LastName = "Custodio",
-                   ContactNumber = "09693262548"
+                   ContactNumber = "09693262548",
+                   ImgURL = "https://tinyurl.com/y6mxgkg9"
                }
                ,
                new Person()
                {
                    FirstName = "Jasper",
                    LastName = "Orilla",
-                   ContactNumber = "0978262548"
+                   ContactNumber = "0978262548",
+                   ImgURL = "https://tinyurl.com/yy2hhvlx"
                },
                new Person()
                {
                    FirstName = "Felix",
                    LastName = "Carao",
-                   ContactNumber = "09478062548"
+                   ContactNumber = "09478062548",
+                   ImgURL = "https://tinyurl.com/y5qobnam"
                },
                new Person()
                {
                    FirstName = "Kyla Gae",
                    LastName = "Calpito",
-                   ContactNumber = "09236062548"
+                   ContactNumber = "09236062548",
+                   ImgURL = "https://tinyurl.com/y2euxrpn"
                },
                new Person()
                {
                    FirstName = "Mermellah",
                    LastName = "Angni",
-                   ContactNumber = "09369062548"
+                   ContactNumber = "09369062548",
+                   ImgURL = "https://tinyurl.com/y5caatvo"
                },
                new Person()
                {
                    FirstName = "Arnold",
                    LastName = "Mendoza",
-                   ContactNumber = "09899062548"
+                   ContactNumber = "09899062548",
+                   ImgURL = "https://tinyurl.com/yy5vcr58"
                },
                new Person()
                {
                    FirstName = "Charles",
                    LastName = "Nazareno",
-                   ContactNumber = "09789062548"
+                   ContactNumber = "09789062548",
+                   ImgURL = "https://tinyurl.com/y4c9479c"
                },
                new Person()
                {
                    FirstName = "Dino",
                    LastName = "Reyes",
-                   ContactNumber = "09299062548"
+                   ContactNumber = "09299062548",
+                   ImgURL = "https://tinyurl.com/yy2ufmor"
                },
                new Person()
                {
                    FirstName = "Marc Kenneth",
                    LastName = "Lomio",
-                   ContactNumber = "09369062548"
+                   ContactNumber = "09369062548",
+                   ImgURL = "https://tinyurl.com/y65k59cw"
                }
                ,
                new Person()
                {
                    FirstName = "Jelmarose Grace",
                    LastName = "De Vera",
-                   ContactNumber = "09328962548"
+                   ContactNumber = "09328962548",
+                   ImgURL = "https://tinyurl.com/y2m7s2cg"
                }
             };
 
@@ -184,10 +220,14 @@ namespace XamarinActivities
             lstContacts.EndRefresh();
         }
 
-        //private void ContactListView_Tapped(object sender, ItemTappedEventArgs e)
-        //{
-        //    var person = (Person) e.Item;
-        //    DisplayAlert("Contact List", "You tap: " + person.FullName, "OK");
-        //}
+        async void ContactListView_Tapped(object sender, ItemTappedEventArgs e)
+        {
+            var personDetails = (Person) e.Item;
+            var detailPage = new E6ContactDetailsPage(personDetails);
+            await Navigation.PushModalAsync(new NavigationPage(detailPage));
+            
+            //var person = (Person)e.Item;
+            //DisplayAlert("Contact List", "You tap: " + person.FullName, "OK");
+        }
     }
 }

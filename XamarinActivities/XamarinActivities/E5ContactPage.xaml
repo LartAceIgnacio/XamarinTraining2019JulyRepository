@@ -6,10 +6,12 @@
              mc:Ignorable="d"
              x:Class="XamarinActivities.E5ContactPage"
              Title="My Contacts">
-    <StackLayout>
+
+    <StackLayout Padding="10, 0, 10, 0">
         <SearchBar Placeholder="Search here" TextChanged="SeachBar_TextChanged"></SearchBar>
         <ListView x:Name="lstContacts" 
                   IsPullToRefreshEnabled="True"
+                  ItemTapped="ContactListView_Tapped"
                   Refreshing="ContactListView_Refreshing"
                   HasUnevenRows="True">
             <ListView.ItemTemplate>
