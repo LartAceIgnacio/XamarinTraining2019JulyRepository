@@ -15,6 +15,7 @@ namespace XamarinExercise
     public partial class ContactsPage : ContentPage
     {
         ObservableCollection<Contacts> contactList;
+        ObservableCollection<Contacts> searchList;
         public ContactsPage()
         {
             InitializeComponent();
@@ -39,7 +40,6 @@ namespace XamarinExercise
         }
         ObservableCollection<Contacts> Filter(string searchText=null)
         {
-
             if (string.IsNullOrWhiteSpace(searchText))
             {
                 return contactList;
@@ -47,8 +47,8 @@ namespace XamarinExercise
             else
             {
                 var filter = contactList.Where(c => c.FullName.ToLower().Contains(searchText.ToLower())).OrderBy(c => c.FirstName).ToList();
-                ObservableCollection<Contacts> filteredContacs = new ObservableCollection<Contacts>(filter);
-                return filteredContacs;
+                ObservableCollection<Contacts> filteredContacts = new ObservableCollection<Contacts>(filter);
+                return filteredContacts;
             }
         }
         
@@ -74,8 +74,8 @@ namespace XamarinExercise
 
         void SearchBar_TextChanged(object sender, TextChangedEventArgs e)
         {
-            contactList = Filter(e.NewTextValue);
-            contactListView.ItemsSource = contactList.OrderBy(c=>c.FirstName);
+            searchList = Filter(e.NewTextValue);
+            contactListView.ItemsSource = searchList.OrderBy(c=>c.FirstName);
         }
     }
 }
