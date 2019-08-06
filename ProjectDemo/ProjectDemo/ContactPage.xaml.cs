@@ -116,7 +116,7 @@ namespace ProjectDemo
 				}
 				else
 				{
-					var filteredContact = temporaryContactList.Where(contact => contact.FullName.ToLower().Contains(searchtext.ToLower()) || contact.PhoneNumber.ToLower().Contains(searchtext.ToLower()));
+					var filteredContact = temporaryContactList.Where(contact => contact.FullName.ToLower().Contains(searchtext.ToLower()) || contact.PhoneNumber.Contains(searchtext));
 					contactListView.ItemsSource = filteredContact;
 
 				}
