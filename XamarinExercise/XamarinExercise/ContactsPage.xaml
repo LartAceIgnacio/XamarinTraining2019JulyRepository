@@ -25,12 +25,12 @@
                         <ViewCell Height="40">
                             <StackLayout Orientation="Horizontal"
                                          VerticalOptions="FillAndExpand" 
-                                         Padding="30,0,30,0"
+                                         Padding="30, 0, 30, 0"
                                          Margin="7">
                                 <AbsoluteLayout HeightRequest="40"
                                                 WidthRequest="40">
                                     <BoxView x:Name="boxInital"
-                                            AbsoluteLayout.LayoutBounds="1,1,1,1"
+                                            AbsoluteLayout.LayoutBounds="1, 1, 1, 1"
                                             AbsoluteLayout.LayoutFlags="All"
                                             Color="{Binding BoxColor}"
                                             CornerRadius="15"/>
@@ -40,7 +40,7 @@
                                            FontAttributes="Bold"
                                            VerticalOptions="Center"
                                            HorizontalOptions="Center"
-                                           AbsoluteLayout.LayoutBounds="1,1,1,1"
+                                           AbsoluteLayout.LayoutBounds="1, 1, 1, 1"
                                            AbsoluteLayout.LayoutFlags="All"/>
                                 </AbsoluteLayout>
                                 <StackLayout Orientation="Vertical"
