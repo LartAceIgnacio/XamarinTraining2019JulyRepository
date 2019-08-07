@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="App3.ContactInformationPage">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Name="TlbrDelete" 
+                     Text="Delete"
+                     Order="Secondary"
+                     Clicked="TlbrDelete_Clicked"/>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="{Binding GetInitials}"
+                HorizontalTextAlignment="Center"
+                VerticalTextAlignment="Center"
+                TextColor="White"
+                BackgroundColor="{Binding GetBackgroundColor}"
+                FontSize="80"
+                HeightRequest="100"/>
+            <StackLayout 
+                Orientation="Horizontal"
+                Padding="20, 10, 20, 10">
+                <Label Text="Name"
+                       FontAttributes="Bold"
+                       HorizontalOptions="StartAndExpand"/>
+                <Label Text="{Binding FullName}"
+                       HorizontalOptions="EndAndExpand"/>
+            </StackLayout>
+            <BoxView
+                Color="Gray"
+                HeightRequest="1"/>
+            <StackLayout 
+                Orientation="Horizontal"
+                Padding="20, 10, 20, 10">
+                <Label Text="Number"
+                       FontAttributes="Bold"
+                       HorizontalOptions="StartAndExpand"/>
+                <Label Text="{Binding PhoneNumber}"
+                       HorizontalOptions="EndAndExpand"/>
+            </StackLayout>
+            <BoxView
+                Color="Gray"
+                HeightRequest="1"/>
+            <StackLayout 
+                Orientation="Horizontal"
+                Padding="20, 10, 20, 10">
+                <Label Text="Email"
+                       FontAttributes="Bold"
+                       HorizontalOptions="StartAndExpand"/>
+                <Label Text="{Binding Email}"
+                       HorizontalOptions="EndAndExpand"/>
+            </StackLayout>
+            <BoxView
+                Color="Gray"
+                HeightRequest="1"/>
+            <StackLayout
+                Padding="20, 10, 20, 10">
+                <Label Text="Quote"
+                       FontAttributes="Bold"
+                       HorizontalOptions="CenterAndExpand"/>
+                <Label Text="{Binding Quote}"
+                       HorizontalOptions="Center"
+                       HorizontalTextAlignment="Center"/>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

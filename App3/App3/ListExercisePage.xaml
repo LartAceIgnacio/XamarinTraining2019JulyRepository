@@ -28,7 +28,8 @@
                 Refreshing="ContactList_Refreshing"
                 RowHeight="50"
                 SeparatorVisibility="Default"
-                SeparatorColor="Black">
+                SeparatorColor="Black"
+                ItemTapped="ContactList_ItemTapped">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>

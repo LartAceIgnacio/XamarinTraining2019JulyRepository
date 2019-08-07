@@ -20,7 +20,9 @@ namespace App3
             //MainPage = new RelativeLayoutPage();
             //MainPage = new Image1Page();
             //MainPage = new Image2Page();
-            MainPage = new ListExercisePage();
+            var page = new ListExercisePage();
+            MainPage = new NavigationPage(page);
+            NavigationPage.SetHasNavigationBar(page , false);
         }
 
         protected override void OnStart()
