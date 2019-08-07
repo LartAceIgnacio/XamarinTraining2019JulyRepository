@@ -16,6 +16,7 @@ namespace Exercise1
             //MainPage = new Grid1Page();
             //MainPage = new Grid2Page();
             //MainPage = new StackLayout2Page();
+            //MainPage = new ApplicationProperties();
         }
 
         protected override void OnStart()

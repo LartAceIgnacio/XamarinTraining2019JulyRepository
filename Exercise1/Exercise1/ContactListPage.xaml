@@ -10,7 +10,8 @@
             
             <ListView x:Name="contactListView" RowHeight="50"
                       IsPullToRefreshEnabled="True"
-                      Refreshing="ContactListView_Refreshing">
+                      Refreshing="ContactListView_Refreshing"
+                      ItemTapped="ContactListView_ItemTapped">
                 <ListView.Header>
                     <StackLayout>
                         <Label Text="People List"
@@ -31,7 +32,8 @@
                                 
                                 <AbsoluteLayout >
                                     <BoxView Color="{Binding BoxColor}" 
-                                             CornerRadius="10" />
+                                             CornerRadius="10" 
+                                             Margin="0, 5, 0, 0"/>
                                     <Label Text="{Binding Initials}"
                                            HorizontalTextAlignment="Center"
                                            VerticalOptions="Center"
