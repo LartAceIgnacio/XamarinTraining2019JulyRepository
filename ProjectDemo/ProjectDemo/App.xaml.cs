@@ -10,7 +10,7 @@ namespace ProjectDemo
 		{
 			InitializeComponent();
 
-			MainPage = new FormAndSettingDemoPage();
+			MainPage = new ContactPage();
 		}
 
 		protected override void OnStart()

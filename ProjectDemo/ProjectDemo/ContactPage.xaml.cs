@@ -19,67 +19,89 @@ namespace ProjectDemo
 				{
 					Firstname = "Mermellah",
 					Lastname = "Angni",
-					PhoneNumber = "09095229126"
+					Nickname = "Ellah",
+					PhoneNumber = "09095229126",
+					Picture = "ellah.jpg"
 				},
 				new Contact
 				{
 					Firstname = "Kyla Gae",
 					Lastname = "Calpito",
-					PhoneNumber = "09095362345"
+					Nickname = "Turtle",
+					PhoneNumber = "09095362345",
+					Picture = "kyla.jpg"
 				},
 				new Contact
 				{
 					Firstname = "Melrose",
 					Lastname = "Mejidana",
-					PhoneNumber = "09197638467"
+					Nickname ="Rosmel",
+					PhoneNumber = "09197638467",
+					Picture = "melrose.jpg"
 				},
 				new Contact
 				{
 					Firstname = "Jelmarose Grace",
 					Lastname = "De Vera",
-					PhoneNumber = "09297364098"
+					Nickname = "Jelma",
+					PhoneNumber = "09297364098",
+					Picture = "jelma.jpg"
 				},
 				new Contact
 				{
 					Firstname = "Charles",
 					Lastname = "Nazareno",
-					PhoneNumber = "09156283615"
+					Nickname = "Memelord",
+					PhoneNumber = "09156283615",
+					Picture = "charles.jpg"
 				},
 				new Contact
 				{
 					Firstname = "Arnold Allan",
 					Lastname = "Mendoza",
-					PhoneNumber = "09176653725"
+					Nickname = "Arnold",
+					PhoneNumber = "09176653725",
+					Picture = "arnold.jpg"
 				},
 				new Contact
 				{
 					Firstname = "Dino",
 					Lastname = "Reyes",
-					PhoneNumber = "09097622615"
+					Nickname = "Dina",
+					PhoneNumber = "09097622615",
+					Picture = "dino.jpg"
 				},
 				new Contact
 				{
 					Firstname = "Marc Kenneth",
 					Lastname = "Lomio",
-					PhoneNumber = "09297658876"
+					Nickname = "Hangsome",
+					PhoneNumber = "09297658876",
+					Picture = "marc.jpg"
 				},
 				new Contact
 				{
 					Firstname = "Aaron",
 					Lastname = "Custodio",
-					PhoneNumber = "09195564254"
+					Nickname = "EyEyron",
+					PhoneNumber = "09195564254",
+					Picture = "aaron.jpg"
 				},
 				new Contact
 				{
 					Firstname = "Jasper",
 					Lastname = "Orilla",
-					PhoneNumber = "09152235146"
+					Nickname = "Hi Japs",
+					PhoneNumber = "09152235146",
+					Picture = "jasper.jpg"
 				},
 				new Contact
 				{
 					Firstname = "Felix",
 					Lastname = "Carao",
-					PhoneNumber = "09176782536"
+					Nickname = "Lex",
+					PhoneNumber = "09176782536",
+					Picture = "lex.jpg"
 				}
 			};
 		public List<Contact> temporaryContactList = new List<Contact>();
@@ -137,6 +159,13 @@ namespace ProjectDemo
 			temporaryContactList.Remove(_contact);
 			contactListView.ItemsSource = GetContacts();
 		}
+
+		private void ViewCell_Tapped(object sender, ItemTappedEventArgs e)
+		{
+			Contact contact = e.Item as Contact;
+			ContactDetails detailPage = new ContactDetails(contact);
+			this.Navigation.PushModalAsync(detailPage);
+		}
 	}
 
 	public class Contact
@@ -148,12 +177,14 @@ namespace ProjectDemo
 			{ 'D', "#5dff54" },
 			{ 'F', "#54ffee" },
 			{ 'J', "#5457ff" },
-			{ 'K', "#af54ff" },
+			{ 'K', "#ffab4a" },
 			{ 'M', "#ff54b8" }
 		};
 		public string Firstname { get; set; }
 		public string Lastname { get; set; }
+		public string Nickname { get; set; }
 		public string PhoneNumber { get; set; }
+		public string Picture { get; set; }
 		public string FullName {
 			get
 			{

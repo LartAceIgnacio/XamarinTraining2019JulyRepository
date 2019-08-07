@@ -11,6 +11,7 @@
 			<ListView x:Name="contactListView"
 					  SeparatorColor="#707070"
 					  IsPullToRefreshEnabled="True"
+					  ItemTapped="ViewCell_Tapped"
 					  Refreshing="ContactListView_Refreshing">
 				<ListView.ItemTemplate>
 					<DataTemplate>

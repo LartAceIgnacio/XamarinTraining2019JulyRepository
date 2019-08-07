@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="ProjectDemo.ContactDetails">
+	<ContentPage.ToolbarItems>
+		<ToolbarItem Text="Delete" Order="Primary" Priority="0" Clicked="tlb_Delete"/>
+	</ContentPage.ToolbarItems>
+	<ContentPage.Content>
+		
+		<RelativeLayout>
+			<BoxView x:Name="boxviewBG"
+					 BackgroundColor="{Binding Color}"
+					 HeightRequest="150"
+					 RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent,
+				Property=Width,
+				Factor=1}" />
+
+			<Image Source="{Binding Picture}"
+				   HeightRequest="150"
+				   WidthRequest="150"
+						   RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToView,
+								ElementName= boxviewBG,
+								 Property=Width,
+								 Factor=0.2,Constant=30}"
+				   RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToView,
+							ElementName= boxviewBG,
+                             Property=Height,
+                             Factor=0}"/>
+
+			<TableView RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToView,
+								ElementName= boxviewBG,
+								 Property=Height,
+								 Factor=1}">
+				<TableRoot>
+					<TableSection  Title="Contact Information">
+						<TextCell Text="Name" Detail="{Binding FullName}" ></TextCell>
+						<TextCell Text="Nickname" Detail="{Binding Nickname}" ></TextCell>
+						<TextCell Text="Phone Number" Detail="{Binding PhoneNumber}" ></TextCell>
+					</TableSection>
+				</TableRoot>
+			</TableView>
+		</RelativeLayout>
+
+	</ContentPage.Content>
+</ContentPage>

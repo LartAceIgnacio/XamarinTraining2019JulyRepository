@@ -53,7 +53,7 @@
 	
 	<!---  TIME PICKER -->
 
-	<StackLayout>
+	<!--<StackLayout>
 		<Entry x:Name="_entry"
                Placeholder="Enter event to be reminded of" />
 		<Label Text="Select the time below to be reminded at." />
@@ -67,5 +67,50 @@
                     HorizontalOptions="EndAndExpand"
                     Toggled="OnSwitchToggled" />
 		</StackLayout>
-	</StackLayout>
+	</StackLayout>-->
+
+	<!---  TIME PICKER -->
+
+
+	<!---  TABLE VIEW -->
+
+	<TableView>
+		<TableRoot>
+			<TableSection  Title="Basic Information">
+				<TextCell Text="Name" Detail="Mermellah Angni" ></TextCell>
+				<EntryCell Label="Nickname"></EntryCell>
+			</TableSection>
+			<TableSection  Title="Contact Information">
+				<EntryCell Label="Email" Keyboard="Email"></EntryCell>
+				<EntryCell Label="Phone Number" Keyboard="Numeric"></EntryCell>
+				<EntryCell Label="Telephone Number" Keyboard="Telephone"></EntryCell>
+				<EntryCell Label="Website" Keyboard="Url"></EntryCell>
+				<SwitchCell Text="Notifications" On="True"></SwitchCell>
+			</TableSection>
+			<TableSection Title="Settings">
+				<ViewCell>
+					<StackLayout Orientation="Horizontal">
+							<Label Text="Birthdate" VerticalOptions="Center"></Label>
+							<DatePicker Format="dd MMM yyyy"
+										HorizontalOptions="EndAndExpand">
+							</DatePicker>
+						</StackLayout>
+				</ViewCell>
+				<ViewCell>
+				<StackLayout Orientation="Horizontal">
+					<Label Text="Date" VerticalOptions="Center"></Label>
+					<TimePicker Time="11:00:00"
+										Format="T"
+										HorizontalOptions="EndAndExpand">
+					</TimePicker>
+				</StackLayout>
+				</ViewCell>
+			</TableSection>
+		</TableRoot>
+	</TableView>
+
 </ContentPage>
+	
+	
+	
+	
