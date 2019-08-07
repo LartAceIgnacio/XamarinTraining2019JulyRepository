@@ -15,10 +15,12 @@ namespace XamarinActivities.Modals
     public partial class ViewContactPage : ContentPage
     {
         private Contact _contact;
-        public ViewContactPage(Contact contact)
+        private EventHandler<Contact> DeleteContactEventHandler;
+        public ViewContactPage(Contact contact, EventHandler<Contact> deleteContactEventHandler)
         {
             InitializeComponent();
             this.BindingContext = contact;
+            this.DeleteContactEventHandler = deleteContactEventHandler;
             _contact = contact;
         }
 
@@ -32,7 +34,7 @@ namespace XamarinActivities.Modals
             var answer = await DisplayAlert("Delete", "Are you sure you want to delete " + _contact.FullName, "Yes", "Cancel");
             if(answer)
             {
-                MessagingCenter.Send(this, "Delete", _contact);
+                this.DeleteContactEventHandler?.Invoke(this, _contact);
                 await Navigation.PopModalAsync();
             }
         }

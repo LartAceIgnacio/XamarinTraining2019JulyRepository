@@ -71,7 +71,7 @@ namespace XamarinActivities
         {
             var menuItem = sender as MenuItem;
             var contact = menuItem.CommandParameter as Contact;
-            DeleteContact(contact);
+            DeleteContact(null, contact);
         }
 
         private void ContactsList_Refreshing(object sender, EventArgs e)
@@ -84,16 +84,11 @@ namespace XamarinActivities
         private void ContactsList_ItemTapped(object sender, ItemTappedEventArgs e)
         {
             var contact = e.Item as Contact;
-            ViewContactPage view = new ViewContactPage(contact);
+            ViewContactPage view = new ViewContactPage(contact, DeleteContact);
             this.Navigation.PushModalAsync(new NavigationPage(view));
-
-            MessagingCenter.Subscribe<ViewContactPage, Contact>(this, "Delete", async(ViewContactPage, _contact) => {
-                DeleteContact(_contact);
-                await DisplayAlert("","Successfully removed " + _contact.FullName + "!", "OK");
-            });
         }
 
-        private void DeleteContact(Contact contact)
+        private void DeleteContact(object sender, Contact contact)
         {
             _contacts.Remove(contact);
         }
