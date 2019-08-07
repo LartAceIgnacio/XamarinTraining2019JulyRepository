@@ -1,17 +1,45 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="XamarinActivities.MainPage">
 
-    <StackLayout>
-        <!-- Place new controls here -->
-        <Label Text="Xamarin Activities" 
-           HorizontalOptions="Center"
-           VerticalOptions="CenterAndExpand" />
-        
-    </StackLayout>
-
-</ContentPage>
+    <MasterDetailPage.Master>
+        <ContentPage Title="Menu" BackgroundColor="Accent">
+            <StackLayout>
+                <ListView x:Name="lstNavigationDrawer"
+                          RowHeight="55"
+                          SeparatorVisibility="Default"
+                          BackgroundColor="AliceBlue"
+                          ItemSelected="OnMenuItemSelected">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout VerticalOptions="FillAndExpand"
+                                             Orientation="Horizontal"
+                                             Padding="20, 10, 0, 10"
+                                             Spacing="0">
+                                    <Image Source="{Binding Icon}"
+                                           WidthRequest="10"
+                                           HeightRequest="10"
+                                           VerticalOptions="Start"></Image>
+                                    <Label Text="{Binding Title}"
+                                           FontSize="Small"
+                                           VerticalOptions="End"
+                                           TextColor="Black"></Label>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+        </ContentPage>
+    </MasterDetailPage.Master>
+    <MasterDetailPage.Detail>
+        <NavigationPage>
+            
+        </NavigationPage>
+    </MasterDetailPage.Detail>
+</MasterDetailPage>

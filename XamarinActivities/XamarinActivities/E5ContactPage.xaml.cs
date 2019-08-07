@@ -65,22 +65,6 @@ namespace XamarinActivities
             });
         }
 
-        //public E5ContactPage(Person personToDelete)
-        //{
-        //    InitializeComponent();
-        //    InitContactList();
-        //    InitItemSource();
-        //    Debug.WriteLine(personToDelete.FirstName);
-
-        //    if (personToDelete != null)
-        //    {
-        //        _peopleList.Remove(personToDelete);
-        //        lstContacts.ItemsSource = _peopleList.OrderBy(p => p.FullName);
-        //        Debug.WriteLine(personToDelete.FullName);
-        //        DisplayAlert("Contact List", personToDelete.FullName + " successfully deleted", "OK");
-        //    } 
-        //}
-
         private void InitColor()
         {
             foreach (var person in _peopleList)

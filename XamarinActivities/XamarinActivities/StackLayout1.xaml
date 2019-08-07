@@ -22,8 +22,8 @@
                        HorizontalOptions="Center" />  
             </StackLayout>
             <StackLayout Spacing="10">
-                <Button TextColor="white" BackgroundColor="#1dabf0"  Text="Login"></Button>
-                <Button TextColor="white" BackgroundColor="#1dabf0" Text="Register"></Button>
+                <Button TextColor="white" BackgroundColor="#1dabf0"  Text="Login" Clicked="Button_Clicked"></Button>
+                <Button TextColor="white" BackgroundColor="#1dabf0" Text="Register" Clicked="Button_Clicked"></Button>
             </StackLayout>
         </StackLayout>
     </ContentPage.Content>

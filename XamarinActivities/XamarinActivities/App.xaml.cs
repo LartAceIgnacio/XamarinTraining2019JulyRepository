@@ -10,11 +10,11 @@ namespace XamarinActivities
         {
             InitializeComponent();
 
-            //MainPage = new TabbedNavigation();
-            //MainPage = new E4ImagePage();
+            //MainPage = new StackLayout1();
+            MainPage = new MainPage();
 
-            var page = new E5ContactPage();
-            MainPage = new NavigationPage(page);
+            //var page = new E5ContactPage();
+            //MainPage = new NavigationPage(page);
             //NavigationPage.SetHasNavigationBar(page, false);
         }
 
