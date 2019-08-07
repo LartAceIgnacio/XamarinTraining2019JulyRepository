@@ -9,31 +9,84 @@
              Title="Details">
 
     <ContentPage.ToolbarItems>
-        <ToolbarItem Name="MenuItemDelete" Order="Primary" Icon="delete.png" 
+        <ToolbarItem Name="MenuItemDelete" Order="Secondary" 
                      Text="Delete" Priority="0"
                      Clicked="OnDelete_Clicked"/>
     </ContentPage.ToolbarItems>
     
     <ContentPage.Content>
-        <StackLayout>
-            <StackLayout  Orientation="Horizontal" Padding="10"
-                          BackgroundColor="#9fb3c4">
+        <StackLayout >
+            <StackLayout  Orientation="Horizontal" 
+                          BackgroundColor="#f0eded"
+                          Padding="20">
                 <controls:CircleImage
-                   HeightRequest="100"
-                   WidthRequest="100"
-                   Source="https://www.w3schools.com/howto/img_avatar2.png"
+                   HeightRequest="80"
+                   WidthRequest="80"
+                   Source="{Binding ImgURL}"
                    Aspect="AspectFill"
-                   BorderColor="#1b5b94"
+                   BorderColor="#2296F3"
                    BorderThickness="5"
                    VerticalOptions="Center"
                    HorizontalOptions="Start"/>
-                <Label Text="{Binding Name}"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand"
-                FontSize="14"/>
+                <StackLayout Padding="15,20,15,20">
+                    <Label Text="{Binding FullName}"
+                        VerticalOptions="Start" 
+                        HorizontalOptions="Start"
+                        FontSize="23"/>
+                    <Label Text="{Binding Bio}"
+                        VerticalOptions="Start" 
+                        HorizontalOptions="Start"
+                        FontSize="18"/>
+                </StackLayout>
             </StackLayout>
-            <StackLayout>
-                
+            <StackLayout Padding="10, 10, 10, 0">
+                <Grid RowSpacing="20" ColumnSpacing="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="2*" />
+                        <ColumnDefinition Width="4*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Label Text="Phone" 
+                           HorizontalOptions="Start"
+                           VerticalOptions="End"
+                           FontSize="20"
+                           Grid.Row="0" 
+                           Grid.Column="0"></Label>
+                    <Label Text="{Binding ContactNumber}" 
+                           HorizontalOptions="Start"
+                           VerticalOptions="End"
+                           FontSize="20"
+                           Grid.Row="0" 
+                           Grid.Column="1"></Label>
+                    <ImageButton Source="phone.png"
+                                 BackgroundColor="White"
+                                 WidthRequest="40" 
+                                 HeightRequest="40"
+                                 Grid.Row="0" Grid.Column="2"></ImageButton>
+                    <ImageButton Source="email.png" 
+                                 BackgroundColor="White"
+                                 WidthRequest="40"
+                                 HeightRequest="40"
+                                 Grid.Row="0" Grid.Column="3"></ImageButton>
+                    <Label Text="Email" 
+                           HorizontalOptions="Start"
+                           VerticalOptions="End"
+                           FontSize="20"
+                           Grid.Row="1" 
+                           Grid.Column="0"></Label>
+                    <Label Text="{Binding Email}" 
+                           HorizontalOptions="Start"
+                           VerticalOptions="End"
+                           FontSize="20"
+                           Grid.Row="1" 
+                           Grid.Column="1"
+                           Grid.ColumnSpan="3"></Label>
+                </Grid>
             </StackLayout>
         </StackLayout>
     </ContentPage.Content>

@@ -15,7 +15,7 @@ namespace XamarinActivities
 
             var page = new E5ContactPage();
             MainPage = new NavigationPage(page);
-            NavigationPage.SetHasNavigationBar(page, false);
+            //NavigationPage.SetHasNavigationBar(page, false);
         }
 
         protected override void OnStart()

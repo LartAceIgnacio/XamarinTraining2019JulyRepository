@@ -14,15 +14,11 @@ namespace XamarinActivities
     public partial class E6ContactDetailsPage : ContentPage
     {
         private Person _personDetails;
-        public string Name { get; set; }
-        public string imgURL { get; set; }
         public E6ContactDetailsPage(Person person)
         {
             InitializeComponent();
             _personDetails = person;
-            Name = person.FullName;
-            imgURL = person.ImgURL;
-            BindingContext = this;
+            BindingContext = person;
         }
 
         async void OnDelete_Clicked(object sender, EventArgs e)
@@ -35,7 +31,7 @@ namespace XamarinActivities
                 //await Navigation.PushModalAsync(new NavigationPage(contactPage));
                 //MessagingCenter.Subscribe<MainPage, string>(this, "Hi", _personDetails.FirstName);
                 //MessagingCenter.Send<E6ContactDetailsPage, Person>(this, "AnchorsName", _personDetails);
-                await Navigation.PopModalAsync();
+                await Navigation.PopAsync();
                 MessagingCenter.Send<E6ContactDetailsPage, Person>(this, "Delete", _personDetails);
             }
         }

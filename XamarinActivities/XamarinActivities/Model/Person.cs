@@ -13,6 +13,8 @@ namespace XamarinActivities.Model
         public string InitialKey { get { return FirstName.Substring(0, 1) + LastName.Substring(0, 1); } }
         public string InitialKeyColor { get; set; }
         public string ImgURL { get; set; }
+        public string Bio { get; set; }
+        public string Email { get; set; }
 
         public string GetInitialKey(string firstName, string lastName)
         {

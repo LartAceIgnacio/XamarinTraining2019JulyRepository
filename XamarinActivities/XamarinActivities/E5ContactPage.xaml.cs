@@ -52,10 +52,15 @@ namespace XamarinActivities
             InitContactList();
             InitItemSource();
 
+            Delete_Subscribe();
+        }
+
+        private void Delete_Subscribe()
+        {
             MessagingCenter.Subscribe<E6ContactDetailsPage, Person>(this, "Delete", (sender, person) => {
                 _peopleList.Remove(person);
                 lstContacts.ItemsSource = _peopleList.OrderBy(p => p.FullName);
-                DisplayAlert("Contact List", personToDelete.FullName + " successfully deleted", "OK");
+                DisplayAlert("Contact List", person.FullName + " successfully deleted", "OK");
                 MessagingCenter.Unsubscribe<E6ContactDetailsPage, Person>(this, "Delete");
             });
         }
@@ -105,14 +110,18 @@ namespace XamarinActivities
                    FirstName = "Melrose",
                    LastName = "Mejidana",
                    ContactNumber = "09389062548",
-                   ImgURL = "https://tinyurl.com/yxmzuluw"
+                   ImgURL = "https://tinyurl.com/y6klbxdz",
+                   Bio = "Luhmeh",
+                   Email = "mhelrosemejidana@gmail.com"
                },
                new Person()
                {
                    FirstName = "Aaron",
                    LastName = "Custodio",
                    ContactNumber = "09693262548",
-                   ImgURL = "https://tinyurl.com/y6mxgkg9"
+                   ImgURL = "https://tinyurl.com/y29bn4og",
+                   Bio = "Creating the life of my dreams one day at a time",
+                   Email = "aaron.custudio@gmail.com"
                }
                ,
                new Person()
@@ -120,56 +129,72 @@ namespace XamarinActivities
                    FirstName = "Jasper",
                    LastName = "Orilla",
                    ContactNumber = "0978262548",
-                   ImgURL = "https://tinyurl.com/yy2hhvlx"
+                   ImgURL = "https://tinyurl.com/y29bn4og",
+                   Bio = "Life isn’t perfect but your photos can be",
+                   Email = "jasper.orilla@gmail.com"
                },
                new Person()
                {
                    FirstName = "Felix",
                    LastName = "Carao",
                    ContactNumber = "09478062548",
-                   ImgURL = "https://tinyurl.com/y5qobnam"
+                   ImgURL = "https://tinyurl.com/y29bn4og",
+                   Bio = "See the good in the world",
+                   Email = "lex.carao@gmail.com"
                },
                new Person()
                {
                    FirstName = "Kyla Gae",
                    LastName = "Calpito",
                    ContactNumber = "09236062548",
-                   ImgURL = "https://tinyurl.com/y2euxrpn"
+                   ImgURL = "https://tinyurl.com/y29bn4og",
+                   Bio = "Save turtle",
+                   Email = "kyla.gae@gmail.com"
                },
                new Person()
                {
                    FirstName = "Mermellah",
                    LastName = "Angni",
                    ContactNumber = "09369062548",
-                   ImgURL = "https://tinyurl.com/y5caatvo"
+                   ImgURL = "https://tinyurl.com/y6klbxdz",
+                   Bio = "Anong produkto sa marawi? Gyera.",
+                   Email = "mermellol@gmail.com"
                },
                new Person()
                {
                    FirstName = "Arnold",
                    LastName = "Mendoza",
                    ContactNumber = "09899062548",
-                   ImgURL = "https://tinyurl.com/yy5vcr58"
+                   ImgURL = "https://tinyurl.com/y29bn4og",
+                   Bio = "No to carbs",
+                   Email = "arnold.mendoza@gmail.com"
                },
                new Person()
                {
-                   FirstName = "Charles",
+                   FirstName = "Charles Kenechi",
                    LastName = "Nazareno",
                    ContactNumber = "09789062548",
-                   ImgURL = "https://tinyurl.com/y4c9479c"
+                   ImgURL = "https://tinyurl.com/y29bn4og",
+                   Bio = "Wake. Play. Slay.",
+                   Email = "blast@gmail.com"
                },
                new Person()
                {
-                   FirstName = "Dino",
+                   FirstName = "Dino Angelo",
                    LastName = "Reyes",
                    ContactNumber = "09299062548",
-                   ImgURL = "https://tinyurl.com/yy2ufmor"
+                   ImgURL = "https://tinyurl.com/y29bn4og",
+                   Bio = "I may be a handful but hey you’ve got two hands!",
+                   Email = "dinarado@gmail.com"
                },
                new Person()
                {
                    FirstName = "Marc Kenneth",
                    LastName = "Lomio",
                    ContactNumber = "09369062548",
-                   ImgURL = "https://tinyurl.com/y65k59cw"
+                   ImgURL = "https://tinyurl.com/y29bn4og",
+                   Bio = "My favorite data type is char",
+                   Email = "drmkc@gmail.com"
                }
                ,
                new Person()
@@ -177,7 +202,9 @@ namespace XamarinActivities
                    FirstName = "Jelmarose Grace",
                    LastName = "De Vera",
                    ContactNumber = "09328962548",
-                   ImgURL = "https://tinyurl.com/y2m7s2cg"
+                   ImgURL = "https://tinyurl.com/y6klbxdz",
+                   Bio = "Single and living my best life",
+                   Email = "grace.rose@gmail.com"
                }
             };
 
@@ -224,7 +251,7 @@ namespace XamarinActivities
         {
             var personDetails = (Person) e.Item;
             var detailPage = new E6ContactDetailsPage(personDetails);
-            await Navigation.PushModalAsync(new NavigationPage(detailPage));
+            await Navigation.PushAsync(detailPage);
             
             //var person = (Person)e.Item;
             //DisplayAlert("Contact List", "You tap: " + person.FullName, "OK");
