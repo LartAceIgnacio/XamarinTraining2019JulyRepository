@@ -52,18 +52,18 @@ namespace XamarinActivities
             InitContactList();
             InitItemSource();
 
-            Delete_Subscribe();
+            //Delete_Subscribe();
         }
 
-        private void Delete_Subscribe()
-        {
-            MessagingCenter.Subscribe<E6ContactDetailsPage, Person>(this, "Delete", (sender, person) => {
-                _peopleList.Remove(person);
-                lstContacts.ItemsSource = _peopleList.OrderBy(p => p.FullName);
-                DisplayAlert("Contact List", person.FullName + " successfully deleted", "OK");
-                MessagingCenter.Unsubscribe<E6ContactDetailsPage, Person>(this, "Delete");
-            });
-        }
+        //private void Delete_Subscribe()
+        //{
+        //    MessagingCenter.Subscribe<E6ContactDetailsPage, Person>(this, "Delete", (sender, person) => {
+        //        _peopleList.Remove(person);
+        //        lstContacts.ItemsSource = _peopleList.OrderBy(p => p.FullName);
+        //        DisplayAlert("Contact List", person.FullName + " successfully deleted", "OK");
+        //        MessagingCenter.Unsubscribe<E6ContactDetailsPage, Person>(this, "Delete");
+        //    });
+        //}
 
         private void InitColor()
         {
@@ -209,11 +209,12 @@ namespace XamarinActivities
                                                      .OrderBy(p => p.FirstName).ToList();
             }
         }
-
+        
+        /* to delete */
         async void OnDelete_Clicked(object sender, EventArgs e)
         {
-            var mi = (MenuItem) sender;
-            var personToDelete = (Person) mi.CommandParameter;
+            var mi = (MenuItem)sender;
+            var personToDelete = (Person)mi.CommandParameter;
             bool answer = await DisplayAlert("Contact List", "Are you sure you want to delete " + personToDelete.FullName + "?", "OK", "Cancel");
 
             if (answer)
@@ -234,9 +235,23 @@ namespace XamarinActivities
         async void ContactListView_Tapped(object sender, ItemTappedEventArgs e)
         {
             var personDetails = (Person) e.Item;
-            var detailPage = new E6ContactDetailsPage(personDetails);
+            var detailPage = new E6ContactDetailsPage(personDetails, DeleteContact);
             await Navigation.PushAsync(detailPage);
             
         }
+
+        async void DeleteContact(object sender, Person person)
+        {
+            _peopleList.Remove(person);
+            lstContacts.ItemsSource = _peopleList.OrderBy(p => p.FullName);
+            await DisplayAlert("Contact List", person.FullName + " successfully deleted", "OK");
+            await Navigation.PopAsync();
+        }
+
+        async void OnAdd_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new E7AddContactPage());
+        }
+
     }
 }

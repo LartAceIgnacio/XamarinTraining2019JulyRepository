@@ -5,7 +5,8 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="XamarinActivities.GridLayout1"
-             BackgroundColor="#354242">
+             BackgroundColor="#354242"
+             Title="Dial">
     <ContentPage.Content>
             <Grid Padding="40" ColumnSpacing="10" RowSpacing="10">
                 <Grid.RowDefinitions>

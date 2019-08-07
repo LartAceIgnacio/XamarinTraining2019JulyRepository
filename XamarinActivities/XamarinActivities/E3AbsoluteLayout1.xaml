@@ -4,7 +4,8 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="XamarinActivities.E3AbsoluteLayout1">
+             x:Class="XamarinActivities.E3AbsoluteLayout1"
+             Title="Lockscreen">
     <AbsoluteLayout>
         <Image Source="https://images2.alphacoders.com/743/thumb-1920-743487.jpg"
                Aspect="AspectFill"

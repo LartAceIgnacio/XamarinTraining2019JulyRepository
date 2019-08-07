@@ -5,7 +5,8 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="XamarinActivities.StackLayout1" 
-             BackgroundColor="#127ac7">
+             BackgroundColor="#127ac7"
+             Title="Login">
     <ContentPage.Content>
         <StackLayout  VerticalOptions="CenterAndExpand" Spacing="20" >
             <StackLayout Spacing="20">

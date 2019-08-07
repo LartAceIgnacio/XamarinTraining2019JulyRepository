@@ -4,7 +4,8 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="XamarinActivities.StackLayout2">
+             x:Class="XamarinActivities.StackLayout2"
+             Title="Instagram">
     <ContentPage.Content>
         <StackLayout Spacing="10">
             <StackLayout Padding="10,5,5,10">

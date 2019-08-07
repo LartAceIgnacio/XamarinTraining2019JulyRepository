@@ -6,6 +6,14 @@
              mc:Ignorable="d"
              x:Class="XamarinActivities.E5ContactPage"
              Title="My Contacts">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Name="MenuItemAdd" 
+                     IconImageSource="add.png"
+                     Order="Primary" 
+                     Text="Add" Priority="0"
+                     Clicked="OnAdd_Clicked"/>
+    </ContentPage.ToolbarItems>
+    
     <StackLayout>
         <SearchBar Placeholder="Search here" TextChanged="SeachBar_TextChanged"></SearchBar>
         <StackLayout Padding="10">

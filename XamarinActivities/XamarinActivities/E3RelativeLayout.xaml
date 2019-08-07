@@ -4,7 +4,8 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="XamarinActivities.E3RelativeLayout">
+             x:Class="XamarinActivities.E3RelativeLayout"
+             Title="Sale">
     <RelativeLayout>
         <BoxView x:Name="bvBanner"
                  BackgroundColor="#f7f7f7"

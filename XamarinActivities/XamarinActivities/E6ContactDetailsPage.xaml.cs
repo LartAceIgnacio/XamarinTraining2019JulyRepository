@@ -14,10 +14,13 @@ namespace XamarinActivities
     public partial class E6ContactDetailsPage : ContentPage
     {
         private Person _personDetails;
-        public E6ContactDetailsPage(Person person)
+        private EventHandler<Person> _deleteEventHandler;
+        public E6ContactDetailsPage(Person person, EventHandler<Person> deleteEventHandler)
         {
             InitializeComponent();
             _personDetails = person;
+
+            _deleteEventHandler = deleteEventHandler;
             BindingContext = person;
         }
 
@@ -27,8 +30,9 @@ namespace XamarinActivities
 
             if (answer)
             {
-                await Navigation.PopAsync();
-                MessagingCenter.Send<E6ContactDetailsPage, Person>(this, "Delete", _personDetails);
+                _deleteEventHandler?.Invoke(this, _personDetails);
+                //await Navigation.PopAsync();
+                //MessagingCenter.Send<E6ContactDetailsPage, Person>(this, "Delete", _personDetails);
             }
         }
 

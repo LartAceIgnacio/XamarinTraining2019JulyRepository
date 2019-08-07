@@ -5,7 +5,8 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="XamarinActivities.E4ImageExercised1"
-             BackgroundColor="Black">
+             BackgroundColor="Black"
+             Title="Photo Viewer">
     <AbsoluteLayout>
         <BoxView BackgroundColor="Black" 
                  AbsoluteLayout.LayoutBounds="0, 0, 1, 0.1" 

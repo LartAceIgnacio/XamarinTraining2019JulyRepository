@@ -24,7 +24,7 @@
                    WidthRequest="80"
                    Source="{Binding ImgURL}"
                    Aspect="AspectFill"
-                   BorderColor="#2296F3"
+                   BorderColor="{Binding InitialKeyColor}"
                    BorderThickness="5"
                    VerticalOptions="Center"
                    HorizontalOptions="Start"/>
@@ -40,7 +40,7 @@
                 </StackLayout>
             </StackLayout>
             <StackLayout Padding="10, 10, 10, 0">
-                <Grid RowSpacing="20" ColumnSpacing="0">
+                <Grid RowSpacing="20" ColumnSpacing="4">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="*" />
                         <RowDefinition Height="*" />
@@ -63,14 +63,18 @@
                            FontSize="18"
                            Grid.Row="0" 
                            Grid.Column="1"></Label>
-                    <ImageButton Source="phone.png"
-                                 BackgroundColor="White"
+                    <ImageButton Source="telephone.png"
+                                 Padding="10"
+                                 CornerRadius="40"
+                                 BackgroundColor="{Binding InitialKeyColor}"
                                  WidthRequest="40" 
                                  HeightRequest="40"
                                  Grid.Row="0" Grid.Column="2"
                                  Clicked="OnButtonCall_Clicked"></ImageButton>
-                    <ImageButton Source="msg.png" 
-                                 BackgroundColor="White"
+                    <ImageButton Source="envelope.png" 
+                                 Padding="10"
+                                 CornerRadius="40"
+                                 BackgroundColor="{Binding InitialKeyColor}"
                                  WidthRequest="40"
                                  HeightRequest="40"
                                  Grid.Row="0" Grid.Column="3"
