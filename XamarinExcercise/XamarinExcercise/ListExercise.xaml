@@ -15,7 +15,9 @@
             <ListView x:Name="ContactList"
                       IsPullToRefreshEnabled="True"
                       Refreshing="ContactList_Refreshing"
-                      HasUnevenRows="True" SeparatorColor="Gold">
+                      HasUnevenRows="True" SeparatorColor="Gold"
+                      ItemTapped="ContactList_ItemTapped"
+                      >
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>

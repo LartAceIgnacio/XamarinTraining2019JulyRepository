@@ -18,7 +18,9 @@ namespace XamarinExcercise
             //MainPage = new AbsoluteLayoutExercise();
             //MainPage = new RelativeLayoutExercise();
             //MainPage = new ImageExercise();
-            MainPage = new ListExercise();
+            var page = new ListExercise();
+            MainPage = new NavigationPage(page);
+            NavigationPage.SetHasNavigationBar(page, false);
         }
 
         protected override void OnStart()

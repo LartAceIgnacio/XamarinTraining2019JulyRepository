@@ -12,7 +12,7 @@ namespace XamarinExcercise
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ListExercise : ContentPage
     {
-        List<Person> deletedList = new List<Person>();
+        public List<Person> deletedList = new List<Person>();
         public ListExercise()
         {
             InitializeComponent();
@@ -68,7 +68,13 @@ namespace XamarinExcercise
             var person = item.CommandParameter as Person;
             deletedList.Remove(person);
             ContactList.ItemsSource = deletedList.OrderBy(f => f.FirstName).ToList();
+        }
 
+        private async void ContactList_ItemTapped(object sender, ItemTappedEventArgs e)
+        {
+            var person = ((ListView)sender).SelectedItem as Person ;
+            var modalPage = new NavigationPage(new DetailPage(person));
+            await this.Navigation.PushModalAsync(modalPage);
         }
     }
 
