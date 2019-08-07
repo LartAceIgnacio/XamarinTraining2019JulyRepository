@@ -20,6 +20,12 @@ namespace XamarinExercise
             InitializeComponent();
             contactList=GetContacts();
             contactListView.ItemsSource = contactList.OrderBy(c => c.FirstName);
+            MessagingCenter.Subscribe<ContactInfoPage, Contacts>(this, "delete this", (sender, contact)=>
+            {
+                contactList.Remove(contact);
+                contactListView.ItemsSource = contactList;
+                DisplayAlert("Delete Success",contact.FullName + " Has been Deleted", "Ok");
+            });
         }
         ObservableCollection<Contacts> GetContacts()
         {
@@ -77,11 +83,11 @@ namespace XamarinExercise
             searchList = Filter(e.NewTextValue);
             contactListView.ItemsSource = searchList.OrderBy(c=>c.FirstName);
         }
-        void ContactItem_Tapped(object sender, ItemTappedEventArgs e)
+        async void ContactItem_Tapped(object sender, ItemTappedEventArgs e)
         {
             Contacts contact = e.Item as Contacts;
             var contactInfo= new NavigationPage(new ContactInfoPage(contact));
-            this.Navigation.PushModalAsync(contactInfo);
+            await this.Navigation.PushModalAsync(contactInfo);
         }
     }
 }
