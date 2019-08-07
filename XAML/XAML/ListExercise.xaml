@@ -18,7 +18,7 @@
                         <Label>My Contacts</Label>
                     </StackLayout>
                 </ListView.Header>
-                
+
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
@@ -47,6 +47,11 @@
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
+            <AbsoluteLayout AbsoluteLayout.LayoutBounds="0.9, 0.9, 0.1, 0.1"
+                            AbsoluteLayout.LayoutFlags="All">
+                <ImageButton Source=" ">
+
+            </AbsoluteLayout>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

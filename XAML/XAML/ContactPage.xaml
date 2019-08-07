@@ -4,11 +4,70 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
+             xmlns:controls="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
              x:Class="XAML.ContactPage"
              Title="Contact Details">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Name="TlbrDelete" Order="Secondary" Text="Delete" Clicked="TlbrDelete_Clicked"/>
+    </ContentPage.ToolbarItems>
     <ContentPage.Content>
-        <RelativeLayout>
-            <Label x:Name="lblName"/>
-        </RelativeLayout>
+        <AbsoluteLayout>
+            <BoxView Color="#F0F0F0"
+                     AbsoluteLayout.LayoutFlags="All"
+                     AbsoluteLayout.LayoutBounds="0, 0, 1, 0.3"/>
+
+            <controls:CircleImage x:Name="imgContact"
+                                  Aspect="AspectFit"
+                                  AbsoluteLayout.LayoutFlags="PositionProportional"
+                                  AbsoluteLayout.LayoutBounds="0.1, 0.1, 125, 125"/>
+
+            <StackLayout AbsoluteLayout.LayoutFlags="All"
+                         AbsoluteLayout.LayoutBounds="1, 0.1, 0.7, 0.3"
+                         Padding="20">
+                <Label x:Name="lblFullName"
+                       HorizontalTextAlignment="End"
+                       FontSize="36"></Label>
+                <BoxView Color="#f0f0f0"
+                         HeightRequest="1"/>
+                
+            </StackLayout>
+
+            <Grid AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0, 0.3, 1, 0.1" BackgroundColor="White">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+            
+                <ImageButton Source="@drawable/phonereceiver.png"
+                             WidthRequest="50"
+                             HeightRequest="50"
+                             HorizontalOptions="Center"
+                             Grid.Row="0"
+                             Grid.Column="0"/>
+                <ImageButton Source="@drawable/message.png"
+                             WidthRequest="50"
+                             HeightRequest="50"
+                             HorizontalOptions="Center"
+                             Grid.Row="0"
+                             Grid.Column="1"/>
+                <ImageButton Source=""
+                             WidthRequest="50"
+                             HeightRequest="50"
+                             HorizontalOptions="Center"
+                             Grid.Column="2"
+                             Grid.Row="0"/>
+            </Grid>
+            <Label x:Name="lblContact"
+                       HorizontalTextAlignment="Center"
+                       FontSize="24"></Label>
+            <BoxView Color="#f0f0f0"
+                         HeightRequest="1"/>
+
+        </AbsoluteLayout>
+        
     </ContentPage.Content>
 </ContentPage>

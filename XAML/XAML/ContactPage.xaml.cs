@@ -12,12 +12,20 @@ namespace XAML
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ContactPage : ContentPage
     {
+        private Person _person;
         public ContactPage(Person person)
         {
             InitializeComponent();
             this.BindingContext = person;
-            lblName.Text = person.FullName;
+            _person = person;
+            lblFullName.Text = person.FullName;
+            lblContact.Text = person.ContactNumber;
+            imgContact.Source = person.ImageUrl;
+        }
 
+        private void TlbrDelete_Clicked(object sender, EventArgs e)
+        {
+            MessagingCenter.Send(this, "Delete", _person);
         }
     }
 }

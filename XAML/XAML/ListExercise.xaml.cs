@@ -30,43 +30,51 @@ namespace XAML
                 {
                     FirstName = "Aaron Edwigg",
                     LastName = "Custodio",
-                    ContactNumber = "09123456789"
+                    ContactNumber = "09123456789",
+                    ImageUrl = "@drawable/aaron.jpg"
+
                 },
                 new Person
                 {
                     FirstName = "Jasper",
                     LastName = "Orilla",
-                    ContactNumber = "09123456790"
+                    ContactNumber = "09123456790",
+                    ImageUrl = "@drawable/jasper.jpg"
                 },
                 new Person
                 {
                     FirstName = "Felix Alexander",
                     LastName = "Carao",
-                    ContactNumber = "09123456791"
+                    ContactNumber = "09123456791",
+                    ImageUrl = "@drawable/felix.jpg"
                 },
                 new Person
                 {
                     FirstName = "Kyla Gae",
                     LastName = "Calpito",
-                    ContactNumber = "09123456792"
+                    ContactNumber = "09123456792",
+                    ImageUrl = "@drawable/kyla.jpg"
                 },
                 new Person
                 {
                     FirstName = "Mermellah",
                     LastName = "Angni",
-                    ContactNumber = "09123456793"
+                    ContactNumber = "09123456793",
+                    ImageUrl = "@drawable/mermellah.jpg"
                 },
                 new Person
                 {
                     FirstName = "Arnold Allan",
                     LastName = "Mendoza",
-                    ContactNumber = "09123456794"
+                    ContactNumber = "09123456794",
+                    ImageUrl = "@drawable/arnold.jpg"
                 },
                 new Person
                 {
                     FirstName = "Charles Kenichi",
                     LastName = "Nazareno",
-                    ContactNumber = "09123456795"
+                    ContactNumber = "09123456795",
+                    ImageUrl = "@drawable/charles.jpg"
                 },
                 new Person
                 {
@@ -78,19 +86,22 @@ namespace XAML
                 {
                     FirstName = "Melrose",
                     LastName = "Mejidana",
-                    ContactNumber = "09123456797"
+                    ContactNumber = "09123456797",
+                    ImageUrl = "@drawable/melrose.jpg"
                 },
                 new Person
                 {
                     FirstName = "Marc Kenneth",
                     LastName = "Lomio",
-                    ContactNumber = "09123456798"
+                    ContactNumber = "09123456798",
+                    ImageUrl = "@drawable/mkc.jpg"
                 },
                 new Person
                 {
                     FirstName = "Jelmarose Grace",
                     LastName = "De Vera",
-                    ContactNumber = "09123456799"
+                    ContactNumber = "09123456799",
+                    ImageUrl = "@drawable/jelma.jpg"
                 },
             };
             personListView.ItemsSource = People.OrderBy(p => p.FirstName);
