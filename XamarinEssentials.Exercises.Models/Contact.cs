@@ -9,8 +9,12 @@ namespace XamarinEssentials.Exercises.Models
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string ContactNumber { get; set; }
+        public string Email { get; set; }
+        public string Quote { get; set; }
+        public string Birthday { get; set; }
+        public string AvatarUrl { get; set; }
 
-        public readonly IDictionary<string, Color> AvatarColors = new Dictionary<string, Color>()
+        private readonly IDictionary<string, Color> AvatarColors = new Dictionary<string, Color>()
             {
                 { "A", Color.AliceBlue },
                 { "B", Color.Blue },
@@ -48,7 +52,7 @@ namespace XamarinEssentials.Exercises.Models
             }
         }
 
-        public string GetInitials
+        public string Initials
         {
             get
             {
@@ -56,7 +60,7 @@ namespace XamarinEssentials.Exercises.Models
             }
         }
 
-        public Color GetAvatarColor
+        public Color AvatarColor
         {
             get
             {

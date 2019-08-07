@@ -4,7 +4,8 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="XamarinEssentials.Exercises.Grid_Exercise1">
+             x:Class="XamarinEssentials.Exercises.Grid_Exercise1"
+             Title="Phone">
     <ContentPage.Resources>
         <ResourceDictionary>
             <Style x:Key="numberDisplay" TargetType="Label">

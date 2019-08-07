@@ -4,12 +4,14 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="XamarinEssentials.Exercises.ListView_Exercise">
+             x:Class="XamarinEssentials.Exercises.ListView_Exercise"
+             Title="Contacts">
     <ContentPage.Content>
         <StackLayout>
             <SearchBar Placeholder="Search.."
                        TextChanged="SearchBar_TextChanged"/>
             <ListView x:Name="lstContacts"
+                      ItemTapped="LstContacts_ItemTapped"
                       RowHeight="60"
                       SeparatorColor="DarkGray"
                       IsPullToRefreshEnabled="True"
@@ -23,11 +25,11 @@
                                 <AbsoluteLayout>
                                     <BoxView HeightRequest="35"
                                              WidthRequest="35"
-                                             Color="{Binding GetAvatarColor}"
+                                             Color="{Binding AvatarColor}"
                                              AbsoluteLayout.LayoutBounds="0.5, 0.5"
                                              AbsoluteLayout.LayoutFlags="PositionProportional"/>
                                     <!--{Binding GetAvatarColor}-->
-                                    <Label Text="{Binding GetInitials}"
+                                    <Label Text="{Binding Initials}"
                                            AbsoluteLayout.LayoutBounds="1, 1, 1, 1"
                                            AbsoluteLayout.LayoutFlags="All"
                                            HorizontalOptions="Center"

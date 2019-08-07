@@ -22,23 +22,28 @@ namespace XamarinEssentials.Exercises
         {
             InitializeComponent();
 
+            MessagingCenter.Subscribe<NavigationPage_Exercise, Contact>(this, "delete_contact", (sender, contact) => {
+                ContactList.Remove(contact);
+                lstContacts.ItemsSource = SortList(ContactList);
+            });
+
             ContactList = new ObservableCollection<Contact>()
             {
-                new Contact { FirstName = "Arnold Allan", LastName = "Schwarzenegger", ContactNumber = "09056484757" },
-                new Contact { FirstName = "Charles Kenichi", LastName = "Onerazan", ContactNumber = "09156584566" },
-                new Contact { FirstName = "Mark Kenneth 'Hangsome'", LastName = "Lomio", ContactNumber = "09056484757" },
-                new Contact { FirstName = "Jasper 'Japs'", LastName = "Orilla", ContactNumber = "09056484757" },
-                new Contact { FirstName = "Jelmarose 'Grace'", LastName = "DeVera", ContactNumber = "09056484757" },
-                new Contact { FirstName = "Felix 'S Perm'", LastName = "Carao", ContactNumber = "09167395531" },
-                new Contact { FirstName = "Dino 'Saur' Angelo", LastName = "Reyes", ContactNumber = "09729588734" },
-                new Contact { FirstName = "Melrose 'Rosemel'", LastName = "Mejidana", ContactNumber = "09167755498" },
-                new Contact { FirstName = "Kyla Gae 'Turtle'", LastName = "Calpito", ContactNumber = "09167395531" },
-                new Contact { FirstName = "Mermellah 'lol'", LastName = "Angni", ContactNumber = "0988659931" },
-                new Contact { FirstName = "Barry 'Happy'", LastName = "Manilow", ContactNumber = "09285555784" },
-                new Contact { FirstName = "Erickson 'Jocson'", LastName = "Reyes", ContactNumber = "09195554491" },
-                new Contact { FirstName = "Gerald 'Alder'", LastName = "Anderson", ContactNumber = "09295550240" },
-                new Contact { FirstName = "Holly 'Jolly'", LastName = "Mendoza", ContactNumber = "09167395531" },
-                new Contact { FirstName = "Irejane 'Ire'", LastName = "Santos", ContactNumber = "0988659931" }
+                new Contact { FirstName = "Arnold Allan", LastName = "Schwarzenegger", ContactNumber = "09056484757", Email = "aschwarzenegger@yahoo.com", Birthday = "January 1, 1990", Quote = "", AvatarUrl = "https://m.media-amazon.com/images/M/MV5BMTI3MDc4NzUyMV5BMl5BanBnXkFtZTcwMTQyMTc5MQ@@._V1_UY317_CR19,0,214,317_AL_.jpg" },
+                new Contact { FirstName = "Charles Kenichi", LastName = "Onerazan", ContactNumber = "09156584566", Email = "conerazan@yahoo.com", Birthday = "January 1, 1990", Quote = "", AvatarUrl = "https://i.pinimg.com/originals/e8/93/a9/e893a94e8fb400e9d3bdc6a8a0e28ae2.jpg" },
+                new Contact { FirstName = "Mark Kenneth 'Hangsome'", LastName = "Lomio", ContactNumber = "09056484757", Email = "mlomio@gmail.com", Birthday = "January 1, 1990", Quote = "", AvatarUrl = "https://www.star2.com/wp-content/uploads/2016/02/str2_dklomio_dinesh.k_stefanie_chiuliet-1024x1024.jpg" },
+                new Contact { FirstName = "Jasper 'Japs'", LastName = "Orilla", ContactNumber = "09056484757", Email = "jorilla@gmail.com", Birthday = "January 1, 1990", Quote = "", AvatarUrl = "http://www.nautiluskayaks.es/wp-content/uploads/photo-gallery/thumb/20.jpg" },
+                new Contact { FirstName = "Jelmarose 'Grace'", LastName = "DeVera", ContactNumber = "09056484757", Email = "jdevera@rocketmail.com", Birthday = "January 1, 1990", Quote = "", AvatarUrl = "https://avatars2.githubusercontent.com/u/15888411?v=4" },
+                new Contact { FirstName = "Felix 'S Perm'", LastName = "Carao", ContactNumber = "09167395531", Email = "fcarao@rocketmail.com", Birthday = "January 1, 1990", Quote = "", AvatarUrl = "https://media.licdn.com/dms/image/C4D03AQGIsZaAYQX_Zg/profile-displayphoto-shrink_200_200/0?e=1568246400&v=beta&t=brQaHB8_VUmKOh_4m0IrFrs7o2c58v-9bvV274QTCHU" },
+                new Contact { FirstName = "Dino 'Saur' Angelo", LastName = "Reyes", ContactNumber = "09729588734", Email = "dreyes@aol.com", Birthday = "January 1, 1990", Quote = "", AvatarUrl = "https://pbs.twimg.com/profile_images/505519655746691072/whEP3pdn_400x400.jpeg" },
+                new Contact { FirstName = "Melrose 'Rosemel'", LastName = "Mejidana", ContactNumber = "09167755498", Email = "mmejidana@aol.com", Birthday = "January 1, 1990", Quote = "", AvatarUrl = "https://media.licdn.com/dms/image/C5103AQHU3I0ZyVyE8Q/profile-displayphoto-shrink_200_200/0?e=1567036800&v=beta&t=j7FYyDhzLWQN7vKX7E7Zj5jh3Nj5H5ynTTHcp-uMgyk" },
+                new Contact { FirstName = "Kyla Gae 'Turtle'", LastName = "Calpito", ContactNumber = "09167395531", Email = "kcalpito@zoho.com", Birthday = "January 1, 1990", Quote = "", AvatarUrl = "https://secure.meetupstatic.com/photos/member/7/b/5/d/highres_271951581.jpeg" },
+                new Contact { FirstName = "Mermellah 'lol'", LastName = "Angni", ContactNumber = "0988659931", Email = "mangni@zoho.com", Birthday = "January 1, 1990", Quote = "", AvatarUrl = "https://yt3.ggpht.com/a-/AN66SAxzuA-Ky7dusSsWPgEwYCYx0iVbdqq7LXt3CA=s900-mo-c-c0xffffffff-rj-k-no" },
+                new Contact { FirstName = "Barry 'Happy'", LastName = "Manilow", ContactNumber = "09285555784", Email = "bmanilow@mail.com", Birthday = "January 1, 1990", Quote = "", AvatarUrl = "https://www.biography.com/.image/ar_1:1%2Cc_fill%2Ccs_srgb%2Cg_face%2Cq_auto:good%2Cw_300/MTE4MDAzNDEwNzY3Njc2OTQy/barry-manilow-9542490-1-402.jpg" },
+                new Contact { FirstName = "Erickson 'Jocson'", LastName = "Reyes", ContactNumber = "09195554491", Email = "ereyes@mail.com", Birthday = "January 1, 1990", Quote = "", AvatarUrl = "https://pbs.twimg.com/profile_images/808621107389534208/btnvxEWU.jpg" },
+                new Contact { FirstName = "Gerald 'Alder'", LastName = "Anderson", ContactNumber = "09295550240", Email = "ganderson@protonmail.com", Birthday = "January 1, 1990", Quote = "", AvatarUrl = "https://philnews.ph/wp-content/uploads/2019/08/gerald-anderson.jpg" },
+                new Contact { FirstName = "Holly 'Jolly'", LastName = "Mendoza", ContactNumber = "09167395531", Email = "hmendoza@protonmail.com", Birthday = "January 1, 1990", Quote = "", AvatarUrl = "https://www.tricountybusts.com/inc/Images/bso-830314.jpg" },
+                new Contact { FirstName = "Irejane 'Ire'", LastName = "Santos", ContactNumber = "0988659931", Email = "isantos@pornhub.com", Birthday = "January 1, 1990", Quote = "", AvatarUrl = "https://pbs.twimg.com/profile_images/663827465438130176/qSQnvHIL.jpg" }
             };
 
             lstContacts.ItemsSource = SortList(ContactList);
@@ -71,12 +76,6 @@ namespace XamarinEssentials.Exercises
             SearchList = GetContacts(e.NewTextValue);
             lstContacts.ItemsSource = SortList(SearchList);
         }
-
-        //private async void ShowConfirmationDialog(string title, string message)
-        //{
-        //    var answer = await DisplayAlert(title , message, "Yes", "No");
-
-        //}
 
         ObservableCollection<Contact> SortList(ObservableCollection<Contact> list)
         {
@@ -116,6 +115,14 @@ namespace XamarinEssentials.Exercises
                 ObservableCollection<Contact> searchResults = new ObservableCollection<Contact>(filteredList);
                 return searchResults;
             }
+        }
+
+        private void LstContacts_ItemTapped(object sender, ItemTappedEventArgs e)
+        {
+            var contact = e.Item as Contact;
+
+            var ContactDetailsPage = new NavigationPage(new NavigationPage_Exercise(contact));
+            this.Navigation.PushModalAsync(ContactDetailsPage);
         }
     }
 }

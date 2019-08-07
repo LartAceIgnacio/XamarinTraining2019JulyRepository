@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             xmlns:controls="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
+             x:Class="XamarinEssentials.Exercises.NavigationPage_Exercise">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="contactInfo" TargetType="Label">
+                <Setter Property="TextColor" Value="Black" />
+                <Setter Property="FontSize" Value="14" />
+            </Style>
+            <Style x:Key="contactName" TargetType="Label">
+                <Setter Property="TextColor" Value="Black" />
+                <Setter Property="FontSize" Value="20" />
+                <Setter Property="FontAttributes" Value="Bold" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Name="tlbrDelete"
+                     Order="Primary"
+                     Icon="tlbr_delete"
+                     Text="Delete"
+                     Priority="0"
+                     Clicked="TlbrDelete_Clicked"/>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical"
+                     Padding="20, 20, 20, 20"
+                     Spacing="30">
+            <StackLayout>
+                <!--rounded image-->
+                <controls:CircleImage
+                    x:Name="ciAvatar"
+                    HeightRequest="80"
+                    WidthRequest="80"
+                    Aspect="AspectFit"
+                    HorizontalOptions="Center"/>
+                <Label x:Name="lblName"
+                       Style="{StaticResource contactName}"
+                       HorizontalTextAlignment="Center"/>
+            </StackLayout>
+            
+            <StackLayout Orientation="Vertical"
+                         HorizontalOptions="StartAndExpand">
+                <BoxView BackgroundColor="#f0f0f0"
+                     HeightRequest="1"/>
+                <Label x:Name="lblContactNo"
+                       Style="{StaticResource contactInfo}"/>
+                <Label x:Name="lblEmail"
+                       Style="{StaticResource contactInfo}"/>
+                <Label x:Name="lblBirthday"
+                       Style="{StaticResource contactInfo}"/>
+            </StackLayout>
+            
+            <Button x:Name="btnBack"
+                    Text="Back"
+                    Clicked="BtnBack_Clicked"
+                    HorizontalOptions="CenterAndExpand"
+                    VerticalOptions="EndAndExpand"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

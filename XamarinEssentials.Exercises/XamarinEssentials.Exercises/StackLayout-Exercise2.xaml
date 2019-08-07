@@ -4,7 +4,8 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="XamarinEssentials.Exercises.StackLayout_Exercise2">
+             x:Class="XamarinEssentials.Exercises.StackLayout_Exercise2"
+             Title="Wannabe Instagram">
     <ContentPage.Resources>
         <ResourceDictionary>
             <Style x:Key="userAction" TargetType="Label">

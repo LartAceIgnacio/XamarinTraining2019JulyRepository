@@ -4,7 +4,8 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="XamarinEssentials.Exercises.RelativeLayout_Exercise">
+             x:Class="XamarinEssentials.Exercises.RelativeLayout_Exercise"
+             Title="Pay for Credits">
     <ContentPage.Resources>
         <ResourceDictionary>
             <Style x:Key="banner" TargetType="BoxView">
