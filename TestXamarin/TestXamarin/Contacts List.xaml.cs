@@ -228,5 +228,12 @@ namespace TestXamarin
             }
         }
 
+        private async void ContactsList_ItemTapped(object sender, ItemTappedEventArgs e)
+        {
+            var person = e.Item as Person;
+            var page = new Contact_Details(person);
+            await Navigation.PushAsync(page);
+            NavigationPage.SetHasNavigationBar(page, false);
+        }
     }
 }

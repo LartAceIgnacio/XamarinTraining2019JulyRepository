@@ -1,0 +1,27 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace TestXamarin.Contacts.Model
+{
+    public class Person
+    {
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public string ContactNo { get; set; }
+        public string FullName
+        {
+            get
+            {
+                return String.Format("{0} {1}", FirstName, LastName);
+            }
+        }
+        public string Initials
+        {
+            get
+            {
+                return String.Format("{0}{1}", FirstName[0], LastName[0]);
+            }
+        }
+    }
+}

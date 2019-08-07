@@ -7,6 +7,8 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 
+using TestXamarin.Contacts;
+
 namespace TestXamarin
 {
     // Learn more about making custom code visible in the Xamarin.Forms previewer
@@ -90,7 +92,9 @@ namespace TestXamarin
 
         private async void GoToContactsList_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new Contacts_List());
+            var page = new ContactsList();
+            await Navigation.PushAsync(page);
+            NavigationPage.SetHasNavigationBar(page, false);
         }
     }
 }

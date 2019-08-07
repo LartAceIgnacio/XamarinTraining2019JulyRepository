@@ -10,6 +10,7 @@
         <StackLayout>
             <SearchBar x:Name="ContactSearch" Placeholder="Search..." TextChanged="ContactSearch_TextChanged" />
             <ListView x:Name="ContactsList"
+                      ItemTapped="ContactsList_ItemTapped"
                       IsGroupingEnabled="True"
                       GroupDisplayBinding="{Binding LongName}"
                       IsPullToRefreshEnabled="True"
