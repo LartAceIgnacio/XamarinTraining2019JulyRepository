@@ -65,6 +65,8 @@ namespace XamarinActivities
         //    });
         //}
 
+        /** refactor or delete **/
+
         private void InitColor()
         {
             foreach (var person in _peopleList)
@@ -74,7 +76,7 @@ namespace XamarinActivities
                     var firstLetter = person.InitialKey.Substring(0, 1);
                     if (color.Key == firstLetter)
                     {
-                        person.InitialKeyColor = color.Value;
+                        //person.InitialKeyColor = color.Value;
                     }
                 }
             }
@@ -248,9 +250,17 @@ namespace XamarinActivities
             await Navigation.PopAsync();
         }
 
+        async void AddContact(object sender, Person person)
+        {
+            _peopleList.Add(person);
+            lstContacts.ItemsSource = _peopleList.OrderBy(p => p.FullName);
+            await DisplayAlert("Contact List", person.FullName + " successfully added", "OK");
+            await Navigation.PopAsync();
+        }
+
         async void OnAdd_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new E7AddContactPage());
+            await Navigation.PushAsync(new E7AddContactPage(AddContact));
         }
 
     }
