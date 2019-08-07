@@ -10,98 +10,140 @@
     
     <ContentPage.Resources>
         <ResourceDictionary>
+
             <converters:StringToColorConverter x:Key="StringToColorConverter" />
+
+            <Style x:Key="HeaderBox" TargetType="BoxView">
+                <Setter Property="RelativeLayout.WidthConstraint"
+                        Value="{ConstraintExpression
+                                Type=RelativeToParent,
+                                Property=Width,
+                                Factor=1}" />
+                <Setter Property="RelativeLayout.HeightConstraint"
+                        Value="{ConstraintExpression
+                                Type=RelativeToParent,
+                                Property=Height,
+                                Factor=0.25}" />
+                <Setter Property="Margin" Value="5" />
+            </Style>
+            
+            <Style x:Key="Initials" TargetType="Label">
+                <Setter Property="RelativeLayout.YConstraint" 
+                        Value="{ConstraintExpression
+                                Type=RelativeToParent,
+                                Property=Height,
+                                Factor=0.18}" />
+                <Setter Property="RelativeLayout.XConstraint" 
+                        Value="{ConstraintExpression
+                                Type=RelativeToParent,
+                                Property=Width,
+                                Factor=0.4}" />
+                <Setter Property="RelativeLayout.WidthConstraint"
+                        Value="{ConstraintExpression
+                                Type=RelativeToParent,
+                                Property=Width,
+                                Factor=0.2}" />
+                <Setter Property="RelativeLayout.HeightConstraint"
+                        Value="{ConstraintExpression
+                                Type=RelativeToParent,
+                                Property=Width,
+                                Factor=0.2}" />
+                <Setter Property="TextColor" Value="White" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="FontSize" Value="22" />
+                <Setter Property="Margin" Value="5" />
+                <Setter Property="BackgroundColor" Value="DarkGray" />
+                <Setter Property="HorizontalTextAlignment" Value="Center" />
+                <Setter Property="VerticalTextAlignment" Value="Center" />
+            </Style>
+            
+            <Style x:Key="UserDetailsContainer" TargetType="StackLayout">
+                <Setter Property="RelativeLayout.YConstraint" 
+                        Value="{ConstraintExpression
+                                Type=RelativeToParent,
+                                Property=Height,
+                                Factor=0.33}" />
+                <Setter Property="RelativeLayout.WidthConstraint"
+                        Value="{ConstraintExpression
+                                Type=RelativeToParent,
+                                Property=Width,
+                                Factor=1}" />
+            </Style>
+
+            <Style x:Key="Name" TargetType="Label">
+                <Setter Property="FontSize" Value="30" />
+                <Setter Property="Margin" Value="3" />
+                <Setter Property="HorizontalTextAlignment" Value="Center" />
+                <Setter Property="VerticalTextAlignment" Value="Center" />
+            </Style>
+
+            <Style x:Key="Details_Stack" TargetType="StackLayout">
+                <Setter Property="Orientation" Value="Horizontal" />
+                <Setter Property="Margin" Value="10" />
+            </Style>
+
+            <Style x:Key="Details_Icon" TargetType="Image">
+                <Setter Property="WidthRequest" Value="20" />
+                <Setter Property="HeightRequest" Value="20" />
+            </Style>
+
+            <Style x:Key="Details_Label" TargetType="Label">
+                <Setter Property="FontSize" Value="18" />
+                <Setter Property="HorizontalOptions" Value="StartAndExpand" />
+                <Setter Property="VerticalTextAlignment" Value="Center" />
+            </Style>
+            
         </ResourceDictionary>
     </ContentPage.Resources>
     
     <ContentPage.ToolbarItems>
-        <ToolbarItem Name="Delete_MenuItem" Order="Secondary" Icon="Xamarin.png" Text="Delete" Priority="1" />
+        <ToolbarItem Order="Primary" Icon="Xamarin.png" Clicked="Close_MenuItem_Clicked" Text="Close" Priority="1" />
+        <ToolbarItem x:Name="Delete_MenuItem" Order="Secondary" Clicked="Delete_MenuItem_Clicked" Text="Delete" Priority="1" />
     </ContentPage.ToolbarItems>
 
     <ContentPage.Content>
         <RelativeLayout>
-            <BoxView RelativeLayout.WidthConstraint="{ConstraintExpression
-                        Type=RelativeToParent,
-                        Property=Width,
-                        Factor=1}"
-                        RelativeLayout.HeightConstraint="{ConstraintExpression
-                        Type=RelativeToParent,
-                        Property=Height,
-                        Factor=0.25}"
-                    Margin="5"
-                    BackgroundColor="{Binding Converter={StaticResource StringToColorConverter}}" />
-            <Label RelativeLayout.YConstraint="{ConstraintExpression
-                            Type=RelativeToParent,
-                            Property=Height,
-                            Factor=0.15}"
-                       RelativeLayout.XConstraint="{ConstraintExpression
-                            Type=RelativeToParent,
-                            Property=Width,
-                            Factor=0.4}"
-                       RelativeLayout.WidthConstraint="{ConstraintExpression
-                            Type=RelativeToParent,
-                            Property=Width,
-                            Factor=0.20}"
-                       RelativeLayout.HeightConstraint="{ConstraintExpression
-                            Type=RelativeToParent,
-                            Property=Width,
-                            Factor=0.20}"
-                        Text="{Binding Initials}"
-                        TextColor="White"
-                        FontAttributes="Bold"
-                        Margin="5"
-                        HorizontalTextAlignment="Center"
-                        VerticalTextAlignment="Center"
-                        FontSize="22"
-                        BackgroundColor="DarkGray" />
+            
+            <BoxView BackgroundColor="{Binding Converter={StaticResource StringToColorConverter}}"
+                     Style="{StaticResource HeaderBox}"/>
+            
+            <Label Text="{Binding Initials}"
+                   Style="{StaticResource Initials}" />
 
-            <StackLayout RelativeLayout.YConstraint="{ConstraintExpression
-                            Type=RelativeToParent,
-                            Property=Height,
-                            Factor=0.33}"
-                         RelativeLayout.WidthConstraint="{ConstraintExpression
-                            Type=RelativeToParent,
-                            Property=Width,
-                            Factor=1}">
-                <Label Text="{Binding FullName}"
-                   FontSize="30"
-                   Margin="3"
-                   HorizontalTextAlignment="Center"
-                   VerticalTextAlignment="Center" />
-
-                <StackLayout Orientation="Horizontal" Margin="10">
-                    <Image Source="phone.png" WidthRequest="25" HeightRequest="25" />
-                    <Label Text="{Binding MobileNumber}"
-                           FontSize="20"
-                           HorizontalOptions="StartAndExpand"
-                           VerticalTextAlignment="Center"/>
-                </StackLayout>
+            <StackLayout Style="{StaticResource UserDetailsContainer}">
                 
-                <StackLayout Orientation="Horizontal" Margin="10">
-                    <Image Source="contact.png" WidthRequest="25" HeightRequest="25" />
+                <Label Text="{Binding FullName}"
+                       Style="{StaticResource Name}" />
+
+                <StackLayout Style="{StaticResource Details_Stack}">
+                    <Image Source="phone.png" 
+                           Style="{StaticResource Details_Icon}" />
+                    <Label Text="{Binding MobileNumber}"
+                           Style="{StaticResource Details_Label}" />
+                </StackLayout>
+
+                <StackLayout Style="{StaticResource Details_Stack}">
+                    <Image Source="contact.png" 
+                           Style="{StaticResource Details_Icon}" />
                     <Label Text="{Binding EmailAddress}"
-                           FontSize="20"
-                           HorizontalOptions="StartAndExpand"
-                           VerticalTextAlignment="Center"/>
+                           Style="{StaticResource Details_Label}" />
                 </StackLayout>
 
-                <StackLayout Orientation="Horizontal" Margin="10">
-                    <Image Source="facebook.png" WidthRequest="25" HeightRequest="25" />
+                <StackLayout Style="{StaticResource Details_Stack}">
+                    <Image Source="facebook.png" 
+                           Style="{StaticResource Details_Icon}" />
                     <Label Text="{Binding FacebookLink}"
-                           FontSize="20"
-                           HorizontalOptions="StartAndExpand"
-                           VerticalTextAlignment="Center"/>
+                           Style="{StaticResource Details_Label}" />
                 </StackLayout>
 
-                <StackLayout Orientation="Horizontal" Margin="10">
-                    <Image Source="instagram.png" WidthRequest="25" HeightRequest="25" />
+                <StackLayout Style="{StaticResource Details_Stack}">
+                    <Image Source="instagram.png" 
+                           Style="{StaticResource Details_Icon}" />
                     <Label Text="{Binding InstagramLink}"
-                           FontSize="20"
-                           HorizontalOptions="StartAndExpand"
-                           VerticalTextAlignment="Center"/>
+                           Style="{StaticResource Details_Label}" />
                 </StackLayout>
 
-            </StackLayout>
+            </StackLayout> <!-- End of User Details Container -->
 
         </RelativeLayout>
     </ContentPage.Content>
