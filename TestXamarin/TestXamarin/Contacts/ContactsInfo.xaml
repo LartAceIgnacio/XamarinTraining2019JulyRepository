@@ -6,10 +6,13 @@
              mc:Ignorable="d"
              x:Class="TestXamarin.Contacts.ContactsInfo">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+        <StackLayout x:Name="ContactInfo">
+            <StackLayout BackgroundColor="{Binding Color}" HorizontalOptions="FillAndExpand" Padding="10">
+                <Image Source="{Binding Image}" Aspect="AspectFill" HeightRequest="100" 
+                       WidthRequest="100" HorizontalOptions="CenterAndExpand" />
+                <Label Text="{Binding FullName}" TextColor="White" FontSize="18" 
+                       HorizontalOptions="CenterAndExpand" />
+            </StackLayout>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

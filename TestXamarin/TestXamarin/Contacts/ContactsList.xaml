@@ -7,29 +7,32 @@
              x:Class="TestXamarin.Contacts.ContactsList">
     <ContentPage.Content>
         <StackLayout>
-            <ListView x:Name="listContacts">
+            <ListView x:Name="listContacts"
+                      ItemTapped="ListContacts_ItemTapped">
                 <ListView.Header>
-                    <StackLayout Padding="5">
-                        <StackLayout Orientation="Horizontal">
+                    <StackLayout>
+                        <StackLayout Orientation="Horizontal" Padding="10, 5, 5, 5">
                             <Label Text="My Contacts" FontSize="18" HorizontalOptions="StartAndExpand" 
                                    VerticalOptions="CenterAndExpand" />
                             <Button x:Name="btnAddNewContact" Text="Add" HorizontalOptions="EndAndExpand"
-                                    BackgroundColor="Transparent"/>
+                                    BackgroundColor="Transparent" Clicked="BtnAddNewContact_Clicked"/>
                         </StackLayout>
-                                <SearchBar HorizontalOptions="CenterAndExpand" Placeholder="Search..." TextChanged="SearchBar_TextChanged"/>
-                        </StackLayout>
+                        <SearchBar HorizontalOptions="CenterAndExpand" Placeholder="Search..." TextChanged="SearchBar_TextChanged"/>
+                    </StackLayout>
                 </ListView.Header>
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
-                            <StackLayout Orientation="Horizontal" Padding="10">
-                                <AbsoluteLayout>
-                                    <BoxView BackgroundColor="{Binding Color}" />
-                                    <Label Text="{Binding Initials}" TextColor="White" />
-                                </AbsoluteLayout>
-                                <StackLayout>
-                                    <Label Text="{Binding FullName}" />
-                                    <Label Text="{Binding ContactNo}" />
+                            <StackLayout Orientation="Vertical" Padding="10">
+                                <StackLayout Orientation="Horizontal" Padding="10">
+                                    <AbsoluteLayout>
+                                        <BoxView BackgroundColor="{Binding Color}" />
+                                        <Label Text="{Binding Initials}" TextColor="White" />
+                                    </AbsoluteLayout>
+                                    <StackLayout>
+                                        <Label Text="{Binding FullName}" />
+                                        <Label Text="{Binding ContactNo}" />
+                                    </StackLayout>
                                 </StackLayout>
                             </StackLayout>
                         </ViewCell>

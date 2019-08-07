@@ -9,6 +9,7 @@ namespace TestXamarin.Contacts.Model
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string ContactNo { get; set; }
+        public string Image { get; set; }
         public string FullName
         {
             get
@@ -21,6 +22,13 @@ namespace TestXamarin.Contacts.Model
             get
             {
                 return String.Format("{0}{1}", FirstName[0], LastName[0]);
+            }
+        }
+        public string Color
+        {
+            get
+            {
+                return "#0093ff";
             }
         }
     }

@@ -93,7 +93,7 @@ namespace TestXamarin
         private async void GoToContactsList_Clicked(object sender, EventArgs e)
         {
             var page = new ContactsList();
-            await Navigation.PushAsync(page);
+            await Navigation.PushAsync(new NavigationPage(page));
             NavigationPage.SetHasNavigationBar(page, false);
         }
     }

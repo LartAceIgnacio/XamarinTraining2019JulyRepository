@@ -12,9 +12,10 @@ namespace TestXamarin.Contacts
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ContactsInfo : ContentPage
     {
-        public ContactsInfo()
+        public ContactsInfo(Person p)
         {
             InitializeComponent();
+            this.ContactInfo.BindingContext = p;
         }
     }
 }

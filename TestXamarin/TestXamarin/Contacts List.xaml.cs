@@ -10,14 +10,14 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 namespace TestXamarin
-{
-
+{    
     public class Person
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string ContactNo { get; set; }
         public string Color { get; set; }
+        public string Image { get; set; }
         public string FullName
         {
             get
