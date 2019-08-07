@@ -20,7 +20,7 @@ namespace XamarinActivities.Util
                 switch (FirstLetter)
                 {
                     case "A":
-                        return Color.Red;
+                        return Color.Coral;
                     case "C":
                         return Color.Chocolate;
                     case "D":

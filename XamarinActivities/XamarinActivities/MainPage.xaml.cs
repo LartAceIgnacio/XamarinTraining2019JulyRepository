@@ -30,7 +30,6 @@ namespace XamarinActivities
                 new MasterPageItem() { Title = "Carousel", Icon = "arrow_right.png", TargetType = typeof(ImagePage) },
                 new MasterPageItem() { Title = "Contacts", Icon = "arrow_right.png", TargetType = typeof(ContactsPage) },
             };
-
             navigationDrawer.ItemsSource = menuList;
             Detail = new NavigationPage((Page)Activator.CreateInstance(typeof(WelcomePage)));
         }
@@ -39,7 +38,6 @@ namespace XamarinActivities
         {
             var item = e.SelectedItem as MasterPageItem;
             Type page = item.TargetType;
-
             Detail = new NavigationPage((Page)Activator.CreateInstance(page));
             IsPresented = false;
         }

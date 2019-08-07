@@ -13,6 +13,12 @@
 
             <converters:StringToColorConverter x:Key="StringToColorConverter" />
 
+            <Style x:Key="HorizontalLine" TargetType="BoxView">
+                <Setter Property="Color" Value="#f0f0f0" />
+                <Setter Property="HeightRequest" Value="1" />
+                <Setter Property="Margin" Value="5" />
+            </Style>
+
             <Style x:Key="HeaderBox" TargetType="BoxView">
                 <Setter Property="RelativeLayout.WidthConstraint"
                         Value="{ConstraintExpression
@@ -80,15 +86,16 @@
             <Style x:Key="Details_Stack" TargetType="StackLayout">
                 <Setter Property="Orientation" Value="Horizontal" />
                 <Setter Property="Margin" Value="10" />
+                <Setter Property="Padding" Value="30, 0, 30, 0" />
             </Style>
 
             <Style x:Key="Details_Icon" TargetType="Image">
-                <Setter Property="WidthRequest" Value="20" />
-                <Setter Property="HeightRequest" Value="20" />
+                <Setter Property="WidthRequest" Value="15" />
+                <Setter Property="HeightRequest" Value="15" />
             </Style>
 
             <Style x:Key="Details_Label" TargetType="Label">
-                <Setter Property="FontSize" Value="18" />
+                <Setter Property="FontSize" Value="15" />
                 <Setter Property="HorizontalOptions" Value="StartAndExpand" />
                 <Setter Property="VerticalTextAlignment" Value="Center" />
             </Style>
@@ -115,12 +122,16 @@
                 <Label Text="{Binding FullName}"
                        Style="{StaticResource Name}" />
 
+                <BoxView Style="{StaticResource HorizontalLine}" />
+
                 <StackLayout Style="{StaticResource Details_Stack}">
                     <Image Source="phone.png" 
                            Style="{StaticResource Details_Icon}" />
                     <Label Text="{Binding MobileNumber}"
                            Style="{StaticResource Details_Label}" />
                 </StackLayout>
+
+                <BoxView Style="{StaticResource HorizontalLine}" />
 
                 <StackLayout Style="{StaticResource Details_Stack}">
                     <Image Source="contact.png" 
@@ -129,6 +140,8 @@
                            Style="{StaticResource Details_Label}" />
                 </StackLayout>
 
+                <BoxView Style="{StaticResource HorizontalLine}" />
+
                 <StackLayout Style="{StaticResource Details_Stack}">
                     <Image Source="facebook.png" 
                            Style="{StaticResource Details_Icon}" />
@@ -136,12 +149,16 @@
                            Style="{StaticResource Details_Label}" />
                 </StackLayout>
 
+                <BoxView Style="{StaticResource HorizontalLine}" />
+
                 <StackLayout Style="{StaticResource Details_Stack}">
                     <Image Source="instagram.png" 
                            Style="{StaticResource Details_Icon}" />
                     <Label Text="{Binding InstagramLink}"
                            Style="{StaticResource Details_Label}" />
                 </StackLayout>
+
+                <BoxView Style="{StaticResource HorizontalLine}" />
 
             </StackLayout> <!-- End of User Details Container -->
 
