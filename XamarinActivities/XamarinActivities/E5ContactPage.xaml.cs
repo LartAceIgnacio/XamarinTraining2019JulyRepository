@@ -81,7 +81,7 @@ namespace XamarinActivities
         //    } 
         //}
 
-        public void InitColor()
+        private void InitColor()
         {
             foreach (var person in _peopleList)
             {
@@ -96,12 +96,12 @@ namespace XamarinActivities
             }
         }
 
-        public void InitItemSource()
+        private void InitItemSource()
         {
             InitColor();
             lstContacts.ItemsSource = _peopleList.OrderBy(p => p.FullName);
         }
-        public ObservableCollection<Person> InitContactList()
+        private ObservableCollection<Person> InitContactList()
         {
             _peopleList = new ObservableCollection<Person>()
             {
@@ -253,8 +253,6 @@ namespace XamarinActivities
             var detailPage = new E6ContactDetailsPage(personDetails);
             await Navigation.PushAsync(detailPage);
             
-            //var person = (Person)e.Item;
-            //DisplayAlert("Contact List", "You tap: " + person.FullName, "OK");
         }
     }
 }

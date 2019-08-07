@@ -6,48 +6,49 @@
              mc:Ignorable="d"
              x:Class="XamarinActivities.E5ContactPage"
              Title="My Contacts">
-
-    <StackLayout Padding="10, 0, 10, 0">
+    <StackLayout>
         <SearchBar Placeholder="Search here" TextChanged="SeachBar_TextChanged"></SearchBar>
-        <ListView x:Name="lstContacts" 
+        <StackLayout Padding="10">
+            <ListView x:Name="lstContacts" 
                   IsPullToRefreshEnabled="True"
                   ItemTapped="ContactListView_Tapped"
                   Refreshing="ContactListView_Refreshing"
                   HasUnevenRows="True">
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <ViewCell>
-                        <ViewCell.ContextActions>
-                            <MenuItem Clicked="OnDelete_Clicked" 
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <ViewCell.ContextActions>
+                                <MenuItem Clicked="OnDelete_Clicked" 
                                       CommandParameter="{Binding .}" 
                                       Text="Delete" 
                                       IsDestructive="True"></MenuItem>
-                        </ViewCell.ContextActions>
-                        <StackLayout Orientation="Horizontal">
-                            <StackLayout Padding="5">
-                                <AbsoluteLayout>
-                                    <BoxView x:Name="bvColor"
+                            </ViewCell.ContextActions>
+                            <StackLayout Orientation="Horizontal">
+                                <StackLayout Padding="5">
+                                    <AbsoluteLayout>
+                                        <BoxView x:Name="bvColor"
                                              BackgroundColor="{Binding InitialKeyColor}"
                                              CornerRadius="50"
                                              AbsoluteLayout.LayoutBounds="0, 0, 50, 50"
                                              AbsoluteLayout.LayoutFlags="PositionProportional"></BoxView>
-                                    <Label Text="{Binding InitialKey}"
+                                        <Label Text="{Binding InitialKey}"
                                            TextColor="White" 
                                            VerticalOptions="Center"
                                            HorizontalOptions="Center"
                                            AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1"
                                            AbsoluteLayout.LayoutFlags="All"
                                            FontSize="20"></Label>
-                                </AbsoluteLayout>
+                                    </AbsoluteLayout>
+                                </StackLayout>
+                                <StackLayout Padding="5">
+                                    <Label Text="{Binding FullName}"></Label>
+                                    <Label Text="{Binding ContactNumber}"></Label>
+                                </StackLayout>
                             </StackLayout>
-                            <StackLayout Padding="5">
-                                <Label Text="{Binding FullName}"></Label>
-                                <Label Text="{Binding ContactNumber}"></Label>
-                            </StackLayout>
-                        </StackLayout>
-                    </ViewCell>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
     </StackLayout>
 </ContentPage>

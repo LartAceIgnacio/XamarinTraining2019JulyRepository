@@ -15,7 +15,7 @@
     </ContentPage.ToolbarItems>
     
     <ContentPage.Content>
-        <StackLayout >
+        <StackLayout BackgroundColor="White">
             <StackLayout  Orientation="Horizontal" 
                           BackgroundColor="#f0eded"
                           Padding="20">
@@ -36,7 +36,7 @@
                     <Label Text="{Binding Bio}"
                         VerticalOptions="Start" 
                         HorizontalOptions="Start"
-                        FontSize="18"/>
+                        FontSize="15"/>
                 </StackLayout>
             </StackLayout>
             <StackLayout Padding="10, 10, 10, 0">
@@ -54,35 +54,37 @@
                     <Label Text="Phone" 
                            HorizontalOptions="Start"
                            VerticalOptions="End"
-                           FontSize="20"
+                           FontSize="18"
                            Grid.Row="0" 
                            Grid.Column="0"></Label>
                     <Label Text="{Binding ContactNumber}" 
                            HorizontalOptions="Start"
                            VerticalOptions="End"
-                           FontSize="20"
+                           FontSize="18"
                            Grid.Row="0" 
                            Grid.Column="1"></Label>
                     <ImageButton Source="phone.png"
                                  BackgroundColor="White"
                                  WidthRequest="40" 
                                  HeightRequest="40"
-                                 Grid.Row="0" Grid.Column="2"></ImageButton>
-                    <ImageButton Source="email.png" 
+                                 Grid.Row="0" Grid.Column="2"
+                                 Clicked="OnButtonCall_Clicked"></ImageButton>
+                    <ImageButton Source="msg.png" 
                                  BackgroundColor="White"
                                  WidthRequest="40"
                                  HeightRequest="40"
-                                 Grid.Row="0" Grid.Column="3"></ImageButton>
+                                 Grid.Row="0" Grid.Column="3"
+                                 Clicked="OnButtonMessage_Clicked"></ImageButton>
                     <Label Text="Email" 
                            HorizontalOptions="Start"
                            VerticalOptions="End"
-                           FontSize="20"
+                           FontSize="18"
                            Grid.Row="1" 
                            Grid.Column="0"></Label>
                     <Label Text="{Binding Email}" 
                            HorizontalOptions="Start"
                            VerticalOptions="End"
-                           FontSize="20"
+                           FontSize="18"
                            Grid.Row="1" 
                            Grid.Column="1"
                            Grid.ColumnSpan="3"></Label>

@@ -27,13 +27,19 @@ namespace XamarinActivities
 
             if (answer)
             {
-                //var contactPage = new E5ContactPage(_personDetails);
-                //await Navigation.PushModalAsync(new NavigationPage(contactPage));
-                //MessagingCenter.Subscribe<MainPage, string>(this, "Hi", _personDetails.FirstName);
-                //MessagingCenter.Send<E6ContactDetailsPage, Person>(this, "AnchorsName", _personDetails);
                 await Navigation.PopAsync();
                 MessagingCenter.Send<E6ContactDetailsPage, Person>(this, "Delete", _personDetails);
             }
+        }
+
+        private void OnButtonCall_Clicked(object sender, EventArgs e)
+        {
+            DisplayAlert("Call", "Calling " + _personDetails.FirstName + "...", "Cancel");
+        }
+
+        private void OnButtonMessage_Clicked(object sender, EventArgs e)
+        {
+            DisplayAlert("Message", "You message " + _personDetails.FirstName + "!", "OK");
         }
     }
 }
