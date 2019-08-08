@@ -79,15 +79,19 @@
                             <BoxView HeightRequest="1" Color="#90a390"/>
                             <StackLayout Orientation="Horizontal" >
                                     <Image Source="date.png" />
-                                    <Label Text="{Binding Birthday}" 
-                                   FontSize="20"/>
+                                <Label Text="{Binding Birthday}" 
+                                       FontSize="20"/>
                             </StackLayout>
-                            <BoxView HeightRequest="1" Color="#90a390"/>
+                            <BoxView HeightRequest="1" Color="#90a390" 
+                                     Margin="0,0,0,20"/>
                             <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
-                                <Button ImageSource="call.png" Text="Call" TextColor="White" BackgroundColor="#5c8dff" HorizontalOptions="FillAndExpand"/>
-                                <Button ImageSource="chat.png" Text="Message" TextColor="White" BackgroundColor="#5c8dff" HorizontalOptions="FillAndExpand"/>
+                                <Frame HasShadow="True" Padding="0" HorizontalOptions="FillAndExpand">
+                                    <Button ImageSource="call.png" Text="Call" FontSize="18" FontAttributes="Bold" TextColor="White" BackgroundColor="{Binding BoxColor}" HorizontalOptions="FillAndExpand"/>
+                                </Frame>
+                                <Frame HasShadow="True" Padding="0" HorizontalOptions="FillAndExpand">
+                                    <Button ImageSource="chat.png" Text="Message" FontSize="18" FontAttributes="Bold" TextColor="White" BackgroundColor="{Binding BoxColor}" HorizontalOptions="FillAndExpand"/>
+                                </Frame>
                             </StackLayout>
-
                         </StackLayout>
                     </StackLayout>
                 </Frame>

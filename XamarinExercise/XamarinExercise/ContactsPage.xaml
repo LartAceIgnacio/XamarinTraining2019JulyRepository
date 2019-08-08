@@ -41,7 +41,7 @@
                                              Color="{Binding BoxColor}"
                                              CornerRadius="15"/>
                                         <Label Text="{Binding Initials}"
-                                           TextColor="#dbe2ff"
+                                           TextColor="White"
                                            FontSize="20"
                                            FontAttributes="Bold"
                                            VerticalOptions="Center"
