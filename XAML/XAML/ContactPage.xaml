@@ -13,60 +13,79 @@
     <ContentPage.Content>
         <AbsoluteLayout>
             <BoxView Color="#F0F0F0"
+                     x:Name="TopBoxView"
                      AbsoluteLayout.LayoutFlags="All"
                      AbsoluteLayout.LayoutBounds="0, 0, 1, 0.3"/>
 
             <controls:CircleImage x:Name="imgContact"
                                   Aspect="AspectFit"
                                   AbsoluteLayout.LayoutFlags="PositionProportional"
-                                  AbsoluteLayout.LayoutBounds="0.1, 0.1, 125, 125"/>
+                                  AbsoluteLayout.LayoutBounds="0.1, 0.1, 100, 100"/>
 
             <StackLayout AbsoluteLayout.LayoutFlags="All"
                          AbsoluteLayout.LayoutBounds="1, 0.1, 0.7, 0.3"
                          Padding="20">
-                <Label x:Name="lblFullName"
+                <Label x:Name="lblFirstName"
                        HorizontalTextAlignment="End"
-                       FontSize="36"></Label>
+                       FontSize="28"></Label>
+                <Label x:Name="lblLastName"
+                       HorizontalTextAlignment="End"
+                       FontSize="28"></Label>
+                <Label x:Name="lblQuote"
+                       Text="Insert awesome quote here"
+                       FontSize="10"
+                       HorizontalTextAlignment="End"
+                       FontAttributes="Italic"/>
                 <BoxView Color="#f0f0f0"
                          HeightRequest="1"/>
                 
             </StackLayout>
 
-            <Grid AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0, 0.3, 1, 0.1" BackgroundColor="White">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="*" />
-                </Grid.RowDefinitions>
+
+            <StackLayout AbsoluteLayout.LayoutFlags="All"
+                         AbsoluteLayout.LayoutBounds="0, 0.40, 1, 0.1">
+                <BoxView Color="#f0f0f0"
+                         HeightRequest="1"/>
+                    <Label x:Name="lblContact"
+                       HorizontalTextAlignment="Start"
+                       FontSize="20"/>
+                    <Label Text="Mobile"
+                       FontSize="10"/>
+                <BoxView Color="#f0f0f0"
+                         HeightRequest="1"/>
+                <Label x:Name="lblEmail"
+                       Text="{Binding Email}"
+                       HorizontalTextAlignment="Start"
+                       FontSize="20"/>
+                <Label Text="E-mail Address"
+                       FontSize="10"/>
+            </StackLayout>
+
+            <Grid BackgroundColor="White"
+                  AbsoluteLayout.LayoutFlags="All"
+                  AbsoluteLayout.LayoutBounds="0, 0.99, 1, 0.075">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
-            
+                
                 <ImageButton Source="@drawable/phonereceiver.png"
-                             WidthRequest="50"
-                             HeightRequest="50"
                              HorizontalOptions="Center"
                              Grid.Row="0"
-                             Grid.Column="0"/>
+                             Grid.Column="0"
+                             Aspect="AspectFill"
+                             BackgroundColor="White"/>
                 <ImageButton Source="@drawable/message.png"
-                             WidthRequest="50"
-                             HeightRequest="50"
                              HorizontalOptions="Center"
                              Grid.Row="0"
-                             Grid.Column="1"/>
-                <ImageButton Source=""
-                             WidthRequest="50"
-                             HeightRequest="50"
-                             HorizontalOptions="Center"
-                             Grid.Column="2"
-                             Grid.Row="0"/>
-            </Grid>
-            <Label x:Name="lblContact"
-                       HorizontalTextAlignment="Center"
-                       FontSize="24"></Label>
-            <BoxView Color="#f0f0f0"
-                         HeightRequest="1"/>
+                             Grid.Column="1"
+                             Aspect="AspectFit"
+                             BackgroundColor="White"/>
 
+            </Grid>
         </AbsoluteLayout>
         
     </ContentPage.Content>

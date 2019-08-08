@@ -13,19 +13,29 @@ namespace XAML
     public partial class ContactPage : ContentPage
     {
         private Person _person;
-        public ContactPage(Person person)
+        private EventHandler<Person> _deleteContactHandler;
+        public ContactPage(Person person, EventHandler<Person> deleteContactHandler)
         {
             InitializeComponent();
             this.BindingContext = person;
-            _person = person;
-            lblFullName.Text = person.FullName;
-            lblContact.Text = person.ContactNumber;
-            imgContact.Source = person.ImageUrl;
+            this._person = person;
+            this._deleteContactHandler = deleteContactHandler;
+
+            FillContactDetails(person);
+
         }
 
         private void TlbrDelete_Clicked(object sender, EventArgs e)
         {
-            MessagingCenter.Send(this, "Delete", _person);
+            this._deleteContactHandler?.Invoke(this, this._person);
+        }
+
+        void FillContactDetails(Person person)
+        {
+            lblFirstName.Text = person.FirstName;
+            lblLastName.Text = person.LastName;
+            lblContact.Text = person.ContactNumber;
+            imgContact.Source = person.ImageUrl;
         }
     }
 }

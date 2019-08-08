@@ -7,6 +7,7 @@
              x:Class="XAML.ListExercise">
     <ContentPage.Content>
         <StackLayout>
+            <AbsoluteLayout>            
             <ListView x:Name="personListView"
                       IsPullToRefreshEnabled="True"
                       ItemSelected="PersonListView_ItemSelected"
@@ -24,6 +25,7 @@
                         <ViewCell>
                             <ViewCell.ContextActions>
                                 <MenuItem CommandParameter="{Binding .}" Text="Delete" Clicked="DeleteItem_Clicked"/>
+                                <MenuItem CommandParameter="{Binding .}" Text="Update" Clicked="UpdateItem_Clicked"/>
                             </ViewCell.ContextActions>
                             <StackLayout Orientation="Horizontal" Padding="5">
                                 <AbsoluteLayout>
@@ -47,10 +49,11 @@
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
-            <AbsoluteLayout AbsoluteLayout.LayoutBounds="0.9, 0.9, 0.1, 0.1"
-                            AbsoluteLayout.LayoutFlags="All">
-                <ImageButton Source=" ">
-
+           
+                <ImageButton Source="@drawable/addcontact.png"
+                             Clicked="AddContactButton_Clicked"
+                             AbsoluteLayout.LayoutFlags="PositionProportional"
+                             AbsoluteLayout.LayoutBounds="0.95, 0.95, 50, 50"/>
             </AbsoluteLayout>
         </StackLayout>
     </ContentPage.Content>

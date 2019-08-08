@@ -28,15 +28,24 @@ namespace XAML.Models
             }
         }
 
+        public string Email
+        {
+            get
+            {
+                return FirstName[0].ToString().ToLower() + LastName.ToString().ToLower().Replace(" ", "") + "@blastasia.com";
+            }
+        }
         public Dictionary<char, Color> Colors = new Dictionary<char, Color>()
         {
             {'A', Color.Red},
+            {'B', Color.Bisque},
             {'C', Color.Orange},
             {'D', Color.Yellow},
             {'F', Color.Green},
             {'J', Color.Blue },
             {'K', Color.Indigo},
-            {'M', Color.Violet}
+            {'L', Color.Lavender},
+            {'M', Color.Violet},
         };
         public Color BoxBgColor
         {

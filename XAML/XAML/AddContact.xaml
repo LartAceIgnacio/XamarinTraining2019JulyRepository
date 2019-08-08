@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             mc:Ignorable="d"
+             x:Class="XAML.AddContact"
+             Title="Add New Contact">
+    <ContentPage.Content>
+        <Frame>
+            <StackLayout Padding="30">
+            <Entry x:Name="entryFirstName"
+                Placeholder="First Name"
+                   ReturnType="Next"/>
+            <Entry x:Name="entryLastName"
+                Placeholder="Last Name"
+                   ReturnType="Next"/>
+            <Entry x:Name="entryContact"
+                   Placeholder="Contact Number"
+                   ReturnType="Next"
+                   Keyboard="Telephone"/>
+            <Editor x:Name="edtrQuote"
+                Placeholder="Quote"/>
+            <Button Text="Save"
+                    Clicked="ButtonAdd_Clicked"
+                    VerticalOptions="End"/>
+            </StackLayout>
+        </Frame>
+    </ContentPage.Content>
+</ContentPage>

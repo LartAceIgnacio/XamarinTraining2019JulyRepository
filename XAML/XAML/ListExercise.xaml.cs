@@ -14,7 +14,7 @@ namespace XAML
     public partial class ListExercise : ContentPage
     {
 
-        ObservableCollection<Person> DeletedList = new ObservableCollection<Person>();
+        ObservableCollection<Person> UpdatedList = new ObservableCollection<Person>();
         public ListExercise()
         {
             InitializeComponent();
@@ -105,7 +105,7 @@ namespace XAML
                 },
             };
             personListView.ItemsSource = People.OrderBy(p => p.FirstName);
-            DeletedList = People;
+            UpdatedList = People;
             return People;
         }
 
@@ -115,11 +115,11 @@ namespace XAML
         {
             if (String.IsNullOrWhiteSpace(searchText))
             {
-                return InitialList();
+                return UpdatedList;
             }
             else
             {
-                var searchPeople = InitialList().Where(p => p.FullName.ToLower().Contains(searchText.ToLower()) || p.ContactNumber.Contains(searchText));
+                var searchPeople = UpdatedList.Where(p => p.FullName.ToLower().Contains(searchText.ToLower()) || p.ContactNumber.Contains(searchText));
                 ObservableCollection<Person> filteredPeople = new ObservableCollection<Person>(searchPeople);
                 return filteredPeople;
             }
@@ -135,9 +135,17 @@ namespace XAML
         {
             var menuItem = sender as MenuItem;
             var person = menuItem.CommandParameter as Person;
-            DeletedList.Remove(person);
-            personListView.ItemsSource = DeletedList.OrderBy(p => p.FirstName);
-            
+            UpdatedList.Remove(person);
+            personListView.ItemsSource = UpdatedList.OrderBy(p => p.FirstName);
+        }
+
+        private void UpdateItem_Clicked(object sender, EventArgs e)
+        {
+            var menuItem = sender as MenuItem;
+            var person = menuItem.CommandParameter as Person;
+            UpdatedList.Remove(person);
+            personListView.ItemsSource = UpdatedList.OrderBy(p => p.FirstName);
+
         }
 
         private void PersonListView_Refreshing(object sender, EventArgs e)
@@ -150,9 +158,30 @@ namespace XAML
         async void PersonListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
             Person person = e.SelectedItem as Person;
-            var page = new ContactPage(person);
-            page.BindingContext = person;
-            await Navigation.PushAsync(page);
+            var contactPage = new ContactPage(person, DeleteContact);
+            contactPage.BindingContext = person;
+            await this.Navigation.PushAsync(contactPage);
+        }
+
+        public void DeleteContact(object sender, Person person)
+        {
+            this.UpdatedList.Remove(person);
+            personListView.ItemsSource = UpdatedList.OrderBy(p => p.FirstName);
+            this.Navigation.PopAsync();
+        }
+
+        async void AddContactButton_Clicked(object sender, EventArgs e)
+        {
+            var addContactPage = new AddContact(AddContact);
+            addContactPage.BindingContext = UpdatedList;
+            await this.Navigation.PushAsync(addContactPage);
+        }
+
+        public void AddContact(object sender, Person person)
+        {
+            this.UpdatedList.Add(person);
+            personListView.ItemsSource = UpdatedList.OrderBy(p => p.FirstName);
+            this.Navigation.PopAsync();
         }
     }
 }
