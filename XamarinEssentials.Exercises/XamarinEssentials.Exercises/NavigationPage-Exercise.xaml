@@ -17,6 +17,10 @@
                 <Setter Property="FontSize" Value="20" />
                 <Setter Property="FontAttributes" Value="Bold" />
             </Style>
+            <Style x:Key="contactInfoSubtitle" TargetType="Label">
+                <Setter Property="TextColor" Value="DarkGray" />
+                <Setter Property="FontSize" Value="10" />
+            </Style>
         </ResourceDictionary>
     </ContentPage.Resources>
     <ContentPage.ToolbarItems>
@@ -45,15 +49,22 @@
             </StackLayout>
             
             <StackLayout Orientation="Vertical"
-                         HorizontalOptions="StartAndExpand">
-                <BoxView BackgroundColor="#f0f0f0"
-                     HeightRequest="1"/>
+                         HorizontalOptions="FillAndExpand">
+                <BoxView Color="Black"
+                         HeightRequest="1"
+                         />
                 <Label x:Name="lblContactNo"
                        Style="{StaticResource contactInfo}"/>
+                <Label Text="Mobile"
+                       Style="{StaticResource contactInfoSubtitle}"/>
                 <Label x:Name="lblEmail"
                        Style="{StaticResource contactInfo}"/>
+                <Label Text="Email"
+                       Style="{StaticResource contactInfoSubtitle}"/>
                 <Label x:Name="lblBirthday"
                        Style="{StaticResource contactInfo}"/>
+                <Label Text="Birthday"
+                       Style="{StaticResource contactInfoSubtitle}"/>
             </StackLayout>
             
             <Button x:Name="btnBack"

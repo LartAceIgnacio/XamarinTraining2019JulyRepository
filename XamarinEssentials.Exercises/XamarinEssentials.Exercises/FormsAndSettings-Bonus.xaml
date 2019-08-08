@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="XamarinEssentials.Exercises.FormsAndSettings_Bonus"
+             Title="Edit Contact">
+    <ContentPage.Content>
+        <StackLayout>
+            <Frame>
+                <StackLayout Padding="20">
+                    <Entry x:Name="enFirstName"
+                       Placeholder="First Name"/>
+                    <Entry x:Name="enLastName"
+                       Placeholder="Last Name"/>
+                    <Entry x:Name="enContactNo"
+                       Placeholder="Contact Number"
+                       Keyboard="Numeric"/>
+                    <Entry x:Name="enEmail"
+                       Placeholder="Email"
+                       Keyboard="Email"/>
+                    <DatePicker x:Name="dpBirthday"
+                            MinimumDate="01/01/1950"/>
+                    <Entry x:Name="enAvatar"
+                       Placeholder="Picture URL"
+                       Keyboard="Url"/>
+                    <Editor x:Name="edQuote"
+                        Placeholder="Quote (Optional)"
+                        Keyboard="Text"/>
+                    <Button x:Name="Submit"
+                        Text="Submit"
+                        Clicked="Submit_Clicked"/>
+                </StackLayout>
+            </Frame>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

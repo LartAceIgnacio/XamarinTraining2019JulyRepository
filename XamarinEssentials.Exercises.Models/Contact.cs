@@ -1,12 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Linq;
 
 namespace XamarinEssentials.Exercises.Models
 {
     public class Contact
     {
-        public string FirstName { get; set; }
+        public int Id { get; set; }
+        public string FirstName {get; set;}
         public string LastName { get; set; }
         public string ContactNumber { get; set; }
         public string Email { get; set; }
@@ -56,7 +58,7 @@ namespace XamarinEssentials.Exercises.Models
         {
             get
             {
-                return String.Format("{0}{1}", FirstName[0], LastName[0]);
+                return String.Format("{0}{1}", FirstName.ToUpper()[0], LastName.ToUpper()[0]);
             }
         }
 
@@ -64,7 +66,8 @@ namespace XamarinEssentials.Exercises.Models
         {
             get
             {
-                return AvatarColors[FirstName[0].ToString()];
+                return AvatarColors.Where(c => c.Key == Initials[0].ToString()).FirstOrDefault().Value;
+                //return AvatarColors[FirstName[0].ToString()];
             }
         }
     }
