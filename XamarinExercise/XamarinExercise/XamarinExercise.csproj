@@ -32,52 +32,52 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="CalculatorPage.xaml.cs">
+    <Compile Update="Views\CalculatorPage.xaml.cs">
       <DependentUpon>CalculatorPage.xaml</DependentUpon>
     </Compile>
-    <Compile Update="LoginPage.xaml.cs">
+    <Compile Update="Views\LoginPage.xaml.cs">
       <DependentUpon>LoginPage.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="AbsoluteLayoutPage.xaml">
+    <EmbeddedResource Update="Views\AbsoluteLayoutPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="AddContactPage.xaml">
+    <EmbeddedResource Update="Views\AddContactPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="ContactInfoPage.xaml">
+    <EmbeddedResource Update="Views\ContactInfoPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="ContactsPage.xaml">
+    <EmbeddedResource Update="Views\ContactsPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="DialerPage.xaml">
+    <EmbeddedResource Update="Views\DialerPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="EditContactPage.xaml">
+    <EmbeddedResource Update="Views\EditContactPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Exercise1.xaml">
+    <EmbeddedResource Update="Views\Exercise1.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Exercise2.xaml">
+    <EmbeddedResource Update="Views\Exercise2.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="GridImages.xaml">
+    <EmbeddedResource Update="Views\GridImages.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="ImageGallery.xaml">
+    <EmbeddedResource Update="Views\ImageGallery.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="InstagramPage.xaml">
+    <EmbeddedResource Update="Views\InstagramPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="LoginPage.xaml">
+    <EmbeddedResource Update="Views\LoginPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="CalculatorPage.xaml">
+    <EmbeddedResource Update="Views\CalculatorPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="RelativeLayoutPage.xaml">

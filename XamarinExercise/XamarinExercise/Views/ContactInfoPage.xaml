@@ -23,19 +23,19 @@
                     WidthRequest="30"
                     HorizontalOptions="Start"/>-->
                     <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
-                        <AbsoluteLayout HeightRequest="60"
-                                        WidthRequest="80"
+                        <AbsoluteLayout HeightRequest="40"
+                                        WidthRequest="40"
                                         HorizontalOptions="End">
                             <BoxView x:Name="boxInital"
-                                     HeightRequest="60"
-                                     WidthRequest="60"
+                                     HeightRequest="40"
+                                     WidthRequest="40"
                                      AbsoluteLayout.LayoutBounds="1, 1, 1, 1"
                                      AbsoluteLayout.LayoutFlags="All"
                                      Color="White"
-                                     CornerRadius="25"/>
+                                     CornerRadius="15"/>
                             <Label Text="{Binding Initials}"
                                    TextColor="{Binding BoxColor}"
-                                   FontSize="45"
+                                   FontSize="20"
                                    FontAttributes="Bold"
                                    VerticalOptions="Center"
                                    HorizontalOptions="Center"
@@ -43,16 +43,12 @@
                                    AbsoluteLayout.LayoutFlags="All"/>
                         </AbsoluteLayout>
                         <StackLayout HorizontalOptions="FillAndExpand">
-                            <Label Text="{Binding FirstName}"
+                            <Label Text="{Binding FullName}"
                                    TextColor="White"
-                                   FontSize="30"
+                                   FontSize="25"
                                    FontAttributes="Bold"
-                                   HorizontalOptions="Center"/>
-                            <Label Text="{Binding LastName}" 
-                                   TextColor="White"
-                                   FontSize="30"
-                                   FontAttributes="Bold"
-                                   HorizontalOptions="Center"/>
+                                   HorizontalOptions="Center"
+                                   VerticalOptions="Center"/>
                         </StackLayout>
                     </StackLayout>
                 </Frame>
@@ -86,10 +82,23 @@
                                      Margin="0,0,0,20"/>
                             <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
                                 <Frame HasShadow="True" Padding="0" HorizontalOptions="FillAndExpand">
-                                    <Button ImageSource="call.png" Text="Call" FontSize="18" FontAttributes="Bold" TextColor="White" BackgroundColor="{Binding BoxColor}" HorizontalOptions="FillAndExpand"/>
+                                    <Button ImageSource="call.png" 
+                                            Text="Call" FontSize="18" 
+                                            FontAttributes="Bold" 
+                                            TextColor="White" 
+                                            BackgroundColor="{Binding BoxColor}" 
+                                            HorizontalOptions="FillAndExpand"
+                                            Clicked="Call_Clicked"/>
                                 </Frame>
                                 <Frame HasShadow="True" Padding="0" HorizontalOptions="FillAndExpand">
-                                    <Button ImageSource="chat.png" Text="Message" FontSize="18" FontAttributes="Bold" TextColor="White" BackgroundColor="{Binding BoxColor}" HorizontalOptions="FillAndExpand"/>
+                                    <Button ImageSource="chat.png" 
+                                            Text="Message" 
+                                            FontSize="13" 
+                                            FontAttributes="Bold" 
+                                            TextColor="White" 
+                                            BackgroundColor="{Binding BoxColor}" 
+                                            HorizontalOptions="FillAndExpand"
+                                            Clicked="Message_Clicked"/>
                                 </Frame>
                             </StackLayout>
                         </StackLayout>

@@ -25,17 +25,30 @@ namespace XamarinExercise
             //btnBack.Clicked += Back_Pop;
             this.BindingContext = contact;
         }
+
         void Back_Pop(object sender, EventArgs e)
         {
             Navigation.PopAsync();
         }
+
         void Contact_Delete(object sender, EventArgs e)
         {
             this._deleteContactEventHandler?.Invoke(this, this.contact);
         }
+
         async void Contact_Edit(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new EditContactPage(contact, _editContactEventHandler));
+        }
+
+        async void Call_Clicked(object sender, EventArgs e)
+        {
+            await DisplayAlert("Alert", "You Have Called " + contact.FullName, "Ok");
+        }
+
+        async void Message_Clicked(object sender, EventArgs e)
+        {
+            await DisplayAlert("Alert", "You Have Sent a message to " + contact.FullName, "Ok");
         }
     }
 }
