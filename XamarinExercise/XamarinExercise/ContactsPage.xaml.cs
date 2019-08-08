@@ -20,12 +20,6 @@ namespace XamarinExercise
             InitializeComponent();
             contactList=GetContacts();
             contactListView.ItemsSource = contactList.OrderBy(c => c.FirstName);
-            MessagingCenter.Subscribe<ContactInfoPage, Contacts>(this, "delete this", (sender, contact)=>
-            {
-                contactList.Remove(contact);
-                contactListView.ItemsSource = contactList;
-                DisplayAlert("Delete Success",contact.FullName + " Has been Deleted", "Ok");
-            });
         }
         ObservableCollection<Contacts> GetContacts()
         {
@@ -69,6 +63,17 @@ namespace XamarinExercise
                 contactListView.ItemsSource = contactList.OrderBy(c => c.FirstName);
             }     
         }
+        async void Delete_Contact(object sender, Contacts contact)
+        {
+            bool answer = await DisplayAlert("Are you sure?",
+                "Would you like to Delete this Contact?", "Yes", "No");
+            if (answer == true)
+            {
+                contactList.Remove(contact);
+                await this.Navigation.PopAsync();
+                contactListView.ItemsSource = contactList.OrderBy(c => c.FirstName);   
+            }
+        }
 
         async void Edit_Clicked(object sender, EventArgs e)
         {
@@ -96,7 +101,7 @@ namespace XamarinExercise
         async void ContactItem_Tapped(object sender, ItemTappedEventArgs e)
         {
             Contacts contact = e.Item as Contacts;
-            var contactInfo= new ContactInfoPage(contact, Edit_Contact);
+            var contactInfo= new ContactInfoPage(contact, Edit_Contact,Delete_Contact);
             await this.Navigation.PushAsync(contactInfo);
         }
 

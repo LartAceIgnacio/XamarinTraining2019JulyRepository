@@ -18,7 +18,7 @@
                 <Entry x:Name="address" Placeholder="Address"/>
                 <Entry x:Name="email" Placeholder="EmailAddress" Keyboard="Email"/>
                 <DatePicker x:Name="birthday"/>
-                <Button x:Name ="btnSubmit" Text="Submit" Clicked="Submit_Clicked"/>
+                <Button x:Name ="btnSubmit" Text="Submit" Clicked="Submit_Clicked" BackgroundColor="Blue"/>
             </StackLayout>
         </Frame>
     </ContentPage.Content>

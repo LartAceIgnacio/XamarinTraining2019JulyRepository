@@ -72,8 +72,8 @@
                                    FontSize="20"/>
                         </StackLayout>
                         <StackLayout Orientation="Horizontal" >
-                            <Button ImageSource="call.png" Text="Call" />
-                            <Button ImageSource="chat.png" Text="Message"/>
+                            <Button ImageSource="call.png" Text="Call" BackgroundColor="Green"/>
+                            <Button ImageSource="chat.png" Text="Message" BackgroundColor="Blue"/>
                         </StackLayout>
 
                     </StackLayout>

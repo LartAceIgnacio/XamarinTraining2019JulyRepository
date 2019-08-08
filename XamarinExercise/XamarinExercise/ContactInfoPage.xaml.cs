@@ -14,12 +14,14 @@ namespace XamarinExercise
     public partial class ContactInfoPage : ContentPage
     {
         Contacts contact;
+        EventHandler<Contacts> _deleteContactEventHandler;
         private EventHandler<Contacts> _editContactEventHandler;
-        public ContactInfoPage(Contacts contact, EventHandler<Contacts> editContactEventHandler)
+        public ContactInfoPage(Contacts contact, EventHandler<Contacts> editContactEventHandler,EventHandler<Contacts> deleteContactEventHandler)
         {
             InitializeComponent();
             this.contact = contact;
             _editContactEventHandler = editContactEventHandler;
+            _deleteContactEventHandler = deleteContactEventHandler;
             //btnBack.Clicked += Back_Pop;
             this.BindingContext = contact;
         }
@@ -27,15 +29,9 @@ namespace XamarinExercise
         {
             Navigation.PopAsync();
         }
-        async void Contact_Delete(object sender, EventArgs e)
+        void Contact_Delete(object sender, EventArgs e)
         {
-            bool answer = await DisplayAlert("Are you sure?",
-                "Would you like to Delete this Contact1?", "Yes", "No");
-            if (answer == true)
-            {
-                await this.Navigation.PopModalAsync();
-                MessagingCenter.Send<ContactInfoPage, Contacts>(this, "delete this", contact);
-            }
+            this._deleteContactEventHandler?.Invoke(this, this.contact);
         }
         async void Contact_Edit(object sender, EventArgs e)
         {
