@@ -19,22 +19,22 @@ namespace TestXamarin.Contacts.Database
             _sqlconnection = DependencyService.Get<ISQLite>().GetConnection();
             _sqlconnection.CreateTable<Person>();
         }
-        public IEnumerable<Person> GetContacts()
+        public IEnumerable<Person> DbGetContacts()
         {
             return (from person in _sqlconnection.Table<Person>() select person).ToList();
         }
 
-        public Person GetContact(int id)
+        public Person DbGetContact(int id)
         {
             return _sqlconnection.Table<Person>().FirstOrDefault(person => person.Id == id);
         }
 
-        public void AddContact(Person person)
+        public void DbAddContact(Person person)
         {
             _sqlconnection.Insert(person);
         }
 
-        public void DeleteContact(int id)
+        public void DbDeleteContact(int id)
         {
             _sqlconnection.Delete<Person>(id);
         }

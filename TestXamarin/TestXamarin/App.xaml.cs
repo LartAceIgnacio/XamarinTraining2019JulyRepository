@@ -10,7 +10,9 @@ namespace TestXamarin
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new MainPage());
+            var page = new MainPage();
+            MainPage = new NavigationPage(page);
+            NavigationPage.SetHasNavigationBar(page, false);
         }
 
         protected override void OnStart()

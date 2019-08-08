@@ -9,14 +9,20 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 using TestXamarin.Contacts.Model;
+using TestXamarin.Contacts.Database;
 
 namespace TestXamarin.Contacts
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ContactsList : ContentPage
     {
+        private ContactService contactService = new ContactService();
+
         AvatarBackground _avatarBGColor = new AvatarBackground();
 
+        private ObservableCollection<Person> _people;
+
+        /*
         private ObservableCollection<Person> _people = new ObservableCollection<Person>
         {
             new Person
@@ -107,7 +113,7 @@ namespace TestXamarin.Contacts
                     Image = "https://avatar.skype.com/v1/avatars/live%3Amhelrosemejidana?auth_key=370822452&cacheHeaders=true&returnDefaultImage=false&size=l"
                 },
         };
-
+        */
         public ContactsList()
         {
             InitializeComponent();
@@ -116,6 +122,9 @@ namespace TestXamarin.Contacts
 
         private void GetContacts()
         {
+            var people = contactService.DbGetContacts();
+            _people = new ObservableCollection<Person>(people);
+
             this.listContacts.ItemsSource = new ObservableCollection<Person>(
                 _people.OrderBy(person => person.FirstName).ToList());
         }
@@ -132,6 +141,8 @@ namespace TestXamarin.Contacts
             List<Person> tempCollection = new List<Person>(_people) { p };
             ObservableCollection<Person> people = new ObservableCollection<Person>(
                 tempCollection.OrderBy(person => person.FirstName).ToList());
+
+            contactService.DbAddContact(p);
 
             GetContacts(people);
 

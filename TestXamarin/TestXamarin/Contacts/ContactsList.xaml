@@ -4,6 +4,7 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
+             NavigationPage.HasNavigationBar="False"
              x:Class="TestXamarin.Contacts.ContactsList">
     <ContentPage.Content>
         <StackLayout>
@@ -27,7 +28,7 @@
                                 <StackLayout Orientation="Horizontal" Padding="10">
                                     <AbsoluteLayout>
                                         <BoxView BackgroundColor="{Binding Color}" />
-                                        <Label Text="{Binding Initials}" TextColor="White" />
+                                        <Label Text="{Binding Initials}" TextColor="White" /> 
                                     </AbsoluteLayout>
                                     <StackLayout>
                                         <Label Text="{Binding FullName}" />
