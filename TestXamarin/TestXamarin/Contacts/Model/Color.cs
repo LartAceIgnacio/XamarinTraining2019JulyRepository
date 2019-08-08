@@ -6,7 +6,7 @@ namespace TestXamarin.Contacts.Model
 {
     public class AvatarBackground
     {
-        private readonly static Dictionary<char, string> colors = new Dictionary<char, string>()
+        private static Dictionary<char, string> colors = new Dictionary<char, string>()
         {
             { 'A', "#262262" },
             { 'B', "#262263" },

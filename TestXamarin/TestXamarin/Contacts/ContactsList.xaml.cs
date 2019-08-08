@@ -165,7 +165,7 @@ namespace TestXamarin.Contacts
 
         private async void ListContacts_ItemTapped(object sender, ItemTappedEventArgs e)
         {
-            var person = e.Item as Person;
+            Person person = e.Item as Person;
             var page = new ContactsInfo(person);
             NavigationPage.SetHasNavigationBar(page, false);
             await Navigation.PushAsync(page);

@@ -27,12 +27,6 @@ namespace TestXamarin.Contacts.Model
                 return String.Format("{0}{1}", FirstName[0], LastName[0]);
             }
         }
-        public string Color
-        {
-            get
-            {
-                return "#0093ff";
-            }
-        }
+        public string Color { get; set; }
     }
 }

@@ -7,6 +7,8 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
+using TestXamarin.Contacts.Model;
+
 namespace TestXamarin.Contacts
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
