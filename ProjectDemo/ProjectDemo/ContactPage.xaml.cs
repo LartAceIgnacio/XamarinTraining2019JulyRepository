@@ -174,6 +174,20 @@ namespace ProjectDemo
 			this.Navigation.PopModalAsync();
 			contactListView.ItemsSource = GetContacts();
 		}
+
+		async void btn_AddContact(object sender, EventArgs e)
+		{
+			var detailPage = new NavigationPage(new ContactForm(AddContact));
+			await this.Navigation.PushModalAsync(detailPage);
+		}
+		public void AddContact(object sender, Contact contact)
+		{
+			this.temporaryContactList.Add(contact);
+			contactListView.ItemsSource = GetContacts();
+			this.Navigation.PopModalAsync();
+			
+		}
+
 	}
 
 	public class Contact
@@ -181,12 +195,31 @@ namespace ProjectDemo
 		public Dictionary<char, string> colorDict = new Dictionary<char, string>()
 		{
 			{ 'A', "#ff5454" },
+			{ 'B', "#ff8254" },
 			{ 'C', "#ffb254" },
 			{ 'D', "#5dff54" },
+			{ 'E', "#ffdd54" },
 			{ 'F', "#54ffee" },
+			{ 'G', "#9eff54" },
+			{ 'H', "#54ff9b" },
+			{ 'I', "#54d7ff" },
 			{ 'J', "#5457ff" },
 			{ 'K', "#ffab4a" },
-			{ 'M', "#ff54b8" }
+			{ 'L', "#5465ff" },
+			{ 'M', "#ff54b8" },
+			{ 'N', "#ac54ff" },
+			{ 'O', "#ff54bd" },
+			{ 'P', "#d0ff61" },
+			{ 'Q', "#e59cf0" },
+			{ 'R', "#9cbff0" },
+			{ 'S', "#ff545d" },
+			{ 'T', "#ee54ff" },
+			{ 'U', "#7654ff" },
+			{ 'V', "#5496ff" },
+			{ 'W', "#54ffe0" },
+			{ 'X', "#54ff57" },
+			{ 'Y', "#e0ff54" },
+			{ 'Z', "#ffc354" },
 		};
 		public string Firstname { get; set; }
 		public string Lastname { get; set; }
@@ -203,8 +236,10 @@ namespace ProjectDemo
 		{
 			get
 			{
-				char[] chars = { Firstname[0] , Lastname[0] };
-				string s = new string(chars);
+				//string fname = Firstname.ToUpper();
+				//string lname = Lastname.ToUpper();
+				//char[] chars = { fname[0] , lname[0] };
+				string s = String.Format("{0}{1}",Firstname.ToUpper()[0],Lastname.ToUpper()[0]);
 				return s;
 			}
 		}
@@ -212,7 +247,7 @@ namespace ProjectDemo
 		{
 			get
 			{
-				string color = colorDict[Firstname[0]];
+				string color = colorDict.Where(c => c.Key == Initial[0]).FirstOrDefault().Value;
 				return color;
 			}
 		}
