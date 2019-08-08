@@ -22,6 +22,14 @@ namespace XamarinActivities.ContactsPages
             _contact = contact;
             EditContactEventHandler = editContactEventHandler;
         }
+        async private void Cancel_MenuItem_Clicked(object sender, EventArgs e)
+        {
+            var answer = await DisplayAlert("Cancel", "Are you sure you want to discard unsaved changes?", "Yes", "Cancel");
+            if (answer)
+            {
+                await Navigation.PopModalAsync();
+            }
+        }
 
         private void SaveButton_Clicked(object sender, EventArgs e)
         {

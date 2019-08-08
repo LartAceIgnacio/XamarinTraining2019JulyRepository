@@ -6,6 +6,11 @@
              mc:Ignorable="d"
              x:Class="XamarinActivities.ContactsPages.EditContactPage"
              Title="Edit Contact">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Order="Primary" Clicked="Cancel_MenuItem_Clicked" Text="Cancel" Priority="1" />
+    </ContentPage.ToolbarItems>
+    
     <ContentPage.Content>
         <StackLayout HorizontalOptions="FillAndExpand" Padding="20">
             <Label Text="First Name:" />
