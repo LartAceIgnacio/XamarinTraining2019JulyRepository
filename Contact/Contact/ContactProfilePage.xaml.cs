@@ -27,7 +27,6 @@ namespace Contact
         private void DeleteContact_Clicked(object sender, EventArgs e)
         {
             this._deleteContactEventHandler?.Invoke(this, this.contact);
-
         }
     }
 }

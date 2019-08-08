@@ -15,12 +15,15 @@ namespace Contact
 
     public partial class AddContactPerson : ContentPage
     {
+        
         private EventHandler<Person> _addContactEventHandler;
         public ContactDb contactDb;
         public Person person;
-        public AddContactPerson(Person person, EventHandler<Person> addContactEventHandler)
+        public AddContactPerson(EventHandler<Person> addContactEventHandler)
         {
+            InitializeComponent();
             _addContactEventHandler = addContactEventHandler;
+            
         }
         void AddContact_Clicked(object sender, EventArgs e)
         {
@@ -28,9 +31,18 @@ namespace Contact
             {
                 FirstName = firstName.Text,
                 LastName = lastName.Text,
+                ContactNumber = contactNumber.Text,
                 Email = email.Text
             };
-            this._addContactEventHandler?.Invoke(this, newContact);
+            if (firstName.Text == null || lastName.Text == null || contactNumber.Text == null || email.Text == null)
+            {
+                DisplayAlert("Registration", "Please Enter All the Fields!", "Ok");
+            }
+            else
+            {
+                this._addContactEventHandler?.Invoke(this, newContact);
+            }
+            
         }
     }
 }
