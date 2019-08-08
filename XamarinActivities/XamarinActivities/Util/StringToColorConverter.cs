@@ -21,18 +21,56 @@ namespace XamarinActivities.Util
                 {
                     case "A":
                         return Color.Coral;
+                    case "B":
+                        return Color.Blue;
                     case "C":
                         return Color.Chocolate;
                     case "D":
                         return Color.DarkGreen;
+                    case "E":
+                        return Color.DeepSkyBlue;
                     case "F":
                         return Color.Firebrick;
+                    case "G":
+                        return Color.Gainsboro;
+                    case "H":
+                        return Color.Honeydew;
+                    case "I":
+                        return Color.Ivory;
                     case "J":
                         return Color.Indigo;
                     case "K":
                         return Color.Orange;
+                    case "L":
+                        return Color.Lavender;
                     case "M":
                         return Color.MediumPurple;
+                    case "N":
+                        return Color.Navy;
+                    case "O":
+                        return Color.OldLace;
+                    case "P":
+                        return Color.PaleTurquoise;
+                    case "Q":
+                        return Color.PaleGoldenrod;
+                    case "R":
+                        return Color.Azure;
+                    case "S":
+                        return Color.Salmon;
+                    case "T":
+                        return Color.Tan;
+                    case "U":
+                        return Color.Teal;
+                    case "V":
+                        return Color.Fuchsia;
+                    case "W":
+                        return Color.Wheat;
+                    case "X":
+                        return Color.Honeydew;
+                    case "Y":
+                        return Color.DarkOliveGreen;
+                    case "Z":
+                        return Color.BurlyWood;
                     default:
                         return Color.Black;
                 };
