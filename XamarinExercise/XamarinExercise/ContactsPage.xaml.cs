@@ -18,9 +18,10 @@ namespace XamarinExercise
         public ContactsPage()
         {
             InitializeComponent();
-            contactList=GetContacts();
+            contactList = GetContacts();
             contactListView.ItemsSource = contactList.OrderBy(c => c.FirstName);
         }
+
         ObservableCollection<Contacts> GetContacts()
         {
             var contacts = new ObservableCollection<Contacts>() {
@@ -37,7 +38,8 @@ namespace XamarinExercise
             };
             return contacts;
         }
-        ObservableCollection<Contacts> Filter(string searchText=null)
+
+        ObservableCollection<Contacts> Filter(string searchText = null)
         {
             if (string.IsNullOrWhiteSpace(searchText))
             {
@@ -50,19 +52,20 @@ namespace XamarinExercise
                 return filteredContacts;
             }
         }
-        
+
         async void Delete_Clicked(object sender, EventArgs e)
         {
             var contacItem = sender as MenuItem;
             var contact = contacItem.CommandParameter as Contacts;
             bool answer = await DisplayAlert("Are you sure?",
                 "Would you like to Delete this Contact?", "Yes", "No");
-            if (answer== true)
+            if (answer == true)
             {
                 contactList.Remove(contact);
                 contactListView.ItemsSource = contactList.OrderBy(c => c.FirstName);
-            }     
+            }
         }
+
         async void Delete_Contact(object sender, Contacts contact)
         {
             bool answer = await DisplayAlert("Are you sure?",
@@ -71,7 +74,7 @@ namespace XamarinExercise
             {
                 contactList.Remove(contact);
                 await this.Navigation.PopAsync();
-                contactListView.ItemsSource = contactList.OrderBy(c => c.FirstName);   
+                contactListView.ItemsSource = contactList.OrderBy(c => c.FirstName);
             }
         }
 
@@ -94,48 +97,42 @@ namespace XamarinExercise
         {
             ObservableCollection<Contacts> searchList;
             searchList = Filter(e.NewTextValue);
-            contactListView.ItemsSource = searchList.OrderBy(c=>c.FirstName);
+            contactListView.ItemsSource = searchList.OrderBy(c => c.FirstName);
         }
 
 
         async void ContactItem_Tapped(object sender, ItemTappedEventArgs e)
         {
             Contacts contact = e.Item as Contacts;
-            var contactInfo= new ContactInfoPage(contact, Edit_Contact,Delete_Contact);
+            var contactInfo = new ContactInfoPage(contact, Edit_Contact, Delete_Contact);
             await this.Navigation.PushAsync(contactInfo);
         }
 
 
         async void Contact_Add(object sender, EventArgs e)
         {
-            int id=contactList.Count+1;
-            await Navigation.PushAsync(new AddContactPage(Add_Contact,id));
+            int id = contactList.Count + 1;
+            await Navigation.PushAsync(new AddContactPage(Add_Contact, id));
         }
 
         async void Add_Contact(object sender, Contacts contact)
         {
             this.contactList.Add(contact);
-            await DisplayAlert("Added "+contact.FirstName,
-                contact.FullName+" Has been added to your Contacts", "Ok");
+            await DisplayAlert("Added " + contact.FirstName,
+                contact.FullName + " Has been added to your Contacts", "Ok");
             await this.Navigation.PopAsync();
-            contactListView.ItemsSource = contactList.OrderBy(c=>c.FirstName);
+            contactListView.ItemsSource = contactList.OrderBy(c => c.FirstName);
         }
-        async void  Edit_Contact(object sender, Contacts contact)
+        async void Edit_Contact(object sender, Contacts contact)
         {
-            foreach( var c in contactList)
-            {
-                if (c.id==contact.id)
-                {
-                    c.FirstName = contact.FirstName;
-                    c.LastName = contact.LastName;
-                    c.ContactNo = contact.ContactNo;
-                    c.Address = contact.Address;
-                    c.EmailAddress = contact.EmailAddress;
-                    c.Birthday = contact.Birthday;
-                    break;
-                }
-            }
-            await DisplayAlert("Edit Successful "," Contact has been updated", "Ok");
+            var toBeEdit = contactList.FirstOrDefault(c => c.id == contact.id);
+            toBeEdit.FirstName = contact.FirstName;
+            toBeEdit.LastName = contact.LastName;
+            toBeEdit.ContactNo = contact.ContactNo;
+            toBeEdit.Address = contact.Address;
+            toBeEdit.EmailAddress = contact.EmailAddress;
+            toBeEdit.Birthday = contact.Birthday;
+            await DisplayAlert("Edit Successful ", " Contact has been updated", "Ok");
             await this.Navigation.PopAsync();
             contactListView.ItemsSource = contactList.OrderBy(c => c.FirstName);
         }

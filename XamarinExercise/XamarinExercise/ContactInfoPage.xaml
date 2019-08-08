@@ -14,20 +14,18 @@
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <ScrollView>
-            <Frame HasShadow="True"
-                   VerticalOptions="StartAndExpand">
-                <StackLayout HorizontalOptions="Fill">
+            <StackLayout>
+                <Frame HasShadow="True">
                     <!--<ImageButton x:Name="btnBack"
                     Source="back.png"
                     Clicked="Back_Pop"
                     HeightRequest="30"
                     WidthRequest="30"
                     HorizontalOptions="Start"/>-->
-                    <StackLayout HorizontalOptions="Center"
-                     VerticalOptions="Center">
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
                         <AbsoluteLayout HeightRequest="60"
-                                WidthRequest="60"
-                                HorizontalOptions="Center">
+                                        WidthRequest="80"
+                                        HorizontalOptions="End">
                             <BoxView x:Name="boxInital"
                                      HeightRequest="60"
                                      WidthRequest="60"
@@ -37,48 +35,61 @@
                                      CornerRadius="25"/>
                             <Label Text="{Binding Initials}"
                                    TextColor="#fff"
-                                   FontSize="30"
+                                   FontSize="45"
                                    FontAttributes="Bold"
                                    VerticalOptions="Center"
                                    HorizontalOptions="Center"
                                    AbsoluteLayout.LayoutBounds="1, 1, 1, 1"
                                    AbsoluteLayout.LayoutFlags="All"/>
                         </AbsoluteLayout>
-                        <StackLayout>
-                            <Label Text="{Binding FullName}" 
+                        <StackLayout HorizontalOptions="FillAndExpand">
+                            <Label Text="{Binding FirstName}" 
                                    FontSize="30"
                                    FontAttributes="Bold"
-                                   HorizontalTextAlignment="Center"
-                                   Margin="0,0,0,30"/>
-                            <StackLayout Orientation="Horizontal" HorizontalOptions="Fill">
-                                <Image Source="phone.png"/>
-                                <Label Text="{Binding ContactNo}" 
-                                   FontSize="25" />
-                            </StackLayout>
-                            </StackLayout>
-                            <StackLayout Orientation="Horizontal" HorizontalOptions="Fill">
-                                <Image Source="address.png" />
-                                <Label Text="{Binding Address}" 
-                                       FontSize="20"/>
-                            </StackLayout>
-                            <StackLayout Orientation="Horizontal" HorizontalOptions="Fill">
-                                <Image Source="email.png" />
-                                <Label Text="{Binding EmailAddress}" 
-                                       FontSize="20"/>
-                            </StackLayout>
-                            <StackLayout Orientation="Horizontal" HorizontalOptions="Fill">
-                                <Image Source="date.png" />
-                            <Label Text="{Binding Birthday}" 
-                                   FontSize="20"/>
+                                   HorizontalOptions="Center"/>
+                            <Label Text="{Binding LastName}" 
+                                   FontSize="30"
+                                   FontAttributes="Bold"
+                                   HorizontalOptions="Center"/>
                         </StackLayout>
-                        <StackLayout Orientation="Horizontal" >
-                            <Button ImageSource="call.png" Text="Call" BackgroundColor="Green"/>
-                            <Button ImageSource="chat.png" Text="Message" BackgroundColor="Blue"/>
-                        </StackLayout>
-
                     </StackLayout>
-                </StackLayout>
-            </Frame>
+                </Frame>
+                <Frame HasShadow="True">
+                    <StackLayout>
+                        <StackLayout>
+                            <StackLayout Orientation="Horizontal" >
+                                    <Image Source="phone.png"/>
+                                    <Label Text="{Binding ContactNo}" 
+                                   FontSize="25" />
+                                </StackLayout>
+                            <BoxView HeightRequest="1" Color="#90a390"/>
+                            <StackLayout Orientation="Horizontal" >
+                                    <Image Source="address.png" />
+                                    <Label Text="{Binding Address}" 
+                                       FontSize="20"/>
+                            </StackLayout>
+                            <BoxView HeightRequest="1" Color="#90a390"/>
+                            <StackLayout Orientation="Horizontal">
+                            <Image Source="email.png" />
+                            <Label Text="{Binding EmailAddress}" 
+                                   FontSize="20"/>
+                            </StackLayout>
+                            <BoxView HeightRequest="1" Color="#90a390"/>
+                            <StackLayout Orientation="Horizontal" >
+                                    <Image Source="date.png" />
+                                    <Label Text="{Binding Birthday}" 
+                                   FontSize="20"/>
+                            </StackLayout>
+                            <BoxView HeightRequest="1" Color="#90a390"/>
+                            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                                <Button ImageSource="call.png" Text="Call" TextColor="White" BackgroundColor="#5c8dff" HorizontalOptions="FillAndExpand"/>
+                                <Button ImageSource="chat.png" Text="Message" TextColor="White" BackgroundColor="#5c8dff" HorizontalOptions="FillAndExpand"/>
+                            </StackLayout>
+
+                        </StackLayout>
+                    </StackLayout>
+                </Frame>
+            </StackLayout>
         </ScrollView>
     </ContentPage.Content>
 </ContentPage>
