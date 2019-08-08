@@ -12,12 +12,18 @@
         <Frame HasShadow="True"
                VerticalOptions="StartAndExpand">
             <StackLayout>
-                <Entry x:Name="firstName" Placeholder="FirstName"/>
-                <Entry x:Name="lastName" Placeholder="LastName"/>
-                <Entry x:Name="contactNo" Placeholder="Contact No." Keyboard="Telephone"/>
-                <Entry x:Name="address" Placeholder="Address"/>
-                <Entry x:Name="email" Placeholder="EmailAddress" Keyboard="Email"/>
-                <DatePicker x:Name="birthday"/>
+                <Label Text="First Name:"/>
+                <Entry x:Name="firstName" Placeholder="FirstName"  HorizontalOptions="FillAndExpand"/>
+                <Label Text="Last Name:"/>
+                <Entry x:Name="lastName" Placeholder="LastName"  HorizontalOptions="FillAndExpand" />
+                <Label Text="Contact No.:"/>
+                <Entry x:Name="contactNo" Placeholder="Contact No." Keyboard="Telephone" HorizontalOptions="FillAndExpand"/>
+                <Label Text="Address:"/>
+                <Entry x:Name="address" Placeholder="Address"  HorizontalOptions="FillAndExpand"/>
+                <Label Text="Email Adress:"/>
+                <Entry x:Name="email" Placeholder="EmailAddress" Keyboard="Email" HorizontalOptions="FillAndExpand" />
+                <Label Text="Birthday:"/>
+                <DatePicker x:Name="birthday" HorizontalOptions="FillAndExpand"/>
                 <Button x:Name ="btnSubmit" Text="Submit" TextColor="White" Clicked="Submit_Clicked" BackgroundColor="#5c8dff"/>
             </StackLayout>
         </Frame>

@@ -15,7 +15,7 @@
     <ContentPage.Content>
         <ScrollView>
             <StackLayout>
-                <Frame HasShadow="True">
+                <Frame HasShadow="True" BackgroundColor="{Binding BoxColor}">
                     <!--<ImageButton x:Name="btnBack"
                     Source="back.png"
                     Clicked="Back_Pop"
@@ -31,10 +31,10 @@
                                      WidthRequest="60"
                                      AbsoluteLayout.LayoutBounds="1, 1, 1, 1"
                                      AbsoluteLayout.LayoutFlags="All"
-                                     Color="{Binding BoxColor}"
+                                     Color="White"
                                      CornerRadius="25"/>
                             <Label Text="{Binding Initials}"
-                                   TextColor="#fff"
+                                   TextColor="{Binding BoxColor}"
                                    FontSize="45"
                                    FontAttributes="Bold"
                                    VerticalOptions="Center"
@@ -43,11 +43,13 @@
                                    AbsoluteLayout.LayoutFlags="All"/>
                         </AbsoluteLayout>
                         <StackLayout HorizontalOptions="FillAndExpand">
-                            <Label Text="{Binding FirstName}" 
+                            <Label Text="{Binding FirstName}"
+                                   TextColor="White"
                                    FontSize="30"
                                    FontAttributes="Bold"
                                    HorizontalOptions="Center"/>
                             <Label Text="{Binding LastName}" 
+                                   TextColor="White"
                                    FontSize="30"
                                    FontAttributes="Bold"
                                    HorizontalOptions="Center"/>

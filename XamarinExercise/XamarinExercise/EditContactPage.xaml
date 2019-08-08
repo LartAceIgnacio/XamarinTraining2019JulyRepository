@@ -12,12 +12,18 @@
         <Frame HasShadow="True"
                VerticalOptions="StartAndExpand">
             <StackLayout>
-                <Entry x:Name="firstName" Placeholder="FirstName" Text="{Binding FirstName}" />
-                <Entry x:Name="lastName" Placeholder="LastName" Text="{Binding LastName}" />
-                <Entry x:Name="contactNo" Placeholder="Contact No." Keyboard="Telephone" Text="{Binding ContactNo}"/>
-                <Entry x:Name="address" Placeholder="Address" Text="{Binding Address}"/>
-                <Entry x:Name="email" Placeholder="EmailAddress" Keyboard="Email" Text="{Binding EmailAddress}"/>
-                <DatePicker x:Name="birthday" Date="{Binding Birthday}"/>
+                <Label Text="First Name:"/>
+                <Entry x:Name="firstName" Placeholder="FirstName" Text="{Binding FirstName}" HorizontalOptions="FillAndExpand" />
+                <Label Text="Last Name:"/>
+                <Entry x:Name="lastName" Placeholder="LastName" Text="{Binding LastName}" HorizontalOptions="FillAndExpand" />
+                <Label Text="Contact No.:"/>
+                <Entry x:Name="contactNo" Placeholder="Contact No." Keyboard="Telephone" Text="{Binding ContactNo}" HorizontalOptions="FillAndExpand"/>
+                <Label Text="Address:"/>
+                <Entry x:Name="address" Placeholder="Address" Text="{Binding Address}" HorizontalOptions="FillAndExpand"/>
+                <Label Text="Email Adress:"/>
+                <Entry x:Name="email" Placeholder="EmailAddress" Keyboard="Email" Text="{Binding EmailAddress}" HorizontalOptions="FillAndExpand"/>
+                <Label Text="Birthday:"/>
+                <DatePicker x:Name="birthday" Date="{Binding Birthday}" HorizontalOptions="FillAndExpand"/>
                 <Button x:Name ="btnSubmit" Text="Submit" TextColor="White" Clicked="Submit_Clicked" BackgroundColor="#5c8dff"/>
             </StackLayout>
         </Frame>
