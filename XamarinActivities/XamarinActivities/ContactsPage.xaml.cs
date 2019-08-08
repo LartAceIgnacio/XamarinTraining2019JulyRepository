@@ -17,6 +17,7 @@ namespace XamarinActivities
     public partial class ContactsPage : ContentPage
     {
         ObservableCollection<Contact> _contacts;
+        Contact TappedContact;
 
         public ContactsPage()
         {
@@ -84,7 +85,8 @@ namespace XamarinActivities
         private void ContactsList_ItemTapped(object sender, ItemTappedEventArgs e)
         {
             var contact = e.Item as Contact;
-            ViewContactPage viewPage = new ViewContactPage(contact, DeleteContact);
+            TappedContact = contact;
+            ViewContactPage viewPage = new ViewContactPage(contact, DeleteContact, EditContact);
             Navigation.PushModalAsync(new NavigationPage(viewPage));
         }
 
@@ -104,6 +106,12 @@ namespace XamarinActivities
             _contacts.Add(contact);
             _contacts = new ObservableCollection<Contact>(_contacts.OrderBy(c => c.FirstName).ToList());
             contactsList.ItemsSource = _contacts;
+        }
+
+        private void EditContact(object sender, Contact contact)
+        {
+            var ContactIndex = _contacts.IndexOf(TappedContact);
+            _contacts[ContactIndex] = contact;
         }
     }
 }

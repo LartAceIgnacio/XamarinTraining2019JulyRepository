@@ -16,12 +16,22 @@ namespace XamarinActivities.ContactsPages
     {
         private Contact _contact;
         private EventHandler<Contact> DeleteContactEventHandler;
-        public ViewContactPage(Contact contact, EventHandler<Contact> deleteContactEventHandler)
+        private EventHandler<Contact> EditContactEventHandler;
+        public ViewContactPage(Contact contact, 
+                               EventHandler<Contact> deleteContactEventHandler,
+                               EventHandler<Contact> editContactEventHandler)
         {
             InitializeComponent();
             this.BindingContext = contact;
             this.DeleteContactEventHandler = deleteContactEventHandler;
+            this.EditContactEventHandler = editContactEventHandler;
             _contact = contact;
+        }
+
+        private void Edit_MenuItem_Clicked(object sender, EventArgs e)
+        {
+            EditContactPage editPage = new EditContactPage(_contact, EditContactEventHandler);
+            Navigation.PushModalAsync(new NavigationPage(editPage));
         }
 
         async private void Delete_MenuItem_Clicked(object sender, EventArgs e)

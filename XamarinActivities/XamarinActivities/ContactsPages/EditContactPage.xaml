@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="XamarinActivities.ContactsPages.EditContactPage"
+             Title="Edit Contact">
+    <ContentPage.Content>
+        <StackLayout>
+            <TableView Intent="Form">
+                <TableRoot>
+                    <TableSection Title="Information"
+                                  TextColor="Black">
+                        <EntryCell x:Name="firstName"
+                                   Text="{Binding FirstName}"
+                                   Keyboard="Plain" />
+                        <EntryCell x:Name="lastName"
+                                   Text="{Binding LastName}"
+                                   Keyboard="Plain" />
+                        <EntryCell x:Name="mobileNumber"
+                                   Text="{Binding MobileNumber}"
+                                   Keyboard="Telephone" />
+                        <EntryCell x:Name="emailAddress"
+                                   Text="{Binding EmailAddress}"
+                                   Keyboard="Email" />
+                        <EntryCell x:Name="facebookLink"
+                                   Text="{Binding FacebookLink}"
+                                   Keyboard="Url" />
+                        <EntryCell x:Name="instagramLink"
+                                   Text="{Binding InstagramLink}"
+                                   Keyboard="Url" />
+                    </TableSection>
+                </TableRoot>
+            </TableView>
+            <Button Text="Save Contact" Clicked="SaveButton_Clicked" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
