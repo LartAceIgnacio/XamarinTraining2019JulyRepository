@@ -40,7 +40,7 @@ namespace XamarinExcercise
         };
         public string FirstName { get; set; }
         public string LastName { get; set; }
-        public int ContactNumber { get; set; }
+        public string ContactNumber { get; set; }
         public string FullName
         {
 
@@ -61,7 +61,7 @@ namespace XamarinExcercise
 
             get
             {
-                return string.Format("{0}{1}", FirstName[0], LastName[0]);
+                return string.Format("{0}{1}", FirstName.ToUpper()[0], LastName.ToUpper()[0]);
             }
         }
 

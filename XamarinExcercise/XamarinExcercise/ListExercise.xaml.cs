@@ -24,21 +24,21 @@ namespace XamarinExcercise
         {
             List<Person> Persons = new List<Person>()
         {
-            new Person(){FirstName= "Aaron Edwigg", LastName="Custodio", ContactNumber= 1234567},
-            new Person(){FirstName= "Arnold Allan", LastName="Mendoza", ContactNumber= 1234567},
-            new Person(){FirstName= "Jasper", LastName="Orilla", ContactNumber= 1234567},
-            new Person(){FirstName= "Felix Alexander", LastName="Carao", ContactNumber= 1234567},
-            new Person(){FirstName= "Kyla Gae", LastName="Calpito", ContactNumber= 1234567},
-            new Person(){FirstName= "Mermellah", LastName="Angni", ContactNumber= 1234567},
-            new Person(){FirstName= "Jelmarose Grace", LastName="De Vera", ContactNumber= 1234567},
-            new Person(){FirstName= "Marc Kenneth", LastName="Lomio", ContactNumber= 1234567},
-            new Person(){FirstName= "Melrose", LastName="Mejidana", ContactNumber= 1234567},
-            new Person(){FirstName= "Dino Angelo", LastName="Reyes", ContactNumber= 1234567},
-            new Person(){FirstName= "Charles Kenichi", LastName="Nazareno", ContactNumber= 1234567},
+            new Person(){FirstName= "Aaron Edwigg", LastName="Custodio", ContactNumber= "1234567"},
+            new Person(){FirstName= "Arnold Allan", LastName="Mendoza", ContactNumber= "1234567"},
+            new Person(){FirstName= "Jasper", LastName="Orilla", ContactNumber= "1234567"},
+            new Person(){FirstName= "Felix Alexander", LastName="Carao", ContactNumber= "1234567"},
+            new Person(){FirstName= "Kyla Gae", LastName="Calpito", ContactNumber= "1234567"},
+            new Person(){FirstName= "Mermellah", LastName="Angni", ContactNumber= "1234567"},
+            new Person(){FirstName= "Jelmarose Grace", LastName="De Vera", ContactNumber= "1234567"},
+            new Person(){FirstName= "Marc Kenneth", LastName="Lomio", ContactNumber= "1234567"},
+            new Person(){FirstName= "Melrose", LastName="Mejidana", ContactNumber= "1234567"},
+            new Person(){FirstName= "Dino Angelo", LastName="Reyes", ContactNumber= "1234567"},
+            new Person(){FirstName= "Charles Kenichi", LastName="Nazareno", ContactNumber= "1234567"},
         };
             deletedList.Clear();
             Persons.ForEach(x => deletedList.Add(x));
-            //deletedList = Persons.OrderBy(f => f.FirstName).ToList() ;
+            deletedList = deletedList.OrderBy(f => f.FirstName).ToList() ;
             return deletedList.OrderBy(f => f.FirstName).ToList();
         }
         private void SearchBar_TextChanged(object sender, TextChangedEventArgs e)
@@ -69,12 +69,28 @@ namespace XamarinExcercise
             deletedList.Remove(person);
             ContactList.ItemsSource = deletedList.OrderBy(f => f.FirstName).ToList();
         }
+        private async void Add_Clicked(object sender, EventArgs e)
+        {
+            var addPage = new NavigationPage(new ContactFormPage(AddContact));
+            await this.Navigation.PushModalAsync(addPage);
+        }
 
         private async void ContactList_ItemTapped(object sender, ItemTappedEventArgs e)
         {
             var person = ((ListView)sender).SelectedItem as Person ;
-            var modalPage = new NavigationPage(new DetailPage(person));
+            var modalPage = new NavigationPage(new DetailPage(person,DeleteContact));
             await this.Navigation.PushModalAsync(modalPage);
+        }
+        public void DeleteContact(object sender,Person person)
+        {
+            this.deletedList.Remove(person);
+            ContactList.ItemsSource = deletedList.ToList();
+            //this.Navigation.PopModalAsync();
+        }
+        public void AddContact(object sender,Person newPerson)
+        {
+            this.deletedList.Add(newPerson);
+            this.ContactList.ItemsSource = deletedList.OrderBy(f => f.FirstName).ToList();
         }
     }
 

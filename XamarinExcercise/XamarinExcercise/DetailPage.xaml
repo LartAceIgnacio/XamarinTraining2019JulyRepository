@@ -7,16 +7,16 @@
              x:Class="XamarinExcercise.DetailPage">
     <ContentPage.Content>
         <StackLayout >
-            <StackLayout BackgroundColor="Gold" Margin="0,75,0,55" 
+            <StackLayout BackgroundColor="{Binding NameColor}" Margin="0,75,0,55" 
                          Padding="20"
                          HorizontalOptions="Center">
-                <Label x:Name="initial" Text="AA" 
+                <Label x:Name="initial" Text="{Binding Initial}" TextColor="White" 
                  FontSize="50" />
             </StackLayout>
             <StackLayout Padding="15" Spacing="30">
                 
             
-            <Label x:Name="Name" Text="Arnold Mendoza"
+            <Label x:Name="Name" Text="{Binding FullName}"
                    
                 HorizontalOptions="Start" FontSize="30" />
                 <BoxView HeightRequest="1" HorizontalOptions="FillAndExpand" BackgroundColor="Gray"/>
@@ -39,7 +39,7 @@
                 
                 <StackLayout Orientation="Horizontal" Spacing="20" HorizontalOptions="FillAndExpand"  >
                     <ImageButton Source="phone.png"  HeightRequest="35" BackgroundColor="Transparent"/>
-                    <Label Text="095124577" VerticalTextAlignment="Center"/>
+                    <Label Text="{Binding ContactNumber}" VerticalTextAlignment="Center"/>
                     <ImageButton Source="sms.png"  HeightRequest="35" HorizontalOptions="EndAndExpand"  BackgroundColor="Transparent"/>
                 </StackLayout>
             </StackLayout>

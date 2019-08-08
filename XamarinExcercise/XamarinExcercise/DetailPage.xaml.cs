@@ -13,19 +13,25 @@ namespace XamarinExcercise
     public partial class DetailPage : ContentPage
     {
         private Person _person;
-        public DetailPage(Person person )
+        private EventHandler<Person> _deleteContactDetailEventHandler;
+        public DetailPage(Person person,EventHandler<Person> deleteContactDetailEventHandler)
         {
             InitializeComponent();
             this._person = person;
-            Name.Text = person.FullName;
-            initial.Text = person.Initial;
+            this.BindingContext = person;
+            this._deleteContactDetailEventHandler = deleteContactDetailEventHandler;
+
 
         }
 
         private async void Delete_Clicked(object sender, EventArgs e)
         {
-            
-            await Navigation.PopModalAsync();
+            bool answer = await DisplayAlert("Delete", String.Format("Do you want to delete {0}", _person.FullName),"Yes","No");
+            if (answer)
+            {
+                _deleteContactDetailEventHandler?.Invoke(this, _person);
+                await Navigation.PopModalAsync();
+            }
         }
     }
 }

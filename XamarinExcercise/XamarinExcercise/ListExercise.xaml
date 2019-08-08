@@ -4,20 +4,19 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="XamarinExcercise.ListExercise">
+             x:Class="XamarinExcercise.ListExercise"
+             Title="My Contacts">
     <ContentPage.Content>
         <StackLayout>
-            <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
-                <Label Text="My Contacts" HorizontalOptions="Center"/>
-            </StackLayout>
-            <SearchBar x:Name="searchString" Placeholder="Search Name or Number" TextChanged="SearchBar_TextChanged"/>
 
+            <SearchBar x:Name="searchString" Placeholder="Search Name or Number" TextChanged="SearchBar_TextChanged"/>
             <ListView x:Name="ContactList"
                       IsPullToRefreshEnabled="True"
                       Refreshing="ContactList_Refreshing"
                       HasUnevenRows="True" SeparatorColor="Gold"
                       ItemTapped="ContactList_ItemTapped"
                       >
+                
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
@@ -43,4 +42,7 @@
             </ListView>
         </StackLayout>
     </ContentPage.Content>
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Order="Primary" IconImageSource="add.png" Text="Add" Clicked="Add_Clicked"/>
+    </ContentPage.ToolbarItems>
 </ContentPage>

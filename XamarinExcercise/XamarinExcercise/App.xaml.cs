@@ -20,7 +20,7 @@ namespace XamarinExcercise
             //MainPage = new ImageExercise();
             var page = new ListExercise();
             MainPage = new NavigationPage(page);
-            NavigationPage.SetHasNavigationBar(page, false);
+            //NavigationPage.SetHasNavigationBar(page, false);
         }
 
         protected override void OnStart()
