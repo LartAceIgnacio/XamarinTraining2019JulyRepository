@@ -25,5 +25,10 @@ namespace App3
         {
             _contact = _updatedContact;
         }
+
+        async private void TlbrUpdate_Clicked(object sender, EventArgs e)
+        {
+            await this.Navigation.PopAsync(false);
+        }
     }
 }

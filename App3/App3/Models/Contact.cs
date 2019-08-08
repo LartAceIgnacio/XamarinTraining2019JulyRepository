@@ -30,7 +30,7 @@ namespace App3.Models
         {
             get
             {
-                return ColorList.ColorsList[this.FirstName[0]];
+                return ColorList.ColorsList[this.FirstName.ToLower()[0]];
             }
         }
         public string FullName

@@ -6,6 +6,12 @@
              mc:Ignorable="d"
              x:Class="App3.UpdateContactPage"
              Padding="10">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Name="TlbrUpdate" 
+                     Text="Update"
+                     Order="Primary"
+                     Clicked="TlbrUpdate_Clicked"/>
+    </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <StackLayout>
             <Entry
