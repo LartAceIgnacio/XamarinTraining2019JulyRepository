@@ -7,36 +7,39 @@
              Title="Update Contact"
              x:Class="XamarinActivities.E7UpdateContactPage">
     <ContentPage.Content>
-        <StackLayout Padding="10" Spacing="10">
-            <Entry x:Name="entryFirstName"
+        <Frame>
+            <StackLayout Padding="10" Spacing="10">
+                <Entry x:Name="entryFirstName"
                    Text="{Binding FirstName}"
                    Placeholder="Enter First Name..."
                    Keyboard="Text"/>
-            <Entry x:Name="entryLastName" 
+                <Entry x:Name="entryLastName" 
                    Text="{Binding LastName}"
                    Placeholder="Enter Last Name..."
                    Keyboard="Text"/>
-            <Entry x:Name="entryContactNumber" 
+                <Entry x:Name="entryContactNumber" 
                    Text="{Binding ContactNumber}"
                    Placeholder="Enter Contact Number..."
                    Keyboard="Numeric" />
-            <Entry x:Name="entryEmail" 
+                <Entry x:Name="entryEmail" 
                    Text="{Binding Email}"
                    Placeholder="Enter Email..."
                    Keyboard="Email"/>
-            <Entry x:Name="entryImageURL" 
-                   Text="{Binding Email}"
+                <Entry x:Name="entryImageURL" 
+                   Text="{Binding ImgURL}"
                    Placeholder="Enter Image URL ..."
                    Keyboard="Url"/>
-            <Editor x:Name="editorBio" 
+                <Editor x:Name="editorBio" 
                     Text="{Binding Bio}"
                     Placeholder="Enter Bio..."
-                    Keyboard="Email"/>
-            <Button Text="Save" 
+                    Keyboard="Text"
+                    AutoSize="TextChanges"/>
+                <Button Text="Save" 
                     TextColor="#fff"
                     Clicked="OnUpdateContacts_Clicked"
                     BackgroundColor="#2296F3"
                     HorizontalOptions="Fill"/>
-        </StackLayout>
+            </StackLayout>
+        </Frame>
     </ContentPage.Content>
 </ContentPage>

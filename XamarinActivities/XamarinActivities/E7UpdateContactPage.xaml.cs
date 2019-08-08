@@ -22,6 +22,15 @@ namespace XamarinActivities
             _personDetails = personDetails;
 
             BindingContext = _personDetails;
+
+            SetKeyboard();
+        }
+
+        private void SetKeyboard()
+        {
+            entryFirstName.Keyboard = Keyboard.Create(KeyboardFlags.CapitalizeWord);
+            entryLastName.Keyboard = Keyboard.Create(KeyboardFlags.CapitalizeWord);
+            editorBio.Keyboard = Keyboard.Create(KeyboardFlags.CapitalizeSentence);
         }
 
         private void OnUpdateContacts_Clicked(object sender, EventArgs e)

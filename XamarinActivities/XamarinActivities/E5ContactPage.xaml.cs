@@ -57,6 +57,7 @@ namespace XamarinActivities
         {
             lstContacts.ItemsSource = _peopleList.OrderBy(p => p.FullName);
         }
+
         private ObservableCollection<Person> InitContactList()
         {
             _peopleList = new ObservableCollection<Person>()
@@ -218,8 +219,7 @@ namespace XamarinActivities
         {
             var personDetails = (Person) e.Item;
             var detailPage = new E6ContactDetailsPage(personDetails, DeleteContact, UpdateContact);
-            await Navigation.PushAsync(detailPage);
-            
+            await Navigation.PushAsync(detailPage); 
         }
 
         async void DeleteContact(object sender, Person person)
@@ -243,6 +243,7 @@ namespace XamarinActivities
             await DisplayAlert("Contact List", person.FullName + " successfully added", "OK");
             await Navigation.PopAsync();
         }
+
         async void OnUpdate_Clicked(object sender, EventArgs e)
         {
             var mi = (MenuItem)sender;

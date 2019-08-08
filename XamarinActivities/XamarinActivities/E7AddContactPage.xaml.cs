@@ -20,6 +20,15 @@ namespace XamarinActivities
             InitializeComponent();
             _addContactEventHandler = addContactEventHandler;
             _id = id;
+
+            SetKeyboard();
+        }
+
+        private void SetKeyboard()
+        {
+            entryFirstName.Keyboard = Keyboard.Create(KeyboardFlags.CapitalizeWord);
+            entryLastName.Keyboard = Keyboard.Create(KeyboardFlags.CapitalizeWord);
+            editorBio.Keyboard = Keyboard.Create(KeyboardFlags.CapitalizeSentence);
         }
 
         private void OnAddToContacts_Clicked(object sender, EventArgs e)
