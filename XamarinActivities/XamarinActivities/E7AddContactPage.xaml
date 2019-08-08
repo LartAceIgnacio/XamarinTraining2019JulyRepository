@@ -5,39 +5,27 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="XamarinActivities.E7AddContactPage"
-             Title="My Contacts">
+             Title="Add New Contacts">
     <ContentPage.Content>
-        <StackLayout Padding="10" Spacing="5">
-            <TableView>
-                <TableRoot>
-                    <TableSection Title="Add Contact Information">
-                        <EntryCell 
-                           x:Name="entryFirstName"
-                           Placeholder="Enter Firstname..."
-                           Keyboard="Text"/>
-                        <EntryCell x:Name="entryLastName"
-                                   Placeholder="Enter Lastname..."
-                                   Keyboard="Text"/>
-                        <EntryCell x:Name="entryContactNumber"
-                                   Placeholder="Enter Contact Number..."
-                                   Keyboard="Telephone"/>
-                        <EntryCell x:Name="entryEmail"
-                                   Placeholder="Enter Email..."
-                                   Keyboard="Text"/>
-                        <EntryCell x:Name="entryImageURL"
-                                   Placeholder="Enter Image Url..."
-                                   Keyboard="Text"/>
-                        <ViewCell>
-                            <StackLayout Padding="15, 0, 15, 0">
-                                <Editor x:Name="editorBio"
-                                 Placeholder="Type your bio here..."
-                                 Keyboard="Default"
-                                 AutoSize="TextChanges"/>
-                            </StackLayout>
-                        </ViewCell>
-                    </TableSection>
-                </TableRoot>
-            </TableView>
+        <StackLayout Padding="10" Spacing="10">
+            <Entry x:Name="entryFirstName"
+                   Placeholder="Enter First Name..."
+                   Keyboard="Text"/>
+            <Entry x:Name="entryLastName" 
+                   Placeholder="Enter Last Name..."
+                   Keyboard="Text"/>
+            <Entry x:Name="entryContactNumber" 
+                   Placeholder="Enter Contact Number..."
+                   Keyboard="Numeric" />
+            <Entry x:Name="entryEmail" 
+                   Placeholder="Enter Email..."
+                   Keyboard="Email"/>
+            <Entry x:Name="entryImageURL" 
+                   Placeholder="Enter Image URL ..."
+                   Keyboard="Url"/>
+            <Editor x:Name="editorBio" 
+                    Placeholder="Enter Bio..."
+                    Keyboard="Email"/>
             <Button Text="Save" 
                     TextColor="#fff"
                     Clicked="OnAddToContacts_Clicked"

@@ -6,9 +6,13 @@ namespace XamarinActivities.Model
 {
     public class Person
     {
+        public int Id { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string ContactNumber { get; set; }
+        public string ImgURL { get; set; }
+        public string Bio { get; set; }
+        public string Email { get; set; }
         public string FullName
         {
             get {
@@ -66,14 +70,5 @@ namespace XamarinActivities.Model
                 { "Z", "#e89c23"}
         };
 
-        public string ImgURL { get; set; }
-        public string Bio { get; set; }
-        public string Email { get; set; }
-
-        //public string GetInitialKey(string firstName, string lastName)
-        //{
-        //    var initialKey = firstName.Substring(0, 1) + lastName.Substring(0, 1);
-        //    return initialKey.ToUpper();
-        //}
     }
 }

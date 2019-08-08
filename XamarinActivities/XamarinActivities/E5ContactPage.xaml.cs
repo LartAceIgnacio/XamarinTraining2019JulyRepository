@@ -51,40 +51,10 @@ namespace XamarinActivities
             InitializeComponent();
             InitContactList();
             InitItemSource();
-
-            //Delete_Subscribe();
         }
-
-        //private void Delete_Subscribe()
-        //{
-        //    MessagingCenter.Subscribe<E6ContactDetailsPage, Person>(this, "Delete", (sender, person) => {
-        //        _peopleList.Remove(person);
-        //        lstContacts.ItemsSource = _peopleList.OrderBy(p => p.FullName);
-        //        DisplayAlert("Contact List", person.FullName + " successfully deleted", "OK");
-        //        MessagingCenter.Unsubscribe<E6ContactDetailsPage, Person>(this, "Delete");
-        //    });
-        //}
-
-        /** refactor or delete **/
-
-        //private void InitColor()
-        //{
-        //    foreach (var person in _peopleList)
-        //    {
-        //        foreach (var color in _colorList)
-        //        {
-        //            var firstLetter = person.InitialKey.Substring(0, 1);
-        //            if (color.Key == firstLetter)
-        //            {
-        //                //person.InitialKeyColor = color.Value;
-        //            }
-        //        }
-        //    }
-        //}
 
         private void InitItemSource()
         {
-            //InitColor();
             lstContacts.ItemsSource = _peopleList.OrderBy(p => p.FullName);
         }
         private ObservableCollection<Person> InitContactList()
@@ -93,6 +63,7 @@ namespace XamarinActivities
             {
                new Person()
                {
+                   Id = 1,
                    FirstName = "Melrose",
                    LastName = "Mejidana",
                    ContactNumber = "09389062548",
@@ -102,6 +73,7 @@ namespace XamarinActivities
                },
                new Person()
                {
+                   Id = 2,
                    FirstName = "Aaron",
                    LastName = "Custodio",
                    ContactNumber = "09693262548",
@@ -112,6 +84,7 @@ namespace XamarinActivities
                ,
                new Person()
                {
+                   Id = 3,
                    FirstName = "Jasper",
                    LastName = "Orilla",
                    ContactNumber = "0978262548",
@@ -121,6 +94,7 @@ namespace XamarinActivities
                },
                new Person()
                {
+                   Id = 4,
                    FirstName = "Felix",
                    LastName = "Carao",
                    ContactNumber = "09478062548",
@@ -130,6 +104,7 @@ namespace XamarinActivities
                },
                new Person()
                {
+                   Id = 5,
                    FirstName = "Kyla Gae",
                    LastName = "Calpito",
                    ContactNumber = "09236062548",
@@ -139,6 +114,7 @@ namespace XamarinActivities
                },
                new Person()
                {
+                   Id = 6,
                    FirstName = "Mermellah",
                    LastName = "Angni",
                    ContactNumber = "09369062548",
@@ -148,6 +124,7 @@ namespace XamarinActivities
                },
                new Person()
                {
+                   Id = 7,
                    FirstName = "Arnold",
                    LastName = "Mendoza",
                    ContactNumber = "09899062548",
@@ -157,6 +134,7 @@ namespace XamarinActivities
                },
                new Person()
                {
+                   Id = 8,
                    FirstName = "Charles Kenechi",
                    LastName = "Nazareno",
                    ContactNumber = "09789062548",
@@ -166,6 +144,7 @@ namespace XamarinActivities
                },
                new Person()
                {
+                   Id = 9,
                    FirstName = "Dino Angelo",
                    LastName = "Reyes",
                    ContactNumber = "09299062548",
@@ -175,6 +154,7 @@ namespace XamarinActivities
                },
                new Person()
                {
+                   Id = 10,
                    FirstName = "Marc Kenneth",
                    LastName = "Lomio",
                    ContactNumber = "09369062548",
@@ -185,6 +165,7 @@ namespace XamarinActivities
                ,
                new Person()
                {
+                   Id = 11,
                    FirstName = "Jelmarose Grace",
                    LastName = "De Vera",
                    ContactNumber = "09328962548",
@@ -212,7 +193,6 @@ namespace XamarinActivities
             }
         }
         
-        /* to delete */
         async void OnDelete_Clicked(object sender, EventArgs e)
         {
             var mi = (MenuItem)sender;
@@ -237,7 +217,7 @@ namespace XamarinActivities
         async void ContactListView_Tapped(object sender, ItemTappedEventArgs e)
         {
             var personDetails = (Person) e.Item;
-            var detailPage = new E6ContactDetailsPage(personDetails, DeleteContact);
+            var detailPage = new E6ContactDetailsPage(personDetails, DeleteContact, UpdateContact);
             await Navigation.PushAsync(detailPage);
             
         }
@@ -252,7 +232,8 @@ namespace XamarinActivities
 
         async void OnAdd_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new E7AddContactPage(AddContact));
+            var id = _peopleList.Count + 1;
+            await Navigation.PushAsync(new E7AddContactPage(AddContact, id));
         }
 
         async void AddContact(object sender, Person person)
@@ -284,7 +265,7 @@ namespace XamarinActivities
             }
 
             lstContacts.ItemsSource = _peopleList.OrderBy(p => p.FullName);
-            await DisplayAlert("Contact List", person.FirstName + " successfully updated", "OK");
+            await DisplayAlert("Contact List", person.FullName + " successfully updated", "OK");
             await Navigation.PopToRootAsync();
         }
 

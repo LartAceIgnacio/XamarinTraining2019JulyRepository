@@ -9,6 +9,9 @@
              Title="Details">
 
     <ContentPage.ToolbarItems>
+        <ToolbarItem Name="MenuItemUpdate" Order="Secondary" 
+                     Text="Update" Priority="0"
+                     Clicked="OnUpdate_Clicked"/>
         <ToolbarItem Name="MenuItemDelete" Order="Secondary" 
                      Text="Delete" Priority="0"
                      Clicked="OnDelete_Clicked"/>

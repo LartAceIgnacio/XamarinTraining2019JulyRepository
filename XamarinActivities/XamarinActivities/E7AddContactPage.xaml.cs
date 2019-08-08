@@ -14,17 +14,19 @@ namespace XamarinActivities
     public partial class E7AddContactPage : ContentPage
     {
         EventHandler<Person> _addContactEventHandler;
-        public E7AddContactPage(EventHandler<Person> addContactEventHandler)
+        private int _id;
+        public E7AddContactPage(EventHandler<Person> addContactEventHandler, int id)
         {
             InitializeComponent();
             _addContactEventHandler = addContactEventHandler;
-
+            _id = id;
         }
 
         private void OnAddToContacts_Clicked(object sender, EventArgs e)
         {
             var _personDetails = new Person
             {
+                Id = _id,
                 FirstName = entryFirstName.Text,
                 LastName = entryLastName.Text,
                 ContactNumber = entryContactNumber.Text,

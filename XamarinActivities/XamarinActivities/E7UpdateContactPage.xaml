@@ -4,39 +4,34 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
+             Title="Update Contact"
              x:Class="XamarinActivities.E7UpdateContactPage">
     <ContentPage.Content>
-        <StackLayout Padding="10" Spacing="5">
-            <TableView>
-                <TableRoot>
-                    <TableSection Title="Add Contact Information">
-                        <EntryCell x:Name="entryFirstName"
-                                   Text="{Binding FirstName}"
-                                   Keyboard="Text"/>
-                        <EntryCell x:Name="entryLastName"
-                                   Text="{Binding LastName}"
-                                   Keyboard="Text"/>
-                        <EntryCell x:Name="entryContactNumber"
-                                   Text="{Binding ContactNumber}"
-                                   Keyboard="Telephone"/>
-                        <EntryCell x:Name="entryEmail"
-                                   Text="{Binding Email}"
-                                   Keyboard="Text"/>
-                        <EntryCell x:Name="entryImageURL"
-                                   Text="{Binding ImgURL}"
-                                   Placeholder="Enter Image Url..."
-                                   Keyboard="Text"/>
-                        <ViewCell>
-                            <StackLayout Padding="15, 0, 15, 0">
-                                <Editor x:Name="editorBio"
-                                 Text="{Binding Bio}"
-                                 Keyboard="Default"
-                                 AutoSize="TextChanges"/>
-                            </StackLayout>
-                        </ViewCell>
-                    </TableSection>
-                </TableRoot>
-            </TableView>
+        <StackLayout Padding="10" Spacing="10">
+            <Entry x:Name="entryFirstName"
+                   Text="{Binding FirstName}"
+                   Placeholder="Enter First Name..."
+                   Keyboard="Text"/>
+            <Entry x:Name="entryLastName" 
+                   Text="{Binding LastName}"
+                   Placeholder="Enter Last Name..."
+                   Keyboard="Text"/>
+            <Entry x:Name="entryContactNumber" 
+                   Text="{Binding ContactNumber}"
+                   Placeholder="Enter Contact Number..."
+                   Keyboard="Numeric" />
+            <Entry x:Name="entryEmail" 
+                   Text="{Binding Email}"
+                   Placeholder="Enter Email..."
+                   Keyboard="Email"/>
+            <Entry x:Name="entryImageURL" 
+                   Text="{Binding Email}"
+                   Placeholder="Enter Image URL ..."
+                   Keyboard="Url"/>
+            <Editor x:Name="editorBio" 
+                    Text="{Binding Bio}"
+                    Placeholder="Enter Bio..."
+                    Keyboard="Email"/>
             <Button Text="Save" 
                     TextColor="#fff"
                     Clicked="OnUpdateContacts_Clicked"

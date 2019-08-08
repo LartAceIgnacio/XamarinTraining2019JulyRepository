@@ -15,12 +15,14 @@ namespace XamarinActivities
     {
         private Person _personDetails;
         private EventHandler<Person> _deleteEventHandler;
-        public E6ContactDetailsPage(Person person, EventHandler<Person> deleteEventHandler)
+        private EventHandler<Person> _updateEventHandler;
+        public E6ContactDetailsPage(Person person, EventHandler<Person> deleteEventHandler, EventHandler<Person> updateEventHandler)
         {
             InitializeComponent();
             _personDetails = person;
 
             _deleteEventHandler = deleteEventHandler;
+            _updateEventHandler = updateEventHandler;
             BindingContext = person;
         }
 
@@ -32,6 +34,12 @@ namespace XamarinActivities
             {
                 _deleteEventHandler?.Invoke(this, _personDetails);
             }
+        }
+
+        async void OnUpdate_Clicked(object sender, EventArgs e)
+        {
+           ;
+            await Navigation.PushAsync(new E7UpdateContactPage(_updateEventHandler, _personDetails));
         }
 
         private void OnButtonCall_Clicked(object sender, EventArgs e)
