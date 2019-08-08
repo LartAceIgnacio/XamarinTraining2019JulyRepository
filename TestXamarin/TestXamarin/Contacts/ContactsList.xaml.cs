@@ -127,6 +127,8 @@ namespace TestXamarin.Contacts
 
         private void AddContact(object sender, Person p)
         {
+            p.Color = AvatarBackground.GetColor(p.FirstName[0]);
+
             List<Person> tempCollection = new List<Person>(_people) { p };
             ObservableCollection<Person> people = new ObservableCollection<Person>(
                 tempCollection.OrderBy(person => person.FirstName).ToList());
