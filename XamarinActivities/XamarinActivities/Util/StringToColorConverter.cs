@@ -16,7 +16,7 @@ namespace XamarinActivities.Util
             if (value != null)
             {
                 Contact contact = value as Contact;
-                var FirstLetter = contact.Initials[0].ToString();
+                var FirstLetter = contact.Initials[0].ToString().ToUpper();
                 switch (FirstLetter)
                 {
                     case "A":

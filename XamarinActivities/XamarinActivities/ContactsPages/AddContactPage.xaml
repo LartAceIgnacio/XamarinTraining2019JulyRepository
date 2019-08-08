@@ -10,29 +10,22 @@
     <ContentPage.ToolbarItems>
         <ToolbarItem Order="Primary" Clicked="Close_MenuItem_Clicked" Text="Close" Priority="1" />
     </ContentPage.ToolbarItems>
-    
+
     <ContentPage.Content>
-        <StackLayout>
-            <TableView Intent="Form">
-                <TableRoot>
-                    <TableSection Title="Information"
-                                  TextColor="Black">
-                        <EntryCell x:Name="firstName"
-                                   Placeholder="First Name"
-                                   Keyboard="Plain" />
-                        <EntryCell x:Name="lasttName"
-                                   Placeholder="Last Name"
-                                   Keyboard="Plain" />
-                        <EntryCell x:Name="mobileNumber"
-                                   Placeholder="Mobile Number"
-                                   Keyboard="Telephone" />
-                        <EntryCell x:Name="emailAddress"
-                                   Placeholder="Email Address"
-                                   Keyboard="Email" />
-                    </TableSection>
-                </TableRoot>
-            </TableView>
-            <Button Text="Save Contact" Clicked="SaveContact_Clicked" />
+        <StackLayout HorizontalOptions="FillAndExpand" Padding="20">
+            <Label Text="First Name:" />
+            <Entry x:Name="firstName"
+                   Keyboard="Plain" />
+            <Label Text="Last Name:" />
+            <Entry x:Name="lastName"
+                   Keyboard="Plain" />
+            <Label Text="Mobile Number:" />
+            <Entry x:Name="mobileNumber"
+                   Keyboard="Telephone" />
+            <Label Text="Email Address:" />
+            <Entry x:Name="emailAddress"
+                   Keyboard="Email" />
+            <Button Text="Save Contact" Clicked="SaveButton_Clicked" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

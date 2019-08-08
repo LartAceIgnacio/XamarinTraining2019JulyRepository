@@ -21,7 +21,7 @@ namespace XamarinActivities.Models
             FirstName = firstName;
             LastName = lastName;
             FullName = firstName + " " + lastName;
-            Initials = firstName[0].ToString() + lastName[0].ToString();
+            Initials = firstName[0].ToString().ToUpper() + lastName[0].ToString().ToUpper();
             MobileNumber = mobileNumber;
             EmailAddress = emailAddress;
             FacebookLink = facebookLink;

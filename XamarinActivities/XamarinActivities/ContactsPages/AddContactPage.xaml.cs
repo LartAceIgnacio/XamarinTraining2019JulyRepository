@@ -25,9 +25,9 @@ namespace XamarinActivities.ContactsPages
             Navigation.PopModalAsync();
         }
 
-        private void SaveContact_Clicked(object sender, EventArgs e)
+        private void SaveButton_Clicked(object sender, EventArgs e)
         {
-            Contact contact = new Contact(firstName.Text, lasttName.Text, mobileNumber.Text, emailAddress.Text, "facebook.com/user", "instagram.com/user");
+            Contact contact = new Contact(firstName.Text, lastName.Text, mobileNumber.Text, emailAddress.Text, "facebook.com/user", "instagram.com/user");
             SaveContactEventHandler?.Invoke(this, contact);
             Navigation.PopModalAsync();
         }

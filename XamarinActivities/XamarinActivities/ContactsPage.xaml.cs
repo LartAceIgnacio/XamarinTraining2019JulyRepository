@@ -86,6 +86,7 @@ namespace XamarinActivities
         {
             var contact = e.Item as Contact;
             TappedContact = contact;
+            contactsList.SelectedItem = null;
             ViewContactPage viewPage = new ViewContactPage(contact, DeleteContact, EditContact);
             Navigation.PushModalAsync(new NavigationPage(viewPage));
         }
