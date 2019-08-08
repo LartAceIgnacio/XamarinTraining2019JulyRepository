@@ -5,7 +5,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:converters="clr-namespace:XamarinActivities.Util"
              mc:Ignorable="d"
-             x:Class="XamarinActivities.Modals.ViewContactPage"
+             x:Class="XamarinActivities.ContactsPages.ViewContactPage"
              Title="{Binding FirstName}">
     
     <ContentPage.Resources>
@@ -104,7 +104,7 @@
     </ContentPage.Resources>
     
     <ContentPage.ToolbarItems>
-        <ToolbarItem Order="Primary" Icon="Xamarin.png" Clicked="Close_MenuItem_Clicked" Text="Close" Priority="1" />
+        <ToolbarItem Order="Primary" Icon="Xamarin.png" Clicked="Edit_MenuItem_Clicked" Text="Edit" Priority="1" />
         <ToolbarItem x:Name="Delete_MenuItem" Order="Secondary" Clicked="Delete_MenuItem_Clicked" Text="Delete" Priority="1" />
     </ContentPage.ToolbarItems>
 
