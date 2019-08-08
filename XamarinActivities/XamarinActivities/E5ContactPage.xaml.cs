@@ -67,24 +67,24 @@ namespace XamarinActivities
 
         /** refactor or delete **/
 
-        private void InitColor()
-        {
-            foreach (var person in _peopleList)
-            {
-                foreach (var color in _colorList)
-                {
-                    var firstLetter = person.InitialKey.Substring(0, 1);
-                    if (color.Key == firstLetter)
-                    {
-                        //person.InitialKeyColor = color.Value;
-                    }
-                }
-            }
-        }
+        //private void InitColor()
+        //{
+        //    foreach (var person in _peopleList)
+        //    {
+        //        foreach (var color in _colorList)
+        //        {
+        //            var firstLetter = person.InitialKey.Substring(0, 1);
+        //            if (color.Key == firstLetter)
+        //            {
+        //                //person.InitialKeyColor = color.Value;
+        //            }
+        //        }
+        //    }
+        //}
 
         private void InitItemSource()
         {
-            InitColor();
+            //InitColor();
             lstContacts.ItemsSource = _peopleList.OrderBy(p => p.FullName);
         }
         private ObservableCollection<Person> InitContactList()
@@ -179,7 +179,7 @@ namespace XamarinActivities
                    LastName = "Lomio",
                    ContactNumber = "09369062548",
                    ImgURL = "https://tinyurl.com/y29bn4og",
-                   Bio = "My favorite data type is char",
+                   Bio = "WALANG HATDOG",
                    Email = "drmkc@gmail.com"
                }
                ,
@@ -250,6 +250,11 @@ namespace XamarinActivities
             await Navigation.PopAsync();
         }
 
+        async void OnAdd_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new E7AddContactPage(AddContact));
+        }
+
         async void AddContact(object sender, Person person)
         {
             _peopleList.Add(person);
@@ -257,10 +262,30 @@ namespace XamarinActivities
             await DisplayAlert("Contact List", person.FullName + " successfully added", "OK");
             await Navigation.PopAsync();
         }
-
-        async void OnAdd_Clicked(object sender, EventArgs e)
+        async void OnUpdate_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new E7AddContactPage(AddContact));
+            var mi = (MenuItem)sender;
+            var personDetails = (Person)mi.CommandParameter;
+            await Navigation.PushAsync(new E7UpdateContactPage(UpdateContact, personDetails));
+        }
+
+        async void UpdateContact(object sender, Person person)
+        {
+            var personToUpdate = _peopleList.FirstOrDefault(p => p.FullName.Contains(person.FullName));
+
+            if(personToUpdate != null)
+            {
+                personToUpdate.FirstName = person.FirstName;
+                personToUpdate.LastName = person.LastName;
+                personToUpdate.ContactNumber = person.ContactNumber;
+                personToUpdate.Email = person.Email;
+                personToUpdate.ImgURL = person.ImgURL;
+                personToUpdate.Bio = person.Bio;
+            }
+
+            lstContacts.ItemsSource = _peopleList.OrderBy(p => p.FullName);
+            await DisplayAlert("Contact List", person.FirstName + " successfully updated", "OK");
+            await Navigation.PopToRootAsync();
         }
 
     }

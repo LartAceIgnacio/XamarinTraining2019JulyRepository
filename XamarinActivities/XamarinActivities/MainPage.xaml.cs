@@ -22,7 +22,7 @@ namespace XamarinActivities
 
             InitMenuList();
             
-            Detail = new NavigationPage((Page)Activator.CreateInstance(typeof(QuotePage)));
+            Detail = new NavigationPage((Page)Activator.CreateInstance(typeof(E6ContactDetailsPage)));
         }
 
         private void InitMenuList()

@@ -25,12 +25,12 @@ namespace XamarinActivities
         {
             var _personDetails = new Person
             {
-                FirstName = txtFirstName.Text,
-                LastName = txtLastName.Text,
-                ContactNumber = txtContactNumber.Text,
-                ImgURL = "https://tinyurl.com/y6klbxdz",
-                Email = "dhdhd",
-                Bio = "gshshs"
+                FirstName = entryFirstName.Text,
+                LastName = entryLastName.Text,
+                ContactNumber = entryContactNumber.Text,
+                ImgURL = entryImageURL.Text,
+                Email = entryEmail.Text,
+                Bio = editorBio.Text
             };
             _addContactEventHandler?.Invoke(this, _personDetails);
         }

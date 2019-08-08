@@ -31,8 +31,6 @@ namespace XamarinActivities
             if (answer)
             {
                 _deleteEventHandler?.Invoke(this, _personDetails);
-                //await Navigation.PopAsync();
-                //MessagingCenter.Send<E6ContactDetailsPage, Person>(this, "Delete", _personDetails);
             }
         }
 

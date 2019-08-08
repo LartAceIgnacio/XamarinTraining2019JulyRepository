@@ -4,33 +4,32 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="XamarinActivities.E7AddContactPage"
-             Title="My Contacts">
+             x:Class="XamarinActivities.E7UpdateContactPage">
     <ContentPage.Content>
         <StackLayout Padding="10" Spacing="5">
             <TableView>
                 <TableRoot>
                     <TableSection Title="Add Contact Information">
-                        <EntryCell 
-                           x:Name="entryFirstName"
-                           Placeholder="Enter Firstname..."
-                           Keyboard="Text"/>
+                        <EntryCell x:Name="entryFirstName"
+                                   Text="{Binding FirstName}"
+                                   Keyboard="Text"/>
                         <EntryCell x:Name="entryLastName"
-                                   Placeholder="Enter Lastname..."
+                                   Text="{Binding LastName}"
                                    Keyboard="Text"/>
                         <EntryCell x:Name="entryContactNumber"
-                                   Placeholder="Enter Contact Number..."
+                                   Text="{Binding ContactNumber}"
                                    Keyboard="Telephone"/>
                         <EntryCell x:Name="entryEmail"
-                                   Placeholder="Enter Email..."
+                                   Text="{Binding Email}"
                                    Keyboard="Text"/>
                         <EntryCell x:Name="entryImageURL"
+                                   Text="{Binding ImgURL}"
                                    Placeholder="Enter Image Url..."
                                    Keyboard="Text"/>
                         <ViewCell>
                             <StackLayout Padding="15, 0, 15, 0">
                                 <Editor x:Name="editorBio"
-                                 Placeholder="Type your bio here..."
+                                 Text="{Binding Bio}"
                                  Keyboard="Default"
                                  AutoSize="TextChanges"/>
                             </StackLayout>
@@ -40,7 +39,7 @@
             </TableView>
             <Button Text="Save" 
                     TextColor="#fff"
-                    Clicked="OnAddToContacts_Clicked"
+                    Clicked="OnUpdateContacts_Clicked"
                     BackgroundColor="#2296F3"
                     HorizontalOptions="Fill"/>
         </StackLayout>
