@@ -83,11 +83,27 @@ namespace XamarinExercise
             searchList = Filter(e.NewTextValue);
             contactListView.ItemsSource = searchList.OrderBy(c=>c.FirstName);
         }
+
+
         async void ContactItem_Tapped(object sender, ItemTappedEventArgs e)
         {
             Contacts contact = e.Item as Contacts;
-            var contactInfo= new NavigationPage(new ContactInfoPage(contact));
-            await this.Navigation.PushModalAsync(contactInfo);
+            var contactInfo= new ContactInfoPage(contact);
+            await this.Navigation.PushAsync(contactInfo);
+        }
+
+        async void Contact_Add(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new AddContactPage(Add_Contact));
+        }
+
+        async void Add_Contact(object sender, Contacts contact)
+        {
+            this.contactList.Add(contact);
+            await DisplayAlert("Added "+contact.FirstName,
+                contact.FullName+" Has been added to your Contacts", "Ok");
+            await this.Navigation.PopAsync();
+            contactListView.ItemsSource = contactList.OrderBy(c=>c.FirstName);
         }
     }
 }

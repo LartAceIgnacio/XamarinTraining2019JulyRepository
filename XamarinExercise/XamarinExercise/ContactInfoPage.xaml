@@ -5,80 +5,79 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              BackgroundColor="#dbe2ff"
-             Padding="30"
+             Padding="20"
+             Title="{Binding FirstName}"
              x:Class="XamarinExercise.ContactInfoPage">
     <ContentPage.ToolbarItems>
         <ToolbarItem Name="TlbrHome" Order="Primary" Icon="profiledelete.png" Text="Delete" Priority="0" Clicked="Contact_Delete"/>
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <ScrollView>
-            <StackLayout HorizontalOptions="Fill">
-                <ImageButton x:Name="btnBack"
+            <Frame HasShadow="True"
+                   VerticalOptions="StartAndExpand">
+                <StackLayout HorizontalOptions="Fill">
+                    <!--<ImageButton x:Name="btnBack"
                     Source="back.png"
                     Clicked="Back_Pop"
                     HeightRequest="30"
                     WidthRequest="30"
-                    HorizontalOptions="Start"/>
+                    HorizontalOptions="Start"/>-->
                     <StackLayout HorizontalOptions="Center"
                      VerticalOptions="Center">
-                <AbsoluteLayout HeightRequest="60"
+                        <AbsoluteLayout HeightRequest="60"
                                 WidthRequest="60"
                                 HorizontalOptions="Center">
-                    <BoxView x:Name="boxInital"
-                         HeightRequest="60"
-                         WidthRequest="60"
-                         AbsoluteLayout.LayoutBounds="1, 1, 1, 1"
-                         AbsoluteLayout.LayoutFlags="All"
-                         Color="{Binding BoxColor}"
-                         CornerRadius="25"/>
-                    <Label Text="{Binding Initials}"
-                       TextColor="#dbe2ff"
-                       FontSize="30"
-                       FontAttributes="Bold"
-                       VerticalOptions="Center"
-                       HorizontalOptions="Center"
-                       AbsoluteLayout.LayoutBounds="1, 1, 1, 1"
-                       AbsoluteLayout.LayoutFlags="All"/>
-                </AbsoluteLayout>
-                    <StackLayout>
-                        <Label Text="{Binding FullName}" 
-                               TextColor="Black"
-                               FontSize="30"
-                               FontAttributes="Bold"
-                               HorizontalTextAlignment="Center"
-                               Margin="0,0,0,30"/>
-                        <StackLayout Orientation="Horizontal" HorizontalOptions="Fill">
-                            <Image Source="phone.png"/>
-                            <Label Text="{Binding ContactNo}" 
-                                   FontSize="25" 
-                                   TextColor="Black"/>
-                            <StackLayout Orientation="Horizontal" HorizontalOptions="End">
-                                <ImageButton Source="call.png" />
-                                <ImageButton Source="chat.png" />
+                            <BoxView x:Name="boxInital"
+                                     HeightRequest="60"
+                                     WidthRequest="60"
+                                     AbsoluteLayout.LayoutBounds="1, 1, 1, 1"
+                                     AbsoluteLayout.LayoutFlags="All"
+                                     Color="{Binding BoxColor}"
+                                     CornerRadius="25"/>
+                            <Label Text="{Binding Initials}"
+                                   TextColor="#fff"
+                                   FontSize="30"
+                                   FontAttributes="Bold"
+                                   VerticalOptions="Center"
+                                   HorizontalOptions="Center"
+                                   AbsoluteLayout.LayoutBounds="1, 1, 1, 1"
+                                   AbsoluteLayout.LayoutFlags="All"/>
+                        </AbsoluteLayout>
+                        <StackLayout>
+                            <Label Text="{Binding FullName}" 
+                                   FontSize="30"
+                                   FontAttributes="Bold"
+                                   HorizontalTextAlignment="Center"
+                                   Margin="0,0,0,30"/>
+                            <StackLayout Orientation="Horizontal" HorizontalOptions="Fill">
+                                <Image Source="phone.png"/>
+                                <Label Text="{Binding ContactNo}" 
+                                   FontSize="25" />
                             </StackLayout>
-                        </StackLayout>
-                        <StackLayout Orientation="Horizontal" HorizontalOptions="Fill">
-                            <Image Source="address.png" />
-                            <Label Text="{Binding Address}" 
-                                   FontSize="20"
-                                   TextColor="Black"/>
-                        </StackLayout>
-                        <StackLayout Orientation="Horizontal" HorizontalOptions="Fill">
-                            <Image Source="email.png" />
-                            <Label Text="{Binding EmailAddress}" 
-                                   FontSize="20"
-                                   TextColor="Black"/>
-                        </StackLayout>
-                        <StackLayout Orientation="Horizontal" HorizontalOptions="Fill">
-                            <Image Source="date.png" />
+                            </StackLayout>
+                            <StackLayout Orientation="Horizontal" HorizontalOptions="Fill">
+                                <Image Source="address.png" />
+                                <Label Text="{Binding Address}" 
+                                       FontSize="20"/>
+                            </StackLayout>
+                            <StackLayout Orientation="Horizontal" HorizontalOptions="Fill">
+                                <Image Source="email.png" />
+                                <Label Text="{Binding EmailAddress}" 
+                                       FontSize="20"/>
+                            </StackLayout>
+                            <StackLayout Orientation="Horizontal" HorizontalOptions="Fill">
+                                <Image Source="date.png" />
                             <Label Text="{Binding Birthday}" 
-                                   FontSize="20"
-                                   TextColor="Black"/>
+                                   FontSize="20"/>
                         </StackLayout>
-                    </StackLayout>
+                        <StackLayout Orientation="Horizontal" >
+                            <Button ImageSource="call.png" Text="Call" />
+                            <Button ImageSource="chat.png" Text="Message"/>
+                        </StackLayout>
 
+                    </StackLayout>
                 </StackLayout>
-            </StackLayout>
+            </Frame>
         </ScrollView>
     </ContentPage.Content>
 </ContentPage>

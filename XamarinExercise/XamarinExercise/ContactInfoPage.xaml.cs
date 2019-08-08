@@ -18,12 +18,12 @@ namespace XamarinExercise
         {
             InitializeComponent();
             this.contact = contact;
-            btnBack.Clicked += Back_Pop;
+            //btnBack.Clicked += Back_Pop;
             this.BindingContext = contact;
         }
         void Back_Pop(object sender, EventArgs e)
         {
-            Navigation.PopModalAsync();
+            Navigation.PopAsync();
         }
         async void Contact_Delete(object sender, EventArgs e)
         {
