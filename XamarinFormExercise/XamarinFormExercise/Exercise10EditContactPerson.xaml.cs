@@ -39,6 +39,7 @@ namespace XamarinFormExercise
             _person =
                new Person()
                {
+                   Id = _person.Id,
                    Firstname = firstName,
                    Lastname = lastName,
                    ContactNumber = contact,

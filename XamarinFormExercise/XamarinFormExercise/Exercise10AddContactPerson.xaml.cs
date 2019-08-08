@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using XamarinFormExercise.Database;
 using XamarinFormExercise.Model;
 
 namespace XamarinFormExercise
@@ -14,7 +15,7 @@ namespace XamarinFormExercise
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class Exercise10AddContactPerson : ContentPage
     {
-        Person _person;
+       private Person _person;
         EventHandler<Person> _onAddContactPersonEventHandler;
         public Exercise10AddContactPerson(EventHandler<Person> onAddContactPersonEventHandler)
         {

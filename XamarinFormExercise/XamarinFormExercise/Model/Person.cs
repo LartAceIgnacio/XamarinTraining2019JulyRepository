@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 using System.Text;
 using System.ComponentModel;
+using SQLite;
 
 namespace XamarinFormExercise.Model
 {
+    [Table("Person")]
     public class Person 
     {
         private Dictionary<string, string> ColorDictionary = new Dictionary<string, string>()
@@ -36,14 +38,15 @@ namespace XamarinFormExercise.Model
                 { "Y", "#4a638c"},
                 { "Z", "#e89c23"}
         };
-   
+        [PrimaryKey, AutoIncrement]
+        public int Id { get; set; }
         public string Firstname { get; set; }
         public string Lastname { get; set; }
         public string Fullname { get { return Firstname + " " + Lastname; } }
         public string ContactNumber { get; set; }
         public string ColorLogo { get
             {
-                string first = Firstname.Substring(0, 1);
+                string first = Firstname.Substring(0, 1).ToUpper();
                 if (ColorDictionary.ContainsKey(first))
                 {
                     return ColorDictionary[first];
@@ -55,7 +58,7 @@ namespace XamarinFormExercise.Model
         {
             get
             { 
-                return Firstname.Substring(0, 1) + Lastname.Substring(0, 1);
+                return Firstname.Substring(0, 1).ToUpper() + Lastname.Substring(0, 1).ToUpper();
            }
         }
         public string Image { get; set; }
