@@ -6,15 +6,30 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using XamarinActivities.Models;
 
 namespace XamarinActivities.ContactsPages
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class AddContactPage : ContentPage
     {
-        public AddContactPage()
+        private EventHandler<Contact> SaveContactEventHandler;
+        public AddContactPage(EventHandler<Contact> saveContactEventHandler)
         {
             InitializeComponent();
+            SaveContactEventHandler = saveContactEventHandler;
+        }
+
+        private void Close_MenuItem_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PopModalAsync();
+        }
+
+        private void SaveContact_Clicked(object sender, EventArgs e)
+        {
+            Contact contact = new Contact(firstName.Text, lasttName.Text, mobileNumber.Text, emailAddress.Text, "facebook.com/user", "instagram.com/user");
+            SaveContactEventHandler?.Invoke(this, contact);
+            Navigation.PopModalAsync();
         }
     }
 }

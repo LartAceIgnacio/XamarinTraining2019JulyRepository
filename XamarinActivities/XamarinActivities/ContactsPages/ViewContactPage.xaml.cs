@@ -9,7 +9,7 @@ using Xamarin.Forms.Xaml;
 
 using XamarinActivities.Models;
 
-namespace XamarinActivities.Modals
+namespace XamarinActivities.ContactsPages
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ViewContactPage : ContentPage
@@ -24,17 +24,12 @@ namespace XamarinActivities.Modals
             _contact = contact;
         }
 
-        private void Close_MenuItem_Clicked(object sender, EventArgs e)
-        {
-            Navigation.PopModalAsync();
-        }
-
         async private void Delete_MenuItem_Clicked(object sender, EventArgs e)
         {
             var answer = await DisplayAlert("Delete", "Are you sure you want to delete " + _contact.FullName, "Yes", "Cancel");
             if(answer)
             {
-                this.DeleteContactEventHandler?.Invoke(this, _contact);
+                DeleteContactEventHandler?.Invoke(this, _contact);
                 await Navigation.PopModalAsync();
             }
         }

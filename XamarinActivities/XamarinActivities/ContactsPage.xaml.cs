@@ -9,7 +9,7 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 using XamarinActivities.Models;
-using XamarinActivities.Modals;
+using XamarinActivities.ContactsPages;
 
 namespace XamarinActivities
 {
@@ -84,13 +84,26 @@ namespace XamarinActivities
         private void ContactsList_ItemTapped(object sender, ItemTappedEventArgs e)
         {
             var contact = e.Item as Contact;
-            ViewContactPage view = new ViewContactPage(contact, DeleteContact);
-            this.Navigation.PushModalAsync(new NavigationPage(view));
+            ViewContactPage viewPage = new ViewContactPage(contact, DeleteContact);
+            Navigation.PushModalAsync(new NavigationPage(viewPage));
         }
 
         private void DeleteContact(object sender, Contact contact)
         {
             _contacts.Remove(contact);
+        }
+
+        private void AddUser_Clicked(object sender, EventArgs e)
+        {
+            AddContactPage addPage = new AddContactPage(AddContact);
+            Navigation.PushModalAsync(new NavigationPage(addPage));
+        }
+
+        private void AddContact(object sender, Contact contact)
+        {
+            _contacts.Add(contact);
+            _contacts = new ObservableCollection<Contact>(_contacts.OrderBy(c => c.FirstName).ToList());
+            contactsList.ItemsSource = _contacts;
         }
     }
 }
