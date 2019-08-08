@@ -74,14 +74,14 @@
 
 	<!---  TABLE VIEW -->
 
-	<TableView>
+	<TableView Intent="Form">
 		<TableRoot>
 			<TableSection  Title="Basic Information">
 				<TextCell Text="Name" Detail="Mermellah Angni" ></TextCell>
 				<EntryCell Label="Nickname"></EntryCell>
 			</TableSection>
 			<TableSection  Title="Contact Information">
-				<EntryCell Label="Email" Keyboard="Email"></EntryCell>
+				<EntryCell Label="Email" Keyboard="Email" ></EntryCell>
 				<EntryCell Label="Phone Number" Keyboard="Numeric"></EntryCell>
 				<EntryCell Label="Telephone Number" Keyboard="Telephone"></EntryCell>
 				<EntryCell Label="Website" Keyboard="Url"></EntryCell>

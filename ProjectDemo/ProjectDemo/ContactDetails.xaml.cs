@@ -13,20 +13,19 @@ namespace ProjectDemo
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class ContactDetails : ContentPage
 	{
-		Contact contact;
-		public ContactDetails(Contact contact)
+		private Contact _contact;
+		private EventHandler<Contact> _deleteContactEventHandler;
+		public ContactDetails(Contact contact, EventHandler<Contact> deleteContactEventHandler)
 		{
 			InitializeComponent();
 			this.BindingContext = contact;
-			setContact(contact);
+			this._contact = contact;
+			this._deleteContactEventHandler = deleteContactEventHandler;
 		}
 
-		public void setContact(Contact contact)
+		public void tlb_Delete(object sender, EventArgs e)
 		{
-			this.contact = contact;
-		}
-		private void tlb_Delete(object sender, EventArgs e)
-		{
+			this._deleteContactEventHandler?.Invoke(this, this._contact);
 			this.Navigation.PopModalAsync();
 		}
 	}

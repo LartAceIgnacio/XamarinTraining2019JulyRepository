@@ -4,6 +4,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ProjectDemo;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -160,11 +161,18 @@ namespace ProjectDemo
 			contactListView.ItemsSource = GetContacts();
 		}
 
-		private void ViewCell_Tapped(object sender, ItemTappedEventArgs e)
+		async void ViewCell_Tapped(object sender, ItemTappedEventArgs e)
 		{
 			Contact contact = e.Item as Contact;
-			ContactDetails detailPage = new ContactDetails(contact);
-			this.Navigation.PushModalAsync(detailPage);
+			var detailPage = new NavigationPage(new ContactDetails(contact,DeleteContact));
+			await this.Navigation.PushModalAsync(detailPage);
+		}
+
+		public void DeleteContact(object sender, Contact contact)
+		{
+			this.temporaryContactList.Remove(contact);
+			this.Navigation.PopModalAsync();
+			contactListView.ItemsSource = GetContacts();
 		}
 	}
 
