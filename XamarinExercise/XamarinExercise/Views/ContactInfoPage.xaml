@@ -83,7 +83,7 @@
                             <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
                                 <Frame HasShadow="True" Padding="0" HorizontalOptions="FillAndExpand">
                                     <Button ImageSource="call.png" 
-                                            Text="Call" FontSize="18" 
+                                            Text="Call" FontSize="15" 
                                             FontAttributes="Bold" 
                                             TextColor="White" 
                                             BackgroundColor="{Binding BoxColor}" 
@@ -93,7 +93,7 @@
                                 <Frame HasShadow="True" Padding="0" HorizontalOptions="FillAndExpand">
                                     <Button ImageSource="chat.png" 
                                             Text="Message" 
-                                            FontSize="13" 
+                                            FontSize="15" 
                                             FontAttributes="Bold" 
                                             TextColor="White" 
                                             BackgroundColor="{Binding BoxColor}" 
