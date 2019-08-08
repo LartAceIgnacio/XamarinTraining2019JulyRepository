@@ -31,5 +31,13 @@ namespace App3
                 await Navigation.PopAsync(true);
             }
         }
+        async private void TlbrUpdate_Clicked(object sender, EventArgs e)
+        {
+            var menuItem = sender as MenuItem;
+            //_contact.FullName = "Updated";
+            //contactList.ItemsSource = _contactList;
+            var updateContactPage = new UpdateContactPage(_contact);
+            await this.Navigation.PushAsync(updateContactPage);
+        }
     }
 }

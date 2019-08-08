@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="App3.AddContactPage"
+             Padding="10"
+             Title="New Contact">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Name="TlbrAdd" 
+                     Text="Add"
+                     Order="Primary"
+                     Clicked="TlbrAdd_Clicked"/>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <StackLayout>
+            <Entry
+                x:Name="newFirstName"
+                Placeholder="First Name"/>
+            <Entry
+                x:Name="newLastName"
+                Placeholder="Last Name"/>
+            <Entry
+                x:Name="newMobileNumber"
+                Placeholder="Mobile Number"
+                Keyboard="Numeric"/>
+            <Entry
+                x:Name="newEmail"
+                Placeholder="Email"
+                Keyboard="Email"/>
+            <Editor
+                x:Name="newQuote"
+                Placeholder="Quote"
+                Keyboard="Default"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

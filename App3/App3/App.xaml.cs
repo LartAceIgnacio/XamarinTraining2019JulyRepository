@@ -22,7 +22,6 @@ namespace App3
             //MainPage = new Image2Page();
             var page = new ListExercisePage();
             MainPage = new NavigationPage(page);
-            NavigationPage.SetHasNavigationBar(page , false);
         }
 
         protected override void OnStart()

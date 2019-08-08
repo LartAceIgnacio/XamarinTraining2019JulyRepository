@@ -70,12 +70,37 @@ namespace App3
             var _contact = menuItem.CommandParameter as Contact;
             _contactList.Remove(_contact);
             DisplayAlert("This contact has been deleted", _contact.FullName, "OK");
+            contactList.ItemsSource = new ObservableCollection<Contact>(this._contactList.OrderBy(x => x.FirstName));
         }
 
         private async void ContactList_ItemTapped(object sender, ItemTappedEventArgs e)
         {
             Contact contact = e.Item as Contact;
             await Navigation.PushAsync(new ContactInformationPage(contact));
+        }
+
+        async private void TlbrAdd_Clicked(object sender, EventArgs e)
+        {
+            var addContactPage = new AddContactPage(AddContact);
+            await Navigation.PushAsync(addContactPage);
+        }
+
+        public void AddContact(object sender, Contact contact)
+        {
+            this._contactList.Add(contact);
+            contactList.ItemsSource = new ObservableCollection<Contact>(this._contactList.OrderBy(x=>x.FirstName)); 
+            this.Navigation.PopAsync();
+        }
+
+        async private void Update_Clicked(object sender, EventArgs e)
+        {
+            var menuItem = sender as MenuItem;
+            var _contact = menuItem.CommandParameter as Contact;
+            //_contact.FullName = "Updated";
+            //contactList.ItemsSource = _contactList;
+            var updateContactPage = new UpdateContactPage(_contact);
+            await this.Navigation.PushAsync(updateContactPage);
+            contactList.ItemsSource = new ObservableCollection<Contact>(this._contactList.OrderBy(x => x.FirstName));
         }
     }
 }

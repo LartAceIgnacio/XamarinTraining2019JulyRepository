@@ -8,7 +8,6 @@ namespace App3.Models
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }
-        public string FullName { get; set; }
         public string PhoneNumber { get; set; }
         public string Quote { get; set; }
         public string Email { get; set; }
@@ -16,7 +15,6 @@ namespace App3.Models
         {
             this.FirstName = firstName;
             this.LastName = lastName;
-            this.FullName = firstName + ' ' + lastName;
             this.PhoneNumber = phoneNumber;
             this.Quote = quote;
             this.Email = email;
@@ -35,5 +33,12 @@ namespace App3.Models
                 return ColorList.ColorsList[this.FirstName[0]];
             }
         }
+        public string FullName
+        {
+            get
+            { 
+                return string.Format("{0} {1}", this.FirstName, this.LastName);
+            }
+        }   
     }
 }

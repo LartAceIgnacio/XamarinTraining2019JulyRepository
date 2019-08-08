@@ -4,20 +4,17 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="App3.ListExercisePage">
+             x:Class="App3.ListExercisePage"
+             Title="My Contacts">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Name="TlbrAdd" 
+                     Text="Add"
+                     IconImageSource="add"
+                     Order="Primary"
+                     Clicked="TlbrAdd_Clicked"/>
+    </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <StackLayout>
-            <StackLayout
-                HorizontalOptions="Fill"
-                BackgroundColor="Maroon"
-                HeightRequest="50">
-                <Label
-                    Text="My Contacts"
-                    TextColor="White"
-                    FontSize="18"
-                    HorizontalOptions="Center"
-                    VerticalOptions="CenterAndExpand"/>
-            </StackLayout>
             <SearchBar 
                 Placeholder="Search" 
                 TextChanged="SearchBar_TextChanged"
@@ -58,6 +55,7 @@
                             </AbsoluteLayout>
                             <ViewCell.ContextActions>
                                 <MenuItem Clicked="Delete_Clicked" CommandParameter="{Binding .}" Text="Delete"/>
+                                <MenuItem Clicked="Update_Clicked" CommandParameter="{Binding .}" Text="Update"/>
                             </ViewCell.ContextActions>
                         </ViewCell>
                     </DataTemplate>
