@@ -6,7 +6,6 @@
              mc:Ignorable="d"
              x:Class="XamarinActivities.E5ContactPage"
              Title="My Contacts">
-
     <StackLayout>
         <AbsoluteLayout>
             <StackLayout Padding="10"
@@ -65,7 +64,7 @@
                          BackgroundColor="#2296F3"
                          Clicked="OnAdd_Clicked"
                          AbsoluteLayout.LayoutFlags="PositionProportional"
-                         AbsoluteLayout.LayoutBounds="0.95, 0.95, 50, 50"/>
+                         AbsoluteLayout.LayoutBounds="0.92, 0.95, 50, 50"/>
         </AbsoluteLayout>
     </StackLayout>
 </ContentPage>

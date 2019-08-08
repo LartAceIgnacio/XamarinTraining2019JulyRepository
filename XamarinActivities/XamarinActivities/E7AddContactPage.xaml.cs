@@ -14,12 +14,10 @@ namespace XamarinActivities
     public partial class E7AddContactPage : ContentPage
     {
         EventHandler<Person> _addContactEventHandler;
-        private int _id;
-        public E7AddContactPage(EventHandler<Person> addContactEventHandler, int id)
+        public E7AddContactPage(EventHandler<Person> addContactEventHandler)
         {
             InitializeComponent();
             _addContactEventHandler = addContactEventHandler;
-            _id = id;
 
             SetKeyboard();
         }
@@ -35,7 +33,6 @@ namespace XamarinActivities
         {
             var _personDetails = new Person
             {
-                Id = _id,
                 FirstName = entryFirstName.Text,
                 LastName = entryLastName.Text,
                 ContactNumber = entryContactNumber.Text,
@@ -43,6 +40,7 @@ namespace XamarinActivities
                 Email = entryEmail.Text,
                 Bio = editorBio.Text
             };
+
             _addContactEventHandler?.Invoke(this, _personDetails);
         }
     }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SQLite;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
@@ -8,6 +9,7 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using XamarinActivities.Database;
 using XamarinActivities.Model;
 
 namespace XamarinActivities
@@ -16,46 +18,19 @@ namespace XamarinActivities
     public partial class E5ContactPage : ContentPage
     {
         private ObservableCollection<Person> _peopleList = new ObservableCollection<Person>();
-        private Dictionary<String, String> _colorList = new Dictionary<String, String>()
-        {
-                { "A", "#ff0000"},
-                { "B", "#ff4000"},
-                { "C", "#ff8000"},
-                { "D", "#ffbf00"},
-                { "E", "#bfff00"},
-                { "F", "#80ff00"},
-                { "G", "#00ff00"},
-                { "H", "#00ffbf"},
-                { "I", "#0040ff"},
-                { "J", "#0000ff"},
-                { "K", "#8000ff"},
-                { "L", "#ff00ff"},
-                { "M", "#f0327e"},
-                { "N", "#856364"},
-                { "O", "#74807c"},
-                { "P", "#295730"},
-                { "Q", "#3c0e3d"},
-                { "R", "#85780b"},
-                { "S", "#662308"},
-                { "T", "#ff9eca"},
-                { "U", "#9ee8ff"},
-                { "V", "#c5ff9e"},
-                { "W", "#f2ff9e"},
-                { "X", "#822222"},
-                { "Y", "#4a638c"},
-                { "Z", "#e89c23"}
-        };
-        public Person PersonToDelete { get; set; }
+        public ContactsDb contactsDb = new ContactsDb();
+        public Person person;
         public E5ContactPage()
         {
             InitializeComponent();
-            InitContactList();
+            //InitContactList();
             InitItemSource();
         }
 
         private void InitItemSource()
         {
-            lstContacts.ItemsSource = _peopleList.OrderBy(p => p.FullName);
+            //lstContacts.ItemsSource = _peopleList.OrderBy(p => p.FullName);
+            lstContacts.ItemsSource = contactsDb.GetPeople().OrderBy(p => p.FullName);
         }
 
         private ObservableCollection<Person> InitContactList()
@@ -187,7 +162,7 @@ namespace XamarinActivities
             }
             else
             {
-                lstContacts.ItemsSource = _peopleList.Where(p => p.FirstName.ToLower().StartsWith(e.NewTextValue.ToLower())
+                lstContacts.ItemsSource = contactsDb.GetPeople().Where(p => p.FirstName.ToLower().StartsWith(e.NewTextValue.ToLower())
                                                                || p.LastName.ToLower().StartsWith(e.NewTextValue.ToLower())
                                                                || p.ContactNumber.Contains(e.NewTextValue))
                                                      .OrderBy(p => p.FirstName).ToList();
@@ -202,17 +177,20 @@ namespace XamarinActivities
 
             if (answer)
             {
-                _peopleList.Remove(personToDelete);
-                lstContacts.ItemsSource = _peopleList.OrderBy(p => p.FullName);
+                contactsDb.DeleteContact(personToDelete.Id);
+                InitItemSource();
+
                 await DisplayAlert("Contact List", personToDelete.FullName + " successfully deleted", "OK");
+
+                //_peopleList.Remove(personToDelete);
+                //lstContacts.ItemsSource = _peopleList.OrderBy(p => p.FullName);
             }
         }
 
         private void ContactListView_Refreshing(object sender, EventArgs e)
         {
-            InitContactList();
+            //InitContactList();
             InitItemSource();
-            lstContacts.EndRefresh();
         }
 
         async void ContactListView_Tapped(object sender, ItemTappedEventArgs e)
@@ -224,24 +202,31 @@ namespace XamarinActivities
 
         async void DeleteContact(object sender, Person person)
         {
-            _peopleList.Remove(person);
-            lstContacts.ItemsSource = _peopleList.OrderBy(p => p.FullName);
+            contactsDb.DeleteContact(person.Id);
+            InitItemSource();
+
             await DisplayAlert("Contact List", person.FullName + " successfully deleted", "OK");
             await Navigation.PopAsync();
+
+            //_peopleList.Remove(person);
+            //lstContacts.ItemsSource = _peopleList.OrderBy(p => p.FullName);
         }
 
         async void OnAdd_Clicked(object sender, EventArgs e)
         {
-            var id = _peopleList.Count + 1;
-            await Navigation.PushAsync(new E7AddContactPage(AddContact, id));
+            await Navigation.PushAsync(new E7AddContactPage(AddContact));
         }
 
         async void AddContact(object sender, Person person)
         {
-            _peopleList.Add(person);
-            lstContacts.ItemsSource = _peopleList.OrderBy(p => p.FullName);
+            contactsDb.CreateContact(person);
+            InitItemSource();
+
             await DisplayAlert("Contact List", person.FullName + " successfully added", "OK");
             await Navigation.PopAsync();
+
+            //_peopleList.Add(person);
+            //lstContacts.ItemsSource = _peopleList.OrderBy(p => p.FullName);
         }
 
         async void OnUpdate_Clicked(object sender, EventArgs e)
@@ -253,21 +238,26 @@ namespace XamarinActivities
 
         async void UpdateContact(object sender, Person person)
         {
-            var personToUpdate = _peopleList.FirstOrDefault(p => p.FullName.Contains(person.FullName));
+            contactsDb.UpdateContact(person);
+            InitItemSource();
 
-            if(personToUpdate != null)
-            {
-                personToUpdate.FirstName = person.FirstName;
-                personToUpdate.LastName = person.LastName;
-                personToUpdate.ContactNumber = person.ContactNumber;
-                personToUpdate.Email = person.Email;
-                personToUpdate.ImgURL = person.ImgURL;
-                personToUpdate.Bio = person.Bio;
-            }
-
-            lstContacts.ItemsSource = _peopleList.OrderBy(p => p.FullName);
             await DisplayAlert("Contact List", person.FullName + " successfully updated", "OK");
             await Navigation.PopToRootAsync();
+
+            //var personToUpdate = _peopleList.FirstOrDefault(p => p.FullName.Contains(person.FullName));
+
+            //if(personToUpdate != null)
+            //{
+            //    personToUpdate.FirstName = person.FirstName;
+            //    personToUpdate.LastName = person.LastName;
+            //    personToUpdate.ContactNumber = person.ContactNumber;
+            //    personToUpdate.Email = person.Email;
+            //    personToUpdate.ImgURL = person.ImgURL;
+            //    personToUpdate.Bio = person.Bio;
+            //}
+
+            //lstContacts.ItemsSource = _peopleList.OrderBy(p => p.FullName);
+
         }
 
     }
