@@ -20,7 +20,7 @@ namespace XamarinFormExercise
             //MainPage = new Exercise8RelativeLayout();
             // MainPage = new Practice();
             //MainPage = new Exercise9Images();
-            MainPage = new Exercise10ListViewExercise();
+            MainPage = new NavigationPage(new Exercise10ListViewExercise());
         }
 
         protected override void OnStart()

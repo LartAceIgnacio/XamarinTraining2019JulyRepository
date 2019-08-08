@@ -16,29 +16,27 @@ namespace XamarinFormExercise
     public partial class Exercise10ListViewExercise : ContentPage
     {
         private ObservableCollection<Person> _persons;
-        private Dictionary<string, string> ColorDictionary = new Dictionary<string, string>();
+        Person oldPerson;
 
         public Exercise10ListViewExercise()
         {
             
             InitializeComponent();
-            
             _persons = GetPersons();
-            GetColor();
             ListviewContacts.ItemsSource = _persons.OrderBy(contactPerson => contactPerson.Firstname);
         }
 
         ObservableCollection<Person> GetPersons()
         {
-           
-
             return _persons = new ObservableCollection<Person>
             {
                     new Person()
                     {
                         Firstname = "Aaron",
                         Lastname  =  "Custodio",
-                        ContactNumber = "09261231345"
+                        ContactNumber = "09261231345",
+                        Image = "https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Carlsen_Magnus_%2830238051906%29.jpg/220px-Carlsen_Magnus_%2830238051906%29.jpg",
+                        Quote = "S perm is the best perm #Rubiks"
                         
                       
 
@@ -47,78 +45,99 @@ namespace XamarinFormExercise
                     {
                         Firstname = "Jelmarose",
                         Lastname  =  "De Vera",
-                        ContactNumber = "09261231323"
-        
+                        ContactNumber = "09261231323",
+                        Image = "https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Carlsen_Magnus_%2830238051906%29.jpg/220px-Carlsen_Magnus_%2830238051906%29.jpg",
+                        Quote = "Bayad muna bago baba"
+
 
                     },
                     new Person()
                     {
                         Firstname = "Jasper",
                         Lastname  =  "Orilla",
-                        ContactNumber = "09321233456"
-                       
+                        ContactNumber = "09321233456",
+                        Image = "https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Carlsen_Magnus_%2830238051906%29.jpg/220px-Carlsen_Magnus_%2830238051906%29.jpg",
+                        Quote = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
+
 
                     },
-                        new Person()
+                    new Person()
                     {
                         Firstname = "Marc Kenneth",
                         Lastname  =  "Lomio",
-                        ContactNumber = "0942314532"
-                     
+                        ContactNumber = "0942314532",
+                        Image = "https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Carlsen_Magnus_%2830238051906%29.jpg/220px-Carlsen_Magnus_%2830238051906%29.jpg",
+                        Quote = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
+
 
                     },
-                            new Person()
+                    new Person()
                     {
                         Firstname = "Melrose",
                         Lastname  =  "Mejidana",
-                        ContactNumber = "0952122424"
+                        ContactNumber = "0952122424",
+                        Image = "https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Carlsen_Magnus_%2830238051906%29.jpg/220px-Carlsen_Magnus_%2830238051906%29.jpg",
+                        Quote = "Platino loves me"
                      
 
                     },
-                                new Person()
+                    new Person()
                     {
                         Firstname = "Felix Alexander",
                         Lastname  =  "Carao",
-                        ContactNumber = "09721231111"
-                  
+                        ContactNumber = "09721231111",
+                        Image = "https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Carlsen_Magnus_%2830238051906%29.jpg/220px-Carlsen_Magnus_%2830238051906%29.jpg",
+                        Quote = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
+
 
                     },
-                                    new Person()
+                    new Person()
                     {
                         Firstname = "Dino Angelo",
                         Lastname  =  "Reyes",
-                        ContactNumber = "09121233456"
-                     
+                        ContactNumber = "09121233456",
+                        Image = "https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Carlsen_Magnus_%2830238051906%29.jpg/220px-Carlsen_Magnus_%2830238051906%29.jpg",
+                        Quote = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
+
 
                     },
-                               new Person()
+                    new Person()
                     {
                         Firstname = "Kyla Gae",
                         Lastname  =  "Calpito",
-                        ContactNumber = "09821233456"
-                       
+                        ContactNumber = "09821233456",
+                        Image = "https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Carlsen_Magnus_%2830238051906%29.jpg/220px-Carlsen_Magnus_%2830238051906%29.jpg",
+                        Quote = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
+
 
                     },
-                               new Person()
+                    new Person()
                     {
                         Firstname = "Charles Kenichi",
                         Lastname  =  "Nazareno",
-                        ContactNumber = "09821233456"
-                        
+                        ContactNumber = "09821233456",
+                        Image = "https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Carlsen_Magnus_%2830238051906%29.jpg/220px-Carlsen_Magnus_%2830238051906%29.jpg",
+                        Quote = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
 
-                    },           new Person()
+
+                    },
+                    new Person()
                     {
                         Firstname = "Mermellah",
                         Lastname  =  "Angni",
-                        ContactNumber = "09821233456"
-                      
+                        ContactNumber = "09821233456",
+                        Image = "https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Carlsen_Magnus_%2830238051906%29.jpg/220px-Carlsen_Magnus_%2830238051906%29.jpg",
+                        Quote = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
+
 
                     },
-                                 new Person()
+                    new Person()
                     {
                         Firstname = "Arnold Allan",
                         Lastname  =  "Mendoza",
-                        ContactNumber = "09821233456"
+                        ContactNumber = "09821233456",
+                        Image = "https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Carlsen_Magnus_%2830238051906%29.jpg/220px-Carlsen_Magnus_%2830238051906%29.jpg",
+                        Quote = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
                     }
 
             };
@@ -138,10 +157,10 @@ namespace XamarinFormExercise
             }
         }
        
-        private void PersonListView_ItemTapped(object sender, ItemTappedEventArgs e)
+        async void PersonListView_ItemTapped(object sender, ItemTappedEventArgs e)
         {
-            var person = e.Item as Person;
-            DisplayAlert("Person", person.Firstname + " " + person.Lastname, "OK");
+            oldPerson = e.Item as Person;
+            await Navigation.PushAsync(new Exercise10ContactPage(oldPerson, onDeleteContactPerson));
         }
         
         private void Delete_Clicked(object sender, EventArgs e)
@@ -149,6 +168,18 @@ namespace XamarinFormExercise
             var menuItem = sender as MenuItem;
             var person = menuItem.CommandParameter as Person;
             _persons.Remove(person);
+            ListviewContacts.ItemsSource = _persons.OrderBy(contactPerson => contactPerson.Firstname);
+        }
+        async void Edit_Clicked(object sender, EventArgs e)
+        {
+            var menuItem = sender as MenuItem;
+            oldPerson = menuItem.CommandParameter as Person;
+            await Navigation.PushAsync(new Exercise10EditContactPerson(oldPerson, onEditContactPerson));
+        }
+       private void onEditContactPerson(object sender, Person person)
+        {
+            _persons.Remove(oldPerson);
+            _persons.Add(person);
             ListviewContacts.ItemsSource = _persons.OrderBy(contactPerson => contactPerson.Firstname);
         }
 
@@ -159,28 +190,22 @@ namespace XamarinFormExercise
             ListviewContacts.EndRefresh();
         }
 
-        private void GetColor()
+        private void onDeleteContactPerson(object sender, Person person)
         {
-            ColorDictionary.Add("A", "#800000");
-            ColorDictionary.Add("J", "#000000");
-            ColorDictionary.Add("M", "#191970");
-            ColorDictionary.Add("F", "#800080");
-            ColorDictionary.Add("D", "#556B2F");
-            ColorDictionary.Add("K", "#006400");
-            ColorDictionary.Add("C", "#2F4F4F");
-            
-          foreach (var selectPerson in _persons)
-            {
-                foreach (var selectColor in ColorDictionary)
-                {
-                    if (selectColor.Key == selectPerson.Firstname.Substring(0, 1))
-                    {
-                        selectPerson.ColorLogo = selectColor.Value;
-                    }
-                }
-            }
-
+            _persons.Remove(person);
+            ListviewContacts.ItemsSource = _persons.OrderBy(contactPerson => contactPerson.Firstname);
         }
+
+        async void gotoAddContactPerson(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new Exercise10AddContactPerson(onAddContactPerson));
+        }
+        private void onAddContactPerson(object sender, Person person)
+        {
+            _persons.Add(person);
+            ListviewContacts.ItemsSource = _persons.OrderBy(contactPerson => contactPerson.Firstname);
+        }
+
 
     }
 }

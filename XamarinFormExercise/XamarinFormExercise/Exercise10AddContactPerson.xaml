@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="XamarinFormExercise.Exercise10AddContactPerson">
+    <ContentPage.Content>
+        <StackLayout>
+            <TableView>
+                <TableRoot>
+                    <TableSection Title="Contact Information">
+                        <EntryCell 
+                           x:Name="Firstname"
+                           Placeholder="Firstname..."
+                           Keyboard="Text"/>
+                        <EntryCell x:Name="Lastname"
+                                   Placeholder="Lastname..."
+                                   Keyboard="Text"/>
+                        <EntryCell x:Name="ContactNumber"
+                                   Placeholder="ContactNumber..."
+                                   Keyboard="Telephone"/>
+                        <EntryCell x:Name="ImageUrl"
+                                   Placeholder="Image Url..."
+                                   Keyboard="Text"/>
+                    </TableSection>
+                    <TableSection>
+                        <ViewCell>
+                            <Editor x:Name="Quote"
+                                 Placeholder="Quote..."
+                                 Keyboard="Text"
+                                 AutoSize="TextChanges"/>
+                        </ViewCell>
+                    </TableSection>
+                    <TableSection>
+                        <ViewCell>
+                            <Button Text="Save Contact" 
+                                 Clicked="AddContactPerson"
+                                TextColor="White"
+                                BackgroundColor="Blue"/>
+                        </ViewCell>
+                    </TableSection>
+                </TableRoot>
+            </TableView>
+         
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
