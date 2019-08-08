@@ -5,10 +5,16 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="Contact.ContactProfilePage">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Name ="TlbrDelete" Clicked="DeleteContact_Clicked" Priority="1"    
+                     Text="Delete"/>
+    </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
+            <Label Text="{Binding FullName}" FontSize="15" 
+                   FontAttributes="Bold"
+                HorizontalOptions="CenterAndExpand"/>
+            <Label Text="{Binding ContactNumber}" FontSize="15" 
                 HorizontalOptions="CenterAndExpand" />
         </StackLayout>
     </ContentPage.Content>

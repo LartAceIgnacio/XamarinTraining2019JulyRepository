@@ -4,12 +4,15 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="Contact.AddContagePage">
+             x:Class="Contact.AddContactPerson">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <Entry x:Name="firstName" Placeholder="First Name"/>
+            <Entry x:Name="lastName" Placeholder="Last Name"/>
+            <Entry x:Name="email" Placeholder="Email" Keyboard="Email"/>
+
+            <Button x:Name ="btnSubmit" Text="Submit" TextColor="White" Clicked="AddContact_Clicked" BackgroundColor="#5c8dff"/>
+            
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

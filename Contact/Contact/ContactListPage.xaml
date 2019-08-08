@@ -5,11 +5,59 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="Contact.ContactListPage">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Name="TlbrHome" Order="Primary" Icon="add.png" Text="Add New Contact" Priority="0" Clicked="ShowAdd_Contact"/>
+    </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <ListView x:Name="contactListView" RowHeight="50"
+                      IsPullToRefreshEnabled="True"
+                      Refreshing="ContactListView_Refreshing"
+                      ItemTapped="ContactListView_ItemTapped">
+
+                <ListView.Header>
+                    <StackLayout>
+                        <Label Text="People List"
+                               HorizontalOptions="CenterAndExpand"/>
+                        <SearchBar Placeholder="Search Here" TextChanged="SearchBar_TextChanged"/>
+                    </StackLayout>
+                </ListView.Header>
+
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal"
+                                         Padding="20, 0, 20, 0"
+                                         VerticalOptions="Center">
+
+                                <AbsoluteLayout>
+                                    <BoxView Color="{Binding BoxColor}" 
+                                             CornerRadius="10" 
+                                             Margin="0, 5, 0, 0"/>
+
+                                    <Label Text="{Binding Initials}"
+                                           HorizontalTextAlignment="Center"
+                                           VerticalOptions="Center"
+                                           
+                                           AbsoluteLayout.LayoutFlags="All"
+                                           AbsoluteLayout.LayoutBounds="1, 1, 1, 1"/>
+                                </AbsoluteLayout>
+
+                                <StackLayout>
+                                    <Label Text="{Binding FullName}"
+                                           FontSize="20"
+                                           FontAttributes="Bold"/>
+                                    <Label Text="{Binding ContactNumber}"/>
+                                </StackLayout>
+                            </StackLayout>
+                            <ViewCell.ContextActions>
+                                <MenuItem Clicked="Delete_Clicked" CommandParameter="{Binding .}" Text="Delete"/>
+                            </ViewCell.ContextActions>
+
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
