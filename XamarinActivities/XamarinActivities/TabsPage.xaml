@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+            xmlns:pages="clr-namespace:XamarinActivities"
+            mc:Ignorable="d"
+             x:Class="XamarinActivities.TabsPage">
+  <!--Pages can be added as references or inline-->
+    <pages:WelcomePage Title= "Welcome Page" />
+    <pages:InstagramPage Title= "Instagram Page" />
+    <pages:DialPage Title= "Dial Page" />
+    <pages:CalculatorPage Title= "Calculator Page" />
+    <pages:QuotesPage Title= "Quotes Page" />
+    <pages:BoxColorPage Title= "Box Page" />
+    <pages:AbsolutePage Title= "Absolute Page" />
+    <pages:RelativePage Title= "Relative Page" />
+    <pages:GridImagePage Title= "Gallery Page" />
+</TabbedPage>

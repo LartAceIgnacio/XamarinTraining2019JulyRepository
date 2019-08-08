@@ -31,7 +31,7 @@ namespace XamarinActivities
                 new MasterPageItem() { Title = "Contacts", Icon = "arrow_right.png", TargetType = typeof(ContactsPage) },
             };
             navigationDrawer.ItemsSource = menuList;
-            Detail = new NavigationPage((Page)Activator.CreateInstance(typeof(WelcomePage)));
+            Detail = new NavigationPage((Page)Activator.CreateInstance(typeof(ContactsPage)));
         }
 
         private void onMenuItemSelected(object sender, SelectedItemChangedEventArgs e)
