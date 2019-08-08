@@ -9,7 +9,8 @@
              Title="{Binding FirstName}"
              x:Class="XamarinExercise.ContactInfoPage">
     <ContentPage.ToolbarItems>
-        <ToolbarItem Name="TlbrHome" Order="Primary" Icon="profiledelete.png" Text="Delete" Priority="0" Clicked="Contact_Delete"/>
+        <ToolbarItem Name="TlbrDelete" Order="Primary" Icon="profiledelete.png" Text="Delete" Priority="1" Clicked="Contact_Delete"/>
+        <ToolbarItem Name="TlbrEdit" Order="Primary" Icon="edit.png" Text="Edit Contact" Priority="0" Clicked="Contact_Edit"/>
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <ScrollView>

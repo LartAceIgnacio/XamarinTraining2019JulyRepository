@@ -11,21 +11,24 @@ using XamarinExercise.Models;
 namespace XamarinExercise
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class AddContactPage : ContentPage
+    public partial class EditContactPage : ContentPage
     {
-        int id;
-        private EventHandler<Contacts> _addContactEventHandler;
-        public AddContactPage(EventHandler<Contacts> addContactEventHandler, int id)
+        Contacts contact;
+        private EventHandler<Contacts> _editContactEventHandler;
+        public EditContactPage(Contacts contact, EventHandler<Contacts> editContactEventHandler)
         {
             InitializeComponent();
-            this.id = id;
-            _addContactEventHandler = addContactEventHandler;
+            this.contact = contact;
+            this.BindingContext = contact;
+            birthday.Date = DateTime.Parse(contact.Birthday);
+            this._editContactEventHandler = editContactEventHandler;
         }
+
         void Submit_Clicked(object sender, EventArgs e)
         {
-            var newContact = new Contacts()
+            var editContact = new Contacts()
             {
-                id = this.id,
+                id = contact.id,
                 FirstName = firstName.Text,
                 LastName = lastName.Text,
                 ContactNo = contactNo.Text,
@@ -33,7 +36,7 @@ namespace XamarinExercise
                 EmailAddress = email.Text,
                 Birthday = birthday.Date.ToString()
             };
-            this._addContactEventHandler?.Invoke(this, newContact);
+            this._editContactEventHandler?.Invoke(this, editContact);
         }
     }
 }

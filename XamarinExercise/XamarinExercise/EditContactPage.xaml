@@ -6,18 +6,18 @@
              mc:Ignorable="d"
              Padding="20"
              BackgroundColor="#dbe2ff"
-             Title="Add New Contact"
-             x:Class="XamarinExercise.AddContactPage">
+             Title="Edit Contact"
+             x:Class="XamarinExercise.EditContactPage">
     <ContentPage.Content>
         <Frame HasShadow="True"
                VerticalOptions="StartAndExpand">
             <StackLayout>
-                <Entry x:Name="firstName" Placeholder="FirstName"/>
-                <Entry x:Name="lastName" Placeholder="LastName"/>
-                <Entry x:Name="contactNo" Placeholder="Contact No." Keyboard="Telephone"/>
-                <Entry x:Name="address" Placeholder="Address"/>
-                <Entry x:Name="email" Placeholder="EmailAddress" Keyboard="Email"/>
-                <DatePicker x:Name="birthday"/>
+                <Entry x:Name="firstName" Placeholder="FirstName" Text="{Binding FirstName}" />
+                <Entry x:Name="lastName" Placeholder="LastName" Text="{Binding LastName}" />
+                <Entry x:Name="contactNo" Placeholder="Contact No." Keyboard="Telephone" Text="{Binding ContactNo}"/>
+                <Entry x:Name="address" Placeholder="Address" Text="{Binding Address}"/>
+                <Entry x:Name="email" Placeholder="EmailAddress" Keyboard="Email" Text="{Binding EmailAddress}"/>
+                <DatePicker x:Name="birthday" Date="{Binding Birthday}"/>
                 <Button x:Name ="btnSubmit" Text="Submit" Clicked="Submit_Clicked"/>
             </StackLayout>
         </Frame>

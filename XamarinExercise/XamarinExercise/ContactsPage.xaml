@@ -19,7 +19,6 @@
                 <ListView x:Name="contactListView"
                       IsPullToRefreshEnabled="True"
                       Refreshing="ContactList_Refreshing"
-                      SeparatorVisibility="None"
                       RowHeight="50"
                       ItemTapped="ContactItem_Tapped">
 
@@ -60,6 +59,7 @@
                                 </StackLayout>
 
                                 <ViewCell.ContextActions>
+                                    <MenuItem Clicked="Edit_Clicked" CommandParameter="{Binding .}" Text="Edit"/>
                                     <MenuItem Clicked="Delete_Clicked" CommandParameter="{Binding .}" Text="Delete"/>
                                 </ViewCell.ContextActions>
 

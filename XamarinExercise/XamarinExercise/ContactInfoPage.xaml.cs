@@ -14,10 +14,12 @@ namespace XamarinExercise
     public partial class ContactInfoPage : ContentPage
     {
         Contacts contact;
-        public ContactInfoPage(Contacts contact)
+        private EventHandler<Contacts> _editContactEventHandler;
+        public ContactInfoPage(Contacts contact, EventHandler<Contacts> editContactEventHandler)
         {
             InitializeComponent();
             this.contact = contact;
+            _editContactEventHandler = editContactEventHandler;
             //btnBack.Clicked += Back_Pop;
             this.BindingContext = contact;
         }
@@ -34,6 +36,10 @@ namespace XamarinExercise
                 await this.Navigation.PopModalAsync();
                 MessagingCenter.Send<ContactInfoPage, Contacts>(this, "delete this", contact);
             }
+        }
+        async void Contact_Edit(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new EditContactPage(contact, _editContactEventHandler));
         }
     }
 }
