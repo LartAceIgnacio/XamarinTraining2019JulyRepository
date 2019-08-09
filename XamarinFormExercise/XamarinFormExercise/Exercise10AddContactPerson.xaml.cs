@@ -24,22 +24,31 @@ namespace XamarinFormExercise
         }
         async void AddContactPerson(object sender, EventArgs e)
         {
-            string firstName = Firstname.GetValue(EntryCell.TextProperty).ToString();
-            string lastName = Lastname.GetValue(EntryCell.TextProperty).ToString();
-            string contact = ContactNumber.GetValue(EntryCell.TextProperty).ToString();
-            string imageUrl = ImageUrl.GetValue(EntryCell.TextProperty).ToString();
-            string quote = Quote.GetValue(Editor.TextProperty).ToString();
-            _person =
-               new Person()
-               {
-                Firstname = firstName,
-                Lastname = lastName,
-                ContactNumber = contact,
-                Image = imageUrl,
-                Quote = quote
-               };
-            this._onAddContactPersonEventHandler?.Invoke(this, this._person);
-            await this.Navigation.PopAsync(false);
+            string firstName = Firstname.Text;
+            string lastName = Lastname.Text;
+            string contact = ContactNumber.Text;
+            string imageUrl = ImageUrl.Text;
+            string quote = Quote.Text;
+            if (firstName == "" || firstName == null || lastName == "" || lastName == null ||
+               contact == "" || contact == null || imageUrl == "" || imageUrl == null ||
+               quote == "" || quote == null)
+            {
+                await DisplayAlert("", "All field is required", "OK");
+            }
+            else
+            {
+                _person =
+                   new Person()
+                   {
+                       Firstname = firstName,
+                       Lastname = lastName,
+                       ContactNumber = contact,
+                       Image = imageUrl,
+                       Quote = quote
+                   };
+                this._onAddContactPersonEventHandler?.Invoke(this, this._person);
+                await this.Navigation.PopAsync(false);
+            }
         }
     }
 }

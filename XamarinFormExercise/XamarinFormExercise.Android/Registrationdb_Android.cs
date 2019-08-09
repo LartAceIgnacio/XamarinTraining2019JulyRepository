@@ -21,7 +21,7 @@ namespace XamarinFormExercise.Droid
     {
         public SQLiteConnection GetConnection()
         {
-            var sqliteContact = "Contactsdb.db3";
+            var sqliteContact = "Contactdb.db3";
             string documentsPath = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal);
             var path = Path.Combine(documentsPath, sqliteContact);
             var conn = new SQLiteConnection(path, SQLiteOpenFlags.ReadWrite | SQLiteOpenFlags.Create | SQLiteOpenFlags.SharedCache);

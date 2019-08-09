@@ -13,18 +13,22 @@
                         <EntryCell 
                            x:Name="ExistingFirstname"
                            Placeholder="Firstname..."
-                           Keyboard="Text"/>
+                           Keyboard="Text"
+                            Label="Firstname"/>
                         <EntryCell x:Name="ExistingLastname"
                                    Placeholder="Lastname..."
-                                   Keyboard="Text"/>
+                                   Keyboard="Text"
+                                   Label="Lastname"/>
                         <EntryCell x:Name="ExistingContactNumber"
                                    Placeholder="ContactNumber..."
-                                   Keyboard="Telephone"/>
+                                   Keyboard="Telephone"
+                                   Label="Contact Number"/>
                         <EntryCell x:Name="ExistingImageUrl"
                                    Placeholder="Image Url..."
-                                   Keyboard="Text"/>
+                                   Keyboard="Text"
+                                   Label="Image Url"/>
                     </TableSection>
-                    <TableSection>
+                    <TableSection Title="Quote">
                         <ViewCell>
                             <Editor x:Name="ExistingQuote"
                                  Placeholder="Quote..."

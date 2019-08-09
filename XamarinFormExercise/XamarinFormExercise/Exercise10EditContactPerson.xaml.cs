@@ -31,23 +31,34 @@ namespace XamarinFormExercise
         }
         async void UpdateContactPerson(object sender, EventArgs e)
         {
-            string firstName = ExistingFirstname.GetValue(EntryCell.TextProperty).ToString();
-            string lastName = ExistingLastname.GetValue(EntryCell.TextProperty).ToString();
-            string contact = ExistingContactNumber.GetValue(EntryCell.TextProperty).ToString();
-            string imageUrl = ExistingImageUrl.GetValue(EntryCell.TextProperty).ToString();
-            string quote = ExistingQuote.GetValue(Editor.TextProperty).ToString();
-            _person =
-               new Person()
-               {
-                   Id = _person.Id,
-                   Firstname = firstName,
-                   Lastname = lastName,
-                   ContactNumber = contact,
-                   Image = imageUrl,
-                   Quote = quote
-               };
-            this._onEditContactPersonEventHandler?.Invoke(this, this._person);
-            await this.Navigation.PopAsync(false);
+            string firstName = ExistingFirstname.Text;
+            string lastName = ExistingLastname.Text;
+            string contact = ExistingContactNumber.Text;
+            string imageUrl = ExistingImageUrl.Text;
+            string quote = ExistingQuote.Text;
+            if(firstName == "" || firstName == null || lastName == "" || lastName == null ||
+                contact == "" || contact == null || imageUrl == "" || imageUrl == null ||
+                quote == "" || quote == null)
+            {
+                await DisplayAlert("", "All field is required", "OK");
+            }
+            else
+            {
+                _person =
+              new Person()
+              {
+                  Id = _person.Id,
+                  Firstname = firstName,
+                  Lastname = lastName,
+                  ContactNumber = contact,
+                  Image = imageUrl,
+                  Quote = quote
+              };
+                this._onEditContactPersonEventHandler?.Invoke(this, this._person);
+                await this.Navigation.PopAsync(false);
+
+            }
+           
         }
     }
 }

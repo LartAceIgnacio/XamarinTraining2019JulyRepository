@@ -96,7 +96,7 @@ namespace XamarinFormExercise
         private void GetAllContactPerson()
         {
             var contactPersons = contactDb.GetContactPersons();
-            ListviewContacts.ItemsSource = contactPersons;
+           ListviewContacts.ItemsSource = contactPersons;
         }
 
     }
