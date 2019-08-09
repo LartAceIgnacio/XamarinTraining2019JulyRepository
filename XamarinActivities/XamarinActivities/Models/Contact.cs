@@ -1,15 +1,26 @@
-﻿using System;
+﻿using SQLite;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace XamarinActivities.Models
 {
+    [Table("Contacts")]
     public class Contact
     {
+        [PrimaryKey, AutoIncrement]
+        public int Id { get; set; }
+
+        [NotNull]
         public string FirstName { get; set; }
+
+        [NotNull]
         public string LastName { get; set; }
+
         public string FullName { get; set; }
         public string Initials { get; set; }
+
+        [NotNull]
         public string MobileNumber { get; set; }
         public string EmailAddress { get; set; }
         public string FacebookLink { get; set; }
@@ -26,6 +37,11 @@ namespace XamarinActivities.Models
             EmailAddress = emailAddress;
             FacebookLink = facebookLink;
             InstagramLink = instagramLink;
+        }
+
+        public Contact()
+        {
+
         }
     }
 }
