@@ -21,7 +21,7 @@ namespace Contact.Droid
     {
         public SQLiteConnection GetConnection()
         {
-            var sqliteFilename = "ContactDb.db3";
+            var sqliteFilename = "contactDb.db3";
             string documentsPath = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal);
             var path = Path.Combine(documentsPath, sqliteFilename);
 

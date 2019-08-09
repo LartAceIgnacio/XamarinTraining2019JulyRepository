@@ -36,7 +36,7 @@ namespace Contact
             };
             if (firstName.Text == null || lastName.Text == null || contactNumber.Text == null || email.Text == null)
             {
-                DisplayAlert("Registration", "Please Enter All the Fields!", "Ok");
+                DisplayAlert("Registration Failed!", "Please Enter All the Fields!", "Ok");
             }
             else
             {

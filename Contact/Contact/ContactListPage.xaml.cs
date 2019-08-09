@@ -17,7 +17,6 @@ namespace Contact
     {
         ObservableCollection<ContactDb> dbContactList = new ObservableCollection<ContactDb>();
         ObservableCollection<Person> contactList = new ObservableCollection<Person>();
-        ObservableCollection<Person> filterGroup = new ObservableCollection<Person>();
         public ContactDb contactDb;
         public Person person;
 
@@ -27,21 +26,6 @@ namespace Contact
             List_Refresh();
         }
         
-        ObservableCollection<Person>  FilterList(string searchText = null)
-        {
-
-            var list = contactList;
-            if (String.IsNullOrWhiteSpace(searchText))
-            {
-                return contactList;
-            }
-            else
-            {
-                var filter = list.Where(p => p.FullName.ToLower().Contains(searchText.ToLower()) || p.ContactNumber.ToLower().Contains(searchText.ToLower()));
-                ObservableCollection<Person> filterGroup = new ObservableCollection<Person>(filter);
-                return filterGroup;
-            }
-        }
             
         async void Delete_Clicked(object sender, EventArgs e)
         {
@@ -67,8 +51,9 @@ namespace Contact
 
         private void SearchBar_TextChanged(object sender, TextChangedEventArgs e)
         {
-            filterGroup = FilterList(e.NewTextValue);
-            contactListView.ItemsSource = filterGroup.OrderBy(n => n.FirstName);
+            contactDb = new ContactDb();
+            string searchString = e.NewTextValue.ToLower();
+            contactListView.ItemsSource = contactDb.SearchPerson(searchString).OrderBy(n => n.FullName);
         }
 
         private void ContactListView_Refreshing(object sender, EventArgs e)
@@ -91,14 +76,24 @@ namespace Contact
         async private void ContactListView_ItemTapped(object sender, ItemTappedEventArgs e)
         {
             Person person = e.Item as Person;
-            var contactProfilePage = new ContactProfilePage(person, DeleteContactProfile);
+            var contactProfilePage = new ContactProfilePage(person, DeleteContactProfile, EditContactProfile);
             await this.Navigation.PushAsync(contactProfilePage);
         }
+
+        async void EditContactProfile(object sender, Person person)
+        {
+            contactDb = new ContactDb();
+            this.contactDb.UpdateContact(person);
+            await DisplayAlert("Contact Added", person.FirstName + " is now update to your Contacts", "Ok");
+            List_Refresh();
+            await this.Navigation.PopAsync();
+        }
+
         async void AddContactProfile(object sender, Person person)
         {
             contactDb = new ContactDb();
             this.contactDb.AddContact(person);
-            await DisplayAlert("Contact Added", person.FirstName + "Added to your Contacts", "Ok");
+            await DisplayAlert("Contact Added", person.FirstName + " is now added to your Contacts", "Ok");
             List_Refresh();
             await this.Navigation.PopAsync();
 

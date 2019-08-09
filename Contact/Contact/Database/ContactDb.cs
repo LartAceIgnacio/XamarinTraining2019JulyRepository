@@ -12,7 +12,9 @@ namespace Contact.Database
     public class ContactDb
     {
         private SQLiteConnection _sqlconnection;
-        
+
+        public string FullName { get; set; }
+        public string ContactNumber { get; set; }
         public ContactDb()
         {
             _sqlconnection = DependencyService.Get<ISqlite>().GetConnection();
@@ -38,6 +40,10 @@ namespace Contact.Database
         public void UpdateContact(Person person)
         {
             _sqlconnection.Update(person);
+        }
+        public IEnumerable<Person> SearchPerson(string searchText)
+        {
+            return _sqlconnection.Table<Person>().Where(p => p.FirstName.ToLower().Contains(searchText.ToLower()) || p.ContactNumber.ToLower().Contains(searchText.ToLower()));
         }
     }
 }

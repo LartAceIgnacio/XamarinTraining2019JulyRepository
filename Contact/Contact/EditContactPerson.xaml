@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Contact.EditContactPerson">
+    <ContentPage.Content>
+        <StackLayout Padding="30, 30, 30, 30">
+            <Label Text="Edit Contact" FontSize="40" HorizontalTextAlignment="Center" />
+            <Label Text="First Name:" HorizontalOptions="Start"/>
+            <Entry x:Name="firstName" Text ="{Binding FirstName}" Placeholder="First Name"/>
+            <Label Text="Last Name:" HorizontalOptions="Start"/>
+            <Entry x:Name="lastName" Text="{Binding LastName}" Placeholder="Last Name"/>
+            <Label Text="Contact Number:" HorizontalOptions="Start"/>
+            <Entry x:Name="contactNumber" Text="{Binding ContactNumber}" Placeholder="Contact Number"/>
+            <Label Text="Email Address:" HorizontalOptions="Start"/>
+            <Entry x:Name="email" Text="{Binding Email}" Placeholder="Email Address" Keyboard="Email"/>
+            
+            <Button x:Name ="btnSubmit" Text="Submit" Clicked="BtnSubmit_Clicked"/>
+            
+            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

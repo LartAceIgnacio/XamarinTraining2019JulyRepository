@@ -10,15 +10,17 @@
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <StackLayout>
-            <ListView x:Name="contactListView" RowHeight="50"
+            <ListView x:Name="contactListView" RowHeight="75"
                       IsPullToRefreshEnabled="True"
                       Refreshing="ContactListView_Refreshing"
                       ItemTapped="ContactListView_ItemTapped">
 
                 <ListView.Header>
                     <StackLayout>
-                        <Label Text="People List"
-                               HorizontalOptions="CenterAndExpand"/>
+                        <Label Text="Contact List"
+                               HorizontalOptions="CenterAndExpand"
+                               FontSize="15"
+                               FontAttributes="Bold"/>
                         <SearchBar Placeholder="Search Here" TextChanged="SearchBar_TextChanged"/>
                     </StackLayout>
                 </ListView.Header>
@@ -53,7 +55,6 @@
                             <ViewCell.ContextActions>
                                 <MenuItem Clicked="Delete_Clicked" CommandParameter="{Binding .}" Text="Delete"/>
                             </ViewCell.ContextActions>
-
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>

@@ -6,16 +6,55 @@
              mc:Ignorable="d"
              x:Class="Contact.ContactProfilePage">
     <ContentPage.ToolbarItems>
+        <ToolbarItem Name ="TlbrEdit" Clicked="TlbrEdit_Clicked"  Priority="0"    
+                     Text="Edit"/>
         <ToolbarItem Name ="TlbrDelete" Clicked="DeleteContact_Clicked" Priority="1"    
                      Text="Delete"/>
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="{Binding FullName}" FontSize="15" 
-                   FontAttributes="Bold"
-                HorizontalOptions="CenterAndExpand"/>
-            <Label Text="{Binding ContactNumber}" FontSize="15" 
-                HorizontalOptions="CenterAndExpand" />
+        <StackLayout Padding="50,50,50,50">
+            <StackLayout HorizontalOptions="Center"
+                         Orientation="Horizontal"
+                Padding="20, 0, 20, 0">
+                <AbsoluteLayout>
+                    <BoxView Color="{Binding BoxColor}"
+                     HorizontalOptions="CenterAndExpand"
+                     WidthRequest="100"
+                     HeightRequest="100"
+                     CornerRadius="100"
+                     Margin="0, 5, 0, 0"/>
+
+                    <Label Text="{Binding Initials}"
+                    HorizontalTextAlignment="Center"
+                    VerticalOptions="Center"
+                    FontSize="40"
+                    AbsoluteLayout.LayoutFlags="All"
+                    AbsoluteLayout.LayoutBounds="1, 1, 1, 1"/>
+                </AbsoluteLayout>
+            </StackLayout>
+            
+            <StackLayout>
+                <Label Text="{Binding FullName}" FontSize="25" 
+                       FontAttributes="Bold"
+                       HorizontalOptions="CenterAndExpand"/>
+                <StackLayout  Margin="0, 50, 20, 50" Orientation="Horizontal">
+                    <ImageButton x:Name="call_Person" Clicked="Call_Person_Clicked" Source="call.png" HeightRequest="30" WidthRequest="30" BackgroundColor="Transparent" />
+                    <ImageButton x:Name="message_Person" Clicked="Message_Person_Clicked" Source="envelope.png" HeightRequest="30" WidthRequest="30" BackgroundColor="Transparent" HorizontalOptions="CenterAndExpand" Margin="0, 0, 25, 0"/>
+                    <ImageButton/>
+                </StackLayout>
+                <StackLayout>
+                    <Label Text="Contact Number:" FontSize="15" 
+                           HorizontalOptions="CenterAndExpand" />
+                    <Label Text="{Binding ContactNumber}" FontSize="25" 
+                           HorizontalOptions="CenterAndExpand" />
+                    <Label Text="Email Address:" FontSize="15" 
+                           HorizontalOptions="CenterAndExpand" />
+                    <Label Text="{Binding Email}" FontSize="25" 
+                           HorizontalOptions="CenterAndExpand" />
+                </StackLayout>
+                
+            </StackLayout>
         </StackLayout>
+
     </ContentPage.Content>
 </ContentPage>
