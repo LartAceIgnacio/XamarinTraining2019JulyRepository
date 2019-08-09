@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
+using SQLite;
 
 namespace XamarinEssentials.Exercises.Models
 {
     public class Contact
     {
+        [PrimaryKey, AutoIncrement]
         public int Id { get; set; }
         public string FirstName {get; set;}
         public string LastName { get; set; }

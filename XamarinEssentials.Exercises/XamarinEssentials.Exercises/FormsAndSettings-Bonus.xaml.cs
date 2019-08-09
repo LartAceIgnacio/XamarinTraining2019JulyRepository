@@ -37,6 +37,13 @@ namespace XamarinEssentials.Exercises
 
         private void Submit_Clicked(object sender, EventArgs e)
         {
+            if (string.IsNullOrWhiteSpace(enFirstName.Text) ||
+                string.IsNullOrWhiteSpace(enLastName.Text) ||
+                string.IsNullOrWhiteSpace(enContactNo.Text))
+            {
+                DisplayAlert("Add failed", "First name, Last name, and Contact number fields cannot be empty", "Ok");
+                return;
+            }
             var UpdatedContact = new Contact
             {
                 Id = _contact.Id,

@@ -13,14 +13,16 @@ namespace XamarinEssentials.Exercises
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class NavigationPage_Exercise : ContentPage
     {
-        private Contact contact;
+        private readonly Contact contact;
+        private readonly EventHandler<Contact> _deleteContactEventHandler;
 
-        public NavigationPage_Exercise(Contact item)
+        public NavigationPage_Exercise(Contact item, EventHandler<Contact> deleteContactEventHandler)
         {
             InitializeComponent();
             btnBack.Clicked += BtnBack_Clicked;
 
             contact = item;
+            this._deleteContactEventHandler = deleteContactEventHandler;
 
             ciAvatar.Source = contact.AvatarUrl;
             lblName.Text = contact.FullName;
@@ -31,7 +33,7 @@ namespace XamarinEssentials.Exercises
 
         private void BtnBack_Clicked(object sender, EventArgs e)
         {
-            this.Navigation.PopModalAsync();
+            this.Navigation.PopAsync();
         }
 
         private async void TlbrDelete_Clicked(object sender, EventArgs e)
@@ -42,8 +44,8 @@ namespace XamarinEssentials.Exercises
 
             if (answer)
             {
-                MessagingCenter.Send<NavigationPage_Exercise, Contact>(this, "delete_contact", contact);
-                await this.Navigation.PopModalAsync();
+                this._deleteContactEventHandler?.Invoke(this, this.contact);
+                await this.Navigation.PopAsync();
             }
         }
     }
