@@ -59,15 +59,9 @@ namespace XamarinActivities
                 return false;
             }
 
-            if ( entryContactNumber.Text.Length <= 1)
+            if (entryContactNumber.Text.Length != 12 || entryContactNumber.Text.Length != 9)
             {
-                DisplayAlert("", "Too short for a valid contact number! Must be 8-12 in length.", "OK");
-                return false;
-            }
-
-            if (entryContactNumber.Text.Length >= 12)
-            {
-                DisplayAlert("", "Too long for a valid contact number! Must be 8-12 in length.", "OK");
+                DisplayAlert("", "Contact number must be 8-12 in length.", "OK");
                 return false;
             }
 
