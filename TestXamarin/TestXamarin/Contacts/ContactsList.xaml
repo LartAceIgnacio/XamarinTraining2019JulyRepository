@@ -9,7 +9,9 @@
     <ContentPage.Content>
         <StackLayout>
             <ListView x:Name="listContacts"
-                      ItemTapped="ListContacts_ItemTapped">
+                      ItemTapped="ListContacts_ItemTapped"
+                      IsPullToRefreshEnabled="True"
+                      Refreshing="ListContacts_Refreshing">
                 <ListView.Header>
                     <StackLayout>
                         <StackLayout Orientation="Horizontal" Padding="10, 5, 5, 5">

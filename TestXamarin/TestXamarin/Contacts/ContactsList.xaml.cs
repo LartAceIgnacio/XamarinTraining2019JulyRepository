@@ -188,5 +188,11 @@ namespace TestXamarin.Contacts
             NavigationPage.SetHasNavigationBar(page, false);
             await Navigation.PushAsync(page);
         }
+
+        private void ListContacts_Refreshing(object sender, EventArgs e)
+        {
+            GetContacts();
+            this.listContacts.EndRefresh();
+        }
     }
 }
