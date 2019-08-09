@@ -28,6 +28,9 @@
     <EmbeddedResource Update="ContactPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Update="DatabaseExercise.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="GridExercise1.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
@@ -41,6 +44,9 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="ListExercise.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="MainNav.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Page1.xaml">

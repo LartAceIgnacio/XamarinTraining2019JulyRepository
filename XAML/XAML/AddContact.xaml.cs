@@ -31,13 +31,22 @@ namespace XAML
 
         private void ButtonAdd_Clicked(object sender, EventArgs e)
         {
-            Person _person = new Person
+            if (string.IsNullOrWhiteSpace(entryFirstName.Text) || string.IsNullOrWhiteSpace(entryLastName.Text) || string.IsNullOrWhiteSpace(entryContact.Text) || string.IsNullOrWhiteSpace(edtrQuote.Text)
             {
-                FirstName = entryFirstName.Text,
-                LastName = entryLastName.Text,
-                ContactNumber = entryContact.Text
-            };
-            this._addContactHandler?.Invoke(this, _person);
+                DisplayAlert("Alert", "Please fill all required fields.", "Okay");   
+            }
+
+            else
+            {
+                Person _person = new Person
+                {
+                    FirstName = entryFirstName.Text,
+                    LastName = entryLastName.Text,
+                    ContactNumber = entryContact.Text
+                };
+                this._addContactHandler?.Invoke(this, _person);
+            }
+            
         }
 
     }

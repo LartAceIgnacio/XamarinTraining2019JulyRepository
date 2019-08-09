@@ -20,9 +20,7 @@ namespace XAML
             //MainPage = new RelativeExercise();
             //MainPage = new ImageExercise1();
             //MainPage = new ImageExercise2();
-            var page = new ListExercise();
-            MainPage = new NavigationPage(page);
-            NavigationPage.SetHasNavigationBar(page, false);
+            MainPage = new NavigationPage(new DatabaseExercise());
         }
 
         protected override void OnStart()
