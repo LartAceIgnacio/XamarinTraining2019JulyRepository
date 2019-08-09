@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SQLite;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -38,6 +39,8 @@ namespace XamarinExcercise
             {'Y',Color.FromRgb(93,11,141) },
             {'Z',Color.FromRgb(63,54,15) }
         };
+        [PrimaryKey, AutoIncrement]
+        public int Id { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string ContactNumber { get; set; }

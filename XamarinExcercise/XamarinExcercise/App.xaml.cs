@@ -1,6 +1,7 @@
 ﻿using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using XamarinExcercise.Db;
 
 namespace XamarinExcercise
 {
@@ -18,7 +19,7 @@ namespace XamarinExcercise
             //MainPage = new AbsoluteLayoutExercise();
             //MainPage = new RelativeLayoutExercise();
             //MainPage = new ImageExercise();
-            var page = new ListExercise();
+            var page = new ListExercise(new ContactDb());
             MainPage = new NavigationPage(page);
             //NavigationPage.SetHasNavigationBar(page, false);
         }

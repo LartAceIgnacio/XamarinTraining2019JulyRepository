@@ -20,8 +20,6 @@ namespace XamarinExcercise
             this._person = person;
             this.BindingContext = person;
             this._deleteContactDetailEventHandler = deleteContactDetailEventHandler;
-
-
         }
 
         private async void Delete_Clicked(object sender, EventArgs e)
