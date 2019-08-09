@@ -8,18 +8,19 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 using XamarinActivities.Models;
+using XamarinActivities.ViewModel;
 
 namespace XamarinActivities.ContactsPages
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ViewContactPage : ContentPage
     {
-        private Contact _contact;
-        private EventHandler<Contact> DeleteContactEventHandler;
-        private EventHandler<Contact> EditContactEventHandler;
-        public ViewContactPage(Contact contact, 
-                               EventHandler<Contact> deleteContactEventHandler,
-                               EventHandler<Contact> editContactEventHandler)
+        private ContactViewModel _contact;
+        private EventHandler<ContactViewModel> DeleteContactEventHandler;
+        private EventHandler<ContactViewModel> EditContactEventHandler;
+        public ViewContactPage(ContactViewModel contact, 
+                               EventHandler<ContactViewModel> deleteContactEventHandler,
+                               EventHandler<ContactViewModel> editContactEventHandler)
         {
             InitializeComponent();
             this.BindingContext = contact;

@@ -11,14 +11,15 @@ using Xamarin.Forms.Xaml;
 using XamarinActivities.Models;
 using XamarinActivities.ContactsPages;
 using XamarinActivities.Db;
+using XamarinActivities.ViewModel;
 
 namespace XamarinActivities
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ContactsPage : ContentPage
     {
-        ObservableCollection<Contact> _contacts;
-        Contact TappedContact;
+        ObservableCollection<ContactViewModel> _contacts;
+        ContactViewModel TappedContact;
         ContactsDb contactsDb = new ContactsDb();
 
         public ContactsPage()
@@ -28,7 +29,7 @@ namespace XamarinActivities
             contactsList.ItemsSource = _contacts;
         }
 
-        ObservableCollection<Contact> getContacts()
+        ObservableCollection<ContactViewModel> getContacts()
         {
             #region Old Implementation
             //var contacts = new ObservableCollection<Contact>()
@@ -51,12 +52,12 @@ namespace XamarinActivities
             return contactsDb.GetContacts();
         }
 
-        ObservableCollection<Contact> filterContacts(string searchText = null)
+        ObservableCollection<ContactViewModel> filterContacts(string searchText = null)
         {
 
             if (String.IsNullOrEmpty(searchText))
             {
-                return new ObservableCollection<Contact>(_contacts.OrderBy(c => c.FirstName));
+                return new ObservableCollection<ContactViewModel>(_contacts.OrderBy(c => c.FirstName));
             }
             else
             {
@@ -64,7 +65,7 @@ namespace XamarinActivities
                                                            c.MobileNumber.Contains(searchText.ToLower()))
                                                    .ToList()
                                                    .OrderBy(c => c.FirstName);
-                return new ObservableCollection<Contact>(filteredContactsList);
+                return new ObservableCollection<ContactViewModel>(filteredContactsList);
             }
         }
 
@@ -76,7 +77,7 @@ namespace XamarinActivities
         private void Delete_Clicked(object sender, EventArgs e)
         {
             var menuItem = sender as MenuItem;
-            var contact = menuItem.CommandParameter as Contact;
+            var contact = menuItem.CommandParameter as ContactViewModel;
             DeleteContact(null, contact);
         }
 
@@ -89,7 +90,7 @@ namespace XamarinActivities
         
         private void ContactsList_ItemTapped(object sender, ItemTappedEventArgs e)
         {
-            var contact = e.Item as Contact;
+            var contact = e.Item as ContactViewModel;
             TappedContact = contact;
             contactsList.SelectedItem = null;
             ViewContactPage viewPage = new ViewContactPage(contact, DeleteContact, EditContact);
@@ -102,13 +103,13 @@ namespace XamarinActivities
             Navigation.PushModalAsync(new NavigationPage(addPage));
         }
 
-        private void DeleteContact(object sender, Contact contact)
+        private void DeleteContact(object sender, ContactViewModel contact)
         {
             _contacts = contactsDb.DeleteContact(contact);
             contactsList.ItemsSource = _contacts;
         }
 
-        private void AddContact(object sender, Contact contact)
+        private void AddContact(object sender, ContactViewModel contact)
         {
             //_contacts.Add(contact);
             //_contacts = new ObservableCollection<Contact>(_contacts.OrderBy(c => c.FirstName).ToList());
@@ -117,7 +118,7 @@ namespace XamarinActivities
             contactsList.ItemsSource = _contacts;
         }
 
-        private void EditContact(object sender, Contact newContact)
+        private void EditContact(object sender, ContactViewModel newContact)
         {
             contactsDb.UpdateContact(TappedContact, newContact);
         }

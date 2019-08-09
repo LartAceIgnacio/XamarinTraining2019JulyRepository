@@ -7,6 +7,7 @@ using System.Text;
 using Xamarin.Forms;
 using XamarinActivities.Models;
 using XamarinActivities.Util;
+using XamarinActivities.ViewModel;
 
 namespace XamarinActivities.Db
 {
@@ -17,28 +18,28 @@ namespace XamarinActivities.Db
         public ContactsDb()
         {
             connection = DependencyService.Get<ISQLiteDb>().GetConnection();
-            connection.CreateTable<Contact>();
+            connection.CreateTable<ContactViewModel>();
         }
 
-        public ObservableCollection<Contact> GetContacts()
+        public ObservableCollection<ContactViewModel> GetContacts()
         {
-            var contacts = connection.Table<Contact>().OrderBy(c => c.FirstName).ToList();
-            return new ObservableCollection<Contact>(contacts);
+            var contacts = connection.Table<ContactViewModel>().OrderBy(c => c.FirstName).ToList();
+            return new ObservableCollection<ContactViewModel>(contacts);
         }
 
-        public ObservableCollection<Contact> AddContact(Contact contact)
+        public ObservableCollection<ContactViewModel> AddContact(ContactViewModel contact)
         {
             connection.Insert(contact);
             return GetContacts();
         }
 
-        public ObservableCollection<Contact> DeleteContact(Contact contact)
+        public ObservableCollection<ContactViewModel> DeleteContact(ContactViewModel contact)
         {
-            connection.Delete<Contact>(contact.Id);
+            connection.Delete<ContactViewModel>(contact.Id);
             return GetContacts();
         }
 
-        public ObservableCollection<Contact> UpdateContact(Contact contact, Contact newContact)
+        public ObservableCollection<ContactViewModel> UpdateContact(ContactViewModel contact, ContactViewModel newContact)
         {
             newContact.Id = contact.Id;
             connection.Update(newContact);

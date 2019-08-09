@@ -6,6 +6,7 @@ using System.Text;
 using Xamarin.Forms;
 
 using XamarinActivities.Models;
+using XamarinActivities.ViewModel;
 
 namespace XamarinActivities.Util
 {
@@ -15,7 +16,7 @@ namespace XamarinActivities.Util
         {
             if (value != null)
             {
-                Contact contact = value as Contact;
+                ContactViewModel contact = value as ContactViewModel;
                 var FirstLetter = contact.Initials[0].ToString().ToUpper();
                 switch (FirstLetter)
                 {

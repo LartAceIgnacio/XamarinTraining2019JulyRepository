@@ -7,14 +7,15 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using XamarinActivities.Models;
+using XamarinActivities.ViewModel;
 
 namespace XamarinActivities.ContactsPages
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class AddContactPage : ContentPage
     {
-        private EventHandler<Contact> SaveContactEventHandler;
-        public AddContactPage(EventHandler<Contact> saveContactEventHandler)
+        private EventHandler<ContactViewModel> SaveContactEventHandler;
+        public AddContactPage(EventHandler<ContactViewModel> saveContactEventHandler)
         {
             InitializeComponent();
             SaveContactEventHandler = saveContactEventHandler;
@@ -27,7 +28,15 @@ namespace XamarinActivities.ContactsPages
 
         private void SaveButton_Clicked(object sender, EventArgs e)
         {
-            Contact contact = new Contact(firstName.Text, lastName.Text, mobileNumber.Text, emailAddress.Text, "facebook.com/user", "instagram.com/user");
+            ContactViewModel contact = new ContactViewModel()
+            {
+                FirstName = firstName.Text,
+                LastName = lastName.Text,
+                MobileNumber = mobileNumber.Text,
+                EmailAddress = emailAddress.Text,
+                FacebookLink = "facebook.com/user",
+                InstagramLink = "instagram.com/user"
+            };
             SaveContactEventHandler?.Invoke(this, contact);
             Navigation.PopModalAsync();
         }

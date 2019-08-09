@@ -25,7 +25,9 @@
             <Label Text="Email Address:" />
             <Entry x:Name="emailAddress"
                    Keyboard="Email" />
-            <Button Text="Save Contact" Clicked="SaveButton_Clicked" />
+            <Button Text="Save Contact" Clicked="SaveButton_Clicked" TextColor="White" 
+                    FontAttributes="Bold" BackgroundColor="LightBlue" />
+            <!--#369fe0-->
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
