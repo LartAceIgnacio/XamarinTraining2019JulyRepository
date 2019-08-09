@@ -149,6 +149,13 @@ namespace TestXamarin.Contacts
             this.Navigation.PopAsync();
         }
 
+        private void DeleteContact(object sender, Person p)
+        {
+            contactService.DbDeleteContact(p.Id);
+            GetContacts();
+            this.Navigation.PopAsync();
+        }
+
         private void SearchBar_TextChanged(object sender, TextChangedEventArgs e)
         {
             if(String.IsNullOrEmpty(e.NewTextValue) || String.IsNullOrWhiteSpace(e.NewTextValue))
@@ -177,7 +184,7 @@ namespace TestXamarin.Contacts
         private async void ListContacts_ItemTapped(object sender, ItemTappedEventArgs e)
         {
             Person person = e.Item as Person;
-            var page = new ContactsInfo(person);
+            var page = new ContactsInfo(person, DeleteContact);
             NavigationPage.SetHasNavigationBar(page, false);
             await Navigation.PushAsync(page);
         }

@@ -13,6 +13,7 @@
                 <Label Text="{Binding FullName}" TextColor="White" FontSize="18" 
                        HorizontalOptions="CenterAndExpand" />
             </StackLayout>
+            <Button x:Name="btnDeleteContact" Text="Delete Contact" Clicked="BtnDeleteContact_Clicked"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
