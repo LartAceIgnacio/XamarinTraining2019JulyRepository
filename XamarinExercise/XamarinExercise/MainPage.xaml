@@ -1,60 +1,51 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="XamarinExercise.MainPage">
-    <ScrollView>
-        <StackLayout Padding="20,20,20,20">
+    <MasterDetailPage.Master >
+        <ContentPage Title="Menu">
+            <StackLayout Orientation="Vertical"  BackgroundColor="#2e3a4d">
+                <StackLayout BackgroundColor="#2e3a4d">
+                    <Image Source="https://tinyurl.com/y63yz4eb" Aspect="AspectFit"/>
+                </StackLayout>
+                <ListView x:Name="navigationDrawerList"
+                          RowHeight="55"
+                          VerticalOptions="Center"
+                          SeparatorVisibility="None"
+                          BackgroundColor="#2e3a4d"
+                          ItemSelected="OnMenuItemSelected">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout VerticalOptions="FillAndExpand"
+                                         Orientation="Horizontal"
+                                         Padding="20,10,0,10"
+                                         Spacing="20">
+                                    <Image Source="{Binding Icon}"
+                                       WidthRequest="40"
+                                       HeightRequest="40"
+                                       VerticalOptions="Start"/>
+                                    <Label Text="{Binding Title}"
+                                       FontSize="20"
+                                       VerticalOptions="End"
+                                       TextColor="White"/>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+        </ContentPage>
+    </MasterDetailPage.Master>
+    <MasterDetailPage.Detail>
+        <NavigationPage>
 
-            <Button x:Name="ex1"
-                Text="Exercise1"
-                Clicked='Ex1_Clicked' />
+        </NavigationPage>
+    </MasterDetailPage.Detail>
 
-            <Button x:Name="ex2"
-                Text="Exercise2"
-                Clicked='Ex2_Clicked' />
 
-            <Button x:Name="ex3"
-                Text="Exercise3"
-                Clicked='Ex3_Clicked' />
 
-            <Button x:Name="ex4"
-                Text="Exercise4"
-                Clicked='Ex4_Clicked' />
-
-            <Button x:Name="ex5"
-                Text="Exercise5"
-                Clicked='Ex5_Clicked'/>
-
-            <Button x:Name="ex6"
-                Text="Exercise6"
-                Clicked='Ex6_Clicked' />
-
-            <Button x:Name="ex7"
-                Text="Exercise7"
-                Clicked='Ex7_Clicked'/>
-
-            <Button x:Name="ex8"
-                Text="Exercise8"
-                Clicked='Ex8_Clicked'/>
-
-            <Button x:Name="ex9"
-                Text="Exercise9"
-                Clicked="Ex9_Clicked"/>
-            
-            <Button x:Name="ex10"
-                Text="Exercise10"
-                Clicked="Ex10_Clicked"/>
-
-            <Button x:Name="ex11"
-                Text="Exercise11"
-                Clicked="Ex11_Clicked"/>
-
-        </StackLayout>
-    </ScrollView>
-    
-    
-
-</ContentPage>
+</MasterDetailPage>
