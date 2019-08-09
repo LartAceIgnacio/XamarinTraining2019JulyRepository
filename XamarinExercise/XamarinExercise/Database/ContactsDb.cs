@@ -19,13 +19,13 @@ namespace XamarinExercise.Database
             _sqlconnection.CreateTable<Contacts>();
         }
 
-        public IEnumerable<Contacts> GetUsers()
+        public IEnumerable<Contacts> GetContacts()
         {
             return (from c in _sqlconnection.Table<Contacts>()
                     select c).ToList();
         }
 
-        public Contacts GetContacts(int id)
+        public Contacts GetContact(int id)
         {
             return _sqlconnection.Table<Contacts>().FirstOrDefault(c => c.id == id);
         }

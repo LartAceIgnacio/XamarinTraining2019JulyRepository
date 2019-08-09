@@ -13,27 +13,36 @@ namespace XamarinExercise
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class AddContactPage : ContentPage
     {
-        int id;
         private EventHandler<Contacts> _addContactEventHandler;
-        public AddContactPage(EventHandler<Contacts> addContactEventHandler, int id)
+        public AddContactPage(EventHandler<Contacts> addContactEventHandler)
         {
             InitializeComponent();
-            this.id = id;
             _addContactEventHandler = addContactEventHandler;
         }
-        void Submit_Clicked(object sender, EventArgs e)
+       void Submit_Clicked(object sender, EventArgs e)
         {
-            var newContact = new Contacts()
+            if (string.IsNullOrWhiteSpace(firstName.Text) ||
+                string.IsNullOrWhiteSpace(lastName.Text) ||
+                string.IsNullOrWhiteSpace(contactNo.Text) ||
+                string.IsNullOrWhiteSpace(address.Text) ||
+                string.IsNullOrWhiteSpace(email.Text))
             {
-                id = this.id,
-                FirstName = firstName.Text,
-                LastName = lastName.Text,
-                ContactNo = contactNo.Text,
-                Address = address.Text,
-                EmailAddress = email.Text,
-                Birthday = birthday.Date.ToString()
-            };
-            this._addContactEventHandler?.Invoke(this, newContact);
+                DisplayAlert("All Fields Are Required", "Please Fill up all the fields", "Ok");
+            }
+            else
+            {
+                var newContact = new Contacts()
+                {
+                    FirstName = firstName.Text,
+                    LastName = lastName.Text,
+                    ContactNo = contactNo.Text,
+                    Address = address.Text,
+                    EmailAddress = email.Text,
+                    Birthday = birthday.Date.ToString()
+                };
+                this._addContactEventHandler?.Invoke(this, newContact);
+            }
+            
         }
     }
 }

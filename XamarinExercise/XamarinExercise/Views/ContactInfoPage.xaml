@@ -42,7 +42,7 @@
                                    AbsoluteLayout.LayoutBounds="1, 1, 1, 1"
                                    AbsoluteLayout.LayoutFlags="All"/>
                         </AbsoluteLayout>
-                        <StackLayout HorizontalOptions="FillAndExpand">
+                        <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="Center">
                             <Label Text="{Binding FullName}"
                                    TextColor="White"
                                    FontSize="25"
