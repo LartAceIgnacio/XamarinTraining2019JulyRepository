@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProjectDemo.Menuitems;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -11,53 +12,48 @@ namespace ProjectDemo
 	// Learn more about making custom code visible in the Xamarin.Forms previewer
 	// by visiting https://aka.ms/xamarinforms-previewer
 	[DesignTimeVisible(false)]
-	public partial class MainPage : ContentPage
+	public partial class MainPage : MasterDetailPage
 	{
-		public string[] quotes = {"Any fool can write code that a computer can understand. Good programmers write code that humans can understand.",
-			"The most disastrous thing that you can ever learn is your first programming language",
-			"Code is like humor. When you have to explain it, it’s bad.",
-			"Before software can be reusable it first has to be usable.",
-			"One of the best programming skills you can have is knowing when to walk away for awhile."
-		};
+		public List<MenuItems> menuList { get; set; }
 		public MainPage()
 		{
 			InitializeComponent();
-			slider.Value = 15;
-			quote.Text = quotes[0];
+
+			menuList = new List<MenuItems>();
+
+			var page1 = new MenuItems() { Title = "Contacts", Icon = "About.png", TargeType = typeof(ContactPage) };
+			var page2 = new MenuItems() { Title = "ColorPicker", Icon = "About.png", TargeType = typeof(Page1) };
+			var page3 = new MenuItems() { Title = "Instagram", Icon = "About.png", TargeType = typeof(InstagramPage) };
+			var page5 = new MenuItems() { Title = "Calculator", Icon = "About.png", TargeType = typeof(CalculatorPage) };
+			var page6 = new MenuItems() { Title = "AbsoluteLayout", Icon = "About.png", TargeType = typeof(AbsoluteLayoutExercise1) };
+			var page7 = new MenuItems() { Title = "RelativeLayout", Icon = "About.png", TargeType = typeof(RelativeLayoutPage) };
+			var page8 = new MenuItems() { Title = "Images", Icon = "About.png", TargeType = typeof(ImageExercise1Page) };
+			var page9 = new MenuItems() { Title = "GridExercise", Icon = "About.png", TargeType = typeof(GridExercise1Page) };
+			var page10 = new MenuItems() { Title = "StackLayout", Icon = "About.png", TargeType = typeof(StackLayoutExercise1Page) };
+
+
+			menuList.Add(page1);
+			menuList.Add(page2);
+			menuList.Add(page3);
+			menuList.Add(page5);
+			menuList.Add(page6);
+			menuList.Add(page7);
+			menuList.Add(page8);
+			menuList.Add(page9);
+			menuList.Add(page10);
+			navigationDrawerList.ItemsSource = menuList;
+			// Initial navigation, this can be used for our home page
+			Detail = new NavigationPage((Page)Activator.CreateInstance(typeof(CalculatorPage)));
+		}
+		void OnMenuItemSelected(object sender, SelectedItemChangedEventArgs e)
+		{
+			var item = (MenuItems)e.SelectedItem;
+			Type page = item.TargeType;
+
+			Detail = new NavigationPage((Page)Activator.CreateInstance(page));
+			IsPresented = false;
 		}
 
-		private void Slider_ValueChanged(object sender, ValueChangedEventArgs e)
-		{
-			fontSize.Text = String.Format("Font Size: {0:F0}", e.NewValue);
-		}
-		int count = 0;
-		private void Next_Quote(object sender, EventArgs e)
-		{
-			if(count==4)
-			{
-				count=0;
-				quote.Text = quotes[count];
-			}
-			else
-			{
-				count++;
-				quote.Text = quotes[count];
-			}
-			
-		}
-		private void Previous_Quote(object sender, EventArgs e)
-		{
-			if (count == 0)
-			{
-				count = 4;
-				quote.Text = quotes[count];
-			}
-			else
-			{
-				count--;
-				quote.Text = quotes[count];
-			}
 
-		}
 	}
 }
