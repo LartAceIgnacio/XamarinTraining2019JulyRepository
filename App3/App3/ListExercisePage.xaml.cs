@@ -9,74 +9,91 @@ using Xamarin.Forms.Xaml;
 
 using App3.Models;
 using System.Collections.ObjectModel;
+using App3.SQLite;
 
 namespace App3
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ListExercisePage : ContentPage
     {
-        private ObservableCollection<Contact> _contactList;
+        public ContactDb contactDb;
+        //private ObservableCollection<Contact> _contactList;
 
         public ListExercisePage()
         {
+            
             InitializeComponent();
-            _contactList = GetContactList();
-            contactList.ItemsSource = _contactList;
-            MessagingCenter.Subscribe<ContentPage, Contact>(this, "Delete", (sender, arg) =>
+            //_contactList = GetContactList();
+            //MessagingCenter.Subscribe<ContentPage, Contact>(this, "Delete", (sender, arg) =>
+            //{
+            //    _contactList.Remove(arg);
+            //});
+            contactDb = new ContactDb();
+            contactDb.DeleteAll();
+            contactDb.AddContact(new Contact()
             {
-                _contactList.Remove(arg);
+                FirstName="Aaron",
+                LastName="Custodio",
+                PhoneNumber="09179854875",
+                Email="aaron@bai.com",
+                Quote="ay-ayron the 3x3 god"
             });
-        }
-
-        ObservableCollection<Contact> GetContactList()
-        {
-            ObservableCollection<Contact> initialList = new ObservableCollection<Contact>
+            contactDb.AddContact(new Contact()
             {
-                new Contact("Aaron", "Custodio", "09176967845", "I do not know where family doctors acquired illegibly perplexing handwriting; nevertheless, extraordinary pharmaceutical intellectuality, counterbalancing indecipherability, transcendentalizes intercommunications' incomprehensibleness.", "aaroncustodio@gmail.com"){ },
-                new Contact("Jasper", "Orilla", "09175214789", "jasper is the masper", "jasperorilla@gmial.com"){ },
-                new Contact("Lex", "Carao", "0917965978", "You can quote them, disagree with them, glorify or vilify them.", "drlexan123213@gmail.com"){ },
-                new Contact("Kyla", "Calpito", "09177894321", "angulord is my name, angular is my game", "kylacalpits@gmail.com"){ },
-                new Contact("Mermellah", "Angni", "09171254698", "sorisorisori", "mermellah@gmail.com"){ },
-                new Contact("Arnold", "Mendoza", "09173216540", "*nagsosolve pa ng 7x7*", "arnoldmendoza@gmail.com"){ },
-                new Contact("Charles", "Nazareno", "09174563215", "nani mo nani mo", "charlesnazareno@gmail.com"){ },
-                new Contact("Dino", "Reyes", "09175641289", "hoy", "dinoreyes@gmail.com"){ },
-                new Contact("Melrose", "Mejidana", "09174678913", "Hindi kami ni Lomi", "melrosemeji@gmail.com"){ },
-                new Contact("Hangsome", "Lomio", "09176547821", "Dalawa lang ang masarap sa mundo", "drmkcthehandsome@gmail.com"){ },
-                new Contact("Jelmarose", "Grace", "09177845263", "ano?", "jemlarose@gmail.com"){ }
-            };
-            return new ObservableCollection<Contact>(initialList.OrderBy(contact=>contact.FirstName));
-        }  
+                FirstName = "Jasper",
+                LastName = "Orilla",
+                PhoneNumber = "09179854175",
+                Email = "jaspern@bai.com",
+                Quote = "ajsper the master"
+            });
+            contactDb.AddContact(new Contact()
+            {
+                FirstName = "Lex",
+                LastName = "Carao",
+                PhoneNumber = "09176995978",
+                Email = "kedx@bai.com",
+                Quote = "ella talaga"
+            });
+            contactList.ItemsSource = contactDb.GetContacts();
+        } 
 
         private void ContactList_Refreshing(object sender, EventArgs e)
         {
-            _contactList = GetContactList();
-            contactList.ItemsSource = _contactList;
+            contactDb = new ContactDb();
+            contactList.ItemsSource = contactDb.GetContacts();
             contactList.EndRefresh();
         }
 
         private void SearchBar_TextChanged(object sender, TextChangedEventArgs e)
         {
-            var filteredContacts = _contactList.Where(contact => contact.FullName
-                                                                        .ToLower()
-                                                                        .Contains(e.NewTextValue.ToLower()))
-                                                                        .ToList()
-                                                                        .OrderBy(contact => contact.FirstName);
-            contactList.ItemsSource = new ObservableCollection<Contact>(filteredContacts);
+            contactDb = new ContactDb();
+            string _searchString = e.NewTextValue.ToLower(); 
+            contactList.ItemsSource = contactDb.SearchContact(_searchString);
         }
 
         private void Delete_Clicked(object sender, EventArgs e)
         {
+            contactDb = new ContactDb();
             var menuItem = sender as MenuItem;
             var _contact = menuItem.CommandParameter as Contact;
-            _contactList.Remove(_contact);
+            contactDb.DeleteContact(_contact.Id);
             DisplayAlert("This contact has been deleted", _contact.FullName, "OK");
-            contactList.ItemsSource = new ObservableCollection<Contact>(this._contactList.OrderBy(x => x.FirstName));
+            contactList.ItemsSource = contactDb.GetContacts();
+        }
+
+        private void DeleteFromInformationPage(object sender, Contact contact)
+        {
+            contactDb = new ContactDb();
+            contactDb.DeleteContact(contact.Id);
+            contactList.ItemsSource = contactDb.GetContacts();
+            this.Navigation.PopAsync();
         }
 
         private async void ContactList_ItemTapped(object sender, ItemTappedEventArgs e)
         {
             Contact contact = e.Item as Contact;
-            await Navigation.PushAsync(new ContactInformationPage(contact));
+            var contactInformationPage = new ContactInformationPage(contact, DeleteFromInformationPage);
+            await Navigation.PushAsync(contactInformationPage);
         }
 
         async private void TlbrAdd_Clicked(object sender, EventArgs e)
@@ -87,8 +104,17 @@ namespace App3
 
         public void AddContact(object sender, Contact contact)
         {
-            this._contactList.Add(contact);
-            contactList.ItemsSource = new ObservableCollection<Contact>(this._contactList.OrderBy(x=>x.FirstName)); 
+            contactDb = new ContactDb();
+            contactDb.AddContact(contact);
+            contactList.ItemsSource = contactDb.GetContacts();
+            this.Navigation.PopAsync();
+        }
+
+        private void UpdateInformation(object sender, Contact contact)
+        {
+            contactDb = new ContactDb();
+            contactDb.UpdateContact(contact);
+            contactList.ItemsSource = contactDb.GetContacts();
             this.Navigation.PopAsync();
         }
 
@@ -96,11 +122,8 @@ namespace App3
         {
             var menuItem = sender as MenuItem;
             var _contact = menuItem.CommandParameter as Contact;
-            //_contact.FullName = "Updated";
-            //contactList.ItemsSource = _contactList;
-            var updateContactPage = new UpdateContactPage(_contact);
+            var updateContactPage = new UpdateContactPage(_contact, UpdateInformation);
             await this.Navigation.PushAsync(updateContactPage);
-            contactList.ItemsSource = new ObservableCollection<Contact>(this._contactList.OrderBy(x => x.FirstName));
         }
     }
 }

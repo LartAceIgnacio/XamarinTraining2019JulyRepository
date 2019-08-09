@@ -7,28 +7,27 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using App3.SQLite;
 
 namespace App3
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class UpdateContactPage : ContentPage
     {
+        private EventHandler<Contact> _updateContactEventHandler;
+        public ContactDb contactDb;
         private Contact _contact;
-        private Contact _updatedContact = new Contact("Lartt", "Ignacio", "09684865123", "Lart is good", "lignacio@blastaisa.com");
-        public UpdateContactPage(Contact contact)
+        public UpdateContactPage(Contact contact, EventHandler<Contact> updateContactEventHandler)
         {
             InitializeComponent();
-            this.BindingContext = contact;
+            _contact = contact;
+            this.BindingContext = _contact;
+            _updateContactEventHandler = updateContactEventHandler;
         }
 
-        private void Button_Clicked(object sender, EventArgs e)
+        private void TlbrUpdate_Clicked(object sender, EventArgs e)
         {
-            _contact = _updatedContact;
-        }
-
-        async private void TlbrUpdate_Clicked(object sender, EventArgs e)
-        {
-            await this.Navigation.PopAsync(false);
+            this._updateContactEventHandler?.Invoke(this, this._contact);
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SQLite;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -6,19 +7,21 @@ namespace App3.Models
 {
     public class Contact
     {
+        [PrimaryKey, AutoIncrement]
+        public int Id { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string PhoneNumber { get; set; }
         public string Quote { get; set; }
         public string Email { get; set; }
-        public Contact(string firstName, string lastName, string phoneNumber, string quote, string email)
-        {
-            this.FirstName = firstName;
-            this.LastName = lastName;
-            this.PhoneNumber = phoneNumber;
-            this.Quote = quote;
-            this.Email = email;
-        }
+        //public Contact(string firstName, string lastName, string phoneNumber, string quote, string email)
+        //{
+        //    this.FirstName = firstName;
+        //    this.LastName = lastName;
+        //    this.PhoneNumber = phoneNumber;
+        //    this.Quote = quote;
+        //    this.Email = email;
+        //}
         public string GetInitials
         {
             get

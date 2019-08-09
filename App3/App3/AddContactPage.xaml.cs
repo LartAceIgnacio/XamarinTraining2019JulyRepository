@@ -33,9 +33,14 @@ namespace App3
             this._newMobileNumber = newMobileNumber.Text.ToString();
             this._newQuote = newQuote.Text.ToString();
             this._newEmail = newEmail.Text.ToString();
-            this._contact = new Contact(_newFirstName, _newLastName, _newMobileNumber, _newQuote, _newEmail) { };
-            //this._contact = new Contact(newFirstName.Text, newLastName.Text, newMobileNumber.Text, newQuote.Text, newEmail.Text) { };
-            //this._contact = new Contact("Lart", "Ignacio", "09177845263", "lart is good", "lart@gmail.com") { };
+            this._contact = new Contact()
+            {
+                FirstName = _newFirstName,
+                LastName = _newLastName,
+                PhoneNumber = _newMobileNumber,
+                Quote = _newQuote,
+                Email = _newEmail
+            };
             this._addContactEventHandler?.Invoke(this, this._contact);
         }
     }

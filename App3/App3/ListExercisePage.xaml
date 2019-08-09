@@ -24,9 +24,9 @@
                 IsPullToRefreshEnabled="True"
                 Refreshing="ContactList_Refreshing"
                 RowHeight="50"
+                ItemTapped="ContactList_ItemTapped"
                 SeparatorVisibility="Default"
-                SeparatorColor="Black"
-                ItemTapped="ContactList_ItemTapped">
+                SeparatorColor="Black">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
