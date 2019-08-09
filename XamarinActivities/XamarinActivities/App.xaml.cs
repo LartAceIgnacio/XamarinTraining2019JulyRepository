@@ -11,6 +11,8 @@ namespace XamarinActivities
             InitializeComponent();
 
             //MainPage = new StackLayout1();
+
+
             MainPage = new MainPage();
 
             //var page = new E5ContactPage();

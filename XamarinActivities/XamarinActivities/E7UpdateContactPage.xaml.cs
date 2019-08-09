@@ -35,7 +35,38 @@ namespace XamarinActivities
 
         private void OnUpdateContacts_Clicked(object sender, EventArgs e)
         {
-            _updateContactEventHandler?.Invoke(this, _personDetails);
+            bool isComplete = CheckInput();
+
+            if (isComplete)
+            {
+                _updateContactEventHandler?.Invoke(this, _personDetails);
+            }
+            else
+            {
+                DisplayAlert("", "Please complete the required inputs!", "OK");
+            }
+        }
+
+        private bool CheckInput()
+        {
+            if (string.IsNullOrEmpty(entryFirstName.Text) || string.IsNullOrEmpty(entryLastName.Text) || string.IsNullOrEmpty(entryContactNumber.Text) || string.IsNullOrEmpty(entryEmail.Text) || string.IsNullOrEmpty(editorBio.Text))
+            {
+                return false;
+            }
+
+            if (entryContactNumber.Text.Length <= 1)
+            {
+                DisplayAlert("", "Too short for a valid contact number! Must be 8-12 in length.", "OK");
+                return false;
+            }
+
+            if (entryContactNumber.Text.Length >= 12)
+            {
+                DisplayAlert("", "Too long for a valid contact number! Must be 8-12 in length.", "OK");
+                return false;
+            }
+
+            return true;
         }
     }
 }

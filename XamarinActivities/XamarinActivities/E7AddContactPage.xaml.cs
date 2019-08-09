@@ -31,17 +31,47 @@ namespace XamarinActivities
 
         private void OnAddToContacts_Clicked(object sender, EventArgs e)
         {
-            var _personDetails = new Person
-            {
-                FirstName = entryFirstName.Text,
-                LastName = entryLastName.Text,
-                ContactNumber = entryContactNumber.Text,
-                ImgURL = entryImageURL.Text,
-                Email = entryEmail.Text,
-                Bio = editorBio.Text
-            };
+            bool isComplete = CheckInput();
 
-            _addContactEventHandler?.Invoke(this, _personDetails);
+            if (isComplete)
+            {
+                var _personDetails = new Person
+                {
+                    FirstName = entryFirstName.Text,
+                    LastName = entryLastName.Text,
+                    ContactNumber = entryContactNumber.Text,
+                    ImgURL = "https://tinyurl.com/y29bn4og",
+                    Email = entryEmail.Text,
+                    Bio = editorBio.Text
+                };
+
+                _addContactEventHandler?.Invoke(this, _personDetails);
+            } else
+            {
+                DisplayAlert("", "Please complete the required inputs!", "OK");
+            }
+        }
+
+        private bool CheckInput()
+        {
+            if ( string.IsNullOrEmpty(entryFirstName.Text) || string.IsNullOrEmpty(entryLastName.Text) || string.IsNullOrEmpty(entryContactNumber.Text) || string.IsNullOrEmpty(entryEmail.Text) || string.IsNullOrEmpty(editorBio.Text))
+            {
+                return false;
+            }
+
+            if ( entryContactNumber.Text.Length <= 1)
+            {
+                DisplayAlert("", "Too short for a valid contact number! Must be 8-12 in length.", "OK");
+                return false;
+            }
+
+            if (entryContactNumber.Text.Length >= 12)
+            {
+                DisplayAlert("", "Too long for a valid contact number! Must be 8-12 in length.", "OK");
+                return false;
+            }
+
+            return true;
         }
     }
 }

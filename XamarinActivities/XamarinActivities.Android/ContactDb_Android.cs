@@ -21,7 +21,7 @@ namespace XamarinActivities.Droid
     {
         public SQLiteConnection GetConnection()
         {
-            var sqliteFileName = "ContactsDb.db3";
+            var sqliteFileName = "ContactzDb.db3";
             var documentsPath = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal);
             var path = Path.Combine(documentsPath, sqliteFileName);
 

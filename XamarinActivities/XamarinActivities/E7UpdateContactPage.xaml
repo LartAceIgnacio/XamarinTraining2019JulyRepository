@@ -9,26 +9,38 @@
     <ContentPage.Content>
         <Frame>
             <StackLayout Padding="10" Spacing="10">
+                
+                <Label Text="Firstname:" FontSize="Small"/>
                 <Entry x:Name="entryFirstName"
                    Text="{Binding FirstName}"
                    Placeholder="Enter First Name..."
                    Keyboard="Text"/>
+                
+                <Label Text="Lastname:" FontSize="Small"/>
                 <Entry x:Name="entryLastName" 
                    Text="{Binding LastName}"
                    Placeholder="Enter Last Name..."
                    Keyboard="Text"/>
+                
+                <Label Text="Contact Number:" FontSize="Small"/>
                 <Entry x:Name="entryContactNumber" 
                    Text="{Binding ContactNumber}"
                    Placeholder="Enter Contact Number..."
                    Keyboard="Numeric" />
+
+                <Label Text="Email:" FontSize="Small"/>
                 <Entry x:Name="entryEmail" 
                    Text="{Binding Email}"
                    Placeholder="Enter Email..."
                    Keyboard="Email"/>
+
+                <!--<Label Text="Image URL:" FontSize="Small"/>
                 <Entry x:Name="entryImageURL" 
                    Text="{Binding ImgURL}"
                    Placeholder="Enter Image URL ..."
-                   Keyboard="Url"/>
+                   Keyboard="Url"/>-->
+
+                <Label Text="Bio:" FontSize="Small"/>
                 <Editor x:Name="editorBio" 
                     Text="{Binding Bio}"
                     Placeholder="Enter Bio..."

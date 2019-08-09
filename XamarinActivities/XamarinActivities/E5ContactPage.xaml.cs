@@ -30,7 +30,7 @@ namespace XamarinActivities
         private void InitItemSource()
         {
             //lstContacts.ItemsSource = _peopleList.OrderBy(p => p.FullName);
-            lstContacts.ItemsSource = contactsDb.GetPeople().OrderBy(p => p.FullName);
+            lstContacts.ItemsSource = contactsDb.GetPeople().OrderBy(p => p.FullName).ToList();
         }
 
         private ObservableCollection<Person> InitContactList()
@@ -191,6 +191,7 @@ namespace XamarinActivities
         {
             //InitContactList();
             InitItemSource();
+            lstContacts.EndRefresh();
         }
 
         async void ContactListView_Tapped(object sender, ItemTappedEventArgs e)

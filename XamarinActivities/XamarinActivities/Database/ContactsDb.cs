@@ -20,8 +20,7 @@ namespace XamarinActivities.Database
 
         public IEnumerable<Person> GetPeople()
         {
-            return (from t in _sqlConnection.Table<Person>()
-                    select t).ToList();
+            return _sqlConnection.Table<Person>();
         }
 
         public Person GetPerson(int id)

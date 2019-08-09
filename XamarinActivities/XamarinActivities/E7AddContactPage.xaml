@@ -13,25 +13,38 @@
                          BackgroundColor="#fff"
                          AbsoluteLayout.LayoutFlags="All"
                          AbsoluteLayout.LayoutBounds="0.5, 0.5, 0.9, 0.5">
+                
+                <Label Text="Firstname:" FontSize="Small"/>
                 <Entry x:Name="entryFirstName"
                        Placeholder="Enter First Name..."
                        Keyboard="Text"/>
+
+                <Label Text="Lastname:" FontSize="Small"/>
                 <Entry x:Name="entryLastName" 
                        Placeholder="Enter Last Name..."
                        Keyboard="Text"/>
+
+                <Label Text="Contact Number:" FontSize="Small"/>
                 <Entry x:Name="entryContactNumber" 
                        Placeholder="Enter Contact Number..."
                        Keyboard="Numeric" />
+
+                <Label Text="Email:" FontSize="Small"/>
                 <Entry x:Name="entryEmail" 
                        Placeholder="Enter Email..."
                        Keyboard="Email"/>
+                
+                <!--<Label Text="Image URL:" FontSize="Small"/>
                 <Entry x:Name="entryImageURL" 
                        Placeholder="Enter Image URL ..."
-                       Keyboard="Url"/>
+                       Keyboard="Url"/>-->
+
+                <Label Text="Bio:" FontSize="Small"/>
                 <Editor x:Name="editorBio" 
                         Placeholder="Enter Bio..."
                         Keyboard="Text"
                         AutoSize="TextChanges"/>
+                
                 <Button Text="Save" 
                         TextColor="#fff"
                         Clicked="OnAddToContacts_Clicked"
