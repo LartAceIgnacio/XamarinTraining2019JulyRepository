@@ -10,6 +10,7 @@ using Xamarin.Forms.Xaml;
 
 using TestXamarin.Contacts.Model;
 using TestXamarin.Contacts.Database;
+using TestXamarin.Contacts.View;
 
 namespace TestXamarin.Contacts
 {

@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             xmlns:local="clr-namespace:TestXamarin.Contacts.ViewModel"
+             x:Class="TestXamarin.Contacts.View.AddContactView">
+    <ContentPage.BindingContext>
+        <local:AddContactViewModel />
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+            <StackLayout HorizontalOptions="FillAndExpand" Padding="10" BackgroundColor="#6200ee">
+                <Label Text="Add New Contact" HorizontalOptions="CenterAndExpand" TextColor="White" />
+            </StackLayout>
+            <StackLayout Padding="5">
+                <Label Text="First Name" />
+                <Entry Text="{Binding FirstName}" />
+                <Label Text="Last Name" />
+                <Entry Text="{Binding LastName}" />
+                <Label Text="Contact Number" />
+                <Entry Text="{Binding ContactNo}" />
+            </StackLayout>
+            <Button Text="Save" BackgroundColor="#6200ee" TextColor="White"
+                    Command="{Binding AddNewContactCommand}"
+                    VerticalOptions="EndAndExpand"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
