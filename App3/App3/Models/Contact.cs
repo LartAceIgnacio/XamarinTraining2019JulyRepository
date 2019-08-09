@@ -9,19 +9,17 @@ namespace App3.Models
     {
         [PrimaryKey, AutoIncrement]
         public int Id { get; set; }
+        [NotNull]
         public string FirstName { get; set; }
+        [NotNull]
         public string LastName { get; set; }
+        [NotNull]
         public string PhoneNumber { get; set; }
+        [NotNull]
         public string Quote { get; set; }
+        [NotNull]
         public string Email { get; set; }
-        //public Contact(string firstName, string lastName, string phoneNumber, string quote, string email)
-        //{
-        //    this.FirstName = firstName;
-        //    this.LastName = lastName;
-        //    this.PhoneNumber = phoneNumber;
-        //    this.Quote = quote;
-        //    this.Email = email;
-        //}
+
         public string GetInitials
         {
             get

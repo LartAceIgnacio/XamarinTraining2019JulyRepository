@@ -26,22 +26,29 @@ namespace App3
             this._addContactEventHandler = addContactEventHandler;
         }
 
-        private void TlbrAdd_Clicked(object sender, EventArgs e)
+        async private void TlbrAdd_Clicked(object sender, EventArgs e)
         {
-            this._newFirstName = newFirstName.Text.ToString();
-            this._newLastName = newLastName.Text.ToString();
-            this._newMobileNumber = newMobileNumber.Text.ToString();
-            this._newQuote = newQuote.Text.ToString();
-            this._newEmail = newEmail.Text.ToString();
-            this._contact = new Contact()
+            if (String.IsNullOrEmpty(newFirstName.Text) || String.IsNullOrEmpty(newLastName.Text) || String.IsNullOrEmpty(newMobileNumber.Text) || String.IsNullOrEmpty(newEmail.Text) || String.IsNullOrEmpty(newQuote.Text))
             {
-                FirstName = _newFirstName,
-                LastName = _newLastName,
-                PhoneNumber = _newMobileNumber,
-                Quote = _newQuote,
-                Email = _newEmail
-            };
-            this._addContactEventHandler?.Invoke(this, this._contact);
+                await DisplayAlert("Alert", "All fields must be answered", "Ok");
+            }
+            else
+            {
+                this._newFirstName = newFirstName.Text.ToString();
+                this._newLastName = newLastName.Text.ToString();
+                this._newMobileNumber = newMobileNumber.Text.ToString();
+                this._newQuote = newQuote.Text.ToString();
+                this._newEmail = newEmail.Text.ToString();
+                this._contact = new Contact()
+                {
+                    FirstName = _newFirstName,
+                    LastName = _newLastName,
+                    PhoneNumber = _newMobileNumber,
+                    Quote = _newQuote,
+                    Email = _newEmail
+                };
+                this._addContactEventHandler?.Invoke(this, this._contact);
+            }      
         }
     }
 }

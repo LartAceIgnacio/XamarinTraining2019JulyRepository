@@ -25,9 +25,16 @@ namespace App3
             _updateContactEventHandler = updateContactEventHandler;
         }
 
-        private void TlbrUpdate_Clicked(object sender, EventArgs e)
+        async private void TlbrUpdate_Clicked(object sender, EventArgs e)
         {
-            this._updateContactEventHandler?.Invoke(this, this._contact);
+            if (String.IsNullOrEmpty(newFirstName.Text) || String.IsNullOrEmpty(newLastName.Text) || String.IsNullOrEmpty(newMobileNumber.Text) || String.IsNullOrEmpty(newEmail.Text) || String.IsNullOrEmpty(newQuote.Text))
+            {
+                await DisplayAlert("Alert", "All fields must be answered", "Ok");
+            }
+            else
+            {
+                this._updateContactEventHandler?.Invoke(this, this._contact);
+            }      
         }
     }
 }
