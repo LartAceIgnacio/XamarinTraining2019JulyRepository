@@ -19,9 +19,11 @@
                     <StackLayout>
                         <Label Text="Contact List"
                                HorizontalOptions="CenterAndExpand"
-                               FontSize="15"
+                               FontSize="25"
                                FontAttributes="Bold"/>
+                        
                         <SearchBar Placeholder="Search Here" TextChanged="SearchBar_TextChanged"/>
+                        
                     </StackLayout>
                 </ListView.Header>
 

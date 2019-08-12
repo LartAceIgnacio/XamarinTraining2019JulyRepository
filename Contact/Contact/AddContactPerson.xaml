@@ -8,13 +8,14 @@
     <ContentPage.Content>
         
         <StackLayout Padding="30, 30, 30, 30">
-            <Label Text="Add Contact" FontSize="40" HorizontalTextAlignment="Center" />
+            <Label Text="Add Contact" FontSize="40" HorizontalTextAlignment="Center" Margin="0,0,0,20"/>
             <Label Text="First Name:" HorizontalOptions="Start"/>
             <Entry x:Name="firstName" Placeholder="First Name"/>
             <Label Text="Last Name:" HorizontalOptions="Start"/>
             <Entry x:Name="lastName" Placeholder="Last Name"/>
             <Label Text="Contact Number:" HorizontalOptions="Start"/>
             <Entry x:Name="contactNumber" Placeholder="Contact Number"/>
+            <Label Text="Email Address:" HorizontalOptions="Start"/>
             <Entry x:Name="email" Placeholder="Email" Keyboard="Email"/>
 
             <Button x:Name ="btnSubmit" Text="Submit" Clicked="AddContact_Clicked"/>
