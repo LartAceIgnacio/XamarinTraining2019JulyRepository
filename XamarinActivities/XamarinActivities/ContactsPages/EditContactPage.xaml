@@ -13,31 +13,48 @@
     
     <ContentPage.Content>
         <StackLayout HorizontalOptions="FillAndExpand" Padding="20">
+
             <Label Text="First Name:" />
             <Entry x:Name="firstName"
                         Text="{Binding FirstName}"
-                        Keyboard="Plain" />
+                        Keyboard="Plain"
+                        Unfocused="FirstName_Unfocused" />
+            <Label x:Name="Error_FirstName" TextColor="Red" />
+
             <Label Text="Last Name:" />
             <Entry x:Name="lastName"
                        Text="{Binding LastName}"
-                       Keyboard="Plain" />
+                       Keyboard="Plain"
+                       Unfocused="LastName_Unfocused" />
+            <Label x:Name="Error_LastName" TextColor="Red" />
+
             <Label Text="Mobile Number:" />
             <Entry x:Name="mobileNumber"
                        Text="{Binding MobileNumber}"
-                       Keyboard="Telephone" />
+                       Keyboard="Telephone"
+                       Unfocused="MobileNumber_Unfocused" />
+            <Label x:Name="Error_MobileNumber" TextColor="Red" />
+
             <Label Text="Email Address:" />
             <Entry x:Name="emailAddress"
                        Text="{Binding EmailAddress}"
-                       Keyboard="Email" />
+                       Keyboard="Email"
+                       Unfocused="EmailAddress_Unfocused" />
+            <Label x:Name="Error_EmailAddress" TextColor="Red" />
+
             <Label Text="Facebook:" />
             <Entry x:Name="facebookLink"
                        Text="{Binding FacebookLink}"
                        Keyboard="Url" />
+
             <Label Text="Instagram:" />
             <Entry x:Name="instagramLink"
                        Text="{Binding InstagramLink}"
                        Keyboard="Url" />
-            <Button Text="Save Contact" Clicked="SaveButton_Clicked" />
+
+            <Button x:Name="saveButton"  Text="Save Contact" Clicked="SaveButton_Clicked" TextColor="White" 
+                    FontAttributes="Bold" BackgroundColor="#369fe0" IsEnabled="False" />
+
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

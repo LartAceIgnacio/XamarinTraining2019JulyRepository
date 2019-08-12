@@ -13,20 +13,29 @@
 
     <ContentPage.Content>
         <StackLayout HorizontalOptions="FillAndExpand" Padding="20">
+
             <Label Text="First Name:" />
             <Entry x:Name="firstName"
-                   Keyboard="Plain" />
+                   Keyboard="Plain" Unfocused="FirstName_Unfocused" />
+            <Label x:Name="Error_FirstName" TextColor="Red" />
+
             <Label Text="Last Name:" />
             <Entry x:Name="lastName"
-                   Keyboard="Plain" />
+                   Keyboard="Plain" Unfocused="LastName_Unfocused" />
+            <Label x:Name="Error_LastName" TextColor="Red" />
+
             <Label Text="Mobile Number:" />
             <Entry x:Name="mobileNumber"
-                   Keyboard="Telephone" />
+                   Keyboard="Telephone" Unfocused="MobileNumber_Unfocused" />
+            <Label x:Name="Error_MobileNumber" TextColor="Red" />
+
             <Label Text="Email Address:" />
             <Entry x:Name="emailAddress"
-                   Keyboard="Email" />
-            <Button Text="Save Contact" Clicked="SaveButton_Clicked" TextColor="White" 
-                    FontAttributes="Bold" BackgroundColor="LightBlue" />
+                   Keyboard="Email" Unfocused="EmailAddress_Unfocused" />
+            <Label x:Name="Error_EmailAddress" TextColor="Red" />
+
+            <Button x:Name="saveButton" Text="Save Contact" Clicked="SaveButton_Clicked" TextColor="White" 
+                    FontAttributes="Bold" BackgroundColor="#369fe0" IsEnabled="False" />
             <!--#369fe0-->
         </StackLayout>
     </ContentPage.Content>
