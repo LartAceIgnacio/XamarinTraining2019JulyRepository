@@ -27,23 +27,20 @@ namespace XamarinActivities.Db
             return new ObservableCollection<ContactViewModel>(contacts);
         }
 
-        public ObservableCollection<ContactViewModel> AddContact(ContactViewModel contact)
+        public void AddContact(ContactViewModel contact)
         {
             connection.Insert(contact);
-            return GetContacts();
         }
 
-        public ObservableCollection<ContactViewModel> DeleteContact(ContactViewModel contact)
+        public void DeleteContact(ContactViewModel contact)
         {
             connection.Delete<ContactViewModel>(contact.Id);
-            return GetContacts();
         }
 
-        public ObservableCollection<ContactViewModel> UpdateContact(ContactViewModel contact, ContactViewModel newContact)
+        public void UpdateContact(ContactViewModel contact, ContactViewModel newContact)
         {
             newContact.Id = contact.Id;
             connection.Update(newContact);
-            return GetContacts();
         }
     }
 }

@@ -16,6 +16,7 @@ namespace XamarinActivities.ViewModel
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
+        [PrimaryKey, AutoIncrement]
         public int Id { get; set; }
 
         private string _firstName;
@@ -62,11 +63,12 @@ namespace XamarinActivities.ViewModel
                 return String.Format("{0} {1}", FirstName, LastName);
             }
         }
+
         public string Initials
         {
             get
             {
-                return String.Format("{0} {1}", FirstName[0], LastName[0]);
+                return String.Format("{0}{1}", FirstName[0], LastName[0]);
             }
         }
 

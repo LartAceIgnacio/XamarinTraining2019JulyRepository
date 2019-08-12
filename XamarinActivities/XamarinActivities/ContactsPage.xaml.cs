@@ -25,8 +25,13 @@ namespace XamarinActivities
         public ContactsPage()
         {
             InitializeComponent();
+        }
+
+        protected override void OnAppearing()
+        {
             _contacts = getContacts();
             contactsList.ItemsSource = _contacts;
+            base.OnAppearing();
         }
 
         ObservableCollection<ContactViewModel> getContacts()
@@ -105,8 +110,7 @@ namespace XamarinActivities
 
         private void DeleteContact(object sender, ContactViewModel contact)
         {
-            _contacts = contactsDb.DeleteContact(contact);
-            contactsList.ItemsSource = _contacts;
+            contactsDb.DeleteContact(contact);
         }
 
         private void AddContact(object sender, ContactViewModel contact)
@@ -114,8 +118,7 @@ namespace XamarinActivities
             //_contacts.Add(contact);
             //_contacts = new ObservableCollection<Contact>(_contacts.OrderBy(c => c.FirstName).ToList());
             //contactsList.ItemsSource = _contacts;
-            _contacts = contactsDb.AddContact(contact);
-            contactsList.ItemsSource = _contacts;
+            contactsDb.AddContact(contact);
         }
 
         private void EditContact(object sender, ContactViewModel newContact)
