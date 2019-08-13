@@ -20,6 +20,7 @@ namespace App3
         private string _newMobileNumber;
         private string _newQuote;
         private string _newEmail;
+
         public AddContactPage(EventHandler<Contact> addContactEventHandler)
         {
             InitializeComponent();

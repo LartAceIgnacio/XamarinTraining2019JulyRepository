@@ -17,17 +17,10 @@ namespace App3
     public partial class ListExercisePage : ContentPage
     {
         public ContactDb contactDb;
-        //private ObservableCollection<Contact> _contactList;
 
         public ListExercisePage()
-        {
-            
+        {           
             InitializeComponent();
-            //_contactList = GetContactList();
-            //MessagingCenter.Subscribe<ContentPage, Contact>(this, "Delete", (sender, arg) =>
-            //{
-            //    _contactList.Remove(arg);
-            //});
             contactDb = new ContactDb();
             contactDb.DeleteAll();
             contactDb.AddContact(new Contact()
@@ -92,7 +85,7 @@ namespace App3
         private async void ContactList_ItemTapped(object sender, ItemTappedEventArgs e)
         {
             Contact contact = e.Item as Contact;
-            var contactInformationPage = new ContactInformationPage(contact, DeleteFromInformationPage);
+            var contactInformationPage = new ContactInformationPage(contact, DeleteFromInformationPage, UpdateInformation);
             await Navigation.PushAsync(contactInformationPage);
         }
 
@@ -115,7 +108,7 @@ namespace App3
             contactDb = new ContactDb();
             contactDb.UpdateContact(contact);
             contactList.ItemsSource = contactDb.GetContacts();
-            this.Navigation.PopAsync();
+            this.Navigation.PopToRootAsync();
         }
 
         async private void Update_Clicked(object sender, EventArgs e)

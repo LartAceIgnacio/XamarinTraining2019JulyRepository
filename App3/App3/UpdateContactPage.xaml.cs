@@ -17,6 +17,7 @@ namespace App3
         private EventHandler<Contact> _updateContactEventHandler;
         public ContactDb contactDb;
         private Contact _contact;
+
         public UpdateContactPage(Contact contact, EventHandler<Contact> updateContactEventHandler)
         {
             InitializeComponent();

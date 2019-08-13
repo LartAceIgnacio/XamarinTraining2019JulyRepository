@@ -10,10 +10,10 @@
                      Text="Delete"
                      Order="Secondary"
                      Clicked="TlbrDelete_Clicked"/>
-        <!--<ToolbarItem Name="TlbrUpdate" 
+        <ToolbarItem Name="TlbrUpdate" 
                      Text="Update"
                      Order="Secondary"
-                     Clicked="TlbrUpdate_Clicked"/>-->
+                     Clicked="TlbrUpdate_Clicked"/>
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <StackLayout>
