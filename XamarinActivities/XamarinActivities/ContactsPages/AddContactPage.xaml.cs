@@ -98,7 +98,11 @@ namespace XamarinActivities.ContactsPages
 
         private void SaveButton_Disabled()
         {
-            if (!String.IsNullOrWhiteSpace(firstName.Text) || !String.IsNullOrWhiteSpace(lastName.Text) || !String.IsNullOrWhiteSpace(mobileNumber.Text))
+            if (String.IsNullOrWhiteSpace(firstName.Text) || String.IsNullOrWhiteSpace(lastName.Text) || String.IsNullOrWhiteSpace(mobileNumber.Text))
+            {
+                saveButton.IsEnabled = false;
+            }
+            else
             {
                 saveButton.IsEnabled = true;
             }
