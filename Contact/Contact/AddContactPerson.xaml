@@ -18,7 +18,7 @@
             <Label Text="Email Address:" HorizontalOptions="Start"/>
             <Entry x:Name="email" Placeholder="Email" Keyboard="Email"/>
 
-            <Button x:Name ="btnSubmit" Text="Submit" Clicked="AddContact_Clicked"/>
+            <Button x:Name ="btnSubmit" Text="Submit" Clicked="AddContact_Clicked" BackgroundColor="RoyalBlue" TextColor="White"/>
             
         </StackLayout>
     </ContentPage.Content>

@@ -23,6 +23,7 @@ namespace Contact
             this.BindingContext = contact;
             this._deleteContactEventHandler = deleteContactEventHandler;
             this._editContactEventHandler = editContactEventHandler;
+            backgroundBoxView.BackgroundColor = Color.FromRgb(240, 240, 240);
 
         }
 
@@ -33,17 +34,22 @@ namespace Contact
 
         private async void Call_Person_Clicked(object sender, EventArgs e)
         {
-            await DisplayAlert("Call", "Call " + contact.FirstName,  "Call" );
+            await DisplayAlert("Call", "Call " + contact.FirstName + "?",  "Call" );
         }
 
-        async void TlbrEdit_Clicked(object sender, EventArgs e)
+        private async void TlbrEdit_Clicked(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new EditContactPerson(contact, _editContactEventHandler));
         }
 
-        async void Message_Person_Clicked(object sender, EventArgs e)
+        private async void Message_Person_Clicked(object sender, EventArgs e)
         {
             await DisplayAlert("Send Message", "Send Message to " + contact.FirstName, "Send");
+        }
+
+        private async void Skype_Person_Clicked(object sender, EventArgs e)
+        {
+            await DisplayAlert("Opening Skype", "Go to skype profile of " + contact.FirstName + "?", "Go");
         }
     }
 }

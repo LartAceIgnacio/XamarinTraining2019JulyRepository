@@ -17,13 +17,14 @@ namespace Contact
     {
         ObservableCollection<ContactDb> dbContactList = new ObservableCollection<ContactDb>();
         ObservableCollection<Person> contactList = new ObservableCollection<Person>();
-        public ContactDb contactDb;
+        public ContactDb contactDb = new ContactDb();
         public Person person;
 
         public ContactListPage()
         {
             InitializeComponent();
             List_Refresh();
+            
         }
         
             
@@ -44,14 +45,14 @@ namespace Contact
         }
         void List_Refresh()
         {
-            contactDb = new ContactDb();
+
             var viewContactList = contactDb.GetPeople();
             contactListView.ItemsSource = viewContactList.OrderBy(n => n.FirstName);
         }
 
         private void SearchBar_TextChanged(object sender, TextChangedEventArgs e)
         {
-            contactDb = new ContactDb();
+
             string searchString = e.NewTextValue.ToLower();
             contactListView.ItemsSource = contactDb.SearchPerson(searchString).OrderBy(n => n.FullName);
         }
@@ -63,7 +64,7 @@ namespace Contact
         }
         async void DeleteContactProfile(object sender, Person person)
         {
-            contactDb = new ContactDb();
+
             bool confirm = await DisplayAlert("Delete Contact",
                 "Would you like to Delete this Contact?", "Yes", "No");
             if (confirm == true)
@@ -82,18 +83,18 @@ namespace Contact
 
         async void EditContactProfile(object sender, Person person)
         {
-            contactDb = new ContactDb();
+
             this.contactDb.UpdateContact(person);
-            await DisplayAlert("Contact Added", person.FirstName + " is now update to your Contacts", "Ok");
+            await DisplayAlert("Contact Update", person.FirstName + " has updated to your Contacts", "Ok");
             List_Refresh();
             await this.Navigation.PopAsync();
         }
 
         async void AddContactProfile(object sender, Person person)
         {
-            contactDb = new ContactDb();
+
             this.contactDb.AddContact(person);
-            await DisplayAlert("Contact Added", person.FirstName + " is now added to your Contacts", "Ok");
+            await DisplayAlert("Contact Added", person.FirstName + " has added to your Contacts", "Ok");
             List_Refresh();
             await this.Navigation.PopAsync();
 

@@ -34,7 +34,6 @@ namespace Contact
             }
             else
             {
-
                 contact.FirstName = firstName.Text;
                 contact.LastName = lastName.Text;
                 contact.ContactNumber = contactNumber.Text;

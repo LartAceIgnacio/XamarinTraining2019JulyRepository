@@ -13,8 +13,6 @@ namespace Contact.Database
     {
         private SQLiteConnection _sqlconnection;
 
-        public string FullName { get; set; }
-        public string ContactNumber { get; set; }
         public ContactDb()
         {
             _sqlconnection = DependencyService.Get<ISqlite>().GetConnection();

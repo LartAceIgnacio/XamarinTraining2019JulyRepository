@@ -9,7 +9,7 @@
         <ToolbarItem Name="TlbrHome" Order="Primary" Text="Add Contact" Priority="0" Clicked="AddContact_Page"/>
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
-        <StackLayout>
+        <StackLayout Padding="10">
             <ListView x:Name="contactListView" RowHeight="75"
                       IsPullToRefreshEnabled="True"
                       Refreshing="ContactListView_Refreshing"
@@ -21,7 +21,6 @@
                                HorizontalOptions="CenterAndExpand"
                                FontSize="25"
                                FontAttributes="Bold"/>
-                        
                         <SearchBar Placeholder="Search Here" TextChanged="SearchBar_TextChanged"/>
                         
                     </StackLayout>
@@ -34,16 +33,21 @@
                                          Padding="20, 0, 20, 0"
                                          VerticalOptions="Center">
 
-                                <AbsoluteLayout>
+                                <AbsoluteLayout Margin="-10, 0, 20, 0">
+                                    <BoxView Color="LightGray" 
+                                             CornerRadius="10" 
+                                             Margin="0, 5, 0, 5"
+                                             AbsoluteLayout.LayoutFlags="All"
+                                             AbsoluteLayout.LayoutBounds="1, 1, 1, 1"/>
                                     <BoxView Color="{Binding BoxColor}" 
                                              CornerRadius="10" 
-                                             Margin="0, 5, 0, 0"
-                                             />
+                                             Margin="0, 5, 0, 5"
+                                             AbsoluteLayout.LayoutFlags="All"
+                                             AbsoluteLayout.LayoutBounds=".5, .5, .95, .95"/>
 
                                     <Label Text="{Binding Initials}"
                                            HorizontalTextAlignment="Center"
                                            VerticalOptions="Center"
-                                           
                                            AbsoluteLayout.LayoutFlags="All"
                                            AbsoluteLayout.LayoutBounds="1, 1, 1, 1"/>
                                 </AbsoluteLayout>
