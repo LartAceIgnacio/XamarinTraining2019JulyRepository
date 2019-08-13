@@ -36,14 +36,13 @@
                                              Color="{Binding AvatarColor}"
                                              AbsoluteLayout.LayoutBounds="0.5, 0.5"
                                              AbsoluteLayout.LayoutFlags="PositionProportional"/>
-                                    <!--{Binding GetAvatarColor}-->
                                     <Label Text="{Binding Initials}"
+                                           TextColor="{Binding InitialsColor}"
                                            AbsoluteLayout.LayoutBounds="1, 1, 1, 1"
                                            AbsoluteLayout.LayoutFlags="All"
                                            HorizontalOptions="Center"
                                            VerticalOptions="Center"
                                            FontAttributes="Bold"/>
-                                    <!--{Binding GetInitials}-->
                                 </AbsoluteLayout>
                                 <AbsoluteLayout>
                                     <StackLayout Orientation="Vertical"

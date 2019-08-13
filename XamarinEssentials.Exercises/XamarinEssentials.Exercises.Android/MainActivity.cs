@@ -11,7 +11,7 @@ using ImageCircle.Forms.Plugin.Droid;
 
 namespace XamarinEssentials.Exercises.Droid
 {
-    [Activity(Label = "XamarinDbSample", Icon = "@drawable/icecream", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
+    [Activity(Label = "Xamarin Exercises", Icon = "@drawable/icecream", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
     public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
     {
         protected override void OnCreate(Bundle savedInstanceState)

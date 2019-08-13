@@ -72,5 +72,13 @@ namespace XamarinEssentials.Exercises.Models
                 //return AvatarColors[FirstName[0].ToString()];
             }
         }
+
+        public Color InitialsColor
+        {
+            get
+            {
+                return Color.FromArgb(AvatarColor.ToArgb() ^ 0xffffff);
+            }
+        }
     }
 }
