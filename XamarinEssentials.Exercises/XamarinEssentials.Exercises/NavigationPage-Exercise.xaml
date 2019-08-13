@@ -47,7 +47,7 @@
                        Style="{StaticResource contactName}"
                        HorizontalTextAlignment="Center"/>
             </StackLayout>
-            
+
             <StackLayout Orientation="Vertical"
                          HorizontalOptions="FillAndExpand">
                 <BoxView Color="Black"
@@ -66,12 +66,6 @@
                 <Label Text="Birthday"
                        Style="{StaticResource contactInfoSubtitle}"/>
             </StackLayout>
-            
-            <Button x:Name="btnBack"
-                    Text="Back"
-                    Clicked="BtnBack_Clicked"
-                    HorizontalOptions="CenterAndExpand"
-                    VerticalOptions="EndAndExpand"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

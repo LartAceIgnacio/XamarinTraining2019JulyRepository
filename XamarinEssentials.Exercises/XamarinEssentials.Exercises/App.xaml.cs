@@ -10,7 +10,8 @@ namespace XamarinEssentials.Exercises
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new NavPage());
+            //MainPage = new NavigationPage(new NavPage());
+            MainPage = new MainPage();
         }
 
         protected override void OnStart()

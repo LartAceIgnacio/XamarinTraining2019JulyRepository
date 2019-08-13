@@ -19,7 +19,6 @@ namespace XamarinEssentials.Exercises
         public NavigationPage_Exercise(Contact item, EventHandler<Contact> deleteContactEventHandler)
         {
             InitializeComponent();
-            btnBack.Clicked += BtnBack_Clicked;
 
             contact = item;
             this._deleteContactEventHandler = deleteContactEventHandler;
@@ -29,11 +28,6 @@ namespace XamarinEssentials.Exercises
             lblContactNo.Text = contact.ContactNumber;
             lblEmail.Text = contact.Email;
             lblBirthday.Text = contact.Birthday;
-        }
-
-        private void BtnBack_Clicked(object sender, EventArgs e)
-        {
-            this.Navigation.PopAsync();
         }
 
         private async void TlbrDelete_Clicked(object sender, EventArgs e)

@@ -9,7 +9,33 @@
     <MasterDetailPage.Master>
         <ContentPage Title="Menu" BackgroundColor="Silver">
             <StackLayout Orientation="Vertical">
-                
+                <StackLayout HeightRequest="150">
+                    <Image Source="masterdetail_tree.png" Aspect="Fill"/>
+                </StackLayout>
+                <ListView x:Name="navigationDrawerList"
+                          RowHeight="55"
+                          SeparatorVisibility="Default"
+                          BackgroundColor="LightSteelBlue"
+                          ItemSelected="NavigationDrawerList_ItemSelected">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout VerticalOptions="FillAndExpand"
+                                             Orientation="Horizontal"
+                                             Padding="20, 10, 10, 10"
+                                             Spacing="20">
+                                    <Image Source="{Binding Icon}"
+                                           WidthRequest="25"
+                                           HeightRequest="25"
+                                           VerticalOptions="Start"/>
+                                    <Label Text="{Binding Title}"
+                                           HeightRequest="40"
+                                           TextColor="Black"/>
+                                </StackLayout> 
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
             </StackLayout>
         </ContentPage>
     </MasterDetailPage.Master>
