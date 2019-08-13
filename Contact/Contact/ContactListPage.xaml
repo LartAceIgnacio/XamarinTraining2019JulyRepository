@@ -37,7 +37,8 @@
                                 <AbsoluteLayout>
                                     <BoxView Color="{Binding BoxColor}" 
                                              CornerRadius="10" 
-                                             Margin="0, 5, 0, 0"/>
+                                             Margin="0, 5, 0, 0"
+                                             />
 
                                     <Label Text="{Binding Initials}"
                                            HorizontalTextAlignment="Center"

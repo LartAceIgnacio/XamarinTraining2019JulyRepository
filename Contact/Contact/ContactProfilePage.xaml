@@ -37,17 +37,22 @@
                 <Label Text="{Binding FullName}" FontSize="25" 
                        FontAttributes="Bold"
                        HorizontalOptions="CenterAndExpand"/>
-                <StackLayout  Margin="0, 50, 20, 50" Orientation="Horizontal">
-                    <ImageButton x:Name="call_Person" Clicked="Call_Person_Clicked" Source="call.png" HeightRequest="30" WidthRequest="30" BackgroundColor="Transparent" />
-                    <ImageButton x:Name="message_Person" Clicked="Message_Person_Clicked" Source="envelope.png" HeightRequest="30" WidthRequest="30" BackgroundColor="Transparent" HorizontalOptions="CenterAndExpand" Margin="0, 0, 25, 0"/>
-                    <ImageButton/>
+                <StackLayout  Margin="0, 40, 20, 20" Orientation="Horizontal">
+                    <StackLayout Orientation="Vertical" Margin="50, 0, 100, 0">
+                        <ImageButton x:Name="call_Person" Clicked="Call_Person_Clicked" Source="call.png" HeightRequest="40" WidthRequest="40" BackgroundColor="Transparent" />
+                        <Label Text="Call" Margin="10,0,0,0"/>
+                    </StackLayout>
+                    <StackLayout Orientation="Vertical" HorizontalOptions="Center" Margin="0, -9, 0,-10">
+                        <ImageButton x:Name="message_Person" Clicked="Message_Person_Clicked" Source="envelope.png" HeightRequest="50" WidthRequest="50" BackgroundColor="Transparent" HorizontalOptions="CenterAndExpand" Margin="2, 0, 28, 0"/>
+                        <Label Text="Message" Margin="0, 0, 10, 0"/>
+                    </StackLayout>
                 </StackLayout>
                 <StackLayout>
                     <Label Text="Contact Number:" FontSize="15" 
                            HorizontalOptions="CenterAndExpand" />
                     <Label Text="{Binding ContactNumber}" FontSize="25" 
-                           HorizontalOptions="CenterAndExpand" />
-                    <Label Text="Email Address:" FontSize="15" 
+                           HorizontalOptions="CenterAndExpand"  Margin="0, 0, 0, 10" />
+                    <Label Text="Email Address:" FontSize="15"
                            HorizontalOptions="CenterAndExpand" />
                     <Label Text="{Binding Email}" FontSize="25" 
                            HorizontalOptions="CenterAndExpand" />
